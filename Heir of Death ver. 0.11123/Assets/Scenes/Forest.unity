@@ -55709,21 +55709,6 @@ MonoBehaviour:
   slideForce: 200
   slideYScale: 0.5
   slideKey: 306
---- !u!114 &3786259323699010796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4492543168716860001}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e7b935504138dc46a50ddf92b33010e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  teleportationSpot: {fileID: 8210523444122299036}
-  gun: {fileID: 6166841045574522535}
-  pointer: {fileID: 5303933584544220699}
 --- !u!114 &3882561437921652152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56093,7 +56078,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6201226654910069663}
-  - component: {fileID: 3786259323699010796}
   m_Layer: 0
   m_Name: Player1 1
   m_TagString: Untagged

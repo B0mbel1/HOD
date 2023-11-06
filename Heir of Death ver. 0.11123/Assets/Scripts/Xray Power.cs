@@ -21,57 +21,62 @@ public class XrayPower : MonoBehaviour
 
     private void Start()
     {
-        UnlockTime = StartingValue;     
-        StartingValue = PowerTime;
-        CooldownStartingValue = CooldownTime;
-
-        Renderer renderer = GetComponent<Renderer>();
-        if (renderer != null)
+        if(Main.Power == 3)
         {
-            standardShader = renderer.material.shader;
-        }
+            UnlockTime = StartingValue;
+            StartingValue = PowerTime;
+            CooldownStartingValue = CooldownTime;
 
-        IsTimerShown(false);
-        IsPowerActivated(false);
-        isActivated = false;
+            Renderer renderer = GetComponent<Renderer>();
+            if (renderer != null)
+            {
+                standardShader = renderer.material.shader;
+            }
+
+            IsTimerShown(false);
+            IsPowerActivated(false);
+            isActivated = false;
+        }
+       
     }
 
     private void FixedUpdate()
     {
-        if (CanPressAbility && Input.GetKeyDown(KeyCode.Q)) 
+        if(Main.Power == 3)
         {
-            IsPowerActivated(true);
-            CanPressAbility = false; 
-            UnlockTime = (Time.time + 10f) + PowerTime; 
-        }
-        
-        if (!CanPressAbility && Time.fixedTime >= UnlockTime)
-        {
-            CanPressAbility = true;
-        }
-
-        if (isActivated)
-        {
-            if (PowerTime > 0)
+            if (CanPressAbility && Input.GetKeyDown(KeyCode.Q))
             {
-                PowerTime -= Time.fixedDeltaTime;
                 IsPowerActivated(true);
+                CanPressAbility = false;
+                UnlockTime = (Time.time + 10f) + PowerTime;
             }
-            else if (PowerTime <= 0)
+
+            if (!CanPressAbility && Time.fixedTime >= UnlockTime)
             {
-                PowerTime = StartingValue;
-                IsTimerShown(true);
-                IsPowerActivated(false);
+                CanPressAbility = true;
             }
 
-            CooldownTime = CooldownStartingValue;
-        }
-        else
-        {
-            CoodlwonCountdown();
-        }
+            if (isActivated)
+            {
+                if (PowerTime > 0)
+                {
+                    PowerTime -= Time.fixedDeltaTime;
+                    IsPowerActivated(true);
+                }
+                else if (PowerTime <= 0)
+                {
+                    PowerTime = StartingValue;
+                    IsTimerShown(true);
+                    IsPowerActivated(false);
+                }
 
-
+                CooldownTime = CooldownStartingValue;
+            }
+            else
+            {
+                CoodlwonCountdown();
+            }
+        }
     }
 
     void CoodlwonCountdown()

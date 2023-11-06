@@ -3,68 +3,117 @@ using UnityEngine.UI;
 
 public class InvisibilityPower : MonoBehaviour
 {
+
     private Renderer playerRenderer;
-    private bool isInvisible = false;
-    private float cooldownTime = 10.0f;
-    private float invisibleDuration = 5.0f;
-    private float cooldownTimer = 0.0f;
     public Text PowerTimer;
+
+    public float PowerTime;
+    public float StartingValue;
+    public float CooldownTime;
+    public float CooldownStartingValue;
+    public float UnlockTime;    //DODANE
+
+    public bool isActivated;
+    public bool CanPressAbility = true; //DODANE
+
 
     private void Start()
     {
-        playerRenderer = GetComponent<Renderer>();
-        // Upewnij siê, ¿e gracz jest widoczny na pocz¹tku.
-        SetVisibility(true);
-        PowerTimer.GetComponent<Text>().enabled = false;
+        if (Main.Power == 2)
+        {
+            UnlockTime = StartingValue;     //DODANE
+            StartingValue = PowerTime;
+            CooldownStartingValue = CooldownTime;
+
+            playerRenderer = GetComponent<Renderer>();
+
+            IsTimerShown(false);
+            IsPowerActivated(false);
+            isActivated = false;
+
+        }
+
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        if (isInvisible)
+        if (Main.Power == 2)
         {
-            // Odliczanie czasu niewidzialnoœci.
-            invisibleDuration -= Time.deltaTime;
 
-            if (invisibleDuration <= 0)
+            if (CanPressAbility && Input.GetKeyDown(KeyCode.Q))
             {
-                // Niewidzialnoœæ skoñczy³a siê, w³¹cz cooldown.
-                isInvisible = false;
-                cooldownTimer = cooldownTime;
-                SetVisibility(false);
+                IsPowerActivated(true);
+                CanPressAbility = false;
+                UnlockTime = (Time.time + 10f) + PowerTime;
+            }
+
+            if (!CanPressAbility && Time.fixedTime >= UnlockTime)
+            {
+                CanPressAbility = true;
+            }
+
+            if (isActivated)
+            {
+                if (PowerTime > 0)
+                {
+                    PowerTime -= Time.fixedDeltaTime;
+                    IsPowerActivated(true);
+                }
+                else if (PowerTime <= 0)
+                {
+                    PowerTime = StartingValue;
+                    IsTimerShown(true);
+                    IsPowerActivated(false);
+                }
+
+                CooldownTime = CooldownStartingValue;
+            }
+            else
+            {
+                CoodlwonCountdown();
             }
         }
-        else if (cooldownTimer > 0)
-        {
-            // Odliczanie czasu do zakoñczenia cooldownu.
-            cooldownTimer -= Time.deltaTime;
 
-            if (cooldownTimer <= 0)
-            {
-                // Koniec cooldownu, gracz mo¿e ponownie staæ siê niewidzialny.
-                if (Input.GetKeyDown(KeyCode.Q))
-                {
-                    isInvisible = true;
-                    SetVisibility(true);
-                    invisibleDuration = 5.0f;
-                }
-            }
+
+    }
+
+    void CoodlwonCountdown()
+    {
+        CooldownTime -= Time.fixedDeltaTime;
+        UpdateTimer(CooldownTime);
+
+        if (CooldownTime <= 0)
+        {
+            CooldownTime = CooldownStartingValue;
+            IsTimerShown(false);
+        }
+    }
+
+    void IsPowerActivated(bool activation)
+    {
+        if (activation == true)
+        {
+            playerRenderer.enabled = false;
+            isActivated = true;
         }
         else
         {
-            // Gracz mo¿e staæ siê niewidzialny, jeœli klawisz "Q" zosta³ naciœniêty.
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                isInvisible = true;
-                SetVisibility(true);
-                invisibleDuration = 5.0f;
-            }
+            playerRenderer.enabled = true;
+            isActivated = false;
         }
     }
 
-    private void SetVisibility(bool isVisible)
+    bool IsTimerShown(bool timerActive)
     {
-        // W³¹cz/wy³¹cz renderowanie gracza, aby go uczyniæ widzialnym/niewidzialnym.
-        playerRenderer.enabled = isVisible;
+        if (timerActive == true)
+        {
+            return PowerTimer.GetComponent<Text>().enabled = true;
+
+        }
+        else
+        {
+            return PowerTimer.GetComponent<Text>().enabled = false;
+        }
     }
 
     void UpdateTimer(float currentTime)
