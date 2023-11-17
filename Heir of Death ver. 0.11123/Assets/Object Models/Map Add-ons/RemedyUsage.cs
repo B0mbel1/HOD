@@ -6,6 +6,7 @@ public class RemedyUsage : MonoBehaviour
     public GameObject remedy;
     public GameObject pickUptext;
 
+
     private void Start()
     {
         pickUptext.SetActive(false);
@@ -23,6 +24,7 @@ public class RemedyUsage : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            
             if (Input.GetKeyDown(KeyCode.E))
             {
                 this.gameObject.SetActive(false);

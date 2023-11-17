@@ -33,7 +33,7 @@ RenderSettings:
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
-  m_DefaultReflectionResolution: 2048
+  m_DefaultReflectionResolution: 1024
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 02ace8d9308d86f44be73b7085b032d0, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: e99c9b553b6776e42811c6c12f1b8066, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -3358,8 +3358,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f2ab1953482d0f4787dafb0a2c77be5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToRespawn: {fileID: 0}
-  respawnCoordinates: {x: 243, y: 37, z: 65}
 --- !u!205 &136951248
 LODGroup:
   m_ObjectHideFlags: 0
