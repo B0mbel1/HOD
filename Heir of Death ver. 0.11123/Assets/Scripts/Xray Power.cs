@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,7 +15,6 @@ public class XrayPower : MonoBehaviour
 
     public bool isActivated;
     public bool CanPressAbility = true; 
-
 
     private void Start()
     {
@@ -37,7 +34,6 @@ public class XrayPower : MonoBehaviour
             IsPowerActivated(false);
             isActivated = false;
         }
-       
     }
 
     private void FixedUpdate()
@@ -69,7 +65,6 @@ public class XrayPower : MonoBehaviour
                     IsTimerShown(true);
                     IsPowerActivated(false);
                 }
-
                 CooldownTime = CooldownStartingValue;
             }
             else
@@ -110,7 +105,6 @@ public class XrayPower : MonoBehaviour
         if (timerActive == true)
         {
             return PowerTimer.GetComponent<Text>().enabled = true;
-
         }
         else
         {

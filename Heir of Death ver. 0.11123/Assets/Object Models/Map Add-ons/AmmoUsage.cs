@@ -30,9 +30,7 @@ public class PickupScript : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-
                 audioSource.PlayOneShot(pickupSound);
-
 
                 this.gameObject.SetActive(false);
                 clip.SetActive(false);
