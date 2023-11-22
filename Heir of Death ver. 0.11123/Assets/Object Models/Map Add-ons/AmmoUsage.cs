@@ -1,19 +1,18 @@
+using System.Collections;
 using UnityEngine;
 
 public class PickupScript : MonoBehaviour
 {
     public GameObject pickUptext;
     public GameObject clip;
+
     public AudioClip pickupSound;
-    private AudioSource audioSource;
+    public AudioSource pickupSource;
 
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-        if (audioSource == null)
-        {
-            audioSource = gameObject.AddComponent<AudioSource>();
-        }
+        pickUptext.SetActive(false);
+        pickupSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -30,11 +29,10 @@ public class PickupScript : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                audioSource.PlayOneShot(pickupSound);
-
-                this.gameObject.SetActive(false);
-                clip.SetActive(false);
+                pickupSource.Play();
                 pickUptext.SetActive(false);
+
+                StartCoroutine(waitingFor());
             }
         }
     }
@@ -45,5 +43,12 @@ public class PickupScript : MonoBehaviour
         {
             pickUptext.SetActive(false);
         }
+    }
+
+    IEnumerator waitingFor()
+    {
+        yield return new WaitForSeconds(3f);
+        this.gameObject.SetActive(false);
+        clip.SetActive(false);
     }
 }
