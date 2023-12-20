@@ -1,11 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Damaging : MonoBehaviour, obrazeniaOK
 {
-
     public int maxHealth;
     private int currentHealth;
     [SerializeField] private Slider healthBarSlider;
@@ -13,13 +10,11 @@ public class Damaging : MonoBehaviour, obrazeniaOK
     [SerializeField] private Color maxHealthColor;
     [SerializeField] private Color zeroHealthColor;
 
-    // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
         SetHealtbarUI();
     }
-
     
     public void sprawdzCzyDead()
     {
@@ -47,5 +42,4 @@ public class Damaging : MonoBehaviour, obrazeniaOK
     {
         return ((float)currentHealth / (float)maxHealth) * 100;
     }
-
 }

@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class FreeTeleportation : MonoBehaviour
@@ -10,7 +7,6 @@ public class FreeTeleportation : MonoBehaviour
     public static bool teleportState;
     public GameObject gun;
     public GameObject pointer;
-    
 
     void Start()
     {
@@ -29,7 +25,6 @@ public class FreeTeleportation : MonoBehaviour
             {
                 teleportState = !teleportState;
             }
-
 
             if (teleportState == true)
             {
@@ -65,9 +60,7 @@ public class FreeTeleportation : MonoBehaviour
                 {
                     transform.position = teleportationSpot.transform.position;
                 }
-                
             }
-
         }
     }
 }
