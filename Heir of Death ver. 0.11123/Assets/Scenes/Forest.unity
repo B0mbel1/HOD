@@ -56086,25 +56086,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
-<<<<<<< Updated upstream
---- !u!114 &5983618989305166108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3122103830850839329}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b36355838fd07f54bb05ee6b6f99d540, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  custRender: {fileID: 6961480777209688341}
-  TimeLeft: 5
-  PowerOn: 0
-  CooldownValue: 5
-=======
->>>>>>> Stashed changes
 --- !u!1 &5991333655091144619
 GameObject:
   m_ObjectHideFlags: 0
@@ -56230,25 +56211,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<< Updated upstream
---- !u!114 &6681796755685434241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6826481973395673315}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b36355838fd07f54bb05ee6b6f99d540, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  custRender: {fileID: 2162232145519910164}
-  TimeLeft: 5
-  PowerOn: 0
-  CooldownValue: 5
-=======
->>>>>>> Stashed changes
 --- !u!1 &6707440081621421621
 GameObject:
   m_ObjectHideFlags: 0
@@ -56466,18 +56428,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f46507106eb534441aed5c43417e38a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< Updated upstream
-  XrayShader: {fileID: 4800000, guid: 9e91709555c69864093e1c5a90d49d51, type: 3}
-  standardShader: {fileID: 0}
-  TimeLeft: 5
-  PowerOn: 0
-  CooldownValue: 5
---- !u!20 &8034777147064303228
-Camera:
-=======
 --- !u!114 &8033679811990098772
 MonoBehaviour:
->>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
