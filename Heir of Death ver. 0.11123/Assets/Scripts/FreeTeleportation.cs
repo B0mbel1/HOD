@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class FreeTeleportation : MonoBehaviour
@@ -10,8 +7,10 @@ public class FreeTeleportation : MonoBehaviour
     public static bool teleportState;
     public GameObject gun;
     public GameObject pointer;
+
     Vector3 destination;
     
+
 
     void Start()
     {
@@ -30,7 +29,6 @@ public class FreeTeleportation : MonoBehaviour
             {
                 teleportState = !teleportState;
             }
-
 
             if (teleportState == true)
             {
@@ -60,7 +58,22 @@ public class FreeTeleportation : MonoBehaviour
             destination = hit.point;
             teleportationSpot.transform.position = new Vector3(destination.x, destination.y + 0.5f, destination.z);
             teleportationSpot.transform.rotation = Quaternion.LookRotation(hit.normal);
+
             
+
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (teleportationSpot.transform.eulerAngles.x < 280 && teleportationSpot.transform.eulerAngles.x > 260)
+                {
+                    transform.position = teleportationSpot.transform.position;
+                }
+                else
+                {
+                    transform.position = teleportationSpot.transform.position;
+                }
+            }
+
         }
     }
     void Teleport()
