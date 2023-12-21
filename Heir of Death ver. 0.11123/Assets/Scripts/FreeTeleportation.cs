@@ -2,21 +2,25 @@ using UnityEngine;
 
 public class FreeTeleportation : MonoBehaviour
 {
-    Camera cam;
+    public Camera cam;
     public TeleportationSpot teleportationSpot;
     public static bool teleportState;
     public GameObject gun;
     public GameObject pointer;
 
+    Vector3 destination;
+    
+
+
     void Start()
     {
-        cam = GetComponentInChildren<Camera>();
+        
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         teleportState = false;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (Main.Power == 1)
         {
@@ -30,7 +34,11 @@ public class FreeTeleportation : MonoBehaviour
             {
                 gun.SetActive(false);
                 pointer.SetActive(true);
-                Teleport();
+                Line();
+                if(Input.GetMouseButtonDown(0))
+                {
+                    Teleport();
+                }
             }
             else
             {
@@ -40,15 +48,19 @@ public class FreeTeleportation : MonoBehaviour
         }
     }
 
-    void Teleport()
+    void Line()
     {
         RaycastHit hit;
 
-        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+       
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, Mathf.Infinity))
         {
-            teleportationSpot.transform.position = hit.point;
+            destination = hit.point;
+            teleportationSpot.transform.position = new Vector3(destination.x, destination.y + 0.5f, destination.z);
             teleportationSpot.transform.rotation = Quaternion.LookRotation(hit.normal);
+
+            
+
 
             if (Input.GetMouseButtonDown(0))
             {
@@ -61,6 +73,11 @@ public class FreeTeleportation : MonoBehaviour
                     transform.position = teleportationSpot.transform.position;
                 }
             }
+
         }
+    }
+    void Teleport()
+    {
+        transform.position = teleportationSpot.transform.position;
     }
 }

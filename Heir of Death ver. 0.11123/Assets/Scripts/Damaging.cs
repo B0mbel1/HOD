@@ -9,6 +9,7 @@ public class Damaging : MonoBehaviour, obrazeniaOK
     [SerializeField] private Image healthBarFillImage;
     [SerializeField] private Color maxHealthColor;
     [SerializeField] private Color zeroHealthColor;
+    public GameObject Can;
 
     void Start()
     {
@@ -21,6 +22,7 @@ public class Damaging : MonoBehaviour, obrazeniaOK
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
+            Can.SetActive(false);
         }
     }
 
