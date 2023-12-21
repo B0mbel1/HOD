@@ -154,6 +154,7 @@ GameObject:
   - component: {fileID: 6904915184787512172}
   - component: {fileID: 6489180756122391526}
   - component: {fileID: 9048407028724886565}
+  - component: {fileID: 2410266909135175120}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -235,6 +236,22 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1468986348965240270}
   m_Enabled: 1
+--- !u!114 &2410266909135175120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468986348965240270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba95c50b2366687478cf746af38bec60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  chipSpeed: 2
+  frontHealthBar: {fileID: 1100852583709077946}
+  backHealthBar: {fileID: 5181832715466589902}
 --- !u!1 &1524102455505057376
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,6 +263,7 @@ GameObject:
   - component: {fileID: 8321799110953223624}
   - component: {fileID: 8942349134021360701}
   - component: {fileID: 3635730591757569846}
+  - component: {fileID: 7262914570115263074}
   m_Layer: 5
   m_Name: PowerTimer
   m_TagString: Untagged
@@ -314,6 +332,22 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: New Text
+--- !u!114 &7262914570115263074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524102455505057376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bcebef2869056145b2e6ebed156a391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimeLeft: 3
+  PowerOn: 0
+  CooldownValue: 0
+  PowerTimer: {fileID: 3635730591757569846}
 --- !u!1 &2167817230289297634
 GameObject:
   m_ObjectHideFlags: 0
@@ -510,6 +544,7 @@ GameObject:
   - component: {fileID: 7593137566166538505}
   - component: {fileID: 5633683243292027139}
   - component: {fileID: 4973735271374067672}
+  - component: {fileID: 2408132020717528975}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
@@ -578,6 +613,21 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: New Text
+--- !u!114 &2408132020717528975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5922169032179367380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 802030e274580dd4d88d600e96fd6f25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimeLeft: 90
+  TimerOn: 0
+  RoundTimer: {fileID: 4973735271374067672}
 --- !u!1 &6073392376673079126
 GameObject:
   m_ObjectHideFlags: 0
