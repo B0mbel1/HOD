@@ -2,13 +2,13 @@ using System.Collections;
 using UnityEngine;
 
 public class RemedyUsage : MonoBehaviour
-{
-
+{ 
     public GameObject remedy;
     public GameObject pickUptext;
 
     public AudioClip pickupSound;
     public AudioSource pickupSource;
+
 
     private void Start()
     {
@@ -32,7 +32,6 @@ public class RemedyUsage : MonoBehaviour
             {
                 pickupSource.Play();
                 pickUptext.SetActive(false);
-                
                 StartCoroutine(waitingFor());
             }
         }

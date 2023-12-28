@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &139375415 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5181832715466589902, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
+  m_PrefabInstance: {fileID: 754546481}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &754546481
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -200,6 +211,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 496068792080272884, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1230195146}
     - targetCorrespondingSourceObject: {fileID: 5922169032179367380, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
       insertIndex: -1
       addedObject: {fileID: 754546484}
@@ -329,6 +343,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1230195144 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 496068792080272884, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
+  m_PrefabInstance: {fileID: 754546481}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1230195146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230195144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d5717d6cd854784ea93d0d8b4d10990, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  chipSpeed: 2
+  frontHealthBar: {fileID: 1714187523}
+  backHealthBar: {fileID: 139375415}
 --- !u!1 &1399394909
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,6 +432,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1714187523 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1100852583709077946, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
+  m_PrefabInstance: {fileID: 754546481}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

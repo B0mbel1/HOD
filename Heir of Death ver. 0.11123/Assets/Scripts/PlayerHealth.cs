@@ -7,8 +7,10 @@ public class PlayerHealth : MonoBehaviour
     private float lerpTimer;
     public float maxHealth = 100f;
     public float chipSpeed = 2;
+
     public Image frontHealthBar;
     public Image backHealthBar;
+
 
     private void Start()
     {
@@ -23,6 +25,11 @@ public class PlayerHealth : MonoBehaviour
         {
             TakeDamage(Random.Range(1,29));                  //Set damage depends on gun
         }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            RestoreHealth(10);                  //Set restore 
+        }
+
     }
 
     public void UpdateHealthUI()
@@ -39,6 +46,14 @@ public class PlayerHealth : MonoBehaviour
             float percentComplete = lerpTimer / chipSpeed;
             backHealthBar.fillAmount = Mathf.Lerp(fillB, fillF, percentComplete);
         }
+        if(fillF < hFraction)
+        {
+            backHealthBar.color = Color.green;
+            backHealthBar.fillAmount = hFraction;
+            lerpTimer += Time.deltaTime;
+            float percentComplete = lerpTimer / chipSpeed;
+            frontHealthBar.fillAmount = Mathf.Lerp(fillF,backHealthBar.fillAmount,percentComplete);
+        }
     }
 
     public void TakeDamage(float damage)
@@ -46,4 +61,12 @@ public class PlayerHealth : MonoBehaviour
         health -= damage;
         lerpTimer = 0f;
     }
+
+    public void RestoreHealth(float healAmount)
+    {
+        health += healAmount;
+        lerpTimer = 0f;
+    }
+
+
 }
