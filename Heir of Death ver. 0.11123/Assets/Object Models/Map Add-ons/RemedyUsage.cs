@@ -24,15 +24,20 @@ public class RemedyUsage : MonoBehaviour
         }
     }
 
+
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                pickupSource.Play();
+                //pickupSource.Play();
                 pickUptext.SetActive(false);
-                StartCoroutine(waitingFor());
+                this.gameObject.SetActive(false);
+                remedy.SetActive(false);
+                //StartCoroutine(waitingFor());
+
+
             }
         }
     }
@@ -50,6 +55,8 @@ public class RemedyUsage : MonoBehaviour
         yield return new WaitForSeconds(3f);
         this.gameObject.SetActive(false);
         remedy.SetActive(false);
+
+        
     }
 }
 

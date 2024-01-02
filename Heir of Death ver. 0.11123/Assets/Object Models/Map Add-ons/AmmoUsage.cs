@@ -29,10 +29,13 @@ public class PickupScript : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                pickupSource.Play();
-                pickUptext.SetActive(false);
+                //pickupSource.Play();
 
-                StartCoroutine(waitingFor());
+                pickUptext.SetActive(false);
+                this.gameObject.SetActive(false);
+                clip.SetActive(false);
+
+                //StartCoroutine(waitingFor());
             }
         }
     }
