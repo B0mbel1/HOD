@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class RemedyUsage : MonoBehaviour
@@ -24,6 +25,7 @@ public class RemedyUsage : MonoBehaviour
         }
     }
 
+ 
 
     private void OnTriggerStay(Collider other)
     {
@@ -37,7 +39,7 @@ public class RemedyUsage : MonoBehaviour
                 remedy.SetActive(false);
                 //StartCoroutine(waitingFor());
 
-
+                PlayerHealth.RestoreHealth(10);
             }
         }
     }

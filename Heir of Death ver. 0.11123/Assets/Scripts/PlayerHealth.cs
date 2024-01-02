@@ -3,8 +3,8 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    private float health;
-    private float lerpTimer;
+    private static float health;
+    private static float lerpTimer;
     public float maxHealth = 100f;
     public float chipSpeed = 2;
 
@@ -62,7 +62,7 @@ public class PlayerHealth : MonoBehaviour
         lerpTimer = 0f;
     }
 
-    public void RestoreHealth(float healAmount)
+    public static void RestoreHealth(float healAmount)
     {
         health += healAmount;
         lerpTimer = 0f;
