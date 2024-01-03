@@ -6,6 +6,7 @@ using PlayFab.ClientModels;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using PlayFab.EconomyModels;
 
 public class PlayfabManager : MonoBehaviour
 {
@@ -21,11 +22,15 @@ public class PlayfabManager : MonoBehaviour
     public GameObject LoginScreen;
     public GameObject ResetScreen;
     public GameObject RegisterScreen;
-    // Start is called before the first frame update
-    void Start()
+    public static string name = null;
+
+    public class PlayerData
     {
-        //Login();
+        public int position;
+        public string playerName;
+        public int score;
     }
+    // Start is called before the first frame update
 
     public void RegisterButton()
     {
@@ -39,6 +44,7 @@ public class PlayfabManager : MonoBehaviour
         {
             Email = emailInput.GetComponent<TMP_InputField>().text,
             Password = passwordInput.GetComponent<TMP_InputField>().text,
+            DisplayName = usernameInput.GetComponent<TMP_InputField>().text,
             Username = usernameInput.GetComponent<TMP_InputField>().text,
             RequireBothUsernameAndEmail = true
         };
@@ -58,6 +64,10 @@ public class PlayfabManager : MonoBehaviour
         {
             Email = emailLogin.GetComponent<TMP_InputField>().text,
             Password = passwordLogin.GetComponent<TMP_InputField>().text,
+            InfoRequestParameters = new GetPlayerCombinedInfoRequestParams()
+            {
+                GetPlayerProfile = true
+            }
         };
         PlayFabClientAPI.LoginWithEmailAddress(request, OnLoginSuccess, OnError);
     }
@@ -65,6 +75,8 @@ public class PlayfabManager : MonoBehaviour
     void OnLoginSuccess(LoginResult result)
     {
         //messageTextL.GetComponent<TMP_Text>().text = "Zalogowano";
+        
+        name = result.InfoResultPayload.PlayerProfile.DisplayName;
         SceneManager.LoadScene("Menu");
     }
 
@@ -89,6 +101,56 @@ public class PlayfabManager : MonoBehaviour
     {
         messageTextL.GetComponent<TMP_Text>().text = error.ErrorMessage;
         Debug.Log(error.GenerateErrorReport());
+    }
+
+    void OnErrorL(PlayFabError error)
+    {
+        
+        Debug.Log(error.GenerateErrorReport());
+    }
+
+    public void SendLeaderboard(int score)
+    {
+        var request = new UpdatePlayerStatisticsRequest
+        {
+            Statistics = new List<StatisticUpdate>
+            {
+                new StatisticUpdate
+                {
+                    StatisticName = "KC",
+                    Value = score
+                }
+            }
+        };
+        PlayFabClientAPI.UpdatePlayerStatistics(request, OnLeaderboardUpdate, OnErrorL);
+    }
+
+    public void OnLeaderboardUpdate(UpdatePlayerStatisticsResult result)
+    {
+
+    }
+
+    public void GetLeaderboard()
+    {
+        var request = new GetLeaderboardRequest
+        {
+            StatisticName = "KC",
+            StartPosition = 0,
+            MaxResultsCount = 10
+        };
+        PlayFabClientAPI.GetLeaderboard(request, OnLeaderboardGet, OnErrorL);
+    }
+
+    public void OnLeaderboardGet(GetLeaderboardResult result)
+    {
+        foreach(var item in result.Leaderboard)
+        {
+            List<PlayerData> playerDataList = new List<PlayerData>
+        {
+            new PlayerData { position = item.Position, playerName = item.DisplayName, score = item.StatValue },
+            
+        };
+        }
     }
 
     // Update is called once per frame

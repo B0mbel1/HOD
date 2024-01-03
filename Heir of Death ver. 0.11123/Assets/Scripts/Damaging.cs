@@ -10,11 +10,13 @@ public class Damaging : MonoBehaviour, obrazeniaOK
     [SerializeField] private Color maxHealthColor;
     [SerializeField] private Color zeroHealthColor;
     public GameObject Can;
+    public static int wynik;
 
     void Start()
     {
         currentHealth = maxHealth;
         SetHealtbarUI();
+        wynik = 0;
     }
     
     public void sprawdzCzyDead()
@@ -23,6 +25,7 @@ public class Damaging : MonoBehaviour, obrazeniaOK
         {
             Destroy(gameObject);
             Can.SetActive(false);
+            wynik++;
         }
     }
 

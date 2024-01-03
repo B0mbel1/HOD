@@ -10,8 +10,9 @@ public class Main : MonoBehaviour
 {
     public static float Power=0;
     public static float Character = 1;
-    public static string playerName = "";
-    public GameObject inputField;
+    
+    
+
     
     public void PlayGameLas()
     {
@@ -53,7 +54,7 @@ public class Main : MonoBehaviour
 
     public void SetPlayerName()
     {
-        playerName = inputField.GetComponent<TMP_InputField>().text;
+        
     }
 
     public void SetChar1()

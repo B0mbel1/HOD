@@ -47,6 +47,8 @@ public class MenuPauzy : MonoBehaviour
         GameIsPaused = true;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        PlayfabManager tablica = new PlayfabManager();
+        tablica.SendLeaderboard(Damaging.wynik);
     }
 
     public void LoadMenu()
