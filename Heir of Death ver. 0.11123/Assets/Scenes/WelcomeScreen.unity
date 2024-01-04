@@ -2788,6 +2788,7 @@ MonoBehaviour:
   usernameInput: {fileID: 404119640}
   emailInput: {fileID: 1459355661}
   passwordInput: {fileID: 416653788}
+  password2Input: {fileID: 431573009}
   emailLogin: {fileID: 1326237980}
   passwordLogin: {fileID: 1213885004}
   messageTextL: {fileID: 1710212461}

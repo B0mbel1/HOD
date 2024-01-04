@@ -14,6 +14,7 @@ public class PlayfabManager : MonoBehaviour
     public GameObject usernameInput;
     public GameObject emailInput;
     public GameObject passwordInput;
+    public GameObject password2Input;
     public GameObject emailLogin;
     public GameObject passwordLogin;
     public GameObject messageTextL;
@@ -23,7 +24,13 @@ public class PlayfabManager : MonoBehaviour
     public GameObject ResetScreen;
     public GameObject RegisterScreen;
     public static string name = null;
+    
+    
 
+    private void Start()
+    {
+        
+    }
     public class PlayerData
     {
         public int position;
@@ -39,16 +46,22 @@ public class PlayfabManager : MonoBehaviour
             messageText.GetComponent<TMP_Text>().text = "Has³o za krótkie";
             return;
         }
-
-        var request = new RegisterPlayFabUserRequest
+        if (passwordInput.GetComponent<TMP_InputField>().text.Equals(password2Input.GetComponent<TMP_InputField>().text))
         {
-            Email = emailInput.GetComponent<TMP_InputField>().text,
-            Password = passwordInput.GetComponent<TMP_InputField>().text,
-            DisplayName = usernameInput.GetComponent<TMP_InputField>().text,
-            Username = usernameInput.GetComponent<TMP_InputField>().text,
-            RequireBothUsernameAndEmail = true
-        };
-        PlayFabClientAPI.RegisterPlayFabUser(request, OnRegisterSuccess, OnError);
+            var request = new RegisterPlayFabUserRequest
+            {
+                Email = emailInput.GetComponent<TMP_InputField>().text,
+                Password = passwordInput.GetComponent<TMP_InputField>().text,
+                DisplayName = usernameInput.GetComponent<TMP_InputField>().text,
+                Username = usernameInput.GetComponent<TMP_InputField>().text,
+                RequireBothUsernameAndEmail = true
+            };
+            PlayFabClientAPI.RegisterPlayFabUser(request, OnRegisterSuccess, OnError);
+        }
+        else
+        {
+            messageText.GetComponent<TMP_Text>().text = "Has³a nie s¹ identyczne";
+        }
     }
 
     void OnRegisterSuccess(RegisterPlayFabUserResult result)
@@ -74,7 +87,7 @@ public class PlayfabManager : MonoBehaviour
 
     void OnLoginSuccess(LoginResult result)
     {
-        //messageTextL.GetComponent<TMP_Text>().text = "Zalogowano";
+        
         
         name = result.InfoResultPayload.PlayerProfile.DisplayName;
         SceneManager.LoadScene("Menu");
@@ -103,57 +116,11 @@ public class PlayfabManager : MonoBehaviour
         Debug.Log(error.GenerateErrorReport());
     }
 
-    void OnErrorL(PlayFabError error)
-    {
-        
-        Debug.Log(error.GenerateErrorReport());
-    }
+    
 
-    public void SendLeaderboard(int score)
-    {
-        var request = new UpdatePlayerStatisticsRequest
-        {
-            Statistics = new List<StatisticUpdate>
-            {
-                new StatisticUpdate
-                {
-                    StatisticName = "KC",
-                    Value = score
-                }
-            }
-        };
-        PlayFabClientAPI.UpdatePlayerStatistics(request, OnLeaderboardUpdate, OnErrorL);
-    }
+    
 
-    public void OnLeaderboardUpdate(UpdatePlayerStatisticsResult result)
-    {
-
-    }
-
-    public void GetLeaderboard()
-    {
-        var request = new GetLeaderboardRequest
-        {
-            StatisticName = "KC",
-            StartPosition = 0,
-            MaxResultsCount = 10
-        };
-        PlayFabClientAPI.GetLeaderboard(request, OnLeaderboardGet, OnErrorL);
-    }
-
-    public void OnLeaderboardGet(GetLeaderboardResult result)
-    {
-        foreach(var item in result.Leaderboard)
-        {
-            List<PlayerData> playerDataList = new List<PlayerData>
-        {
-            new PlayerData { position = item.Position, playerName = item.DisplayName, score = item.StatValue },
-            
-        };
-        }
-    }
-
-    // Update is called once per frame
+    //
     /*
     void Login()
     {
