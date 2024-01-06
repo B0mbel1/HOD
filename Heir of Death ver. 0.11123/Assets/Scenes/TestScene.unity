@@ -14200,7 +14200,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1322180094980681797, guid: 927892340b0156940a491c84a4d0bccf, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1509267110414354039, guid: 927892340b0156940a491c84a4d0bccf, type: 3}
       propertyPath: damage
@@ -14212,7 +14212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1718037845966448511, guid: 927892340b0156940a491c84a4d0bccf, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1747975241208415012, guid: 927892340b0156940a491c84a4d0bccf, type: 3}
       propertyPath: m_Name
