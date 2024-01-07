@@ -25,16 +25,11 @@ public class PlayerHealth : MonoBehaviour
         {
             TakeDamage(Random.Range(1,29));                  //Set damage depends on gun
         }
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            RestoreHealth(10);                  //Set restore 
-        }
-
     }
 
     public void UpdateHealthUI()
     {
-        Debug.Log(health);
+  
         float fillF = frontHealthBar.fillAmount;
         float fillB = backHealthBar.fillAmount;
         float hFraction = health / maxHealth;

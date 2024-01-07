@@ -24,7 +24,7 @@ public class FreeTeleportation : MonoBehaviour
     {
         if (Main.Power == 1)
         {
-            Debug.Log(teleportState);
+            //Debug.Log(teleportState);
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 teleportState = !teleportState;

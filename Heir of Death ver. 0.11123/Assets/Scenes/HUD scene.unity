@@ -214,6 +214,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 496068792080272884, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1230195146}
+    - targetCorrespondingSourceObject: {fileID: 4500340662871921082, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 754546486}
     - targetCorrespondingSourceObject: {fileID: 5922169032179367380, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
       insertIndex: -1
       addedObject: {fileID: 754546484}
@@ -249,6 +252,27 @@ MonoBehaviour:
   TimeLeft: 90
   TimerOn: 0
   RoundTimer: {fileID: 754546483}
+--- !u!1 &754546485 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4500340662871921082, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
+  m_PrefabInstance: {fileID: 754546481}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &754546486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754546485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a08f3851b20d174a94ed5440cf0aad6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tp: {fileID: 21300000, guid: aad118fef069a8b4aa6434f87e96e623, type: 3}
+  xray: {fileID: 21300000, guid: daf31f00c155a06489c83c915c7b811b, type: 3}
+  stealth: {fileID: 21300000, guid: 0ec56d39ed4b52e41ac428fc38599268, type: 3}
+  invis: {fileID: 21300000, guid: 1f98b9858fde9ed489b9592a38bf85c2, type: 3}
 --- !u!1 &793964056
 GameObject:
   m_ObjectHideFlags: 0

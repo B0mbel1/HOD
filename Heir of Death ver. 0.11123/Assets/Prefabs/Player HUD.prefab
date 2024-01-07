@@ -286,7 +286,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7, y: -97.78821}
+  m_AnchoredPosition: {x: 11, y: -97.78821}
   m_SizeDelta: {x: 176.4713, y: 54.2736}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8942349134021360701
@@ -452,6 +452,7 @@ GameObject:
   - component: {fileID: 1026592162418680382}
   - component: {fileID: 8042536154887171981}
   - component: {fileID: 8791229048444034769}
+  - component: {fileID: 1694949548263605651}
   m_Layer: 5
   m_Name: Power
   m_TagString: Untagged
@@ -468,7 +469,7 @@ RectTransform:
   m_GameObject: {fileID: 4500340662871921082}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.88879, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7922751862813056832}
@@ -476,7 +477,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 1.7744141, y: 28.78186}
-  m_SizeDelta: {x: 240.5, y: 198.86}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8042536154887171981
 CanvasRenderer:
@@ -506,7 +507,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a4e3a02b3f143fc48b5f88d3151b2a51, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -516,6 +517,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1694949548263605651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4500340662871921082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a08f3851b20d174a94ed5440cf0aad6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tp: {fileID: 21300000, guid: aad118fef069a8b4aa6434f87e96e623, type: 3}
+  xray: {fileID: 21300000, guid: daf31f00c155a06489c83c915c7b811b, type: 3}
+  stealth: {fileID: 21300000, guid: 0ec56d39ed4b52e41ac428fc38599268, type: 3}
+  invis: {fileID: 21300000, guid: 1f98b9858fde9ed489b9592a38bf85c2, type: 3}
 --- !u!1 &5922169032179367380
 GameObject:
   m_ObjectHideFlags: 0
