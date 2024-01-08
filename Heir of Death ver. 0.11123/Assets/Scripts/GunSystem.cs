@@ -11,6 +11,7 @@ public class GunSystem : MonoBehaviour
     public bool allowButtonHold;
     int bulletsLeft, bulletsShot;
 
+             
     //bools 
     bool shooting, readyToShoot, reloading;
 
@@ -64,45 +65,40 @@ public class GunSystem : MonoBehaviour
                     bulletsShot = bulletsPerTap;
                     Shoot();
                 }
-
-                
             }
         }
-        
+
     }
     private void Shoot()
     {
         readyToShoot = false;
 
-    //Spread
-    //float x = Random.Range(-spread, spread);
-    //float y = Random.Range(-spread, spread);
+        //Spread
+        //float x = Random.Range(-spread, spread);
+        //float y = Random.Range(-spread, spread);
 
-    //Calculate Direction with Spread
-    //Vector3 direction = fpsCam.transform.forward + new Vector3(x, y, 0);
+        //Calculate Direction with Spread
+        //Vector3 direction = fpsCam.transform.forward + new Vector3(x, y, 0);
 
-    //RayCast
-    
-            RaycastHit co;
-            if (Physics.Raycast(fpsCam.transform.position, transform.forward, out co, Mathf.Infinity))
+        //RayCast
+        RaycastHit co;
+        if (Physics.Raycast(fpsCam.transform.position, transform.forward, out co, Mathf.Infinity))
+        {
+            obrazeniaOK czyOK = co.collider.GetComponent<obrazeniaOK>();
+            if (czyOK != null)
             {
-                obrazeniaOK czyOK = co.collider.GetComponent<obrazeniaOK>();
-                if (czyOK != null)
-                {
-                    czyOK.zadajObrazenia(damage);
-                }
+                czyOK.zadajObrazenia(damage);
             }
-                GameObject bullet = Instantiate(bulletPrefab);
-                Physics.IgnoreCollision(bullet.GetComponent<Collider>(), bulletSpawn.parent.GetComponent<Collider>());
-                bullet.transform.position = bulletSpawn.position;
-                Vector3 rotation = bullet.transform.rotation.eulerAngles;
-                bullet.transform.rotation = Quaternion.Euler(rotation.x, transform.eulerAngles.y, rotation.z);
-                bullet.GetComponent<Rigidbody>().AddForce(bulletSpawn.forward * bulletSpeed, ForceMode.Impulse);
+        }
 
+        GameObject bullet = Instantiate(bulletPrefab);
+        Physics.IgnoreCollision(bullet.GetComponent<Collider>(), bulletSpawn.parent.GetComponent<Collider>());
+        bullet.transform.position = bulletSpawn.position;
+        Vector3 rotation = bullet.transform.rotation.eulerAngles;
+        bullet.transform.rotation = Quaternion.Euler(rotation.x, transform.eulerAngles.y, rotation.z);
+        bullet.GetComponent<Rigidbody>().AddForce(bulletSpawn.forward * bulletSpeed, ForceMode.Impulse);
 
-                audioSource.PlayOneShot(shootSound);
-            
-    
+        audioSource.PlayOneShot(shootSound);
 
         //ShakeCamera
         //camShake.Shake(camShakeDuration, camShakeMagnitude);
@@ -113,13 +109,12 @@ public class GunSystem : MonoBehaviour
 
         bulletsLeft--;
         bulletsShot--;
-
+      
         Invoke("ResetShot", timeBetweenShooting);
 
-        if(bulletsShot > 0 && bulletsLeft > 0)
-        Invoke("Shoot", timeBetweenShots);
-
-        if(bulletsLeft == 0)
+        if (bulletsShot > 0 && bulletsLeft > 0)
+            Invoke("Shoot", timeBetweenShots);
+        if (bulletsLeft == 0)
         {
             Reload();
         }
@@ -130,13 +125,14 @@ public class GunSystem : MonoBehaviour
     }
     private void Reload()
     {
+
         reloading = true;
         audioSource.PlayOneShot(reloadSound);
         Invoke("ReloadFinished", reloadTime);
+
     }
     private void ReloadFinished()
     {
-        
         bulletsLeft = magazineSize;
         reloading = false;
     }
