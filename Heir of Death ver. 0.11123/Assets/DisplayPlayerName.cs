@@ -15,7 +15,7 @@ public class DisplayPlayerName : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        username.text = Main.playerName;
+        username.text = PlayfabManager.name;
     }
 
     
