@@ -47,6 +47,8 @@ public class MenuPauzy : MonoBehaviour
         GameIsPaused = true;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        Leaderboard tablica = new Leaderboard();
+        tablica.SendLeaderboard(Damaging.wynik);
     }
 
     public void LoadMenu()
