@@ -89,7 +89,7 @@ public class GunSystem : MonoBehaviour
             {
                 if(BetterAmmoScript.isBetterAmmoActivated == true)
                 {
-                    czyOK.zadajObrazenia(30);
+                    czyOK.zadajObrazenia(damage+3);
                 }
                 else
                 {
