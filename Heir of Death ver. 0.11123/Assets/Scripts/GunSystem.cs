@@ -1,5 +1,4 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 
 public class GunSystem : MonoBehaviour
@@ -9,7 +8,8 @@ public class GunSystem : MonoBehaviour
     public float timeBetweenShooting, spread, range, reloadTime, timeBetweenShots;
     public int magazineSize, bulletsPerTap;
     public bool allowButtonHold;
-    int bulletsLeft, bulletsShot;
+    public static int bulletsLeft; 
+    int bulletsShot;
 
              
     //bools 
@@ -87,7 +87,16 @@ public class GunSystem : MonoBehaviour
             obrazeniaOK czyOK = co.collider.GetComponent<obrazeniaOK>();
             if (czyOK != null)
             {
-                czyOK.zadajObrazenia(damage);
+                if(BetterAmmoScript.isBetterAmmoActivated == true)
+                {
+                    czyOK.zadajObrazenia(30);
+                }
+                else
+                {
+                    czyOK.zadajObrazenia(damage);
+                }
+               
+
             }
         }
 
