@@ -1,5 +1,11 @@
 using System.Collections;
 using UnityEngine;
+using System.Collections.Generic;
+using Unity.VisualScripting;
+
+//DODANE------------------------------
+[RequireComponent(typeof(AudioSource))]
+//------------------------------------
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -52,8 +58,28 @@ public class PlayerMovement : MonoBehaviour
 
     public MovementState state;
 
-    
+    //DODANE ------------------------------------------------
 
+
+    [SerializeField] private List<AudioClip> footStepsSounds = new List<AudioClip>();
+    [SerializeField] private AudioClip jumpSound;
+    [SerializeField] private AudioClip landSound;
+    [SerializeField] private bool isWalking;
+    [SerializeField][Range(0f, 1f)] private float runstepLenghten;
+    [SerializeField] private float stepInterval;
+
+
+
+    private AudioSource audioSource;
+    private float nextStep;
+    private float stepCycle;
+    private Vector2 input;
+
+    private FootStepsSwapper footStepsSwapper;
+    private Character character;
+    private Rigidbody rigid;
+    private bool isFootstepPlaying = false;
+    //---------------------------------------------------------
 
     public enum MovementState
     {
@@ -63,20 +89,25 @@ public class PlayerMovement : MonoBehaviour
         sliding,
         air
     }
-
     public bool sliding;
 
-    // Start is called before the first frame update
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         readyToJump = true;
         startYScale = transform.localScale.y;
-        
+
+        footStepsSwapper = GetComponent<FootStepsSwapper>();
+        stepCycle = 0f;
+        nextStep = stepCycle / 2f;
+        audioSource = GetComponent<AudioSource>();
+        character = GetComponent<Character>();
+        rigid = GetComponent<Rigidbody>();
+
     }
 
-    // Update is called once per frame
     void Update()
     {
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, whatIsGround);
@@ -84,7 +115,9 @@ public class PlayerMovement : MonoBehaviour
         SpeedControl();
         StateHandler();
 
-        if(grounded)
+        ProgressStepCycle(1f);
+
+        if (grounded)
         {
             rb.drag = groundDrag;
         }
@@ -92,10 +125,6 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.drag = 0;
         }
-        
-
-        
-
     }
 
     void FixedUpdate()
@@ -103,26 +132,27 @@ public class PlayerMovement : MonoBehaviour
         MovePlayer();
     }
 
-    void MyInput()
+
+      void MyInput()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 
-        if(Input.GetKey(jumpKey) && readyToJump && grounded)
+        if (Input.GetKey(jumpKey) && readyToJump && grounded)
         {
-            readyToJump= false;
+            readyToJump = false;
             Jump();
 
             Invoke(nameof(ResetJump), jumpCooldown);
         }
 
-        if(Input.GetKeyDown(crouchKey))
+        if (Input.GetKeyDown(crouchKey))
         {
             transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
             rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
         }
 
-        if(Input.GetKeyUp(crouchKey))
+        if (Input.GetKeyUp(crouchKey))
         {
             transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
         }
@@ -130,11 +160,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void StateHandler()
     {
-        if(sliding)
+        if (sliding)
         {
             state = MovementState.sliding;
 
-            if(OnSlope() && rb.velocity.y < 0.1f)
+            if (OnSlope() && rb.velocity.y < 0.1f)
             {
                 desiredMoveSpeed = slideSpeed;
             }
@@ -144,19 +174,23 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        else if(Input.GetKey(crouchKey))
+        else if (Input.GetKey(crouchKey))
         {
             state = MovementState.crouching;
             desiredMoveSpeed = crouchSpeed;
+
         }
 
-        else if(grounded && Input.GetKey(sprintKey))
+        else if (grounded && Input.GetKey(sprintKey))
         {
             state = MovementState.sprinting;
             desiredMoveSpeed = sprintSpeed;
+            //DODANE
+            isWalking = true;
+            ProgressStepCycle(2f);
         }
 
-        else if(grounded)
+        else if (grounded)
         {
             state = MovementState.walking;
             desiredMoveSpeed = walkSpeed;
@@ -168,7 +202,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        if(Mathf.Abs(desiredMoveSpeed - lastDesiredMoveSpeed) > 4f && moveSpeed != 0)
+        if (Mathf.Abs(desiredMoveSpeed - lastDesiredMoveSpeed) > 4f && moveSpeed != 0)
         {
             StopAllCoroutines();
             StartCoroutine(SmoothlyLerpMobeSpeed());
@@ -181,13 +215,15 @@ public class PlayerMovement : MonoBehaviour
         lastDesiredMoveSpeed = desiredMoveSpeed;
     }
 
+
+
     private IEnumerator SmoothlyLerpMobeSpeed()
     {
         float time = 0;
         float difference = Mathf.Abs(desiredMoveSpeed - moveSpeed);
         float startValue = moveSpeed;
 
-        while(time < difference) 
+        while (time < difference)
         {
             moveSpeed = Mathf.Lerp(startValue, desiredMoveSpeed, time / difference);
             time += Time.deltaTime;
@@ -200,25 +236,27 @@ public class PlayerMovement : MonoBehaviour
     void MovePlayer()
     {
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
-        
 
-        if(OnSlope() && !exitingSlope)
+
+        if (OnSlope() && !exitingSlope)
         {
             rb.AddForce(GetSlopemoveDirection(moveDirection) * moveSpeed * 20f, ForceMode.Force);
-
-            if(rb.velocity.y > 0)
+            if (rb.velocity.y > 0)
             {
                 rb.AddForce(Vector3.down * 80f, ForceMode.Force);
+
             }
         }
-        
+
         else if (grounded)
         {
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+
         }
-        else if(!grounded)
+        else if (!grounded)
         {
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
+
         }
 
         rb.useGravity = !OnSlope();
@@ -236,7 +274,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         else
-        { 
+        {
             Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
             if (flatVel.magnitude > moveSpeed)
@@ -249,26 +287,31 @@ public class PlayerMovement : MonoBehaviour
 
     void Jump()
     {
+        PlayJumpSound();
         exitingSlope = true;
 
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+
+
+
     }
 
     void ResetJump()
     {
         readyToJump = true;
         exitingSlope = false;
+
     }
 
     public bool OnSlope()
     {
-        if(Physics.Raycast(transform.position, Vector3.down, out slopeHit, playerHeight * 0.5f + 0.5f))
-            {
-                float angle = Vector3.Angle(Vector3.up, slopeHit.normal);
-                return angle < maxSlopeAngle && angle != 0;
-            }
+        if (Physics.Raycast(transform.position, Vector3.down, out slopeHit, playerHeight * 0.5f + 0.5f))
+        {
+            float angle = Vector3.Angle(Vector3.up, slopeHit.normal);
+            return angle < maxSlopeAngle && angle != 0;
+        }
 
         return false;
     }
@@ -276,5 +319,69 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 GetSlopemoveDirection(Vector3 direction)
     {
         return Vector3.ProjectOnPlane(direction, slopeHit.normal).normalized;
+    }
+
+    //DODANE --------------------------------------------
+    private void PlayJumpSound()
+    {
+        footStepsSwapper.CheckLayer();
+        audioSource.clip = jumpSound;
+        audioSource.Play();
+    }
+
+    private void PlayLandingSound()
+    {
+        footStepsSwapper.CheckLayer();
+        audioSource.clip = landSound;
+        //audioSource.PlayOneShot(landSound);
+        audioSource.Play();
+        nextStep = stepCycle * .5f;
+    }
+
+
+    private float lastFootstepTime;
+    private void ProgressStepCycle(float speed)
+    {
+        if (rigid.velocity.sqrMagnitude > 0 && (moveDirection.x != 0 || moveDirection.y != 0))
+        {
+            stepCycle += (rigid.velocity.sqrMagnitude + (speed * (isWalking ? 1f : runstepLenghten))) * Time.fixedDeltaTime;
+        }
+        if (!(stepCycle > nextStep))
+        {
+            return;
+        }
+        nextStep = stepCycle + stepInterval;
+        if (!audioSource.isPlaying)
+        {
+            PlayFootStepAudio();
+        }
+    }
+
+
+    private void PlayFootStepAudio()
+    {
+        footStepsSwapper.CheckLayer();
+
+        if (!grounded)
+        {
+            return;
+        }
+        int a = Random.Range(1, footStepsSounds.Count);
+        audioSource.clip = footStepsSounds[a];
+        audioSource.PlayOneShot(audioSource.clip);
+        //audioSource.Play();
+        footStepsSounds[a] = footStepsSounds[0];
+        footStepsSounds[0] = audioSource.clip;
+    }
+
+    public void SwapFootsteps(FootStepCollection collection)
+    {
+        footStepsSounds.Clear();
+        for (int i = 0; i < collection.footstepSound.Count; i++)
+        {
+            footStepsSounds.Add(collection.footstepSound[i]);
+        }
+        jumpSound = collection.jumpSound;
+        landSound = collection.landSound;
     }
 }
