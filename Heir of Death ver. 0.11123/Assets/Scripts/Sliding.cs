@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Sliding : MonoBehaviour
 {
     [Header("References")]
@@ -34,6 +35,7 @@ public class Sliding : MonoBehaviour
 
     private void Update()
     {
+        
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 

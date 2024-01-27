@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -38,12 +39,23 @@ public class OnlineFeaturesHandler : MonoBehaviour
 
     public void GotoLogowanie()
     {
+        Cleanup();
         SceneManager.LoadScene("WelcomeScreen");
         
+
+
     }
     public void GotoNewLogowanie()
     {
+        Cleanup();
         PlayfabManager.name = null;
         SceneManager.LoadScene("WelcomeScreen");
+    }
+    void Cleanup()
+    {
+        if (NetworkManager.Singleton != null)
+        {
+            Destroy(NetworkManager.Singleton.gameObject);
+        }
     }
 }

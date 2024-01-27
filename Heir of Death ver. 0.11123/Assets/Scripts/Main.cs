@@ -10,7 +10,7 @@ public class Main : MonoBehaviour
 {
     public static float Power=0;
     public static float Character = 1;
-    
+    public static int isHost = 0;
     
 
     
@@ -30,6 +30,16 @@ public class Main : MonoBehaviour
     {
         
         SceneManager.LoadScene("TestScene");
+    }
+
+    public void PlayOnlineTest()
+    {
+        SceneManager.LoadScene("TestSceneOnline");
+    }
+
+    public void SetHost()
+    {
+        isHost = 1;
     }
 
     public void SetPowerInvisibility()
