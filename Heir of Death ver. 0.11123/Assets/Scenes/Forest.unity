@@ -194,7 +194,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 127
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &17727235
 Transform:
@@ -223,6 +223,7 @@ GameObject:
   - component: {fileID: 19022385}
   - component: {fileID: 20208461}
   - component: {fileID: 24300447}
+  - component: {fileID: 24300448}
   m_Layer: 6
   m_Name: lo_Rock_A_LOD2
   m_TagString: Untagged
@@ -241,6 +242,7 @@ GameObject:
   - component: {fileID: 18260241}
   - component: {fileID: 2779715}
   - component: {fileID: 18260242}
+  - component: {fileID: 18260243}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -331,6 +333,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &18260243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17971245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!4 &18273371
 Transform:
   m_ObjectHideFlags: 0
@@ -373,6 +388,7 @@ GameObject:
   - component: {fileID: 19631983}
   - component: {fileID: 20698831}
   - component: {fileID: 24959033}
+  - component: {fileID: 24959034}
   m_Layer: 0
   m_Name: Parking
   m_TagString: Untagged
@@ -732,6 +748,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300002, guid: 9345f632db63d60489ffbd611651385e, type: 3}
+--- !u!114 &24300448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17963567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!65 &24959033
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -753,6 +782,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10.000015, y: 0.90000033, z: 6}
   m_Center: {x: -5.000003, y: 0.4500003, z: -0.0000009536743}
+--- !u!114 &24959034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18436835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!4 &25180041
 Transform:
   m_ObjectHideFlags: 0
@@ -865,6 +907,7 @@ GameObject:
   - component: {fileID: 25284199}
   - component: {fileID: 12579131}
   - component: {fileID: 25627726}
+  - component: {fileID: 25627727}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -884,6 +927,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &25627727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25627725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!1 &25652781
 GameObject:
   m_ObjectHideFlags: 0
@@ -1341,7 +1397,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 127
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!33 &56922428
 MeshFilter:
@@ -1482,7 +1538,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 127
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &71065989
 Transform:
@@ -1728,7 +1784,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 127
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!1 &100790910
 GameObject:
@@ -1747,7 +1803,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 127
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &100929634
 Transform:
@@ -2781,6 +2837,7 @@ GameObject:
   - component: {fileID: 129842076}
   - component: {fileID: 109221816}
   - component: {fileID: 129842077}
+  - component: {fileID: 129842078}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -2927,6 +2984,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &129842078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129569622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!4 &129850288
 Transform:
   m_ObjectHideFlags: 0
@@ -3227,7 +3297,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 127
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!23 &134180217
 MeshRenderer:
@@ -4671,6 +4741,7 @@ GameObject:
   - component: {fileID: 179232167}
   - component: {fileID: 194072507}
   - component: {fileID: 194072508}
+  - component: {fileID: 194072509}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -4937,6 +5008,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &194072509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178974017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!1 &195133386
 GameObject:
   m_ObjectHideFlags: 0
@@ -4955,7 +5039,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 127
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!64 &195360949
 MeshCollider:
@@ -5056,6 +5140,7 @@ GameObject:
   - component: {fileID: 200563165}
   - component: {fileID: 199382367}
   - component: {fileID: 195360949}
+  - component: {fileID: 200563166}
   m_Layer: 6
   m_Name: Stone Fence
   m_TagString: Untagged
@@ -5135,6 +5220,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 197644769}
   m_Mesh: {fileID: 4300002, guid: 3c9d077ed5fa69448811ddc276e5bc38, type: 3}
+--- !u!114 &200563166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197644769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!64 &202050176
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5422,6 +5520,7 @@ GameObject:
   m_Component:
   - component: {fileID: 208555552}
   - component: {fileID: 223348962}
+  - component: {fileID: 223348963}
   m_Layer: 6
   m_Name: Stone Fence
   m_TagString: Untagged
@@ -5675,6 +5774,7 @@ GameObject:
   - component: {fileID: 214894454}
   - component: {fileID: 233931542}
   - component: {fileID: 233931543}
+  - component: {fileID: 233931544}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -5954,6 +6054,7 @@ GameObject:
   - component: {fileID: 216215954}
   - component: {fileID: 232633842}
   - component: {fileID: 232633843}
+  - component: {fileID: 232633844}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -6560,6 +6661,7 @@ GameObject:
   - component: {fileID: 222866306}
   - component: {fileID: 209140126}
   - component: {fileID: 223124325}
+  - component: {fileID: 223124326}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -6579,6 +6681,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &223124326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223124324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!1 &223154910
 GameObject:
   m_ObjectHideFlags: 0
@@ -6668,6 +6783,19 @@ LODGroup:
     renderers:
     - renderer: {fileID: 206227248}
   m_Enabled: 0
+--- !u!114 &223348963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208375310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!64 &223752088
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6879,6 +7007,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &232633844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216390594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!205 &233931542
 LODGroup:
   m_ObjectHideFlags: 0
@@ -6918,6 +7059,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &233931544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214560038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!64 &235292308
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7608,6 +7762,7 @@ GameObject:
   - component: {fileID: 296051069}
   - component: {fileID: 1137405062}
   - component: {fileID: 1137405063}
+  - component: {fileID: 1137405064}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -7996,6 +8151,7 @@ GameObject:
   - component: {fileID: 293954202}
   - component: {fileID: 1357937479}
   - component: {fileID: 1357937480}
+  - component: {fileID: 1357937481}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -8238,6 +8394,7 @@ GameObject:
   - component: {fileID: 294488578}
   - component: {fileID: 295405184}
   - component: {fileID: 299707242}
+  - component: {fileID: 299707243}
   m_Layer: 6
   m_Name: Stone Fence
   m_TagString: Untagged
@@ -8267,6 +8424,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 99d4efbb51119b3448b55253e13ac00c, type: 3}
+--- !u!114 &299707243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297665086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!65 &311884480
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8356,7 +8526,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 127
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &317994348
 Transform:
@@ -9211,7 +9381,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 127
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &357328476
 Transform:
@@ -10613,6 +10783,7 @@ GameObject:
   - component: {fileID: 427658035}
   - component: {fileID: 426477489}
   - component: {fileID: 422390363}
+  - component: {fileID: 427658036}
   m_Layer: 6
   m_Name: Stone Fence
   m_TagString: Untagged
@@ -10670,6 +10841,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 424542991}
   m_Mesh: {fileID: 4300002, guid: 3c9d077ed5fa69448811ddc276e5bc38, type: 3}
+--- !u!114 &427658036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424542991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!64 &427881295
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12246,6 +12430,7 @@ GameObject:
   - component: {fileID: 534457081}
   - component: {fileID: 1694712385}
   - component: {fileID: 1694712386}
+  - component: {fileID: 1694712387}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -12351,7 +12536,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 127
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &520540104
 Transform:
@@ -12635,7 +12820,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 123
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!23 &557936594
 MeshRenderer:
@@ -13481,6 +13666,7 @@ GameObject:
   - component: {fileID: 634393797}
   - component: {fileID: 633377969}
   - component: {fileID: 1066450269}
+  - component: {fileID: 1066450270}
   m_Layer: 6
   m_Name: lo_CobbleRock_F_LOD1
   m_TagString: Untagged
@@ -13498,6 +13684,7 @@ GameObject:
   m_Component:
   - component: {fileID: 635727151}
   - component: {fileID: 618287731}
+  - component: {fileID: 635727152}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -13557,6 +13744,19 @@ Transform:
   - {fileID: 635802817}
   m_Father: {fileID: 276266390}
   m_LocalEulerAnglesHint: {x: -12.135, y: 41.607, z: -1.45}
+--- !u!114 &635727152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635612933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!4 &635784127
 Transform:
   m_ObjectHideFlags: 0
@@ -13860,6 +14060,7 @@ GameObject:
   - component: {fileID: 658383778}
   - component: {fileID: 637684114}
   - component: {fileID: 658383779}
+  - component: {fileID: 658383780}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -13930,6 +14131,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &658383780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658113452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!4 &658398688
 Transform:
   m_ObjectHideFlags: 0
@@ -14553,6 +14767,7 @@ GameObject:
   - component: {fileID: 673393277}
   - component: {fileID: 689735257}
   - component: {fileID: 689735258}
+  - component: {fileID: 689735259}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -14667,6 +14882,7 @@ GameObject:
   - component: {fileID: 694220291}
   - component: {fileID: 1431740055}
   - component: {fileID: 1431740056}
+  - component: {fileID: 1431740057}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -15133,6 +15349,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &689735259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673645239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!1 &689834754
 GameObject:
   m_ObjectHideFlags: 0
@@ -17604,7 +17833,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 127
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!33 &803681792
 MeshFilter:
@@ -19191,6 +19420,7 @@ GameObject:
   - component: {fileID: 871698558}
   - component: {fileID: 868303544}
   - component: {fileID: 869785316}
+  - component: {fileID: 871698559}
   m_Layer: 6
   m_Name: lo_CobbleRock_F_LOD2
   m_TagString: Untagged
@@ -19228,6 +19458,7 @@ GameObject:
   - component: {fileID: 852154060}
   - component: {fileID: 871628035}
   - component: {fileID: 871688593}
+  - component: {fileID: 871688594}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -19320,6 +19551,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &871688594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871508922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!4 &871698558
 Transform:
   m_ObjectHideFlags: 0
@@ -19335,6 +19579,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 871688592}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &871698559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871478576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!4 &871747328
 Transform:
   m_ObjectHideFlags: 0
@@ -20138,6 +20395,7 @@ GameObject:
   - component: {fileID: 926498117}
   - component: {fileID: 925839815}
   - component: {fileID: 929668141}
+  - component: {fileID: 929668142}
   m_Layer: 6
   m_Name: Stone Fence
   m_TagString: Untagged
@@ -20281,6 +20539,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 99d4efbb51119b3448b55253e13ac00c, type: 3}
+--- !u!114 &929668142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923448697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!33 &931994995
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -20665,7 +20936,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 127
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &960758530
 BoxCollider:
@@ -21330,7 +21601,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 127
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1003097366
 Transform:
@@ -21406,6 +21677,7 @@ GameObject:
   - component: {fileID: 1003097366}
   - component: {fileID: 989104502}
   - component: {fileID: 1003284295}
+  - component: {fileID: 1003284296}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -21425,6 +21697,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1003284296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1003284294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!1 &1003429102
 GameObject:
   m_ObjectHideFlags: 0
@@ -21456,6 +21741,7 @@ GameObject:
   - component: {fileID: 1006541834}
   - component: {fileID: 1005139270}
   - component: {fileID: 1076331007}
+  - component: {fileID: 1076331008}
   m_Layer: 6
   m_Name: lo_CobbleRock_C_LOD0
   m_TagString: Untagged
@@ -22242,6 +22528,7 @@ GameObject:
   - component: {fileID: 1059706588}
   - component: {fileID: 1850149639}
   - component: {fileID: 1850149640}
+  - component: {fileID: 1850149641}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -22260,6 +22547,7 @@ GameObject:
   - component: {fileID: 1041597968}
   - component: {fileID: 1042319768}
   - component: {fileID: 1043843456}
+  - component: {fileID: 1043843457}
   m_Layer: 6
   m_Name: lo_CobbleRock_B_LOD0
   m_TagString: Untagged
@@ -22623,6 +22911,7 @@ GameObject:
   - component: {fileID: 1043730157}
   - component: {fileID: 1057645789}
   - component: {fileID: 1057645790}
+  - component: {fileID: 1057645791}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -22762,6 +23051,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1043843457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041344338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!4 &1043847623
 Transform:
   m_ObjectHideFlags: 0
@@ -22914,6 +23216,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1057645791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043476195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!205 &1059706588
 LODGroup:
   m_ObjectHideFlags: 0
@@ -23064,7 +23379,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 127
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1062080219
 Transform:
@@ -23272,6 +23587,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300006, guid: 2e9f9bdd2df17f840824a1f12a144074, type: 3}
+--- !u!114 &1066450270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635533421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!64 &1076331007
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -23294,6 +23622,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300008, guid: 3b3f39c428322b54ebfaf574cfc6ab1a, type: 3}
+--- !u!114 &1076331008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1003456982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!64 &1076873933
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -23684,6 +24025,7 @@ GameObject:
   - component: {fileID: 1081081078}
   - component: {fileID: 1095858326}
   - component: {fileID: 1095858327}
+  - component: {fileID: 1095858328}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -23722,6 +24064,7 @@ GameObject:
   - component: {fileID: 1079733738}
   - component: {fileID: 1078772902}
   - component: {fileID: 85479728}
+  - component: {fileID: 1081056999}
   m_Layer: 6
   m_Name: lo_CobbleRock_C_LOD0
   m_TagString: Untagged
@@ -23904,6 +24247,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1081081078}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1081056999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080719414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!4 &1081067896
 Transform:
   m_ObjectHideFlags: 0
@@ -24011,7 +24367,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 127
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1083137637
 Transform:
@@ -24139,6 +24495,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1095858328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080628902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!205 &1098327123
 LODGroup:
   m_ObjectHideFlags: 0
@@ -25579,6 +25948,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1137405064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278817015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!205 &1138864329
 LODGroup:
   m_ObjectHideFlags: 0
@@ -27703,7 +28085,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 127
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!1 &1185612913
 GameObject:
@@ -28065,6 +28447,7 @@ GameObject:
   - component: {fileID: 1186583782}
   - component: {fileID: 1199635377}
   - component: {fileID: 1199982331}
+  - component: {fileID: 1199982332}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -28156,6 +28539,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1199982332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199732252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!4 &1199992930
 Transform:
   m_ObjectHideFlags: 0
@@ -28213,6 +28609,7 @@ GameObject:
   - component: {fileID: 1201859557}
   - component: {fileID: 1203038055}
   - component: {fileID: 1207061133}
+  - component: {fileID: 1207061134}
   m_Layer: 6
   m_Name: Stone Fence
   m_TagString: Untagged
@@ -28590,6 +28987,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 99d4efbb51119b3448b55253e13ac00c, type: 3}
+--- !u!114 &1207061134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200710617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!33 &1207778750
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -29950,6 +30360,7 @@ GameObject:
   - component: {fileID: 1274972505}
   - component: {fileID: 1254597272}
   - component: {fileID: 1274972506}
+  - component: {fileID: 1274972507}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -30326,6 +30737,7 @@ GameObject:
   - component: {fileID: 1258529369}
   - component: {fileID: 1245449853}
   - component: {fileID: 1258785428}
+  - component: {fileID: 1258785429}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -30345,6 +30757,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1258785429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258785427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!23 &1260508119
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -30605,6 +31030,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1274972507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254519855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!205 &1276210625
 LODGroup:
   m_ObjectHideFlags: 0
@@ -31539,6 +31977,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1323312154}
   - component: {fileID: 1339974360}
+  - component: {fileID: 1339974361}
   m_Layer: 6
   m_Name: Stone Fence
   m_TagString: Untagged
@@ -31982,6 +32421,19 @@ LODGroup:
     renderers:
     - renderer: {fileID: 1321512202}
   m_Enabled: 0
+--- !u!114 &1339974361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323689012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!1 &1342316924
 GameObject:
   m_ObjectHideFlags: 0
@@ -32051,6 +32503,7 @@ GameObject:
   - component: {fileID: 1362627132}
   - component: {fileID: 1640448362}
   - component: {fileID: 1640448363}
+  - component: {fileID: 1640448364}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -32150,6 +32603,7 @@ GameObject:
   - component: {fileID: 1344139192}
   - component: {fileID: 1344896996}
   - component: {fileID: 1346293440}
+  - component: {fileID: 1346293441}
   m_Layer: 6
   m_Name: lo_CobbleRock_D_LOD0
   m_TagString: Untagged
@@ -32169,6 +32623,7 @@ GameObject:
   - component: {fileID: 1361253226}
   - component: {fileID: 1797092691}
   - component: {fileID: 1797092692}
+  - component: {fileID: 1797092693}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -32579,6 +33034,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1346293441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343780784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!64 &1347833947
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -32635,6 +33103,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1357937481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 280936544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!4 &1358989161
 Transform:
   m_ObjectHideFlags: 0
@@ -32662,6 +33143,7 @@ GameObject:
   - component: {fileID: 1362492851}
   - component: {fileID: 1361310001}
   - component: {fileID: 1365597403}
+  - component: {fileID: 1365597404}
   m_Layer: 6
   m_Name: Stone Fence
   m_TagString: Untagged
@@ -32817,6 +33299,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 99d4efbb51119b3448b55253e13ac00c, type: 3}
+--- !u!114 &1365597404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359377807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!1 &1369160637
 GameObject:
   m_ObjectHideFlags: 0
@@ -32834,7 +33329,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 127
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1369411481
 Transform:
@@ -33377,6 +33872,7 @@ GameObject:
   - component: {fileID: 1397183652}
   - component: {fileID: 1481386850}
   - component: {fileID: 1481386851}
+  - component: {fileID: 1481386852}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -33490,6 +33986,7 @@ GameObject:
   - component: {fileID: 1379604737}
   - component: {fileID: 1724145316}
   - component: {fileID: 1724145317}
+  - component: {fileID: 1724145318}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -34083,6 +34580,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1431740057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677117833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!23 &1432354153
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -34143,7 +34653,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 126
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1434260295
 Transform:
@@ -35292,6 +35802,7 @@ GameObject:
   - component: {fileID: 1461037231}
   - component: {fileID: 1445697523}
   - component: {fileID: 1461037232}
+  - component: {fileID: 1461037233}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -35443,6 +35954,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1461037233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460890245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!23 &1461042314
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -35957,6 +36481,7 @@ GameObject:
   - component: {fileID: 1449445008}
   - component: {fileID: 1465839505}
   - component: {fileID: 1465839506}
+  - component: {fileID: 1465839507}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -35975,6 +36500,7 @@ GameObject:
   - component: {fileID: 1465423452}
   - component: {fileID: 1466800596}
   - component: {fileID: 1467668940}
+  - component: {fileID: 1467668941}
   m_Layer: 6
   m_Name: lo_CobbleRock_B_LOD0
   m_TagString: Untagged
@@ -36016,6 +36542,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1465839507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1465683118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!1 &1465847488
 GameObject:
   m_ObjectHideFlags: 0
@@ -36160,6 +36699,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1467668941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1465693982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!23 &1467845698
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -36566,6 +37118,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1481386852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383882030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!1 &1481701597
 GameObject:
   m_ObjectHideFlags: 0
@@ -36583,7 +37148,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 127
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1482012145
 Transform:
@@ -37673,6 +38238,7 @@ GameObject:
   - component: {fileID: 1527867580}
   - component: {fileID: 1512777309}
   - component: {fileID: 1527867581}
+  - component: {fileID: 1527867582}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -37711,6 +38277,7 @@ GameObject:
   - component: {fileID: 1511543794}
   - component: {fileID: 1510945670}
   - component: {fileID: 1514838656}
+  - component: {fileID: 1514838657}
   m_Layer: 6
   m_Name: lo_Rock_A_LOD1
   m_TagString: Untagged
@@ -37881,6 +38448,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300002, guid: 9345f632db63d60489ffbd611651385e, type: 3}
+--- !u!114 &1514838657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512672176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!64 &1514849618
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -38301,6 +38881,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1527867582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512651474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!4 &1535313698
 Transform:
   m_ObjectHideFlags: 0
@@ -38813,6 +39406,7 @@ GameObject:
   - component: {fileID: 1519860351}
   - component: {fileID: 536830247}
   - component: {fileID: 1538012150}
+  - component: {fileID: 1538012151}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -38832,6 +39426,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1538012151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538012149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!1 &1538023309
 GameObject:
   m_ObjectHideFlags: 0
@@ -38879,6 +39486,7 @@ GameObject:
   - component: {fileID: 1537853889}
   - component: {fileID: 1537071317}
   - component: {fileID: 1535812365}
+  - component: {fileID: 1538045302}
   m_Layer: 6
   m_Name: lo_CobbleRock_A_LOD1
   m_TagString: Untagged
@@ -38886,6 +39494,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
+--- !u!114 &1538045302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538045301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!33 &1538661740
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -39318,6 +39939,7 @@ GameObject:
   - component: {fileID: 1560347636}
   - component: {fileID: 1547381485}
   - component: {fileID: 1560347637}
+  - component: {fileID: 1560347638}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -39684,6 +40306,7 @@ GameObject:
   - component: {fileID: 1559442083}
   - component: {fileID: 1558566223}
   - component: {fileID: 1554196823}
+  - component: {fileID: 1559442084}
   m_Layer: 6
   m_Name: lo_Rock_B_LOD2
   m_TagString: Untagged
@@ -39740,6 +40363,7 @@ GameObject:
   - component: {fileID: 1556528043}
   - component: {fileID: 1576570859}
   - component: {fileID: 1576570860}
+  - component: {fileID: 1576570861}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -39952,6 +40576,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1556101921}
   m_Mesh: {fileID: 4300002, guid: 5194e6cdfd55bf8438ebf6e665a18e9c, type: 3}
+--- !u!114 &1559442084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556101921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!33 &1559453681
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -39999,6 +40636,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1560347638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547258314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!205 &1561495990
 LODGroup:
   m_ObjectHideFlags: 0
@@ -40073,6 +40723,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1576570861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556344823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!4 &1595622926
 Transform:
   m_ObjectHideFlags: 0
@@ -40894,7 +41557,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 127
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!23 &1629133536
 MeshRenderer:
@@ -41371,6 +42034,7 @@ GameObject:
   - component: {fileID: 1631734646}
   - component: {fileID: 1632913396}
   - component: {fileID: 1628629534}
+  - component: {fileID: 1635201453}
   m_Layer: 6
   m_Name: Stone Fence
   m_TagString: Untagged
@@ -41428,6 +42092,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1438172518}
   m_LocalEulerAnglesHint: {x: 0, y: 281.086, z: -0.227}
+--- !u!114 &1635201453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634845514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!205 &1639454554
 LODGroup:
   m_ObjectHideFlags: 0
@@ -41489,6 +42166,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1640448364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342417094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!33 &1644716499
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -42270,6 +42960,7 @@ GameObject:
   - component: {fileID: 1661994137}
   - component: {fileID: 1661339675}
   - component: {fileID: 1665181169}
+  - component: {fileID: 1665181170}
   m_Layer: 6
   m_Name: Stone Fence
   m_TagString: Untagged
@@ -42464,6 +43155,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 99d4efbb51119b3448b55253e13ac00c, type: 3}
+--- !u!114 &1665181170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663274149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!4 &1670067747
 Transform:
   m_ObjectHideFlags: 0
@@ -43196,6 +43900,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1694712387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518031363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!64 &1696973488
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -43896,6 +44613,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1724145318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392726847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!33 &1724970151
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -43916,6 +44646,7 @@ GameObject:
   - component: {fileID: 1724970151}
   - component: {fileID: 1723903239}
   - component: {fileID: 1720165361}
+  - component: {fileID: 1726317616}
   m_Layer: 0
   m_Name: Parking
   m_TagString: Untagged
@@ -43938,6 +44669,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 970458422}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1726317616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726097707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!4 &1737011551
 Transform:
   m_ObjectHideFlags: 0
@@ -45053,6 +45797,7 @@ GameObject:
   - component: {fileID: 1752230205}
   - component: {fileID: 1766621965}
   - component: {fileID: 1766621966}
+  - component: {fileID: 1766621967}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -45342,6 +46087,7 @@ GameObject:
   - component: {fileID: 1757516318}
   - component: {fileID: 1758917226}
   - component: {fileID: 1754487660}
+  - component: {fileID: 1760943167}
   m_Layer: 6
   m_Name: lo_Rock_A_LOD1
   m_TagString: Untagged
@@ -45399,6 +46145,7 @@ GameObject:
   - component: {fileID: 1774758224}
   - component: {fileID: 1760749497}
   - component: {fileID: 1774758225}
+  - component: {fileID: 1774758226}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -45491,6 +46238,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1760846338}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1760943167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760578140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!205 &1763314748
 LODGroup:
   m_ObjectHideFlags: 0
@@ -45557,6 +46317,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1766621967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752484147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!65 &1770428444
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45744,6 +46517,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1774758226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760623422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!33 &1775639526
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -45784,7 +46570,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 127
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1777197441
 BoxCollider:
@@ -45950,6 +46736,7 @@ GameObject:
   - component: {fileID: 1778638537}
   - component: {fileID: 1799123693}
   - component: {fileID: 1799123694}
+  - component: {fileID: 1799123695}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -46141,6 +46928,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1797092693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343788932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!1001 &1797452361
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46265,6 +47065,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1799123695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778906627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!33 &1812760681
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -47372,6 +48185,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1850149641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041341666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!1 &1855555308
 GameObject:
   m_ObjectHideFlags: 0
@@ -47691,6 +48517,7 @@ GameObject:
   - component: {fileID: 1880105417}
   - component: {fileID: 1879071755}
   - component: {fileID: 567745531}
+  - component: {fileID: 1881502458}
   m_Layer: 6
   m_Name: lo_CobbleRock_E_LOD2
   m_TagString: Untagged
@@ -47709,6 +48536,7 @@ GameObject:
   - component: {fileID: 1881519003}
   - component: {fileID: 1897537927}
   - component: {fileID: 1897537928}
+  - component: {fileID: 1897537929}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -47746,6 +48574,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1881519003}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1881502458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881239237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!4 &1881507075
 Transform:
   m_ObjectHideFlags: 0
@@ -47910,6 +48751,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1897537929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881244541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!23 &1900715086
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -48271,6 +49125,7 @@ GameObject:
   - component: {fileID: 1907718766}
   - component: {fileID: 1906492902}
   - component: {fileID: 1209939017}
+  - component: {fileID: 1907718767}
   m_Layer: 6
   m_Name: lo_CobbleRock_A_LOD0
   m_TagString: Untagged
@@ -48290,6 +49145,7 @@ GameObject:
   - component: {fileID: 1891593018}
   - component: {fileID: 1904665369}
   - component: {fileID: 1904665370}
+  - component: {fileID: 1904665371}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -48369,6 +49225,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1904665371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904501424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!23 &1906492902
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -48511,6 +49380,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1904479944}
   m_Mesh: {fileID: 4300008, guid: ee28604125df26b42b4f32ff15664954, type: 3}
+--- !u!114 &1907718767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904479944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!33 &1907722640
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -48531,6 +49413,7 @@ GameObject:
   - component: {fileID: 1933082755}
   - component: {fileID: 1912777120}
   - component: {fileID: 1933082756}
+  - component: {fileID: 1933082757}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -48607,6 +49490,7 @@ GameObject:
   - component: {fileID: 1912946073}
   - component: {fileID: 1915805533}
   - component: {fileID: 1914817105}
+  - component: {fileID: 1915805534}
   m_Layer: 6
   m_Name: lo_CobbleRock_B_LOD2
   m_TagString: Untagged
@@ -48811,6 +49695,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1912817875}
   m_Mesh: {fileID: 4300004, guid: 89bf544328b22bc4da0d56896518402a, type: 3}
+--- !u!114 &1915805534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912817875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!33 &1915829075
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -48937,6 +49834,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1933082757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912654525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!65 &1938097230
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49355,7 +50265,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 127
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1944570850
 Transform:
@@ -49816,6 +50726,7 @@ GameObject:
   - component: {fileID: 1951001819}
   - component: {fileID: 1952440409}
   - component: {fileID: 1947815347}
+  - component: {fileID: 1954321922}
   m_Layer: 6
   m_Name: Stone Fence
   m_TagString: Untagged
@@ -49910,6 +50821,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1438172518}
   m_LocalEulerAnglesHint: {x: 0, y: 281.724, z: 0}
+--- !u!114 &1954321922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954178279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!4 &1954425196
 Transform:
   m_ObjectHideFlags: 0
@@ -50083,6 +51007,7 @@ GameObject:
   - component: {fileID: 1955980851}
   - component: {fileID: 1954802353}
   - component: {fileID: 1959085915}
+  - component: {fileID: 1959085916}
   m_Layer: 6
   m_Name: Stone Fence
   m_TagString: Untagged
@@ -50112,6 +51037,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 99d4efbb51119b3448b55253e13ac00c, type: 3}
+--- !u!114 &1959085916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957064207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!64 &1964194663
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -51666,6 +52604,7 @@ GameObject:
   - component: {fileID: 2009270044}
   - component: {fileID: 2010341052}
   - component: {fileID: 2006208586}
+  - component: {fileID: 2012641173}
   m_Layer: 0
   m_Name: Parking
   m_TagString: Untagged
@@ -51688,6 +52627,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 970458422}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2012641173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012338832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!64 &2015174068
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -52157,7 +53109,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 127
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2029517135
 Transform:
@@ -52872,6 +53824,7 @@ GameObject:
   - component: {fileID: 2053894554}
   - component: {fileID: 2069128070}
   - component: {fileID: 2069128071}
+  - component: {fileID: 2069128072}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -52952,6 +53905,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2069128072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054144380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!64 &2069854797
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -54311,6 +55277,7 @@ GameObject:
   - component: {fileID: 2146239120}
   - component: {fileID: 2127834587}
   - component: {fileID: 2146239121}
+  - component: {fileID: 2146239122}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -54581,7 +55548,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 127
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2133612329
 Transform:
@@ -54771,6 +55738,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2146239122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127994986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: 1127c4eb73a94b2429fc05e5e6fd84ca, type: 2}
 --- !u!65 &2147100880
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -55009,7 +55989,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 127
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!1 &919132148817357970
 GameObject:

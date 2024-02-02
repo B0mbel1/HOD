@@ -73,12 +73,13 @@ public class PlayerMovement : MonoBehaviour
     private AudioSource audioSource;
     private float nextStep;
     private float stepCycle;
-    private Vector2 input;
 
     private FootStepsSwapper footStepsSwapper;
     private Character character;
     private Rigidbody rigid;
     private bool isFootstepPlaying = false;
+
+    private bool wasAirborne = false;
     //---------------------------------------------------------
 
     public enum MovementState
@@ -125,15 +126,33 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.drag = 0;
         }
+
+        
+
     }
 
     void FixedUpdate()
     {
         MovePlayer();
+
+        // Jest pó³ sekundy opóŸnienia po dotkniêciu ziemi
+        if (wasAirborne && grounded && rb.velocity.y <= 0)
+        {
+            PlayLandingSound();
+        }
+
+        if (!grounded && rb.velocity.y <= 0)
+        {
+            wasAirborne = true;
+        }
+        else
+        {
+            wasAirborne = false;
+        }
     }
 
 
-      void MyInput()
+    void MyInput()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
@@ -195,6 +214,7 @@ public class PlayerMovement : MonoBehaviour
             state = MovementState.walking;
             desiredMoveSpeed = walkSpeed;
         }
+
 
         else
         {
@@ -293,9 +313,6 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
-
-
-
     }
 
     void ResetJump()
