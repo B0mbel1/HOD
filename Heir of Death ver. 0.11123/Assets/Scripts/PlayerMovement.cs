@@ -2,10 +2,9 @@ using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using System;
 
-//DODANE------------------------------
 [RequireComponent(typeof(AudioSource))]
-//------------------------------------
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -58,9 +57,6 @@ public class PlayerMovement : MonoBehaviour
 
     public MovementState state;
 
-    //DODANE ------------------------------------------------
-
-
     [SerializeField] private List<AudioClip> footStepsSounds = new List<AudioClip>();
     [SerializeField] private AudioClip jumpSound;
     [SerializeField] private AudioClip landSound;
@@ -80,7 +76,6 @@ public class PlayerMovement : MonoBehaviour
     private bool isFootstepPlaying = false;
 
     private bool wasAirborne = false;
-    //---------------------------------------------------------
 
     public enum MovementState
     {
@@ -107,6 +102,7 @@ public class PlayerMovement : MonoBehaviour
         character = GetComponent<Character>();
         rigid = GetComponent<Rigidbody>();
 
+        PlayLandingSound += TestPlayLandingSound;
     }
 
     void Update()
@@ -127,18 +123,9 @@ public class PlayerMovement : MonoBehaviour
             rb.drag = 0;
         }
 
-        
-
-    }
-
-    void FixedUpdate()
-    {
-        MovePlayer();
-
-        // Jest pó³ sekundy opóŸnienia po dotkniêciu ziemi
         if (wasAirborne && grounded && rb.velocity.y <= 0)
         {
-            PlayLandingSound();
+            PlayLandingSound.Invoke(this,EventArgs.Empty);
         }
 
         if (!grounded && rb.velocity.y <= 0)
@@ -149,6 +136,11 @@ public class PlayerMovement : MonoBehaviour
         {
             wasAirborne = false;
         }
+    }
+
+    void FixedUpdate()
+    {
+        MovePlayer();
     }
 
 
@@ -204,7 +196,6 @@ public class PlayerMovement : MonoBehaviour
         {
             state = MovementState.sprinting;
             desiredMoveSpeed = sprintSpeed;
-            //DODANE
             isWalking = true;
             ProgressStepCycle(2f);
         }
@@ -215,12 +206,10 @@ public class PlayerMovement : MonoBehaviour
             desiredMoveSpeed = walkSpeed;
         }
 
-
         else
         {
             state = MovementState.air;
         }
-
 
         if (Mathf.Abs(desiredMoveSpeed - lastDesiredMoveSpeed) > 4f && moveSpeed != 0)
         {
@@ -338,7 +327,6 @@ public class PlayerMovement : MonoBehaviour
         return Vector3.ProjectOnPlane(direction, slopeHit.normal).normalized;
     }
 
-    //DODANE --------------------------------------------
     private void PlayJumpSound()
     {
         footStepsSwapper.CheckLayer();
@@ -346,7 +334,17 @@ public class PlayerMovement : MonoBehaviour
         audioSource.Play();
     }
 
-    private void PlayLandingSound()
+    //private void PlayLandingSound()
+    //{
+    //    footStepsSwapper.CheckLayer();
+    //    audioSource.clip = landSound;
+    //    //audioSource.PlayOneShot(landSound);
+    //    audioSource.Play();
+    //    nextStep = stepCycle * .5f;
+    //}
+
+    public event EventHandler PlayLandingSound;
+    private void TestPlayLandingSound(object sender,EventArgs e)
     {
         footStepsSwapper.CheckLayer();
         audioSource.clip = landSound;
@@ -383,7 +381,7 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
-        int a = Random.Range(1, footStepsSounds.Count);
+        int a = UnityEngine.Random.Range(1, footStepsSounds.Count);
         audioSource.clip = footStepsSounds[a];
         audioSource.PlayOneShot(audioSource.clip);
         //audioSource.Play();
