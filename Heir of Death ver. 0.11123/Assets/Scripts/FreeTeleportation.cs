@@ -14,6 +14,7 @@ public class FreeTeleportation : MonoBehaviour
     public float CooldownTime;
     public float CooldownStartingValue;
     public bool cooldownActivated;
+    public bool canTp;
 
     public Text PowerTimer;
 
@@ -23,6 +24,7 @@ public class FreeTeleportation : MonoBehaviour
         Cursor.visible = false;
         teleportState = false;
         CooldownStartingValue = CooldownTime;
+        canTp = true;
 
         IsTimerShown(false);
     }
@@ -31,8 +33,7 @@ public class FreeTeleportation : MonoBehaviour
     {
         if (Main.Power == 1)
         {
-
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetKeyDown(KeyCode.Q) && canTp == true)
             {
                 teleportState = !teleportState;
             }
@@ -53,6 +54,7 @@ public class FreeTeleportation : MonoBehaviour
                     gun.SetActive(true);
                     teleportState = false;
                     CooldownTime = CooldownStartingValue;
+                    canTp = false;
                 }
             }
             else
@@ -60,7 +62,6 @@ public class FreeTeleportation : MonoBehaviour
                 pointer.SetActive(false);
                 gun.SetActive(true);
             }
-
             if (cooldownActivated == true)
             {
                 CoodlwonCountdown();
@@ -93,6 +94,7 @@ public class FreeTeleportation : MonoBehaviour
 
         }
     }
+
     void Teleport()
     {
         transform.position = teleportationSpot.transform.position;
@@ -119,9 +121,9 @@ public class FreeTeleportation : MonoBehaviour
         {
             CooldownTime = CooldownStartingValue;
             IsTimerShown(false);
+            canTp = true;
         }
     }
-
 
     void UpdateTimer(float currentTime)
     {
