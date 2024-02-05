@@ -57979,6 +57979,14 @@ PrefabInstance:
       propertyPath: invisibilitySound
       value: 
       objectReference: {fileID: 8300000, guid: 60125022a3e9b4640910291b6546b212, type: 3}
+    - target: {fileID: 9044252989642221032, guid: 4c09e83b06719e544af015b36efb2786, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 6370299589955317921}
+    - target: {fileID: 9044252989642221032, guid: 4c09e83b06719e544af015b36efb2786, type: 3}
+      propertyPath: invisibilitySound
+      value: 
+      objectReference: {fileID: 8300000, guid: 60125022a3e9b4640910291b6546b212, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
