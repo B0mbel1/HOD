@@ -18,15 +18,22 @@ public class FreeTeleportation : MonoBehaviour
 
     public Text PowerTimer;
 
-    void Start()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        teleportState = false;
-        CooldownStartingValue = CooldownTime;
-        canTp = true;
+    public AudioSource audioSource;
+    public AudioClip teleportationSound;
 
-        IsTimerShown(false);
+    private void Start()
+    {
+        if (Main.Power == 1)
+        {
+            audioSource.clip = teleportationSound;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            teleportState = false;
+            CooldownStartingValue = CooldownTime;
+            canTp = true;
+
+            IsTimerShown(false);
+        }
     }
 
     void FixedUpdate()
@@ -55,6 +62,7 @@ public class FreeTeleportation : MonoBehaviour
                     teleportState = false;
                     CooldownTime = CooldownStartingValue;
                     canTp = false;
+                    audioSource.Play();
                 }
             }
             else
