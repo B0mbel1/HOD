@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
+using Unity.Netcode;
 
-public class TimerScript : MonoBehaviour
+public class TimerScript : NetworkBehaviour
 {
     public float TimeLeft;
     public bool TimerOn = false;
@@ -15,6 +16,7 @@ public class TimerScript : MonoBehaviour
     
     void Update()
     {
+        if(IsOwner) return;
         if(TimerOn)
         {
             if(TimeLeft > 0)

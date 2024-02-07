@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ChangeGun : MonoBehaviour
 {
     public GameObject gun1;
@@ -16,6 +17,7 @@ public class ChangeGun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
             gun1.SetActive(true);

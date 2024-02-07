@@ -1,23 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class Rotation : MonoBehaviour
 {
-    public Transform cameraPosition;
-    public float rotationSpeed;
-    // Start is called before the first frame update
-    void Start()
+    
+   
+    public GameObject cam;
+    
+
+    void Update()
     {
+        
+        
+            HandleRotationInput();
+            
         
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    void HandleRotationInput()
     {
-        
-        //transform.rotation = cameraPosition.rotation;
-        float toRotationY = cameraPosition.transform.eulerAngles.y;
+
+        //transform.rotation = cam.transform.rotation;
+        float toRotationY = cam.transform.eulerAngles.y;
         transform.eulerAngles = new Vector3(transform.eulerAngles.x, toRotationY, transform.eulerAngles.z);
+        
     }
+
+    
 }
