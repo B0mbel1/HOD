@@ -8,10 +8,9 @@ public class GunSystem : MonoBehaviour
     public float timeBetweenShooting, spread, range, reloadTime, timeBetweenShots;
     public int magazineSize, bulletsPerTap;
     public bool allowButtonHold;
-    public static int bulletsLeft; 
+    public static int bulletsLeft;
     int bulletsShot;
 
-             
     //bools 
     bool shooting, readyToShoot, reloading;
 
@@ -67,8 +66,8 @@ public class GunSystem : MonoBehaviour
                 }
             }
         }
-
     }
+
     private void Shoot()
     {
         readyToShoot = false;
@@ -87,16 +86,14 @@ public class GunSystem : MonoBehaviour
             obrazeniaOK czyOK = co.collider.GetComponent<obrazeniaOK>();
             if (czyOK != null)
             {
-                if(BetterAmmoScript.isBetterAmmoActivated == true)
+                if (BetterAmmoScript.isBetterAmmoActivated == true)
                 {
-                    czyOK.zadajObrazenia(damage+3);
+                    czyOK.zadajObrazenia(damage + 3);
                 }
                 else
                 {
                     czyOK.zadajObrazenia(damage);
                 }
-               
-
             }
         }
 
@@ -118,7 +115,7 @@ public class GunSystem : MonoBehaviour
 
         bulletsLeft--;
         bulletsShot--;
-      
+
         Invoke("ResetShot", timeBetweenShooting);
 
         if (bulletsShot > 0 && bulletsLeft > 0)
@@ -128,17 +125,17 @@ public class GunSystem : MonoBehaviour
             Reload();
         }
     }
+
     private void ResetShot()
     {
         readyToShoot = true;
     }
+
     private void Reload()
     {
-
         reloading = true;
         audioSource.PlayOneShot(reloadSound);
         Invoke("ReloadFinished", reloadTime);
-
     }
     private void ReloadFinished()
     {

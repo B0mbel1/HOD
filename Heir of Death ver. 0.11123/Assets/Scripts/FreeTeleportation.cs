@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -69,6 +71,7 @@ public class FreeTeleportation : MonoBehaviour
             {
                 pointer.SetActive(false);
                 gun.SetActive(true);
+
             }
             if (cooldownActivated == true)
             {
