@@ -2,6 +2,7 @@
 using UnityEngine;
 using TMPro;
 
+
 public class GunSystem : MonoBehaviour
 {
     //Gun stats
@@ -42,6 +43,7 @@ public class GunSystem : MonoBehaviour
     }
     private void Update()
     {
+
         MyInput();
 
         //SetText

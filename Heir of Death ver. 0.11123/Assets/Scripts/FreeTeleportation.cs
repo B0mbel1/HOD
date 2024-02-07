@@ -1,5 +1,6 @@
 using UnityEngine;
 
+
 public class FreeTeleportation : MonoBehaviour
 {
     public Camera cam;
@@ -22,6 +23,7 @@ public class FreeTeleportation : MonoBehaviour
 
     void FixedUpdate()
     {
+        
         if (Main.Power == 1)
         {
             Debug.Log(teleportState);
