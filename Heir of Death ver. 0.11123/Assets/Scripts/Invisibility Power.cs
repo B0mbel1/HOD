@@ -14,10 +14,14 @@ public class InvisibilityPower : MonoBehaviour
     public float UnlockTime;    
 
     public bool isActivated;
-    public bool CanPressAbility = true; 
+    public bool CanPressAbility = true;
+
+    public AudioSource audioSource;
+    public AudioClip invisibilitySound;
 
     private void Start()
     {
+        audioSource.clip = invisibilitySound;
         if (Main.Power == 2)
         {
             UnlockTime = StartingValue;     
@@ -42,6 +46,7 @@ public class InvisibilityPower : MonoBehaviour
                 IsPowerActivated(true);
                 CanPressAbility = false;
                 UnlockTime = (Time.time + 10f) + PowerTime;
+                audioSource.Play();
             }
 
             if (!CanPressAbility && Time.fixedTime >= UnlockTime)

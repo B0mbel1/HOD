@@ -14,11 +14,16 @@ public class XrayPower : MonoBehaviour
     public float UnlockTime;    
 
     public bool isActivated;
-    public bool CanPressAbility = true; 
+    public bool CanPressAbility = true;
+
+    public AudioSource audioSource;
+    public AudioClip xrayPowerSound;
+    
 
     private void Start()
     {
-        if(Main.Power == 3)
+        audioSource.clip = xrayPowerSound;
+        if (Main.Power == 3)
         {
             UnlockTime = StartingValue;
             StartingValue = PowerTime;
@@ -45,6 +50,7 @@ public class XrayPower : MonoBehaviour
                 IsPowerActivated(true);
                 CanPressAbility = false;
                 UnlockTime = (Time.time + 10f) + PowerTime;
+                audioSource.Play();
             }
 
             if (!CanPressAbility && Time.fixedTime >= UnlockTime)

@@ -1,14 +1,15 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class RemedyUsage : MonoBehaviour
-{
-
+{ 
     public GameObject remedy;
     public GameObject pickUptext;
 
     public AudioClip pickupSound;
     public AudioSource pickupSource;
+
 
     private void Start()
     {
@@ -24,16 +25,21 @@ public class RemedyUsage : MonoBehaviour
         }
     }
 
+ 
+
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                pickupSource.Play();
+                //pickupSource.Play();
                 pickUptext.SetActive(false);
-                
-                StartCoroutine(waitingFor());
+                this.gameObject.SetActive(false);
+                remedy.SetActive(false);
+                //StartCoroutine(waitingFor());
+
+                PlayerHealth.RestoreHealth(10);
             }
         }
     }
@@ -51,6 +57,8 @@ public class RemedyUsage : MonoBehaviour
         yield return new WaitForSeconds(3f);
         this.gameObject.SetActive(false);
         remedy.SetActive(false);
+
+        
     }
 }
 
