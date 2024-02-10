@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
+
 
 public class NewBehaviourScript : MonoBehaviour
 {
@@ -25,6 +27,7 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
         float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
 
@@ -35,7 +38,7 @@ public class NewBehaviourScript : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
         orientation.rotation = Quaternion.Euler(0,yRotation, 0);
-        SprawdzCo();
+        //SprawdzCo();
     }
 
     private void SprawdzCo()
@@ -53,6 +56,7 @@ public class NewBehaviourScript : MonoBehaviour
                         if (czyOK != null)
                         {
                             czyOK.zadajObrazenia(10);
+                            
                         }
                     }
                 }

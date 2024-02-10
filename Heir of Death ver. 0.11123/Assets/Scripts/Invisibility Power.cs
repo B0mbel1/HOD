@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class InvisibilityPower : MonoBehaviour
 {
-
     private Renderer playerRenderer;
     public Text PowerTimer;
 
@@ -11,17 +11,20 @@ public class InvisibilityPower : MonoBehaviour
     public float StartingValue;
     public float CooldownTime;
     public float CooldownStartingValue;
-    public float UnlockTime;    //DODANE
+    public float UnlockTime;    
 
     public bool isActivated;
-    public bool CanPressAbility = true; //DODANE
+    public bool CanPressAbility = true;
 
+    public AudioSource audioSource;
+    public AudioClip invisibilitySound;
 
     private void Start()
     {
+        audioSource.clip = invisibilitySound;
         if (Main.Power == 2)
         {
-            UnlockTime = StartingValue;     //DODANE
+            UnlockTime = StartingValue;     
             StartingValue = PowerTime;
             CooldownStartingValue = CooldownTime;
 
@@ -30,21 +33,20 @@ public class InvisibilityPower : MonoBehaviour
             IsTimerShown(false);
             IsPowerActivated(false);
             isActivated = false;
-
         }
-
     }
 
     private void FixedUpdate()
     {
+
         if (Main.Power == 2)
         {
-
             if (CanPressAbility && Input.GetKeyDown(KeyCode.Q))
             {
                 IsPowerActivated(true);
                 CanPressAbility = false;
                 UnlockTime = (Time.time + 10f) + PowerTime;
+                audioSource.Play();
             }
 
             if (!CanPressAbility && Time.fixedTime >= UnlockTime)
@@ -65,7 +67,6 @@ public class InvisibilityPower : MonoBehaviour
                     IsTimerShown(true);
                     IsPowerActivated(false);
                 }
-
                 CooldownTime = CooldownStartingValue;
             }
             else
@@ -73,8 +74,6 @@ public class InvisibilityPower : MonoBehaviour
                 CoodlwonCountdown();
             }
         }
-
-
     }
 
     void CoodlwonCountdown()
@@ -108,7 +107,6 @@ public class InvisibilityPower : MonoBehaviour
         if (timerActive == true)
         {
             return PowerTimer.GetComponent<Text>().enabled = true;
-
         }
         else
         {

@@ -1,4 +1,4 @@
 public interface obrazeniaOK
 {
-    void zadajObrazenia(int obrazenia);
+    void zadajObrazenia( int obrazenia);
 }

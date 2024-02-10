@@ -10,6 +10,8 @@ public class MenuPauzy : MonoBehaviour
     public static bool GameIsPaused = false;
 
     public GameObject Canvas;
+
+    
     
 
     // Update is called once per frame
@@ -45,12 +47,14 @@ public class MenuPauzy : MonoBehaviour
         GameIsPaused = true;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        Leaderboard tablica = new Leaderboard();
+        tablica.SendLeaderboard(Damaging.wynik);
     }
 
     public void LoadMenu()
     {
         Time.timeScale = 1f;
-
+        
         SceneManager.LoadScene("Menu");
     }
 }

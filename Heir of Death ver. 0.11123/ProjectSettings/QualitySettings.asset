@@ -60,7 +60,7 @@ QualitySettings:
     excludedTargetPlatforms: []
   - serializedVersion: 3
     name: Very High
-    pixelLightCount: 3
+    pixelLightCount: 0
     shadows: 1
     shadowResolution: 1
     shadowProjection: 1
@@ -80,7 +80,7 @@ QualitySettings:
     antiAliasing: 2
     softParticles: 0
     softVegetation: 1
-    realtimeReflectionProbes: 1
+    realtimeReflectionProbes: 0
     billboardsFaceCameraPosition: 1
     useLegacyDetailDistribution: 1
     vSyncCount: 0

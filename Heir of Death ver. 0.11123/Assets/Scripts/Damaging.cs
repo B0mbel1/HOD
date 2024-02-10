@@ -1,31 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Damaging : MonoBehaviour, obrazeniaOK
 {
-
     public int maxHealth;
     private int currentHealth;
     [SerializeField] private Slider healthBarSlider;
     [SerializeField] private Image healthBarFillImage;
     [SerializeField] private Color maxHealthColor;
     [SerializeField] private Color zeroHealthColor;
+    public GameObject Can;
+    public static int wynik;
 
-    // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
         SetHealtbarUI();
+        wynik = 0;
     }
-
     
     public void sprawdzCzyDead()
     {
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
+            Can.SetActive(false);
+            wynik++;
         }
     }
 
@@ -47,5 +47,4 @@ public class Damaging : MonoBehaviour, obrazeniaOK
     {
         return ((float)currentHealth / (float)maxHealth) * 100;
     }
-
 }

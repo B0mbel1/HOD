@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,12 +14,16 @@ public class XrayPower : MonoBehaviour
     public float UnlockTime;    
 
     public bool isActivated;
-    public bool CanPressAbility = true; 
+    public bool CanPressAbility = true;
 
+    public AudioSource audioSource;
+    public AudioClip xrayPowerSound;
+    
 
     private void Start()
     {
-        if(Main.Power == 3)
+        audioSource.clip = xrayPowerSound;
+        if (Main.Power == 3)
         {
             UnlockTime = StartingValue;
             StartingValue = PowerTime;
@@ -37,7 +39,6 @@ public class XrayPower : MonoBehaviour
             IsPowerActivated(false);
             isActivated = false;
         }
-       
     }
 
     private void FixedUpdate()
@@ -49,6 +50,7 @@ public class XrayPower : MonoBehaviour
                 IsPowerActivated(true);
                 CanPressAbility = false;
                 UnlockTime = (Time.time + 10f) + PowerTime;
+                audioSource.Play();
             }
 
             if (!CanPressAbility && Time.fixedTime >= UnlockTime)
@@ -69,7 +71,6 @@ public class XrayPower : MonoBehaviour
                     IsTimerShown(true);
                     IsPowerActivated(false);
                 }
-
                 CooldownTime = CooldownStartingValue;
             }
             else
@@ -110,7 +111,6 @@ public class XrayPower : MonoBehaviour
         if (timerActive == true)
         {
             return PowerTimer.GetComponent<Text>().enabled = true;
-
         }
         else
         {
