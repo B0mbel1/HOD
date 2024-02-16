@@ -3,7 +3,6 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class FreeTeleportation : MonoBehaviour
 {
     public Camera cam;
@@ -41,7 +40,6 @@ public class FreeTeleportation : MonoBehaviour
 
     void FixedUpdate()
     {
-        
         if (Main.Power == 1)
         {
             if (Input.GetKeyDown(KeyCode.Q) && canTp == true)
@@ -92,7 +90,6 @@ public class FreeTeleportation : MonoBehaviour
             teleportationSpot.transform.position = new Vector3(destination.x, destination.y + 0.5f, destination.z);
             teleportationSpot.transform.rotation = Quaternion.LookRotation(hit.normal);
 
-
             if (Input.GetMouseButtonDown(0))
             {
                 if (teleportationSpot.transform.eulerAngles.x < 280 && teleportationSpot.transform.eulerAngles.x > 260)
@@ -104,7 +101,6 @@ public class FreeTeleportation : MonoBehaviour
                     transform.position = teleportationSpot.transform.position;
                 }
             }
-
         }
     }
 
