@@ -799,6 +799,7 @@ GameObject:
   - component: {fileID: 5306954352341110438}
   - component: {fileID: 8140553025293979}
   - component: {fileID: 5382055350549378397}
+  - component: {fileID: 7947794469966040466}
   m_Layer: 0
   m_Name: Char
   m_TagString: Untagged
@@ -855,6 +856,12 @@ MonoBehaviour:
   maxSlopeAngle: 45
   orientation: {fileID: 8782688503654985613}
   state: 0
+  footStepsSounds: []
+  jumpSound: {fileID: 0}
+  landSound: {fileID: 0}
+  isWalking: 0
+  runstepLenghten: 0
+  stepInterval: 0
   sliding: 0
 --- !u!114 &7406904750180441025
 MonoBehaviour:
@@ -890,6 +897,13 @@ MonoBehaviour:
   teleportationSpot: {fileID: 322299972026020479}
   gun: {fileID: 678383138044308239}
   pointer: {fileID: 2283631661825095805}
+  CooldownTime: 0
+  CooldownStartingValue: 0
+  cooldownActivated: 0
+  canTp: 0
+  PowerTimer: {fileID: 0}
+  audioSource: {fileID: 0}
+  teleportationSound: {fileID: 0}
 --- !u!114 &8140553025293979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -923,6 +937,102 @@ MonoBehaviour:
     m_InternalValue: {x: 0, y: 0, z: 0, w: 0}
   cam: {fileID: 5387732970571511840}
   rotationSpeed: 15
+--- !u!82 &7947794469966040466
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722772648604485972}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1782612912782803256
 GameObject:
   m_ObjectHideFlags: 0
@@ -2093,6 +2203,8 @@ MonoBehaviour:
   UnlockTime: 0
   isActivated: 0
   CanPressAbility: 1
+  audioSource: {fileID: 0}
+  invisibilitySound: {fileID: 0}
 --- !u!1 &4137370954091481257
 GameObject:
   m_ObjectHideFlags: 0
@@ -2455,6 +2567,8 @@ MonoBehaviour:
   UnlockTime: 0
   isActivated: 0
   CanPressAbility: 1
+  audioSource: {fileID: 0}
+  invisibilitySound: {fileID: 0}
 --- !u!1 &4539773951371604858
 GameObject:
   m_ObjectHideFlags: 0
@@ -2512,7 +2626,7 @@ Transform:
   m_GameObject: {fileID: 4660590263184894137}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.754, z: 0}
+  m_LocalPosition: {x: 0, y: 2.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3071,6 +3185,8 @@ MonoBehaviour:
   UnlockTime: 0
   isActivated: 0
   CanPressAbility: 1
+  audioSource: {fileID: 0}
+  invisibilitySound: {fileID: 0}
 --- !u!1 &5963763190481809772
 GameObject:
   m_ObjectHideFlags: 0

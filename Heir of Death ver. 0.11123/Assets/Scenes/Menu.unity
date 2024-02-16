@@ -748,7 +748,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameplaySceneName: Forest
-  characterSelectSceneName: TestSceneOnline
+  characterSelectSceneName: SelectCharacter
 --- !u!4 &71965581
 Transform:
   m_ObjectHideFlags: 0

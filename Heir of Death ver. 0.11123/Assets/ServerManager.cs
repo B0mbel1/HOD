@@ -15,7 +15,7 @@ public class ServerManager : MonoBehaviour
 
     [SerializeField] private string gameplaySceneName = "Forest";
 
-    [SerializeField] private string characterSelectSceneName = "TestSceneOnline";
+    [SerializeField] private string characterSelectSceneName = "SelectCharacter";
 
     private void Awake()
     {
