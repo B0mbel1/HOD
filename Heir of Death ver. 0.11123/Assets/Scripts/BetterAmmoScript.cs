@@ -43,7 +43,6 @@ public class BetterAmmoScript : MonoBehaviour
         //{
         //    AmmoTimer.GetComponent<Text>().enabled = false;
         //}
-
     }
 
     void UpdateTimer(float currentTime)
