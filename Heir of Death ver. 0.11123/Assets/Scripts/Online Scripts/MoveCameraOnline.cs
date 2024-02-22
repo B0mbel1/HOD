@@ -9,6 +9,7 @@ public class MoveCameraOnline : NetworkBehaviour
 {
     public Transform cameraPosition;
     public GameObject cameraHolder;
+    public GameObject Hud;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,7 @@ public class MoveCameraOnline : NetworkBehaviour
     public override void OnNetworkSpawn()
     { // This is basically a Start method
         cameraHolder.SetActive(IsOwner);
+        Hud.SetActive(IsOwner);
         base.OnNetworkSpawn(); // Not sure if this is needed though, but good to have it.
     }
     // Update is called once per frame

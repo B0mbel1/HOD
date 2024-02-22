@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using Unity.Netcode;
+using Unity.Netcode.Components;
 
 public class PlayerMovementOnline : NetworkBehaviour
 {
@@ -54,7 +55,7 @@ public class PlayerMovementOnline : NetworkBehaviour
     public MovementState state;
 
 
-
+    public NetworkVariable<Vector3> currentPosition;
 
     public enum MovementState
     {
@@ -70,6 +71,7 @@ public class PlayerMovementOnline : NetworkBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         readyToJump = true;
@@ -81,32 +83,37 @@ public class PlayerMovementOnline : NetworkBehaviour
     void Update()
     {
         if (!IsOwner) return;
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, whatIsGround);
-        MyInput();
-        SpeedControl();
-        StateHandler();
-
-        if (grounded)
         {
-            rb.drag = groundDrag;
-        }
-        else
-        {
-            rb.drag = 0;
+            grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, whatIsGround);
+            MyInput();
+            SpeedControl();
+            StateHandler();
+
+            if (grounded)
+            {
+                rb.drag = groundDrag;
+            }
+            else
+            {
+                rb.drag = 0;
+            }
         }
 
-
+        
 
 
     }
 
     void FixedUpdate()
     {
+        //if (!IsOwner) return;
         MovePlayer();
+       
     }
 
     void MyInput()
     {
+        
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 
@@ -225,6 +232,7 @@ public class PlayerMovementOnline : NetworkBehaviour
 
         rb.useGravity = !OnSlope();
 
+        
     }
 
     void SpeedControl()
@@ -251,6 +259,7 @@ public class PlayerMovementOnline : NetworkBehaviour
 
     void Jump()
     {
+        
         exitingSlope = true;
 
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
@@ -260,6 +269,7 @@ public class PlayerMovementOnline : NetworkBehaviour
 
     void ResetJump()
     {
+        
         readyToJump = true;
         exitingSlope = false;
     }
@@ -279,4 +289,8 @@ public class PlayerMovementOnline : NetworkBehaviour
     {
         return Vector3.ProjectOnPlane(direction, slopeHit.normal).normalized;
     }
+
+
+    
 }
+

@@ -9,7 +9,7 @@ public class ServerManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public static ServerManager Instance { get; private set; }
-    public Dictionary<ulong, ClientData> ClientData {  get; private set; }
+    public Dictionary<ulong, ClientData> ClientData { get; private set; }
 
     private bool gameHasStarted;
 
