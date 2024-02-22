@@ -3013,7 +3013,7 @@ GameObject:
   - component: {fileID: 8594024245305257662}
   - component: {fileID: 1896343231766636043}
   - component: {fileID: 8683055539157074663}
-  - component: {fileID: 3278441886839157363}
+  - component: {fileID: 4948262807649311097}
   m_Layer: 0
   m_Name: ely_vanguardsoldier_kerwinatienza_Mesh
   m_TagString: Player
@@ -3178,7 +3178,7 @@ MonoBehaviour:
   CanPressAbility: 1
   audioSource: {fileID: 0}
   invisibilitySound: {fileID: 0}
---- !u!136 &3278441886839157363
+--- !u!136 &4948262807649311097
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3197,10 +3197,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.3172034
-  m_Height: 1.84069
+  m_Radius: 0.38712582
+  m_Height: 1.9240688
   m_Direction: 1
-  m_Center: {x: 0, y: 0.85, z: 0}
+  m_Center: {x: 0, y: 0.9, z: -0.05127972}
 --- !u!1 &6715876792769866846
 GameObject:
   m_ObjectHideFlags: 0

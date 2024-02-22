@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class DoorInteraction : MonoBehaviour
+public class DoorInteraction : NetworkBehaviour
 {
     public GameObject interactionText;
     public GameObject door;
@@ -38,7 +39,15 @@ public class DoorInteraction : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 interactionText.SetActive(false);
-                StartCoroutine(OpenDoor());
+                if (isOpened)
+                {
+                    CloseDoor();
+                    
+                }
+                if(!isOpened)
+                {
+                    OpenDoor();
+                }
             }
         }
     }
@@ -51,33 +60,40 @@ public class DoorInteraction : MonoBehaviour
         }
     }
 
-    IEnumerator OpenDoor()
+    void OpenDoor()
     {
-        if (isOpened == false)
-        {
+            
             doorAnimator.SetBool("canOpen", true);
             if (doorSound != null && doorSource != null)
             {
                 doorSource.PlayOneShot(doorSound);
-                doorAnimator.Play("OpenDoor", 1);
+                doorAnimator.Play("OpenDoor");
                 isOpened = true;
                 defaultState = false;
             }
-        }
-        else if (isOpened == true)
-        {
-            doorAnimator.SetBool("canClose", true);
-            if (doorSound != null && doorSource != null)
-            {
-                doorSource.PlayOneShot(doorSound);
-                doorAnimator.Play("CloseDoor", 1);
-                isOpened = false;
-                defaultState = true;
-                yield return new WaitForSeconds(1.5f);
-                doorAnimator.Rebind();
-            }
-        }
+        
+        
 
     }
+
+    void CloseDoor()
+    {
+        doorAnimator.SetBool("canClose", true);
+        if (doorSound != null && doorSource != null)
+        {
+            doorSource.PlayOneShot(doorSound);
+            doorAnimator.Play("CloseDoor");
+            isOpened = false;
+            defaultState = true;
+            Invoke("WaitDoor", 1.5f);
+        }
+    }
+
+    public void WaitDoor()
+    {
+        doorAnimator.Rebind();
+    }
+
+    
 }
 
