@@ -13,9 +13,9 @@ public class AmmoDisplaying : MonoBehaviour
         ammo = GetComponent<Text>();
     }
 
-    GunSystem gunsystem;
+    
     void Update()
     {
-        ammo.text = GunSystem.bulletsLeft.ToString();
+        ammo.text = GunSystemOnline.bulletsLeft.ToString();
     }
 }

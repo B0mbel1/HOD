@@ -43,7 +43,7 @@ public class GunSystem : MonoBehaviour
     }
     private void Update()
     {
-
+        
         MyInput();
 
         //SetText
@@ -53,7 +53,7 @@ public class GunSystem : MonoBehaviour
     {
         if (!MenuPauzy.GameIsPaused)
         {
-            if (!FreeTeleportation.teleportState)
+            if (FreeTeleportation.teleportState == true)
             {
                 if (allowButtonHold) shooting = Input.GetKey(KeyCode.Mouse0);
                 else shooting = Input.GetKeyDown(KeyCode.Mouse0);

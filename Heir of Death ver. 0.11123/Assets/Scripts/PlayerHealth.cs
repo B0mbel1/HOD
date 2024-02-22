@@ -23,7 +23,7 @@ public class PlayerHealth : MonoBehaviour
         UpdateHealthUI();
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            TakeDamage(Random.Range(1,29));                  //Set damage depends on gun
+            //TakeDamage(Random.Range(1,29));                  //Set damage depends on gun
         }
     }
 
