@@ -1,15 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    // Start is called before the first frame update
     public GameObject char1;
     public GameObject char2;
     public GameObject char3;
     public GameObject char4;
     public GameObject char5;
+
     void Start()
     {
         char1.SetActive(false);

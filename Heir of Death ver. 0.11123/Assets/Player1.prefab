@@ -2887,12 +2887,12 @@ MonoBehaviour:
   magazineSize: 10
   bulletsPerTap: 1
   allowButtonHold: 1
+  bulletSpeed: 30
   fpsCam: {fileID: 4398902836322425619}
   shootSound: {fileID: 8300000, guid: bf4fae68ea0966044962ac4e23e527e8, type: 3}
   reloadSound: {fileID: 8300000, guid: ea29e86108f09fa48a3d7e6fdd469b6d, type: 3}
   bulletPrefab: {fileID: 8174539478665384341, guid: 1b84fa7f14eaeeb48819630b948724dd, type: 3}
   bulletSpawn: {fileID: 8221140097452417287}
-  bulletSpeed: 30
 --- !u!1 &2316582798644430014
 GameObject:
   m_ObjectHideFlags: 0
@@ -3029,13 +3029,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8147539442893462373}
+  - component: {fileID: 8671067513681515485}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8147539442893462373
 Transform:
   m_ObjectHideFlags: 0
@@ -3044,7 +3045,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2573951667674145207}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.483936, y: 0.875, z: -5.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3055,6 +3056,27 @@ Transform:
   - {fileID: 7272548934554746417}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &8671067513681515485
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2573951667674145207}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b476e238421d36e469b8e32c4bb081d7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2611810436605983919
 GameObject:
   m_ObjectHideFlags: 0
@@ -5172,6 +5194,7 @@ GameObject:
   - component: {fileID: 6965525972240072874}
   - component: {fileID: 786355944660020899}
   - component: {fileID: 1329771892784747895}
+  - component: {fileID: 5286716937094043857}
   m_Layer: 0
   m_Name: Char
   m_TagString: Untagged
@@ -5313,13 +5336,13 @@ MonoBehaviour:
   teleportationSpot: {fileID: 1804083717216512727}
   gun: {fileID: 7678981018576519721}
   pointer: {fileID: 6484692761085696362}
+  PowerTimer: {fileID: 9174833194263674656}
+  audioSource: {fileID: 6965525972240072874}
+  teleportationSound: {fileID: 8300000, guid: 887b60822a85405438f4fe2816d10695, type: 3}
   CooldownTime: 10
   CooldownStartingValue: 0
   cooldownActivated: 0
   canTp: 0
-  PowerTimer: {fileID: 9174833194263674656}
-  audioSource: {fileID: 6965525972240072874}
-  teleportationSound: {fileID: 8300000, guid: 887b60822a85405438f4fe2816d10695, type: 3}
 --- !u!114 &1865720223350274677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5559,6 +5582,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PowerTimer: {fileID: 9174833194263674656}
+  audiosource: {fileID: 3349521549441277139}
+  audioSourcePower: {fileID: 1329771892784747895}
+  stealth: {fileID: 8300000, guid: 3f90fd0ec57afbc478e312c8b5cae7c0, type: 3}
   CooldownTime: 10
   CooldownStartingValue: 0
   cooldownActivated: 0
@@ -5567,9 +5593,6 @@ MonoBehaviour:
   isActivated: 0
   CanPressAbility: 1
   UnlockTime: 0
-  audiosource: {fileID: 3349521549441277139}
-  audioSourcePower: {fileID: 1329771892784747895}
-  stealth: {fileID: 8300000, guid: 3f90fd0ec57afbc478e312c8b5cae7c0, type: 3}
 --- !u!82 &1329771892784747895
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5666,6 +5689,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5286716937094043857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5251784706893670063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe4586f2577bf1b4c9f1904792311b5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionText: {fileID: 0}
+  door: {fileID: 0}
+  doorSound: {fileID: 8300000, guid: 1b3f4a54430380f45a00e9d2adbcb2ec, type: 3}
+  doorSource: {fileID: 0}
 --- !u!1 &5320116547473741699
 GameObject:
   m_ObjectHideFlags: 0
@@ -8212,12 +8251,12 @@ MonoBehaviour:
   magazineSize: 10
   bulletsPerTap: 1
   allowButtonHold: 1
+  bulletSpeed: 30
   fpsCam: {fileID: 4398902836322425619}
   shootSound: {fileID: 8300000, guid: bf4fae68ea0966044962ac4e23e527e8, type: 3}
   reloadSound: {fileID: 8300000, guid: ea29e86108f09fa48a3d7e6fdd469b6d, type: 3}
   bulletPrefab: {fileID: 8174539478665384341, guid: 1b84fa7f14eaeeb48819630b948724dd, type: 3}
   bulletSpawn: {fileID: 1483790566087367462}
-  bulletSpeed: 30
 --- !u!1 &7687623379034206087
 GameObject:
   m_ObjectHideFlags: 0
@@ -9736,48 +9775,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7262914570115263074, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
-    - {fileID: 2408132020717528975, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
-    m_RemovedGameObjects:
-    - {fileID: 1468986348965240270, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5922169032179367380, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5900146905019812475}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
---- !u!114 &585884096377546702 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4973735271374067672, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
-  m_PrefabInstance: {fileID: 5559477805629534230}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2236317316850240962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &2236317316850240962 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5922169032179367380, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
-  m_PrefabInstance: {fileID: 5559477805629534230}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5900146905019812475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2236317316850240962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a2d15bc7fd430469eed400a5de6190, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TimeLeft: 90
-  TimerOn: 0
-  RoundTimer: {fileID: 585884096377546702}
 --- !u!4 &7272548934554746417 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3011345893718789671, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}

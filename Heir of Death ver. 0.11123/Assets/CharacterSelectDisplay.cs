@@ -1,8 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.Netcode;
-
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,6 +22,7 @@ public class CharacterSelectDisplay : NetworkBehaviour
     {
         players = new NetworkList<CharacterSelectState>();
     }
+
     public override void OnNetworkSpawn()
     {
         if(IsClient)
@@ -36,7 +35,6 @@ public class CharacterSelectDisplay : NetworkBehaviour
                 selectButtonInstance.SetCharacter(this, character);
                 characterButtons.Add(selectButtonInstance);
             }
-
             players.OnListChanged += HandlePlayersStateChanged;
         }
 
@@ -229,7 +227,6 @@ public class CharacterSelectDisplay : NetworkBehaviour
                 return true;
             }
         }
-
         return false;
     }
 }

@@ -1629,7 +1629,6 @@ GameObject:
   m_Component:
   - component: {fileID: 141330872}
   - component: {fileID: 141330873}
-  - component: {fileID: 141330875}
   - component: {fileID: 141330874}
   m_Layer: 5
   m_Name: Dostosuj
@@ -1700,18 +1699,6 @@ MonoBehaviour:
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
---- !u!114 &141330875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 141330871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3277c360587710049b46b162413845b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &145146081
 GameObject:
   m_ObjectHideFlags: 0
@@ -1844,7 +1831,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &152233089
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4274,7 +4261,7 @@ MonoBehaviour:
     Prefabs:
       NetworkPrefabsLists:
       - {fileID: 11400000, guid: d1a00166e602bdd49be0ff53bc4a5b07, type: 2}
-    TickRate: 30
+    TickRate: 100
     ClientConnectionBufferTimeout: 10
     ConnectionApproval: 1
     ConnectionData: 
@@ -12857,7 +12844,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 141330875}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GetCharacterDataOnline, Assembly-CSharp
         m_MethodName: SetChar2
         m_Mode: 1
@@ -14688,7 +14675,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 141330875}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GetCharacterDataOnline, Assembly-CSharp
         m_MethodName: SetChar1
         m_Mode: 1
@@ -19528,7 +19515,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Gra jednoosobwa
+  m_text: Gra jednoosobowa
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -19968,7 +19955,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 141330875}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GetCharacterDataOnline, Assembly-CSharp
         m_MethodName: SetChar4
         m_Mode: 1
@@ -23862,7 +23849,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1665595908
 RectTransform:
   m_ObjectHideFlags: 0
@@ -27903,7 +27890,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 141330875}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GetCharacterDataOnline, Assembly-CSharp
         m_MethodName: SetChar3
         m_Mode: 1

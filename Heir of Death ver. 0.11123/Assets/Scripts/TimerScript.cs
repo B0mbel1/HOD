@@ -16,7 +16,7 @@ public class TimerScript : NetworkBehaviour
     
     void Update()
     {
-        if(IsOwner) return;
+        if(!IsOwner) return;
         if(TimerOn)
         {
             if(TimeLeft > 0)

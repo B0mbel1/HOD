@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using Unity.Netcode;
 using UnityEngine;
@@ -13,7 +11,7 @@ public class OnlineFeaturesHandler : MonoBehaviour
     public TextMeshProUGUI Info;
     public GameObject Logowanie;
     public GameObject Wyloguj;
-    // Start is called before the first frame update
+    
     private void Update()
     {
         if (PlayfabManager.name == null)
@@ -41,16 +39,15 @@ public class OnlineFeaturesHandler : MonoBehaviour
     {
         Cleanup();
         SceneManager.LoadScene("WelcomeScreen");
-        
-
-
     }
+
     public void GotoNewLogowanie()
     {
         Cleanup();
         PlayfabManager.name = null;
         SceneManager.LoadScene("WelcomeScreen");
     }
+
     void Cleanup()
     {
         if (NetworkManager.Singleton != null)

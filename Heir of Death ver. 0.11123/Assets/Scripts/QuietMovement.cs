@@ -4,6 +4,9 @@ using UnityEngine.UI;
 public class QuietMovement : MonoBehaviour
 {
     public Text PowerTimer;
+    public AudioSource audiosource;
+    public AudioSource audioSourcePower;
+    public AudioClip stealth;
 
     public float CooldownTime;
     public float CooldownStartingValue;
@@ -13,10 +16,6 @@ public class QuietMovement : MonoBehaviour
     public bool isActivated;
     public bool CanPressAbility = true;
     public float UnlockTime;
-
-    public AudioSource audiosource;
-    public AudioSource audioSourcePower;
-    public AudioClip stealth;
 
     void Start()
     {
@@ -69,8 +68,8 @@ public class QuietMovement : MonoBehaviour
                 CoodlwonCountdown();
             }
         }
-        
     }
+
     void IsPowerActivated(bool activation)
     {
         if (activation == true)

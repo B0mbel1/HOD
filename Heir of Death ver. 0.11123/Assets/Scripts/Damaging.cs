@@ -5,13 +5,14 @@ public class Damaging : MonoBehaviour, obrazeniaOK
 {
     public int maxHealth;
     private int currentHealth;
+    public GameObject Can;
+    public static int wynik;
+
     [SerializeField] private Slider healthBarSlider;
     [SerializeField] private Image healthBarFillImage;
     [SerializeField] private Color maxHealthColor;
     [SerializeField] private Color zeroHealthColor;
-    public GameObject Can;
-    public static int wynik;
-
+    
     void Start()
     {
         currentHealth = maxHealth;

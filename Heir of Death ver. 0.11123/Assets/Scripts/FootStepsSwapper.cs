@@ -1,13 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FootStepsSwapper : MonoBehaviour
 {
     private TerrainChecker checker;
     private PlayerMovement pMovement;
-    private string currentLayer;
     public FootStepCollection[] terrainFootstepCollection;
+
+    private string currentLayer;
 
     void Start()
     {
@@ -45,5 +44,4 @@ public class FootStepsSwapper : MonoBehaviour
             }
         }
     }
-
 }

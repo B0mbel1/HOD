@@ -4,7 +4,6 @@ public class Floating : MonoBehaviour
 {
     private float amplitude = 0.3f;
     private float amplitudeSpeed = 3f;
-
     private float startupHeight;
 
     void Start()

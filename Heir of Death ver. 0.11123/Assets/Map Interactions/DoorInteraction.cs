@@ -1,8 +1,8 @@
 using System.Collections;
-using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class DoorInteraction : MonoBehaviour
+public class DoorInteraction : NetworkBehaviour
 {
     public GameObject interactionText;
     public GameObject door;
@@ -12,7 +12,6 @@ public class DoorInteraction : MonoBehaviour
 
     private Animator doorAnimator;
     private bool isOpened;
-    private bool defaultState;
 
     void Start()
     {
@@ -20,7 +19,6 @@ public class DoorInteraction : MonoBehaviour
         doorSource = GetComponent<AudioSource>();
         doorAnimator = door.GetComponent<Animator>();
         isOpened = false;
-        defaultState = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -61,7 +59,6 @@ public class DoorInteraction : MonoBehaviour
                 doorSource.PlayOneShot(doorSound);
                 doorAnimator.Play("OpenDoor", 1);
                 isOpened = true;
-                defaultState = false;
             }
         }
         else if (isOpened == true)
@@ -72,12 +69,15 @@ public class DoorInteraction : MonoBehaviour
                 doorSource.PlayOneShot(doorSound);
                 doorAnimator.Play("CloseDoor", 1);
                 isOpened = false;
-                defaultState = true;
                 yield return new WaitForSeconds(1.5f);
                 doorAnimator.Rebind();
             }
         }
+    }
 
+    IEnumerator doorRebind()
+    {
+        yield return new WaitForSeconds(1.5f);
     }
 }
 

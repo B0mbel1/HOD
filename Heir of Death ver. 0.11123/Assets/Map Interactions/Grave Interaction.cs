@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GraveInteraction : MonoBehaviour
@@ -9,7 +7,6 @@ public class GraveInteraction : MonoBehaviour
 
     public AudioClip horrorSound;
     public AudioSource pickupSource;
-
 
     void Start()
     {

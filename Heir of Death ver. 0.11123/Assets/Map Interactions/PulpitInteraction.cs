@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PulpitInteraction : MonoBehaviour
@@ -9,7 +7,6 @@ public class PulpitInteraction : MonoBehaviour
 
     public AudioClip amenoSound;
     public AudioSource pickupSource;
-
 
     void Start()
     {

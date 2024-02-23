@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,9 +5,11 @@ public class FreeTeleportation : MonoBehaviour
 {
     public Camera cam;
     public TeleportationSpot teleportationSpot;
-    public static bool teleportState;
     public GameObject gun;
     public GameObject pointer;
+    public Text PowerTimer;
+    public AudioSource audioSource;
+    public AudioClip teleportationSound;
 
     Vector3 destination;
 
@@ -17,11 +17,7 @@ public class FreeTeleportation : MonoBehaviour
     public float CooldownStartingValue;
     public bool cooldownActivated;
     public bool canTp;
-
-    public Text PowerTimer;
-
-    public AudioSource audioSource;
-    public AudioClip teleportationSound;
+    public static bool teleportState;
 
     private void Start()
     {
@@ -71,8 +67,8 @@ public class FreeTeleportation : MonoBehaviour
             {
                 pointer.SetActive(false);
                 gun.SetActive(true);
-
             }
+
             if (cooldownActivated == true)
             {
                 CoodlwonCountdown();
