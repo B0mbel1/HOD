@@ -1,7 +1,6 @@
 using System.Collections;
-using UnityEngine;
 using Unity.Netcode;
-using Unity.Netcode.Components;
+using UnityEngine;
 
 public class PlayerMovementOnline : NetworkBehaviour
 {
@@ -14,7 +13,6 @@ public class PlayerMovementOnline : NetworkBehaviour
     public float slideSpeed;
     private float desiredMoveSpeed;
     private float lastDesiredMoveSpeed;
-
 
     [Header("Crouching")]
     public float crouchSpeed;
@@ -54,7 +52,6 @@ public class PlayerMovementOnline : NetworkBehaviour
 
     public MovementState state;
 
-
     public NetworkVariable<Vector3> currentPosition;
 
     public enum MovementState
@@ -68,18 +65,14 @@ public class PlayerMovementOnline : NetworkBehaviour
 
     public bool sliding;
 
-    // Start is called before the first frame update
     void Start()
     {
-
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         readyToJump = true;
         startYScale = transform.localScale.y;
-
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!IsOwner) return;
@@ -98,22 +91,16 @@ public class PlayerMovementOnline : NetworkBehaviour
                 rb.drag = 0;
             }
         }
-
-        
-
-
     }
 
     void FixedUpdate()
     {
         //if (!IsOwner) return;
         MovePlayer();
-       
     }
 
     void MyInput()
     {
-        
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 
@@ -176,7 +163,6 @@ public class PlayerMovementOnline : NetworkBehaviour
             state = MovementState.air;
         }
 
-
         if (Mathf.Abs(desiredMoveSpeed - lastDesiredMoveSpeed) > 4f && moveSpeed != 0)
         {
             StopAllCoroutines();
@@ -210,7 +196,6 @@ public class PlayerMovementOnline : NetworkBehaviour
     {
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
-
         if (OnSlope() && !exitingSlope)
         {
             rb.AddForce(GetSlopemoveDirection(moveDirection) * moveSpeed * 20f, ForceMode.Force);
@@ -231,8 +216,6 @@ public class PlayerMovementOnline : NetworkBehaviour
         }
 
         rb.useGravity = !OnSlope();
-
-        
     }
 
     void SpeedControl()
@@ -259,7 +242,6 @@ public class PlayerMovementOnline : NetworkBehaviour
 
     void Jump()
     {
-        
         exitingSlope = true;
 
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
@@ -289,8 +271,5 @@ public class PlayerMovementOnline : NetworkBehaviour
     {
         return Vector3.ProjectOnPlane(direction, slopeHit.normal).normalized;
     }
-
-
-    
 }
 

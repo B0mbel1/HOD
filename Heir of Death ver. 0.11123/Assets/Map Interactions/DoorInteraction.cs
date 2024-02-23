@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -35,14 +36,7 @@ public class DoorInteraction : NetworkBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 interactionText.SetActive(false);
-                if (isOpened)
-                {
-                    CloseDoor();
-                }
-                if (!isOpened)
-                {
-                    OpenDoor();
-                }
+                StartCoroutine(OpenDoor());
             }
         }
     }
@@ -55,32 +49,35 @@ public class DoorInteraction : NetworkBehaviour
         }
     }
 
-    void OpenDoor()
+    IEnumerator OpenDoor()
     {
-        doorAnimator.SetBool("canOpen", true);
-        if (doorSound != null && doorSource != null)
+        if (isOpened == false)
         {
-            doorSource.PlayOneShot(doorSound);
-            doorAnimator.Play("OpenDoor");
-            isOpened = true;
+            doorAnimator.SetBool("canOpen", true);
+            if (doorSound != null && doorSource != null)
+            {
+                doorSource.PlayOneShot(doorSound);
+                doorAnimator.Play("OpenDoor", 1);
+                isOpened = true;
+            }
+        }
+        else if (isOpened == true)
+        {
+            doorAnimator.SetBool("canClose", true);
+            if (doorSound != null && doorSource != null)
+            {
+                doorSource.PlayOneShot(doorSound);
+                doorAnimator.Play("CloseDoor", 1);
+                isOpened = false;
+                yield return new WaitForSeconds(1.5f);
+                doorAnimator.Rebind();
+            }
         }
     }
 
-    void CloseDoor()
+    IEnumerator doorRebind()
     {
-        doorAnimator.SetBool("canClose", true);
-        if (doorSound != null && doorSource != null)
-        {
-            doorSource.PlayOneShot(doorSound);
-            doorAnimator.Play("CloseDoor");
-            isOpened = false;
-            Invoke("WaitDoor", 1.5f);
-        }
-    }
-
-    public void WaitDoor()
-    {
-        doorAnimator.Rebind();
+        yield return new WaitForSeconds(1.5f);
     }
 }
 

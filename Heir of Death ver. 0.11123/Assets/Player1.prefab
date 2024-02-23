@@ -2887,12 +2887,12 @@ MonoBehaviour:
   magazineSize: 10
   bulletsPerTap: 1
   allowButtonHold: 1
+  bulletSpeed: 30
   fpsCam: {fileID: 4398902836322425619}
   shootSound: {fileID: 8300000, guid: bf4fae68ea0966044962ac4e23e527e8, type: 3}
   reloadSound: {fileID: 8300000, guid: ea29e86108f09fa48a3d7e6fdd469b6d, type: 3}
   bulletPrefab: {fileID: 8174539478665384341, guid: 1b84fa7f14eaeeb48819630b948724dd, type: 3}
   bulletSpawn: {fileID: 8221140097452417287}
-  bulletSpeed: 30
 --- !u!1 &2316582798644430014
 GameObject:
   m_ObjectHideFlags: 0
@@ -5336,13 +5336,13 @@ MonoBehaviour:
   teleportationSpot: {fileID: 1804083717216512727}
   gun: {fileID: 7678981018576519721}
   pointer: {fileID: 6484692761085696362}
+  PowerTimer: {fileID: 9174833194263674656}
+  audioSource: {fileID: 6965525972240072874}
+  teleportationSound: {fileID: 8300000, guid: 887b60822a85405438f4fe2816d10695, type: 3}
   CooldownTime: 10
   CooldownStartingValue: 0
   cooldownActivated: 0
   canTp: 0
-  PowerTimer: {fileID: 9174833194263674656}
-  audioSource: {fileID: 6965525972240072874}
-  teleportationSound: {fileID: 8300000, guid: 887b60822a85405438f4fe2816d10695, type: 3}
 --- !u!114 &1865720223350274677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5582,6 +5582,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PowerTimer: {fileID: 9174833194263674656}
+  audiosource: {fileID: 3349521549441277139}
+  audioSourcePower: {fileID: 1329771892784747895}
+  stealth: {fileID: 8300000, guid: 3f90fd0ec57afbc478e312c8b5cae7c0, type: 3}
   CooldownTime: 10
   CooldownStartingValue: 0
   cooldownActivated: 0
@@ -5590,9 +5593,6 @@ MonoBehaviour:
   isActivated: 0
   CanPressAbility: 1
   UnlockTime: 0
-  audiosource: {fileID: 3349521549441277139}
-  audioSourcePower: {fileID: 1329771892784747895}
-  stealth: {fileID: 8300000, guid: 3f90fd0ec57afbc478e312c8b5cae7c0, type: 3}
 --- !u!82 &1329771892784747895
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8251,12 +8251,12 @@ MonoBehaviour:
   magazineSize: 10
   bulletsPerTap: 1
   allowButtonHold: 1
+  bulletSpeed: 30
   fpsCam: {fileID: 4398902836322425619}
   shootSound: {fileID: 8300000, guid: bf4fae68ea0966044962ac4e23e527e8, type: 3}
   reloadSound: {fileID: 8300000, guid: ea29e86108f09fa48a3d7e6fdd469b6d, type: 3}
   bulletPrefab: {fileID: 8174539478665384341, guid: 1b84fa7f14eaeeb48819630b948724dd, type: 3}
   bulletSpawn: {fileID: 1483790566087367462}
-  bulletSpeed: 30
 --- !u!1 &7687623379034206087
 GameObject:
   m_ObjectHideFlags: 0

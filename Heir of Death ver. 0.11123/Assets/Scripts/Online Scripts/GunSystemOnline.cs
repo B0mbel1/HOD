@@ -1,11 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
 public class GunSystemOnline : NetworkBehaviour
 {
-    //Gun stats
     public int damage;
     public float timeBetweenShooting, spread, range, reloadTime, timeBetweenShots;
     public int magazineSize, bulletsPerTap;
@@ -13,10 +10,8 @@ public class GunSystemOnline : NetworkBehaviour
     public static int bulletsLeft;
     int bulletsShot;
 
-    //bools 
     bool shooting, readyToShoot, reloading;
 
-    //Reference
     public Camera fpsCam;
 
     public AudioClip shootSound;
@@ -26,15 +21,6 @@ public class GunSystemOnline : NetworkBehaviour
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
     public float bulletSpeed;
-    //public Transform attackPoint;
-    //public RaycastHit rayHit;
-    //public LayerMask whatIsEnemy;
-
-    //Graphics
-    //public GameObject muzzleFlash, bulletHoleGraphic;
-    //public CamShake camShake;
-    //public float camShakeMagnitude, camShakeDuration;
-    //public TextMeshProUGUI text;
 
     private void Start()
     {
@@ -42,14 +28,13 @@ public class GunSystemOnline : NetworkBehaviour
         readyToShoot = true;
         audioSource = GetComponent<AudioSource>();
     }
+
     private void Update()
     {
         if (!IsOwner) { return; }
         MyInput();
-
-        //SetText
-        //text.SetText(bulletsLeft + " / " + magazineSize);
     }
+
     private void MyInput()
     {
         if (!MenuPauzy.GameIsPaused)
@@ -61,7 +46,6 @@ public class GunSystemOnline : NetworkBehaviour
 
                 if (Input.GetKeyDown(KeyCode.R) && bulletsLeft < magazineSize && !reloading) Reload();
 
-                //Shoot
                 if (readyToShoot && shooting && !reloading && bulletsLeft > 0)
                 {
                     bulletsShot = bulletsPerTap;
@@ -75,14 +59,6 @@ public class GunSystemOnline : NetworkBehaviour
     {
         readyToShoot = false;
 
-        //Spread
-        //float x = Random.Range(-spread, spread);
-        //float y = Random.Range(-spread, spread);
-
-        //Calculate Direction with Spread
-        //Vector3 direction = fpsCam.transform.forward + new Vector3(x, y, 0);
-
-        //RayCast
         RaycastHit co;
         if (Physics.Raycast(fpsCam.transform.position, transform.forward, out co, Mathf.Infinity))
         {
@@ -109,13 +85,6 @@ public class GunSystemOnline : NetworkBehaviour
 
         audioSource.PlayOneShot(shootSound);
 
-        //ShakeCamera
-        //camShake.Shake(camShakeDuration, camShakeMagnitude);
-
-        //Graphics
-        //Instantiate(bulletHoleGraphic, rayHit.point, Quaternion.Euler(0, 180, 0));
-        //Instantiate(muzzleFlash, attackPoint.position, Quaternion.identity);
-
         bulletsLeft--;
         bulletsShot--;
 
@@ -140,6 +109,7 @@ public class GunSystemOnline : NetworkBehaviour
         audioSource.PlayOneShot(reloadSound);
         Invoke("ReloadFinished", reloadTime);
     }
+
     private void ReloadFinished()
     {
         bulletsLeft = magazineSize;

@@ -1,17 +1,9 @@
-
-
-
-
-using System.Collections.Generic;
 using System.Linq;
 using Unity.Netcode;
-
 using UnityEngine;
 
 public class CharacterSpawner : NetworkBehaviour
-    
 {
-
     public static CharacterSpawner Instance { get; internal set; }
 
     [SerializeField] private CharacterDatabase characterDatabase;
@@ -33,30 +25,22 @@ public class CharacterSpawner : NetworkBehaviour
 
             foreach (var client in ServerManager.Instance.ClientData)
             {
-
                 var character = characterDatabase.GetCharacterById(client.Value.characterId);
                 if (character != null && host != client.Value.clientId)
                 {
-                    
                     var characterSpawnPoint = RandomSpawnPoint();
                     spawnPointClient = characterSpawnPoint;
                     var characterInstance = Instantiate(character.GameplayPrefab, characterSpawnPoint, Quaternion.identity);
-                    
+
                     characterInstance.SpawnAsPlayerObject(client.Value.clientId);
-                    
+
                     Debug.Log(client.Value.clientId + " pozycja " + characterSpawnPoint.x + " " + characterSpawnPoint.y + " " + characterSpawnPoint.z);
-                    
                 }
             }
-
             SpawnHost();
-            //Invoke("SpawnHost", 2.0f);
-            
         }
-        
     }
 
-    
     public void SpawnHost()
     {
         ulong host = NetworkManager.LocalClientId;

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Runtime.InteropServices.WindowsRuntime;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
@@ -26,16 +24,14 @@ public class FreeTeleportationOnline : NetworkBehaviour
 
     private void Start()
     {
-        
-            audioSource.clip = teleportationSound;
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-            teleportState = false;
-            CooldownStartingValue = CooldownTime;
-            canTp = true;
+        audioSource.clip = teleportationSound;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        teleportState = false;
+        CooldownStartingValue = CooldownTime;
+        canTp = true;
 
-            IsTimerShown(false);
-        
+        IsTimerShown(false);
     }
 
     private void Update()
@@ -49,40 +45,38 @@ public class FreeTeleportationOnline : NetworkBehaviour
 
     void FixedUpdate()
     {
-        
-            if(!IsOwner) return;
-            
+        if (!IsOwner) return;
 
-            if (teleportState == true)
+        if (teleportState == true)
+        {
+            gun.SetActive(false);
+            pointer.SetActive(true);
+            Line();
+
+            if (Input.GetMouseButtonDown(0))
             {
-                gun.SetActive(false);
-                pointer.SetActive(true);
-                Line();
+                Teleport();
+                IsTimerShown(true);
 
-                if (Input.GetMouseButtonDown(0))
-                {
-                    Teleport();
-                    IsTimerShown(true);
-
-                    cooldownActivated = true;
-                    pointer.SetActive(false);
-                    gun.SetActive(true);
-                    teleportState = false;
-                    CooldownTime = CooldownStartingValue;
-                    canTp = false;
-                    audioSource.Play();
-                }
-            }
-            else
-            {
+                cooldownActivated = true;
                 pointer.SetActive(false);
                 gun.SetActive(true);
-
+                teleportState = false;
+                CooldownTime = CooldownStartingValue;
+                canTp = false;
+                audioSource.Play();
             }
-            if (cooldownActivated == true)
-            {
-                CoodlwonCountdown();
-            
+        }
+        else
+        {
+            pointer.SetActive(false);
+            gun.SetActive(true);
+
+        }
+
+        if (cooldownActivated == true)
+        {
+            CoodlwonCountdown();
         }
     }
 
@@ -95,8 +89,6 @@ public class FreeTeleportationOnline : NetworkBehaviour
             destination = hit.point;
             teleportationSpot.transform.position = new Vector3(destination.x, destination.y + 0.5f, destination.z);
             teleportationSpot.transform.rotation = Quaternion.LookRotation(hit.normal);
-
-            
         }
     }
 
