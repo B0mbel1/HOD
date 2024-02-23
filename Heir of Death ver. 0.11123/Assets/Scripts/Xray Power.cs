@@ -19,7 +19,6 @@ public class XrayPower : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip xrayPowerSound;
     
-
     private void Start()
     {
         audioSource.clip = xrayPowerSound;

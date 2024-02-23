@@ -1,20 +1,15 @@
-using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
-
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ServerManager : MonoBehaviour
 {
-    // Start is called before the first frame update
     public static ServerManager Instance { get; private set; }
     public Dictionary<ulong, ClientData> ClientData { get; private set; }
-
     private bool gameHasStarted;
 
     [SerializeField] private string gameplaySceneName = "Forest";
-
     [SerializeField] private string characterSelectSceneName = "SelectCharacter";
 
     private void Awake()
@@ -27,7 +22,6 @@ public class ServerManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            
         }
     }
 

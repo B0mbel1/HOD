@@ -1,39 +1,22 @@
 ﻿using UnityEngine;
-using TMPro;
-
 
 public class GunSystem : MonoBehaviour
 {
-    //Gun stats
     public int damage;
     public float timeBetweenShooting, spread, range, reloadTime, timeBetweenShots;
     public int magazineSize, bulletsPerTap;
     public bool allowButtonHold;
     public static int bulletsLeft;
     int bulletsShot;
-
-    //bools 
+    public float bulletSpeed;
     bool shooting, readyToShoot, reloading;
 
-    //Reference
     public Camera fpsCam;
-
     public AudioClip shootSound;
     public AudioClip reloadSound;
     private AudioSource audioSource;
-
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
-    public float bulletSpeed;
-    //public Transform attackPoint;
-    //public RaycastHit rayHit;
-    //public LayerMask whatIsEnemy;
-
-    //Graphics
-    //public GameObject muzzleFlash, bulletHoleGraphic;
-    //public CamShake camShake;
-    //public float camShakeMagnitude, camShakeDuration;
-    //public TextMeshProUGUI text;
 
     private void Start()
     {
@@ -43,12 +26,9 @@ public class GunSystem : MonoBehaviour
     }
     private void Update()
     {
-        
         MyInput();
-
-        //SetText
-        //text.SetText(bulletsLeft + " / " + magazineSize);
     }
+
     private void MyInput()
     {
         if (!MenuPauzy.GameIsPaused)
@@ -60,7 +40,6 @@ public class GunSystem : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.R) && bulletsLeft < magazineSize && !reloading) Reload();
 
-                //Shoot
                 if (readyToShoot && shooting && !reloading && bulletsLeft > 0)
                 {
                     bulletsShot = bulletsPerTap;
@@ -73,16 +52,9 @@ public class GunSystem : MonoBehaviour
     private void Shoot()
     {
         readyToShoot = false;
-
-        //Spread
-        //float x = Random.Range(-spread, spread);
-        //float y = Random.Range(-spread, spread);
-
-        //Calculate Direction with Spread
-        //Vector3 direction = fpsCam.transform.forward + new Vector3(x, y, 0);
-
-        //RayCast
+        
         RaycastHit co;
+
         if (Physics.Raycast(fpsCam.transform.position, transform.forward, out co, Mathf.Infinity))
         {
             obrazeniaOK czyOK = co.collider.GetComponent<obrazeniaOK>();
@@ -107,13 +79,6 @@ public class GunSystem : MonoBehaviour
         bullet.GetComponent<Rigidbody>().AddForce(bulletSpawn.forward * bulletSpeed, ForceMode.Impulse);
 
         audioSource.PlayOneShot(shootSound);
-
-        //ShakeCamera
-        //camShake.Shake(camShakeDuration, camShakeMagnitude);
-
-        //Graphics
-        //Instantiate(bulletHoleGraphic, rayHit.point, Quaternion.Euler(0, 180, 0));
-        //Instantiate(muzzleFlash, attackPoint.position, Quaternion.identity);
 
         bulletsLeft--;
         bulletsShot--;

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -13,7 +11,6 @@ public class DoorInteraction : NetworkBehaviour
 
     private Animator doorAnimator;
     private bool isOpened;
-    private bool defaultState;
 
     void Start()
     {
@@ -21,7 +18,6 @@ public class DoorInteraction : NetworkBehaviour
         doorSource = GetComponent<AudioSource>();
         doorAnimator = door.GetComponent<Animator>();
         isOpened = false;
-        defaultState = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -42,9 +38,8 @@ public class DoorInteraction : NetworkBehaviour
                 if (isOpened)
                 {
                     CloseDoor();
-                    
                 }
-                if(!isOpened)
+                if (!isOpened)
                 {
                     OpenDoor();
                 }
@@ -62,18 +57,13 @@ public class DoorInteraction : NetworkBehaviour
 
     void OpenDoor()
     {
-            
-            doorAnimator.SetBool("canOpen", true);
-            if (doorSound != null && doorSource != null)
-            {
-                doorSource.PlayOneShot(doorSound);
-                doorAnimator.Play("OpenDoor");
-                isOpened = true;
-                defaultState = false;
-            }
-        
-        
-
+        doorAnimator.SetBool("canOpen", true);
+        if (doorSound != null && doorSource != null)
+        {
+            doorSource.PlayOneShot(doorSound);
+            doorAnimator.Play("OpenDoor");
+            isOpened = true;
+        }
     }
 
     void CloseDoor()
@@ -84,7 +74,6 @@ public class DoorInteraction : NetworkBehaviour
             doorSource.PlayOneShot(doorSound);
             doorAnimator.Play("CloseDoor");
             isOpened = false;
-            defaultState = true;
             Invoke("WaitDoor", 1.5f);
         }
     }
@@ -93,7 +82,5 @@ public class DoorInteraction : NetworkBehaviour
     {
         doorAnimator.Rebind();
     }
-
-    
 }
 

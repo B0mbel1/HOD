@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TerrainChecker : MonoBehaviour
@@ -34,9 +32,8 @@ public class TerrainChecker : MonoBehaviour
                 maxIndex = i;
                 strongest = cellMix[i];
             }
-
         }
+        
         return terrain.terrainData.terrainLayers[maxIndex].name;
-
     }
 }

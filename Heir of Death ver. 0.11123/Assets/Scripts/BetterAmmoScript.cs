@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 
 public class BetterAmmoScript : MonoBehaviour
 {
@@ -18,7 +15,7 @@ public class BetterAmmoScript : MonoBehaviour
     {
         AmmoTimer.GetComponent<Text>().enabled = false;
     }
-    obrazeniaOK obrazeniaOK;
+
     void Update()
     {
         if (TimerActivation && isBetterAmmoPicked)
@@ -39,10 +36,6 @@ public class BetterAmmoScript : MonoBehaviour
                 isBetterAmmoActivated = false;
             }
         }
-        //if(TimerActivation==false && isBetterAmmoPicked == false)
-        //{
-        //    AmmoTimer.GetComponent<Text>().enabled = false;
-        //}
     }
 
     void UpdateTimer(float currentTime)

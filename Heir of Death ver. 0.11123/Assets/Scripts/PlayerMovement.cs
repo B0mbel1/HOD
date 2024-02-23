@@ -1,11 +1,9 @@
-using System.Collections;
-using UnityEngine;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
-
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -18,7 +16,6 @@ public class PlayerMovement : MonoBehaviour
     public float slideSpeed;
     private float desiredMoveSpeed;
     private float lastDesiredMoveSpeed;
-
 
     [Header("Crouching")]
     public float crouchSpeed;
@@ -65,8 +62,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField][Range(0f, 1f)] private float runstepLenghten;
     [SerializeField] private float stepInterval;
 
-
-
     private AudioSource audioSource;
     private float nextStep;
     private float stepCycle;
@@ -75,7 +70,6 @@ public class PlayerMovement : MonoBehaviour
     private Character character;
     private Rigidbody rigid;
     private bool isFootstepPlaying = false;
-
     private bool wasAirborne = false;
 
     public enum MovementState
@@ -87,7 +81,6 @@ public class PlayerMovement : MonoBehaviour
         air
     }
     public bool sliding;
-
 
     void Start()
     {
@@ -108,7 +101,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, whatIsGround);
         MyInput();
         SpeedControl();
@@ -144,7 +136,6 @@ public class PlayerMovement : MonoBehaviour
     {
         MovePlayer();
     }
-
 
     void MyInput()
     {
@@ -191,7 +182,6 @@ public class PlayerMovement : MonoBehaviour
         {
             state = MovementState.crouching;
             desiredMoveSpeed = crouchSpeed;
-
         }
 
         else if (grounded && Input.GetKey(sprintKey))
@@ -226,8 +216,6 @@ public class PlayerMovement : MonoBehaviour
         lastDesiredMoveSpeed = desiredMoveSpeed;
     }
 
-
-
     private IEnumerator SmoothlyLerpMobeSpeed()
     {
         float time = 0;
@@ -248,14 +236,12 @@ public class PlayerMovement : MonoBehaviour
     {
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
-
         if (OnSlope() && !exitingSlope)
         {
             rb.AddForce(GetSlopemoveDirection(moveDirection) * moveSpeed * 20f, ForceMode.Force);
             if (rb.velocity.y > 0)
             {
                 rb.AddForce(Vector3.down * 80f, ForceMode.Force);
-
             }
         }
 
@@ -267,11 +253,9 @@ public class PlayerMovement : MonoBehaviour
         else if (!grounded)
         {
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
-
         }
 
         rb.useGravity = !OnSlope();
-
     }
 
     void SpeedControl()
@@ -310,7 +294,6 @@ public class PlayerMovement : MonoBehaviour
     {
         readyToJump = true;
         exitingSlope = false;
-
     }
 
     public bool OnSlope()
@@ -336,27 +319,17 @@ public class PlayerMovement : MonoBehaviour
         audioSource.Play();
     }
 
-    //private void PlayLandingSound()
-    //{
-    //    footStepsSwapper.CheckLayer();
-    //    audioSource.clip = landSound;
-    //    //audioSource.PlayOneShot(landSound);
-    //    audioSource.Play();
-    //    nextStep = stepCycle * .5f;
-    //}
-
     public event EventHandler PlayLandingSound;
     private void TestPlayLandingSound(object sender,EventArgs e)
     {
         footStepsSwapper.CheckLayer();
         audioSource.clip = landSound;
-        //audioSource.PlayOneShot(landSound);
         audioSource.Play();
         nextStep = stepCycle * .5f;
     }
 
-
     private float lastFootstepTime;
+
     private void ProgressStepCycle(float speed)
     {
         if (rigid.velocity.sqrMagnitude > 0 && (moveDirection.x != 0 || moveDirection.y != 0))
@@ -374,7 +347,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-
     private void PlayFootStepAudio()
     {
         footStepsSwapper.CheckLayer();
@@ -386,7 +358,6 @@ public class PlayerMovement : MonoBehaviour
         int a = UnityEngine.Random.Range(1, footStepsSounds.Count);
         audioSource.clip = footStepsSounds[a];
         audioSource.PlayOneShot(audioSource.clip);
-        //audioSource.Play();
         footStepsSounds[a] = footStepsSounds[0];
         footStepsSounds[0] = audioSource.clip;
     }

@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class PickupScript : MonoBehaviour
@@ -23,23 +22,17 @@ public class PickupScript : MonoBehaviour
         }
     }
 
-    BetterAmmoScript betterAmmo;
-
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                //pickupSource.Play();
-
                 pickUptext.SetActive(false);
                 this.gameObject.SetActive(false);
                 clip.SetActive(false);
                 BetterAmmoScript.isBetterAmmoPicked = true;
                 BetterAmmoScript.TimerActivation = true;
-
-                //StartCoroutine(waitingFor());
             }
         }
     }
@@ -50,12 +43,5 @@ public class PickupScript : MonoBehaviour
         {
             pickUptext.SetActive(false);
         }
-    }
-
-    IEnumerator waitingFor()
-    {
-        yield return new WaitForSeconds(3f);
-        this.gameObject.SetActive(false);
-        clip.SetActive(false);
     }
 }

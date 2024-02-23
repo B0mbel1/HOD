@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ShelterInteraction : MonoBehaviour
@@ -9,7 +7,6 @@ public class ShelterInteraction : MonoBehaviour
 
     public AudioClip lookSound;
     public AudioSource pickupSource;
-
 
     void Start()
     {

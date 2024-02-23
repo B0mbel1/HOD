@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 
 public class Sliding : MonoBehaviour
 {
@@ -24,7 +21,6 @@ public class Sliding : MonoBehaviour
     private float horizontalInput;
     private float verticalInput;
 
-
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -35,7 +31,6 @@ public class Sliding : MonoBehaviour
 
     private void Update()
     {
-        
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 
@@ -83,7 +78,6 @@ public class Sliding : MonoBehaviour
             rb.AddForce(pm.GetSlopemoveDirection(inputDirection) * slideForce, ForceMode.Force);
         }
         
-
         if(slideTimer <= 0)
         {
             StopSlide();

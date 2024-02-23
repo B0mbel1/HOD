@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class oneHitDestroy : MonoBehaviour, obrazeniaOK
@@ -8,5 +6,4 @@ public class oneHitDestroy : MonoBehaviour, obrazeniaOK
     {
         Destroy(gameObject);
     }
-
 }

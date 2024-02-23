@@ -1,6 +1,5 @@
-using PlayFab.ClientModels;
 using PlayFab;
-using System.Collections;
+using PlayFab.ClientModels;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -11,11 +10,11 @@ public class Leaderboard : MonoBehaviour
     public GameObject scoreboardEntryPrefab;
     public Transform scoreboardContainer;
     public List<PlayerData> playerDataList = new List<PlayerData>();
+
     public void Getit()
     {
         playerDataList.Clear();
         GetLeaderboard();
-        
     }
 
     public void showld()
@@ -23,7 +22,6 @@ public class Leaderboard : MonoBehaviour
         UpdateLeaderboard(playerDataList);
     }
     
-
     public void UpdateLeaderboard(List<PlayerData> playerDataList)
     {
         if (scoreboardContainer.transform.childCount > 0)
@@ -39,13 +37,10 @@ public class Leaderboard : MonoBehaviour
         {
             GameObject scoreboardEntry = Instantiate(scoreboardEntryPrefab, scoreboardContainer);
 
-            
             SetScoreboardEntryData(scoreboardEntry, playerData);
-
             
             RectTransform entryRectTransform = scoreboardEntry.GetComponent<RectTransform>();
             entryRectTransform.anchoredPosition = new Vector2(entryRectTransform.anchoredPosition.x, -offsetY);
-
             
             offsetY += entryRectTransform.rect.height; 
         }
@@ -53,12 +48,10 @@ public class Leaderboard : MonoBehaviour
 
     void SetScoreboardEntryData(GameObject entry, PlayerData playerData)
     {
-        // Pobierz komponenty UI z instancji prefabrykatu
         TextMeshProUGUI positionText = entry.transform.Find("Position/PositionText").GetComponent<TextMeshProUGUI>();
         TextMeshProUGUI playerNameText = entry.transform.Find("Player/PlayerNameText").GetComponent<TextMeshProUGUI>();
         TextMeshProUGUI scoreText = entry.transform.Find("PlayerScore/ScoreText").GetComponent<TextMeshProUGUI>();
 
-        // Ustaw dane gracza na prefabrykacie
         positionText.text = playerData.position.ToString();
         playerNameText.text = playerData.playerName;
         scoreText.text = playerData.score.ToString();
@@ -104,18 +97,13 @@ public class Leaderboard : MonoBehaviour
 
     public void OnLeaderboardGet(GetLeaderboardResult result)
     {
-
         foreach (var item in result.Leaderboard)
         {
-
-
             PlayerData nowyRekord = new PlayerData();
             nowyRekord.position = item.Position+1;
             nowyRekord.playerName = item.DisplayName;
             nowyRekord.score = item.StatValue;
             playerDataList.Add(nowyRekord);
-            
         }
-
     }
 }
