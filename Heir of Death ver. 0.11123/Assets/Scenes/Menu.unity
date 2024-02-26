@@ -17337,7 +17337,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "G\u0142o\u015Bno\u015B\u0107 menu\n"
+  m_text: "G\u0142o\u015Bno\u015B\u0107 muzyki\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -18959,7 +18959,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "G\u0142o\u015Bno\u015B\u0107 og\xF3lna\n"
+  m_text: "D\u017Awi\u0119ki menu UI \n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -26242,8 +26242,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myMixer: {fileID: 24100000, guid: 3b7168e16ee69f247af0d64f54568387, type: 2}
   musicSlider: {fileID: 1596161744}
-  sfxSlider: {fileID: 284938339}
   menuMusicObject: {fileID: 1129086291}
+  CanvaChildren:
+  - {fileID: 152233089}
+  - {fileID: 1099261389}
+  - {fileID: 1604972735}
+  - {fileID: 1743916053}
+  - {fileID: 456306975}
+  - {fileID: 145168553}
+  - {fileID: 370414123}
+  - {fileID: 141330872}
+  - {fileID: 1231232493}
+  - {fileID: 1845837895}
+  - {fileID: 1665595908}
+  sfxSlider: {fileID: 284938339}
 --- !u!114 &1908341370
 MonoBehaviour:
   m_ObjectHideFlags: 0
