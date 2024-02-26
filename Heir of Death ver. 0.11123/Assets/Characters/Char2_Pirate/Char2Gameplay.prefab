@@ -801,8 +801,12 @@ MonoBehaviour:
   maxSlopeAngle: 90
   orientation: {fileID: 3040880498419603182}
   state: 0
-  currentPosition:
-    m_InternalValue: {x: 0, y: 0, z: 0}
+  footStepsSounds: []
+  jumpSound: {fileID: 0}
+  landSound: {fileID: 0}
+  isWalking: 0
+  runstepLenghten: 0
+  stepInterval: 0
   sliding: 0
 --- !u!114 &-8807793041116188683
 MonoBehaviour:
@@ -3043,12 +3047,12 @@ MonoBehaviour:
   magazineSize: 10
   bulletsPerTap: 1
   allowButtonHold: 1
+  bulletSpeed: 30
   fpsCam: {fileID: 8060259704119935742}
   shootSound: {fileID: 8300000, guid: bf4fae68ea0966044962ac4e23e527e8, type: 3}
   reloadSound: {fileID: 8300000, guid: ea29e86108f09fa48a3d7e6fdd469b6d, type: 3}
   bulletPrefab: {fileID: 8174539478665384341, guid: 1b84fa7f14eaeeb48819630b948724dd, type: 3}
   bulletSpawn: {fileID: 7891358629557811834}
-  bulletSpeed: 30
 --- !u!1 &5453527879609817081
 GameObject:
   m_ObjectHideFlags: 0
@@ -3505,7 +3509,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6990607404486837277}
   - component: {fileID: 6707096828038124024}
-  - component: {fileID: 4169018869734293760}
   - component: {fileID: 1592972639841439920}
   m_Layer: 0
   m_Name: VoidPirate
@@ -3658,28 +3661,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.0015847236, y: -0.06321806, z: -0.00211725}
     m_Extent: {x: 0.28549665, y: 0.33724564, z: 0.086756006}
   m_DirtyAABB: 0
---- !u!114 &4169018869734293760
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6516835470644473762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47be96f90c7c6c7488bfb46bb2a7a451, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PowerTimer: {fileID: 0}
-  PowerTime: 3
-  StartingValue: 0
-  CooldownTime: 10
-  CooldownStartingValue: 0
-  UnlockTime: 0
-  isActivated: 0
-  CanPressAbility: 1
-  audioSource: {fileID: 0}
-  invisibilitySound: {fileID: 0}
 --- !u!136 &1592972639841439920
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4039,12 +4020,12 @@ MonoBehaviour:
   magazineSize: 10
   bulletsPerTap: 1
   allowButtonHold: 1
+  bulletSpeed: 30
   fpsCam: {fileID: 8060259704119935742}
   shootSound: {fileID: 8300000, guid: bf4fae68ea0966044962ac4e23e527e8, type: 3}
   reloadSound: {fileID: 8300000, guid: ea29e86108f09fa48a3d7e6fdd469b6d, type: 3}
   bulletPrefab: {fileID: 8174539478665384341, guid: 1b84fa7f14eaeeb48819630b948724dd, type: 3}
   bulletSpawn: {fileID: 6723941698620884460}
-  bulletSpeed: 30
 --- !u!1 &6921078202340757100
 GameObject:
   m_ObjectHideFlags: 0

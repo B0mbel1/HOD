@@ -1,6 +1,10 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
+
+[RequireComponent(typeof(AudioSource))]
 
 public class PlayerMovementOnline : NetworkBehaviour
 {
@@ -52,7 +56,22 @@ public class PlayerMovementOnline : NetworkBehaviour
 
     public MovementState state;
 
-    public NetworkVariable<Vector3> currentPosition;
+    [SerializeField] private List<AudioClip> footStepsSounds = new List<AudioClip>();
+    [SerializeField] private AudioClip jumpSound;
+    [SerializeField] private AudioClip landSound;
+    [SerializeField] private bool isWalking;
+    [SerializeField][Range(0f, 1f)] private float runstepLenghten;
+    [SerializeField] private float stepInterval;
+
+    private AudioSource audioSource;
+    private float nextStep;
+    private float stepCycle;
+
+    private FootStepsSwapperOnline footStepsSwapper;
+    private Character character;
+    private Rigidbody rigid;
+    private bool isFootstepPlaying = false;
+    private bool wasAirborne = false;
 
     public enum MovementState
     {
@@ -71,6 +90,15 @@ public class PlayerMovementOnline : NetworkBehaviour
         rb.freezeRotation = true;
         readyToJump = true;
         startYScale = transform.localScale.y;
+
+        footStepsSwapper = GetComponent<FootStepsSwapperOnline>();
+        stepCycle = 0f;
+        nextStep = stepCycle / 2f;
+        audioSource = GetComponent<AudioSource>();
+        character = GetComponent<Character>();
+        rigid = GetComponent<Rigidbody>();
+
+        PlayLandingSound += TestPlayLandingSound;
     }
 
     void Update()
@@ -82,6 +110,8 @@ public class PlayerMovementOnline : NetworkBehaviour
             SpeedControl();
             StateHandler();
 
+            ProgressStepCycle(1f);
+
             if (grounded)
             {
                 rb.drag = groundDrag;
@@ -89,6 +119,20 @@ public class PlayerMovementOnline : NetworkBehaviour
             else
             {
                 rb.drag = 0;
+            }
+
+            if (wasAirborne && grounded && rb.velocity.y <= 0)
+            {
+                PlayLandingSound.Invoke(this, EventArgs.Empty);
+            }
+
+            if (!grounded && rb.velocity.y <= 0)
+            {
+                wasAirborne = true;
+            }
+            else
+            {
+                wasAirborne = false;
             }
         }
     }
@@ -150,6 +194,8 @@ public class PlayerMovementOnline : NetworkBehaviour
         {
             state = MovementState.sprinting;
             desiredMoveSpeed = sprintSpeed;
+            isWalking = true;
+            ProgressStepCycle(2f);
         }
 
         else if (grounded)
@@ -271,5 +317,68 @@ public class PlayerMovementOnline : NetworkBehaviour
     {
         return Vector3.ProjectOnPlane(direction, slopeHit.normal).normalized;
     }
+
+    private void PlayJumpSound()
+    {
+        footStepsSwapper.CheckLayer();
+        audioSource.clip = jumpSound;
+        audioSource.Play();
+    }
+
+    public event EventHandler PlayLandingSound;
+    private void TestPlayLandingSound(object sender, EventArgs e)
+    {
+        footStepsSwapper.CheckLayer();
+        audioSource.clip = landSound;
+        audioSource.Play();
+        nextStep = stepCycle * .5f;
+    }
+
+    private float lastFootstepTime;
+
+    private void ProgressStepCycle(float speed)
+    {
+        if (rigid.velocity.sqrMagnitude > 0 && (moveDirection.x != 0 || moveDirection.y != 0))
+        {
+            stepCycle += (rigid.velocity.sqrMagnitude + (speed * (isWalking ? 1f : runstepLenghten))) * Time.fixedDeltaTime;
+        }
+        if (!(stepCycle > nextStep))
+        {
+            return;
+        }
+        nextStep = stepCycle + stepInterval;
+        if (!audioSource.isPlaying)
+        {
+            PlayFootStepAudio();
+        }
+    }
+
+    private void PlayFootStepAudio()
+    {
+        footStepsSwapper.CheckLayer();
+
+        if (!grounded)
+        {
+            return;
+        }
+        int a = UnityEngine.Random.Range(1, footStepsSounds.Count);
+        audioSource.clip = footStepsSounds[a];
+        audioSource.PlayOneShot(audioSource.clip);
+        footStepsSounds[a] = footStepsSounds[0];
+        footStepsSounds[0] = audioSource.clip;
+    }
+
+    public void SwapFootsteps(FootStepCollection collection)
+    {
+        footStepsSounds.Clear();
+        for (int i = 0; i < collection.footstepSound.Count; i++)
+        {
+            footStepsSounds.Add(collection.footstepSound[i]);
+        }
+        jumpSound = collection.jumpSound;
+        landSound = collection.landSound;
+    }
 }
+
+
 

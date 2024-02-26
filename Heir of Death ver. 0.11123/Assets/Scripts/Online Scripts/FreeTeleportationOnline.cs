@@ -21,6 +21,7 @@ public class FreeTeleportationOnline : NetworkBehaviour
 
     public AudioSource audioSource;
     public AudioClip teleportationSound;
+    
 
     private void Start()
     {
@@ -30,7 +31,7 @@ public class FreeTeleportationOnline : NetworkBehaviour
         teleportState = false;
         CooldownStartingValue = CooldownTime;
         canTp = true;
-
+        
         IsTimerShown(false);
     }
 
@@ -41,6 +42,7 @@ public class FreeTeleportationOnline : NetworkBehaviour
         {
             teleportState = !teleportState;
         }
+        
     }
 
     void FixedUpdate()
@@ -51,6 +53,7 @@ public class FreeTeleportationOnline : NetworkBehaviour
         {
             gun.SetActive(false);
             pointer.SetActive(true);
+            
             Line();
 
             if (Input.GetMouseButtonDown(0))
@@ -65,13 +68,14 @@ public class FreeTeleportationOnline : NetworkBehaviour
                 CooldownTime = CooldownStartingValue;
                 canTp = false;
                 audioSource.Play();
+                
             }
         }
         else
         {
             pointer.SetActive(false);
             gun.SetActive(true);
-
+            
         }
 
         if (cooldownActivated == true)
