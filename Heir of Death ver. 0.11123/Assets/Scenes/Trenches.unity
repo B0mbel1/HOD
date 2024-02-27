@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 4b5145c63ca0dce41a721c52a412724b, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -9743,6 +9743,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player1
       objectReference: {fileID: 0}
+    - target: {fileID: 2573951667674145207, guid: 071edfcc86142a747b6b57f2ad082cea, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8147539442893462373, guid: 071edfcc86142a747b6b57f2ad082cea, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.7
@@ -11105,7 +11109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionText: {fileID: 106346625}
   shelter: {fileID: 1907325473}
-  horrorSound: {fileID: 8300000, guid: 83d9933be6081d441a2f56c41d4d92c2, type: 3}
+  lookSound: {fileID: 0}
   pickupSource: {fileID: 0}
 --- !u!1 &1991381457
 GameObject:
@@ -13723,11 +13727,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  Can: {fileID: 0}
   healthBarSlider: {fileID: 5436024698008767407}
   healthBarFillImage: {fileID: 279720510481014967}
   maxHealthColor: {r: 0, g: 0.8018868, b: 0.012149788, a: 1}
   zeroHealthColor: {r: 1, g: 0, b: 0.020421028, a: 1}
-  Can: {fileID: 0}
 --- !u!82 &4080417076233407076
 AudioSource:
   m_ObjectHideFlags: 0
