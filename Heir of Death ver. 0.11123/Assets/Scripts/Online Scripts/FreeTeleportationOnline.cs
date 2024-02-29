@@ -22,40 +22,54 @@ public class FreeTeleportationOnline : NetworkBehaviour
 
     public AudioSource audioSource;
     public AudioClip teleportationSound;
+    
 
     private void Start()
     {
-        audioSource.clip = teleportationSound;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        teleportState = false;
-        CooldownStartingValue = CooldownTime;
-        canTp = true;
-        IsTimerShown(false);
-    }
+
+        if (!IsOwner) return;
+        if (Main.Power == 1)
+        {
+            audioSource.clip = teleportationSound;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            teleportState = false;
+            CooldownStartingValue = CooldownTime;
+            canTp = true;
+
+            IsTimerShown(false);
+        }
+        }
 
     private void Update()
     {
-        if (!IsOwner) return;
-        if (Input.GetKeyDown(KeyCode.Q) && canTp == true)
+        if (Main.Power == 1)
         {
-            teleportState = !teleportState;
+            if (!IsOwner) return;
+            if (Input.GetKeyDown(KeyCode.Q) && canTp == true)
+            {
+                teleportState = !teleportState;
+            }
         }
     }
 
     void FixedUpdate()
     {
-        if (!IsOwner) return;
-
-        if (teleportState == true)
+        if (Main.Power == 1)
         {
-            gun.SetActive(false);
-            pointer.SetActive(true);
-            Line();
+            if (!IsOwner) return;
 
-            if (Input.GetMouseButtonDown(0))
+            if (teleportState == true)
             {
-                Teleport();
+
+                gun.SetActive(false);
+                pointer.SetActive(true);
+
+                Line();
+
+                if (Input.GetMouseButtonDown(0))
+                {
+                    Teleport();
                 IsTimerShown(true);
                 cooldownActivated = true;
                 pointer.SetActive(false);
@@ -64,17 +78,21 @@ public class FreeTeleportationOnline : NetworkBehaviour
                 CooldownTime = CooldownStartingValue;
                 canTp = false;
                 audioSource.Play();
-            }
-        }
-        else
-        {
-            pointer.SetActive(false);
-            gun.SetActive(true);
-        }
 
-        if (cooldownActivated == true)
-        {
-            CoodlwonCountdown();
+                }
+            }
+            else
+            {
+                pointer.SetActive(false);
+                gun.SetActive(true);
+
+            }
+
+
+            if (cooldownActivated == true)
+            {
+                CoodlwonCountdown();
+            }
         }
     }
 
