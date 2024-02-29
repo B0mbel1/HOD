@@ -7,12 +7,12 @@ public class PulpitInteraction : NetworkBehaviour
     public GameObject pulpit;
 
     public AudioClip amenoSound;
-    public AudioSource pickupSource;
+    public AudioSource amenoSource;
 
     void Start()
     {
         interactionText.SetActive(false);
-        pickupSource = GetComponent<AudioSource>();
+        amenoSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -31,7 +31,7 @@ public class PulpitInteraction : NetworkBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                pickupSource.Play();
+                amenoSource.Play();
                 interactionText.SetActive(false);
             }
         }
