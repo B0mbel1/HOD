@@ -1,34 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class Main : MonoBehaviour
 {
-    public static float Power=0;
+    public static float Power = 0;
     public static float Character = 1;
     public static int isHost = 0;
-    
 
-    
     public void PlayGameLas()
     {
-        
         SceneManager.LoadScene("Forest");
     }
 
     public void PlayGameOkopy()
     {
-        
         SceneManager.LoadScene("Trenches");
     }
 
     public void PlayGameTest()
     {
-        
         SceneManager.LoadScene("TestScene");
     }
 
@@ -64,7 +54,7 @@ public class Main : MonoBehaviour
 
     public void SetPlayerName()
     {
-        
+
     }
 
     public void SetChar1()

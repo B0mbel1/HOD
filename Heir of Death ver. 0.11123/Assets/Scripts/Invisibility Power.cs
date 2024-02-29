@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class InvisibilityPower : MonoBehaviour
 {
     private Renderer playerRenderer;
@@ -38,7 +37,6 @@ public class InvisibilityPower : MonoBehaviour
 
     private void FixedUpdate()
     {
-
         if (Main.Power == 2)
         {
             if (CanPressAbility && Input.GetKeyDown(KeyCode.Q))

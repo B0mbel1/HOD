@@ -11,7 +11,6 @@ public class PlayerHealth : MonoBehaviour
     public Image frontHealthBar;
     public Image backHealthBar;
 
-
     private void Start()
     {
         health = maxHealth;
@@ -23,13 +22,12 @@ public class PlayerHealth : MonoBehaviour
         UpdateHealthUI();
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            TakeDamage(Random.Range(1,29));                  //Set damage depends on gun
+            //TakeDamage(Random.Range(1,29));                 
         }
     }
 
     public void UpdateHealthUI()
     {
-  
         float fillF = frontHealthBar.fillAmount;
         float fillB = backHealthBar.fillAmount;
         float hFraction = health / maxHealth;
@@ -62,6 +60,4 @@ public class PlayerHealth : MonoBehaviour
         health += healAmount;
         lerpTimer = 0f;
     }
-
-
 }

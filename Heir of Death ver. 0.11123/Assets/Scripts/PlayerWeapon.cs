@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerWeapon : MonoBehaviour
@@ -8,8 +7,8 @@ public class PlayerWeapon : MonoBehaviour
     public Transform bulletSpawn;
     public float bulletSpeed = 1;
     public float lifeTime = 3;
-    public int maxAmmo = 6; // Maksymalna iloœæ pocisków
-    private int currentAmmo; // Obecna iloœæ pocisków
+    public int maxAmmo = 6;
+    private int currentAmmo;
     private bool isReloading = false;
     public AudioClip shootSound;
     public AudioClip reloadSound;
@@ -43,7 +42,8 @@ public class PlayerWeapon : MonoBehaviour
                     StartCoroutine(Reload());
                 }
             }
-            if (Input.GetKeyDown(KeyCode.R)) // SprawdŸ, czy zosta³ naciœniêty klawisz R
+
+            if (Input.GetKeyDown(KeyCode.R)) 
             {
                 StartCoroutine(Reload());
             }
@@ -58,8 +58,7 @@ public class PlayerWeapon : MonoBehaviour
         Vector3 rotation = bullet.transform.rotation.eulerAngles;
         bullet.transform.rotation = Quaternion.Euler(rotation.x, transform.eulerAngles.y, rotation.z);
         bullet.GetComponent<Rigidbody>().AddForce(bulletSpawn.forward * bulletSpeed, ForceMode.Impulse);
-        //StartCoroutine("DestroyProjectile");
-        currentAmmo--; // Zmniejsz liczbê dostêpnych pocisków
+        currentAmmo--;
         audioSource.PlayOneShot(shootSound);
 
         if (currentAmmo <= 0)
@@ -73,13 +72,14 @@ public class PlayerWeapon : MonoBehaviour
         yield return new WaitForSeconds(delay);
         Destroy(bullet);
     }
+
     IEnumerator Reload()
     {
         isReloading = true;
 
-        yield return new WaitForSeconds(1f); // Czas trwania prze³adowania (1 sekunda w tym przyk³adzie)
+        yield return new WaitForSeconds(1f);
 
-        currentAmmo = maxAmmo; // Ustaw liczbê pocisków na maksymaln¹
+        currentAmmo = maxAmmo;
 
         isReloading = false;
         audioSource.PlayOneShot(reloadSound);

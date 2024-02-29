@@ -1,12 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using PlayFab;
 using PlayFab.ClientModels;
-using UnityEngine.UI;
 using TMPro;
+using UnityEngine;
 using UnityEngine.SceneManagement;
-using PlayFab.EconomyModels;
 
 public class PlayfabManager : MonoBehaviour
 {
@@ -25,19 +21,17 @@ public class PlayfabManager : MonoBehaviour
     public GameObject RegisterScreen;
     public static string name = null;
     
-    
-
     private void Start()
     {
         
     }
+
     public class PlayerData
     {
         public int position;
         public string playerName;
         public int score;
     }
-    // Start is called before the first frame update
 
     public void RegisterButton()
     {
@@ -46,6 +40,7 @@ public class PlayfabManager : MonoBehaviour
             messageText.GetComponent<TMP_Text>().text = "Has³o za krótkie";
             return;
         }
+
         if (passwordInput.GetComponent<TMP_InputField>().text.Equals(password2Input.GetComponent<TMP_InputField>().text))
         {
             var request = new RegisterPlayFabUserRequest
@@ -87,8 +82,6 @@ public class PlayfabManager : MonoBehaviour
 
     void OnLoginSuccess(LoginResult result)
     {
-        
-        
         name = result.InfoResultPayload.PlayerProfile.DisplayName;
         SceneManager.LoadScene("Menu");
     }
@@ -115,32 +108,4 @@ public class PlayfabManager : MonoBehaviour
         messageTextL.GetComponent<TMP_Text>().text = error.ErrorMessage;
         Debug.Log(error.GenerateErrorReport());
     }
-
-    
-
-    
-
-    //
-    /*
-    void Login()
-    {
-        var request = new LoginWithCustomIDRequest
-        {
-            CustomId = SystemInfo.deviceUniqueIdentifier,
-            CreateAccount = true
-        };
-        PlayFabClientAPI.LoginWithCustomID(request, OnSuccess, OnError);
-    }
-
-    void OnSuccess(LoginResult result)
-    {
-        Debug.Log("Zalogowano");
-    }
-
-    void OnError(PlayFabError error)
-    {
-        Debug.Log("B³¹d logowania");
-        Debug.Log(error.GenerateErrorReport());
-    }
-    */
 }

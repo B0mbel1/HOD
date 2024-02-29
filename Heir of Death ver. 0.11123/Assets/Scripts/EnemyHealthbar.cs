@@ -17,6 +17,5 @@ public class EnemyHealthbar : MonoBehaviour
     private void LookAtPlayer()
     {
         transform.LookAt(transform.position + playerCam.transform.rotation * Vector3.forward, playerCam.transform.rotation * Vector3.up);
-
     }
 }

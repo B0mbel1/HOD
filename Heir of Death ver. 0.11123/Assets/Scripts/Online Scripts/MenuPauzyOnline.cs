@@ -1,21 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Unity.Netcode;
 
 public class MenuPauzyOnline : NetworkBehaviour
 {
-    // Start is called before the first frame update
-
     public static bool GameIsPaused = false;
 
     public GameObject Canvas;
-
-
-
-
-    // Update is called once per frame
+    
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -38,7 +30,6 @@ public class MenuPauzyOnline : NetworkBehaviour
         Canvas.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
-
     }
 
     void Pause()
@@ -58,10 +49,12 @@ public class MenuPauzyOnline : NetworkBehaviour
         {
             NetworkManager.Singleton.Shutdown();
         }
+
         if (IsClient)
         {
             NetworkManager.Singleton.DisconnectClient(OwnerClientId);
         }
+
         Cleanup();
         Time.timeScale = 1f;
 

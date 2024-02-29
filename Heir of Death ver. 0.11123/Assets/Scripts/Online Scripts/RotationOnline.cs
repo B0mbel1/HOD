@@ -1,12 +1,8 @@
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.Networking;
 using Unity.Netcode;
-using Unity.Networking;
+using UnityEngine;
 
 public class RotationOnline : NetworkBehaviour
 {
-
     public NetworkVariable<Quaternion> syncedRotation;
     public GameObject cam;
     public float rotationSpeed = 15f;
@@ -22,8 +18,6 @@ public class RotationOnline : NetworkBehaviour
 
     void HandleRotationInput()
     {
-
-        //transform.rotation = cam.transform.rotation;
         float toRotationY = cam.transform.eulerAngles.y;
         transform.eulerAngles = new Vector3(transform.eulerAngles.x, toRotationY, transform.eulerAngles.z);
         if (IsOwner)

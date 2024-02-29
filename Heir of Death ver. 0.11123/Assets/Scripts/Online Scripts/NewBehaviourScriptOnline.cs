@@ -1,12 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
-
 public class NewBehaviourScriptOnline : NetworkBehaviour
 {
-
     public float sensX;
     public float sensY;
 
@@ -15,16 +11,13 @@ public class NewBehaviourScriptOnline : NetworkBehaviour
     float xRotation;
     float yRotation;
 
-    // Start is called before the first frame update
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         MenuPauzy.GameIsPaused = false;
-
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!IsOwner && !IsLocalPlayer) return;
@@ -56,7 +49,6 @@ public class NewBehaviourScriptOnline : NetworkBehaviour
                         if (czyOK != null)
                         {
                             czyOK.zadajObrazenia(10);
-
                         }
                     }
                 }
