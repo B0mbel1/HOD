@@ -26,7 +26,6 @@ public class FreeTeleportationOnline : NetworkBehaviour
 
     private void Start()
     {
-
         if (!IsOwner) return;
         if (Main.Power == 1)
         {
@@ -39,7 +38,7 @@ public class FreeTeleportationOnline : NetworkBehaviour
 
             IsTimerShown(false);
         }
-        }
+    }
 
     private void Update()
     {
@@ -61,7 +60,6 @@ public class FreeTeleportationOnline : NetworkBehaviour
 
             if (teleportState == true)
             {
-
                 gun.SetActive(false);
                 pointer.SetActive(true);
 
@@ -70,14 +68,15 @@ public class FreeTeleportationOnline : NetworkBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     Teleport();
-                IsTimerShown(true);
-                cooldownActivated = true;
-                pointer.SetActive(false);
-                gun.SetActive(true);
-                StartCoroutine(waitWithTPstate());
-                CooldownTime = CooldownStartingValue;
-                canTp = false;
-                audioSource.Play();
+                    IsTimerShown(true);
+                    
+                    cooldownActivated = true;
+                    pointer.SetActive(false);
+                    gun.SetActive(true);
+                    StartCoroutine(waitWithTPstate());
+                    CooldownTime = CooldownStartingValue;
+                    canTp = false;
+                    audioSource.Play();
 
                 }
             }
@@ -87,7 +86,6 @@ public class FreeTeleportationOnline : NetworkBehaviour
                 gun.SetActive(true);
 
             }
-
 
             if (cooldownActivated == true)
             {
