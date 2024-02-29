@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -6,10 +7,13 @@ public class SoundScripts : MonoBehaviour
 {
     [SerializeField] private AudioMixer myMixer;
     [SerializeField] private Slider musicSlider;
-    [SerializeField] private Slider sfxSlider;
     [SerializeField] private GameObject menuMusicObject;
+    [SerializeField] private List<Transform> CanvaChildren;
 
-    public void Start()
+    [SerializeField] private Slider sfxSlider;
+  
+
+    public void Update()
     {
         if (PlayerPrefs.HasKey("musicVolume"))
         {
@@ -22,6 +26,53 @@ public class SoundScripts : MonoBehaviour
         else
         {
             SetMusicVolume();
+        }
+
+        if (PlayerPrefs.HasKey("SFXVolume"))
+        {
+            LoadVolume();
+            if (sfxSlider.value == 0)
+            {
+                TurnOffAudioSources(transform);
+            }
+            else
+            {
+                TurnOnAudioSources(transform);
+            }
+        }
+        else
+        {
+            SetsfxVolume();
+        }
+
+    }
+    public void TurnOffAudioSources(Transform parent)
+    {
+        foreach (Transform child in parent)
+        {
+            AudioSource audioSource = child.GetComponent<AudioSource>();
+
+            if (audioSource != null)
+            {
+                audioSource.enabled = false;
+            }
+
+            TurnOffAudioSources(child); 
+        }
+    }
+
+    public void TurnOnAudioSources(Transform parent)
+    {
+        foreach (Transform child in parent)
+        {
+            AudioSource audioSource = child.GetComponent<AudioSource>();
+
+            if (audioSource != null)
+            {
+                audioSource.enabled = true;
+            }
+
+            TurnOnAudioSources(child);
         }
     }
 
@@ -44,9 +95,12 @@ public class SoundScripts : MonoBehaviour
     private void LoadVolume()
     {
         musicSlider.value = PlayerPrefs.GetFloat("musicVolume");
+
         sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume");
 
+
         SetMusicVolume();
+
         SetsfxVolume();
     }
 }
