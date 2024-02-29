@@ -17138,9 +17138,10 @@ GameObject:
   - component: {fileID: 795952195}
   - component: {fileID: 795243535}
   - component: {fileID: 790703983}
-  - component: {fileID: 795952196}
+  - component: {fileID: 795952199}
   - component: {fileID: 795952197}
   - component: {fileID: 795952198}
+  - component: {fileID: 795952200}
   m_Layer: 8
   m_Name: lo_Prop_Pulpit_A_LOD0
   m_TagString: Untagged
@@ -17325,19 +17326,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 792769339}
   m_Mesh: {fileID: 4300004, guid: 66fd8fa6e7800b44ca18b26738941dcf, type: 3}
---- !u!114 &795952196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 792769339}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  footStepCollection: {fileID: 11400000, guid: c092ca59f4b5e9146b89e1fd2715e3d9, type: 2}
 --- !u!114 &795952197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17353,7 +17341,7 @@ MonoBehaviour:
   interactionText: {fileID: 1234039354}
   pulpit: {fileID: 792954589}
   amenoSound: {fileID: 8300000, guid: 6129ca5650c09f14981cdf5c3ec2ad6f, type: 3}
-  pickupSource: {fileID: 0}
+  amenoSource: {fileID: 0}
 --- !u!82 &795952198
 AudioSource:
   m_ObjectHideFlags: 0
@@ -17450,6 +17438,39 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &795952199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792769339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1446735750
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+--- !u!114 &795952200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792769339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e65d634f6218524188e18d8fc4c698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepCollection: {fileID: 11400000, guid: c092ca59f4b5e9146b89e1fd2715e3d9, type: 2}
 --- !u!33 &796965499
 MeshFilter:
   m_ObjectHideFlags: 0
