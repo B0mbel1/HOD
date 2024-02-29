@@ -1327,6 +1327,10 @@ PrefabInstance:
       propertyPath: script2
       value: 
       objectReference: {fileID: 1314087853}
+    - target: {fileID: 7467263469411041052, guid: 071edfcc86142a747b6b57f2ad082cea, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: fd453bc276f53f243b860ead17b6a9c6, type: 2}
     - target: {fileID: 7666729541332014580, guid: 071edfcc86142a747b6b57f2ad082cea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.43
