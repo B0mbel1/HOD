@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
@@ -68,11 +69,11 @@ public class FreeTeleportationOnline : NetworkBehaviour
                 {
                     Teleport();
                     IsTimerShown(true);
-
+                    
                     cooldownActivated = true;
                     pointer.SetActive(false);
                     gun.SetActive(true);
-                    teleportState = false;
+                    StartCoroutine(waitWithTPstate());
                     CooldownTime = CooldownStartingValue;
                     canTp = false;
                     audioSource.Play();
@@ -91,6 +92,12 @@ public class FreeTeleportationOnline : NetworkBehaviour
                 CoodlwonCountdown();
             }
         }
+    }
+
+    IEnumerator waitWithTPstate()
+    {
+        yield return new WaitForSeconds(0.1f);
+        teleportState = false;
     }
 
     void Line()
