@@ -26,8 +26,11 @@ public class XRayPowerOnline : NetworkBehaviour
 
     private void Start()
     {
-        audioSource.clip = xrayPowerSound;
-        
+        if(!IsOwner) return;
+        if (Main.Power == 3)
+        {
+            audioSource.clip = xrayPowerSound;
+
             UnlockTime = StartingValue;
             StartingValue = PowerTime;
             CooldownStartingValue = CooldownTime;
@@ -41,13 +44,14 @@ public class XRayPowerOnline : NetworkBehaviour
             IsTimerShown(false);
             IsPowerActivated(false);
             isActivated = false;
-        
+        }
     }
 
     private void FixedUpdate()
     {
         if (!IsOwner) return;
-        
+        if (Main.Power == 3)
+        {
             if (CanPressAbility && Input.GetKeyDown(KeyCode.Q))
             {
                 IsPowerActivated(true);
@@ -80,7 +84,7 @@ public class XRayPowerOnline : NetworkBehaviour
             {
                 CoodlwonCountdown();
             }
-        
+        }
     }
 
     void CoodlwonCountdown()
@@ -131,50 +135,33 @@ public class XRayPowerOnline : NetworkBehaviour
         PowerTimer.text = string.Format("{0:00} : {1:00}", minutes, seconds);
     }
 
-    void ChangeObjectShader()
-    {
-        Renderer renderer = GetComponent<Renderer>();
+    
 
-        if (renderer != null && XrayShader != null)
-        {
-            //renderer.material.shader = XrayShader;
-        }
-        else
-        {
-            Debug.LogError("Renderer or myCustomShader is not set.");
-        }
-    }
-
-    void ChangeObjectShaderToDefault()
-    {
-        Renderer renderer2 = GetComponent<Renderer>();
-
-        if (renderer2 != null && standardShader != null)
-        {
-            renderer2.material.shader = standardShader;
-        }
-        else
-        {
-            Debug.LogError("Renderer or myCustomShader is not set.");
-        }
-    }
+    
 
     void CheckPlayers()
     {
         foreach(NetworkClient client in NetworkManager.ConnectedClientsList)
         {
-            Renderer clientsRenderer = client.PlayerObject.GetComponentInChildren<Renderer>();
-            //defaultMaterial[client.ClientId] = clientsRenderer.material;
-            clientsRenderer.material.shader = XrayShader;
+            if (client.ClientId != NetworkManager.LocalClientId)
+            {
+                Renderer clientsRenderer = client.PlayerObject.GetComponentInChildren<Renderer>();
+                //defaultMaterial[client.ClientId] = clientsRenderer.material;
+                clientsRenderer.material.shader = XrayShader;
+            }
         }
     }
 
     void UncheckPlayers()
     {
+
         foreach (NetworkClient client in NetworkManager.ConnectedClientsList)
         {
-            Renderer clientsRenderer = client.PlayerObject.GetComponentInChildren<Renderer>();
-            clientsRenderer.material.shader = standardShader;
+            if (client.ClientId != NetworkManager.LocalClientId)
+            {
+                Renderer clientsRenderer = client.PlayerObject.GetComponentInChildren<Renderer>();
+                clientsRenderer.material.shader = standardShader;
+            }
         }
     }
 }

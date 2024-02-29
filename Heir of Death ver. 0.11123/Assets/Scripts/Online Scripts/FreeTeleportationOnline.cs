@@ -25,62 +25,71 @@ public class FreeTeleportationOnline : NetworkBehaviour
 
     private void Start()
     {
-        audioSource.clip = teleportationSound;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        teleportState = false;
-        CooldownStartingValue = CooldownTime;
-        canTp = true;
-        
-        IsTimerShown(false);
+        if (!IsOwner) return;
+        if (Main.Power == 1)
+        {
+            audioSource.clip = teleportationSound;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            teleportState = false;
+            CooldownStartingValue = CooldownTime;
+            canTp = true;
+
+            IsTimerShown(false);
+        }
     }
 
     private void Update()
     {
-        if (!IsOwner) return;
-        if (Input.GetKeyDown(KeyCode.Q) && canTp == true)
+        if (Main.Power == 1)
         {
-            teleportState = !teleportState;
+            if (!IsOwner) return;
+            if (Input.GetKeyDown(KeyCode.Q) && canTp == true)
+            {
+                teleportState = !teleportState;
+            }
         }
-        
     }
 
     void FixedUpdate()
     {
-        if (!IsOwner) return;
-
-        if (teleportState == true)
+        if (Main.Power == 1)
         {
-            gun.SetActive(false);
-            pointer.SetActive(true);
-            
-            Line();
+            if (!IsOwner) return;
 
-            if (Input.GetMouseButtonDown(0))
+            if (teleportState == true)
             {
-                Teleport();
-                IsTimerShown(true);
+                gun.SetActive(false);
+                pointer.SetActive(true);
 
-                cooldownActivated = true;
+                Line();
+
+                if (Input.GetMouseButtonDown(0))
+                {
+                    Teleport();
+                    IsTimerShown(true);
+
+                    cooldownActivated = true;
+                    pointer.SetActive(false);
+                    gun.SetActive(true);
+                    teleportState = false;
+                    CooldownTime = CooldownStartingValue;
+                    canTp = false;
+                    audioSource.Play();
+
+                }
+            }
+            else
+            {
                 pointer.SetActive(false);
                 gun.SetActive(true);
-                teleportState = false;
-                CooldownTime = CooldownStartingValue;
-                canTp = false;
-                audioSource.Play();
-                
-            }
-        }
-        else
-        {
-            pointer.SetActive(false);
-            gun.SetActive(true);
-            
-        }
 
-        if (cooldownActivated == true)
-        {
-            CoodlwonCountdown();
+            }
+
+            if (cooldownActivated == true)
+            {
+                CoodlwonCountdown();
+            }
         }
     }
 

@@ -1,6 +1,7 @@
+using Unity.Netcode;
 using UnityEngine;
 
-public class GraveInteraction : MonoBehaviour
+public class GraveInteraction : NetworkBehaviour
 {
     public GameObject interactionText;
     public GameObject grave;
@@ -16,6 +17,7 @@ public class GraveInteraction : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (!IsOwner) return;
         if (other.gameObject.tag == "Player")
         {
             interactionText.SetActive(true);
@@ -24,6 +26,7 @@ public class GraveInteraction : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        if (!IsOwner) return;
         if (other.gameObject.tag == "Player")
         {
             if (Input.GetKeyDown(KeyCode.E))
@@ -36,6 +39,7 @@ public class GraveInteraction : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        if (!IsOwner) return;
         if (other.gameObject.tag == "Player")
         {
             interactionText.SetActive(false);

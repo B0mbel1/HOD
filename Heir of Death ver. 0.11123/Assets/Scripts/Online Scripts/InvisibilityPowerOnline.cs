@@ -23,8 +23,11 @@ public class InvisibilityPowerOnline : NetworkBehaviour
 
     private void Start()
     {
-        audioSource.clip = invisibilitySound;
-        
+        if (!IsOwner) return;
+        if (Main.Power == 2)
+        {
+            audioSource.clip = invisibilitySound;
+
             UnlockTime = StartingValue;
             StartingValue = PowerTime;
             CooldownStartingValue = CooldownTime;
@@ -34,12 +37,14 @@ public class InvisibilityPowerOnline : NetworkBehaviour
             IsTimerShown(false);
             IsPowerActivated(false);
             isActivated = false;
-        
+        }
     }
 
     private void FixedUpdate()
     {
-        
+        if (!IsOwner) return;
+        if (Main.Power == 2)
+        {
             if (CanPressAbility && Input.GetKeyDown(KeyCode.Q))
             {
                 IsPowerActivated(true);
@@ -72,7 +77,7 @@ public class InvisibilityPowerOnline : NetworkBehaviour
             {
                 CoodlwonCountdown();
             }
-        
+        }
     }
 
     void CoodlwonCountdown()

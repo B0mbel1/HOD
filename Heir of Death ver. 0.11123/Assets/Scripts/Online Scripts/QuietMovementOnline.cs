@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 
 public class QuietMovementOnline : NetworkBehaviour
@@ -22,20 +23,25 @@ public class QuietMovementOnline : NetworkBehaviour
 
     void Start()
     {
-        audioSourcePower.clip = stealth;
-       
+        if(!IsOwner) return;   
+        if (Main.Power == 4)
+        {
+            audioSourcePower.clip = stealth;
+
             IsTimerShown(false);
             UnlockTime = StartingValue;
             StartingValue = PowerTime;
             CooldownStartingValue = CooldownTime;
             IsPowerActivated(false);
             isActivated = false;
-        
+        }
     }
 
     void FixedUpdate()
     {
-       
+        if (!IsOwner) return;
+        if (Main.Power == 4)
+        {
             if (CanPressAbility && Input.GetKeyDown(KeyCode.Q))
             {
                 IsPowerActivated(true);
@@ -68,7 +74,7 @@ public class QuietMovementOnline : NetworkBehaviour
             {
                 CoodlwonCountdown();
             }
-        
+        }
     }
 
     void IsPowerActivated(bool activation)

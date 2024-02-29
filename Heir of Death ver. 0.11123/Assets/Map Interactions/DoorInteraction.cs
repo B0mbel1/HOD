@@ -23,6 +23,7 @@ public class DoorInteraction : NetworkBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (!IsOwner) return;
         if (other.gameObject.tag == "Player")
         {
             interactionText.SetActive(true);
@@ -31,6 +32,7 @@ public class DoorInteraction : NetworkBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        if (!IsOwner) return;
         if (other.gameObject.tag == "Player")
         {
             if (Input.GetKeyDown(KeyCode.E))
@@ -43,6 +45,7 @@ public class DoorInteraction : NetworkBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        if (!IsOwner) return;
         if (other.gameObject.tag == "Player")
         {
             interactionText.SetActive(false);

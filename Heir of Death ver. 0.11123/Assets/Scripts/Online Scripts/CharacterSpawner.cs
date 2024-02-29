@@ -1,6 +1,7 @@
 using System.Linq;
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class CharacterSpawner : NetworkBehaviour
 {
@@ -30,7 +31,7 @@ public class CharacterSpawner : NetworkBehaviour
                 {
                     var characterSpawnPoint = RandomSpawnPoint();
                     spawnPointClient = characterSpawnPoint;
-                    var characterInstance = Instantiate(character.GameplayPrefab, characterSpawnPoint, Quaternion.identity);
+                    var characterInstance = Instantiate(character.GameplayPrefab, character.GameplayPrefab.transform.position, Quaternion.identity);
 
                     characterInstance.SpawnAsPlayerObject(client.Value.clientId);
 
@@ -52,7 +53,7 @@ public class CharacterSpawner : NetworkBehaviour
             if (hostCharacter != null)
             {
                 var hostSpawnPoint = RandomSpawnPoint();
-                var hostInstance = Instantiate(hostCharacter.GameplayPrefab, hostSpawnPoint, Quaternion.identity);
+                var hostInstance = Instantiate(hostCharacter.GameplayPrefab, hostCharacter.GameplayPrefab.transform.position, Quaternion.identity);
                 hostInstance.SpawnAsPlayerObject(hostClient.Value.clientId);
                 Debug.Log(hostClient.Value.clientId + " pozycja " + hostSpawnPoint.x + " " + hostSpawnPoint.y + " " + hostSpawnPoint.z);
             }
