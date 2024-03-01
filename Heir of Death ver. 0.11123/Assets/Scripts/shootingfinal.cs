@@ -9,7 +9,7 @@ public class shootingfinal : MonoBehaviour
     public float timeBetweenShooting, spread, range, reloadTime, timeBetweenShots;
     public int magazineSize, bulletsPerTap;
     public bool allowButtonHold;
-    public static int bulletsLeft;
+    public static int bulletsLeft1;
     int bulletsShot;
 
     //bools 
@@ -28,7 +28,7 @@ public class shootingfinal : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bulletsLeft = magazineSize;
+        bulletsLeft1 = magazineSize;
         readyToShoot = true;
         audioSource = GetComponent<AudioSource>();
 
@@ -48,10 +48,10 @@ public class shootingfinal : MonoBehaviour
                 if (allowButtonHold) shooting = Input.GetKey(KeyCode.Mouse0);
                 else shooting = Input.GetKeyDown(KeyCode.Mouse0);
 
-                if (Input.GetKeyDown(KeyCode.R) && bulletsLeft < magazineSize && !reloading) Reload();
+                if (Input.GetKeyDown(KeyCode.R) && bulletsLeft1 < magazineSize && !reloading) Reload();
 
                 //Shoot
-                if (readyToShoot && shooting && !reloading && bulletsLeft > 0)
+                if (readyToShoot && shooting && !reloading && bulletsLeft1 > 0)
                 {
                     bulletsShot = bulletsPerTap;
                     Shoot();
@@ -102,21 +102,18 @@ public class shootingfinal : MonoBehaviour
 
         audioSource.PlayOneShot(shootSound);
 
-        bulletsLeft--;
+        bulletsLeft1--;
         bulletsShot--;
 
         Invoke("ResetShot", timeBetweenShooting);
 
-        if (bulletsShot > 0 && bulletsLeft > 0)
+        if (bulletsShot > 0 && bulletsLeft1 > 0)
             Invoke("Shoot", timeBetweenShots);
-        if (bulletsLeft == 0)
+        if (bulletsLeft1 == 0)
         {
             Reload();
         }
     }
-
-
-
 
     private void ResetShot()
     {
@@ -131,7 +128,7 @@ public class shootingfinal : MonoBehaviour
     }
     private void ReloadFinished()
     {
-        bulletsLeft = magazineSize;
+        bulletsLeft1 = magazineSize;
         reloading = false;
     }
 }
