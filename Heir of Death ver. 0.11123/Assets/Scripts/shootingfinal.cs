@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class shootingfinal : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class shootingfinal : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
     public float bulletSpeed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -78,19 +80,21 @@ public class shootingfinal : MonoBehaviour
 
             // Ustaw prêdkoœæ pocisku w kierunku miejsca, gdzie raycast trafi³
             Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
+
             bulletRigidbody.velocity = directionToMouse * bulletSpeed;
             obrazeniaOK czyOK = hit.collider.GetComponent<obrazeniaOK>();
-            if (czyOK != null)
-            {
-                if (BetterAmmoScript.isBetterAmmoActivated == true)
-                {
-                    czyOK.zadajObrazenia(damage + 3);
-                }
-                else
-                {
-                    czyOK.zadajObrazenia(damage);
-                }
-            }
+
+            //if (czyOK != null)
+            //{
+            //    if (BetterAmmoScript.isBetterAmmoActivated == true)
+            //    {
+            //        czyOK.zadajObrazenia(damage + 3);
+            //    }
+            //    else
+            //    {
+            //        czyOK.zadajObrazenia(damage);
+            //    }
+            //}
         }
         else
         {
@@ -113,6 +117,9 @@ public class shootingfinal : MonoBehaviour
         {
             Reload();
         }
+
+
+
     }
 
     private void ResetShot()

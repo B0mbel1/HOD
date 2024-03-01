@@ -49,7 +49,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float damage)
+    public static void TakeDamage(float damage)
     {
         health -= damage;
         lerpTimer = 0f;

@@ -15,6 +15,7 @@ public class ChangeGunsAmmo : MonoBehaviour
     {
         gun1.GetComponent<GameObject>();
         gun2.GetComponent<GameObject>();
+
         ammo1.GetComponent<GameObject>();
         ammo2.GetComponent<GameObject>();
     }
