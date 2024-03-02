@@ -8,42 +8,93 @@ public class BulletDamage : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
+        
         if (other.gameObject.tag == "Reka")
         {
-            Debug.Log("Git");
-
-            // SprawdŸ czy obiekt, z którym kula siê zderza, ma komponent zadaj¹cy obra¿enia
+            Debug.Log("Reka");
             obrazeniaOK obrazeniaComponent = other.GetComponent<obrazeniaOK>();
 
-
-            // Jeœli komponent istnieje, zadaj obra¿enia
             if (obrazeniaComponent != null)
             {
                 if (BetterAmmoScript.isBetterAmmoActivated == true)
                 {
                     obrazeniaComponent.zadajObrazenia(damage + 3);
-
+                    DestroyBullet();
                 }
                 else
                 {
                     PlayerHealth.TakeDamage(10f);
+                    DestroyBullet();
                     //obrazeniaComponent.zadajObrazenia(damage);
                 }
-
-
             }
         }
 
-        //if (other.CompareTag("Reka"))
-        //{
-            
-        //}
-    }
+        if (other.gameObject.tag == "Glowa")
+        {
+            Debug.Log("HEDSZOT");
 
-    public void ZadawaneObrazenia()
-    {
+            obrazeniaOK obrazeniaComponent = other.GetComponent<obrazeniaOK>();
+  
+            if (obrazeniaComponent != null)
+            {
+                if (BetterAmmoScript.isBetterAmmoActivated == true)
+                {
+                    obrazeniaComponent.zadajObrazenia(damage + 3);
+                    DestroyBullet();
 
+                }
+                else
+                {
+                    PlayerHealth.TakeDamage(50f);
+                    //obrazeniaComponent.zadajObrazenia(damage);
+                    DestroyBullet();
+                }
+            }
+        }
+
+        if (other.gameObject.tag == "Tors")
+        {
+            Debug.Log("Bêben");
+
+            obrazeniaOK obrazeniaComponent = other.GetComponent<obrazeniaOK>();
+
+            if (obrazeniaComponent != null)
+            {
+                if (BetterAmmoScript.isBetterAmmoActivated == true)
+                {
+                    obrazeniaComponent.zadajObrazenia(damage + 3);
+                    DestroyBullet();
+                }
+                else
+                {
+                    PlayerHealth.TakeDamage(50f);
+                    DestroyBullet();
+                    //obrazeniaComponent.zadajObrazenia(damage);
+                }
+            }
+        }
+
+        if (other.gameObject.tag == "Noga")
+        {
+            Debug.Log("Gira");
+
+            obrazeniaOK obrazeniaComponent = other.GetComponent<obrazeniaOK>();
+
+            if (obrazeniaComponent != null)
+            {
+                if (BetterAmmoScript.isBetterAmmoActivated == true)
+                {
+                    obrazeniaComponent.zadajObrazenia(damage + 3);
+                    DestroyBullet();
+                }
+                else
+                {
+                    PlayerHealth.TakeDamage(50f);
+                    DestroyBullet();
+                }
+            }
+        }
     }
 
     private void DestroyBullet()
@@ -53,6 +104,6 @@ public class BulletDamage : MonoBehaviour
 
     public void Update()
     {
-        Invoke("DestroyBullet", 2);
+        Invoke("DestroyBullet", 0.1f);
     }
 }

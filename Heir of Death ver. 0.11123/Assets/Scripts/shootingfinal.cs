@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.TextCore.Text;
 
 public class shootingfinal : MonoBehaviour
@@ -41,6 +42,7 @@ public class shootingfinal : MonoBehaviour
     {
         MyInput();
     }
+
     private void MyInput()
     {
         if (!MenuPauzy.GameIsPaused)
@@ -61,7 +63,6 @@ public class shootingfinal : MonoBehaviour
             }
         }
     }
-
     void Shoot()
     {
         readyToShoot = false;
@@ -75,33 +76,24 @@ public class shootingfinal : MonoBehaviour
         // SprawdŸ, czy raycast trafi³ w coœ
         if (Physics.Raycast(ray, out hit))
         {
-            // Oblicz kierunek od pocisku do miejsca, gdzie raycast trafi³
-            Vector3 directionToMouse = (hit.point - bulletSpawn.position).normalized;
-
-            // Ustaw prêdkoœæ pocisku w kierunku miejsca, gdzie raycast trafi³
+            // Oblicz kierunek do miejsca trafienia
+            Vector3 targetPosition = hit.point;
             Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
 
-            bulletRigidbody.velocity = directionToMouse * bulletSpeed;
-            obrazeniaOK czyOK = hit.collider.GetComponent<obrazeniaOK>();
-
-            //if (czyOK != null)
-            //{
-            //    if (BetterAmmoScript.isBetterAmmoActivated == true)
-            //    {
-            //        czyOK.zadajObrazenia(damage + 3);
-            //    }
-            //    else
-            //    {
-            //        czyOK.zadajObrazenia(damage);
-            //    }
-            //}
+            // Przemieszczaj pocisk stopniowo w kierunku celu
+            StartCoroutine(MoveBulletToPosition(bulletRigidbody, targetPosition, bulletSpeed));
         }
         else
         {
             // Jeœli raycast nie trafi³ w nic, pocisk bêdzie lecia³ w kierunku kursora myszy
             Vector3 directionToMouse = (ray.origin + ray.direction * 100f - bulletSpawn.position).normalized;
             Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
-            bulletRigidbody.velocity = directionToMouse * bulletSpeed;
+
+            // Oblicz docelow¹ pozycjê pocisku
+            Vector3 targetPosition = bulletSpawn.position + directionToMouse * 100f;
+
+            // Przemieszczaj pocisk stopniowo w kierunku celu
+            StartCoroutine(MoveBulletToPosition(bulletRigidbody, targetPosition, bulletSpeed));
         }
 
         audioSource.PlayOneShot(shootSound);
@@ -117,11 +109,22 @@ public class shootingfinal : MonoBehaviour
         {
             Reload();
         }
-
-
-
     }
 
+    IEnumerator MoveBulletToPosition(Rigidbody bulletRigidbody, Vector3 targetPosition, float speed)
+    {
+        while (Vector3.Distance(bulletRigidbody.position, targetPosition) > 0.1f)
+        {
+            // Oblicz kierunek do celu
+            Vector3 direction = (targetPosition - bulletRigidbody.position).normalized;
+
+            // Przemieszczaj pocisk w kierunku celu
+            bulletRigidbody.MovePosition(bulletRigidbody.position + direction * speed * Time.deltaTime);
+
+            yield return null;
+        }
+    }
+    
     private void ResetShot()
     {
         readyToShoot = true;

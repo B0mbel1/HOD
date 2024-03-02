@@ -5,13 +5,9 @@ public class RemedyUsage : MonoBehaviour
     public GameObject remedy;
     public GameObject pickUptext;
 
-    public AudioClip pickupSound;
-    public AudioSource pickupSource;
-
     private void Start()
     {
         pickUptext.SetActive(false);
-        pickupSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
