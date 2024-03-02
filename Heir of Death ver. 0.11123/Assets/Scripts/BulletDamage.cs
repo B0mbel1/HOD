@@ -4,95 +4,68 @@ using UnityEngine;
 
 public class BulletDamage : MonoBehaviour
 {
-    public int damage = 10; // Moc obra¿eñ zadawanych przez kulê
-
     private void OnTriggerEnter(Collider other)
     {
-        
+        obrazeniaOK obrazeniaComponent = other.GetComponent<obrazeniaOK>();
+
+        //if (obrazeniaComponent != null)
+        //{
+        //   
+        //}
+
         if (other.gameObject.tag == "Reka")
         {
-            Debug.Log("Reka");
-            obrazeniaOK obrazeniaComponent = other.GetComponent<obrazeniaOK>();
-
-            if (obrazeniaComponent != null)
+            if (BetterAmmoScript.isBetterAmmoActivated == true)
             {
-                if (BetterAmmoScript.isBetterAmmoActivated == true)
-                {
-                    obrazeniaComponent.zadajObrazenia(damage + 3);
-                    DestroyBullet();
-                }
-                else
-                {
-                    PlayerHealth.TakeDamage(10f);
-                    DestroyBullet();
-                    //obrazeniaComponent.zadajObrazenia(damage);
-                }
+                PlayerHealth.TakeDamage(15);
+                DestroyBullet();
+            }
+            if(BetterAmmoScript.isBetterAmmoActivated == false)
+            {
+                PlayerHealth.TakeDamage(12);
+                DestroyBullet();
             }
         }
 
         if (other.gameObject.tag == "Glowa")
         {
-            Debug.Log("HEDSZOT");
-
-            obrazeniaOK obrazeniaComponent = other.GetComponent<obrazeniaOK>();
-  
-            if (obrazeniaComponent != null)
+            if (BetterAmmoScript.isBetterAmmoActivated == true)
             {
-                if (BetterAmmoScript.isBetterAmmoActivated == true)
-                {
-                    obrazeniaComponent.zadajObrazenia(damage + 3);
-                    DestroyBullet();
-
-                }
-                else
-                {
-                    PlayerHealth.TakeDamage(50f);
-                    //obrazeniaComponent.zadajObrazenia(damage);
-                    DestroyBullet();
-                }
+                PlayerHealth.TakeDamage(33);
+                DestroyBullet();
+            }
+            if (BetterAmmoScript.isBetterAmmoActivated == false)
+            {
+                PlayerHealth.TakeDamage(30);
+                DestroyBullet();
             }
         }
 
         if (other.gameObject.tag == "Tors")
         {
-            Debug.Log("Bêben");
-
-            obrazeniaOK obrazeniaComponent = other.GetComponent<obrazeniaOK>();
-
-            if (obrazeniaComponent != null)
+            if (BetterAmmoScript.isBetterAmmoActivated == true)
             {
-                if (BetterAmmoScript.isBetterAmmoActivated == true)
-                {
-                    obrazeniaComponent.zadajObrazenia(damage + 3);
-                    DestroyBullet();
-                }
-                else
-                {
-                    PlayerHealth.TakeDamage(50f);
-                    DestroyBullet();
-                    //obrazeniaComponent.zadajObrazenia(damage);
-                }
+                PlayerHealth.TakeDamage(23);
+                DestroyBullet();
+            }
+            if (BetterAmmoScript.isBetterAmmoActivated == false)
+            {
+                PlayerHealth.TakeDamage(20);
+                DestroyBullet();
             }
         }
 
         if (other.gameObject.tag == "Noga")
         {
-            Debug.Log("Gira");
-
-            obrazeniaOK obrazeniaComponent = other.GetComponent<obrazeniaOK>();
-
-            if (obrazeniaComponent != null)
+            if (BetterAmmoScript.isBetterAmmoActivated == true)
             {
-                if (BetterAmmoScript.isBetterAmmoActivated == true)
-                {
-                    obrazeniaComponent.zadajObrazenia(damage + 3);
-                    DestroyBullet();
-                }
-                else
-                {
-                    PlayerHealth.TakeDamage(50f);
-                    DestroyBullet();
-                }
+                PlayerHealth.TakeDamage(18);
+                DestroyBullet();
+            }
+            if (BetterAmmoScript.isBetterAmmoActivated == false)
+            {
+                PlayerHealth.TakeDamage(15);
+                DestroyBullet();
             }
         }
     }

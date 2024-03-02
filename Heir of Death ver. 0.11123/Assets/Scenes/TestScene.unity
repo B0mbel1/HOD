@@ -1479,7 +1479,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5032589732647218896, guid: 23ca44aa2b1501747b8e7dc0f85f97df, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Reka
       objectReference: {fileID: 0}
     - target: {fileID: 5181653983524528751, guid: 23ca44aa2b1501747b8e7dc0f85f97df, type: 3}
       propertyPath: m_TagString
@@ -1763,7 +1763,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5743693669157028946, guid: 071edfcc86142a747b6b57f2ad082cea, type: 3}
       propertyPath: damage
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5743693669157028946, guid: 071edfcc86142a747b6b57f2ad082cea, type: 3}
       propertyPath: character
