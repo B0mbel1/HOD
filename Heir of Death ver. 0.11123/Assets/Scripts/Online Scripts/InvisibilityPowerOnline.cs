@@ -14,13 +14,14 @@ public class InvisibilityPowerOnline : NetworkBehaviour
     public float CooldownTime;
     public float CooldownStartingValue;
     public float UnlockTime;
-
+    
     public bool isActivated;
     public bool CanPressAbility = true;
-
+    public NetworkVariable<bool> isRendererActive;
+    //public NetworkVariable<Renderer> rendereronline;
     public AudioSource audioSource;
     public AudioClip invisibilitySound;
-
+    NetworkObject netObject;
     private void Start()
     {
         if (!IsOwner) return;
@@ -32,8 +33,8 @@ public class InvisibilityPowerOnline : NetworkBehaviour
             StartingValue = PowerTime;
             CooldownStartingValue = CooldownTime;
 
-            playerRenderer = GetComponent<Renderer>();
-
+            playerRenderer = GetComponentInChildren<Renderer>();
+            
             IsTimerShown(false);
             IsPowerActivated(false);
             isActivated = false;
@@ -43,6 +44,10 @@ public class InvisibilityPowerOnline : NetworkBehaviour
     private void FixedUpdate()
     {
         if (!IsOwner) return;
+        if (IsClient)
+        {
+            OnRendererChangedClientRpc(isRendererActive.Value);
+        }
         if (Main.Power == 2)
         {
             if (CanPressAbility && Input.GetKeyDown(KeyCode.Q))
@@ -96,13 +101,16 @@ public class InvisibilityPowerOnline : NetworkBehaviour
     {
         if (activation == true)
         {
+            SendRendererCurrentServerRpc(false);
             playerRenderer.enabled = false;
             isActivated = true;
+            
         }
         else
         {
-            playerRenderer.enabled = true;
+            SendRendererCurrentServerRpc(true);
             isActivated = false;
+            playerRenderer.enabled = true;
         }
     }
 
@@ -126,5 +134,30 @@ public class InvisibilityPowerOnline : NetworkBehaviour
         float seconds = Mathf.FloorToInt(currentTime % 60);
 
         PowerTimer.text = string.Format("{0:00} : {1:00}", minutes, seconds);
+    }
+
+    void InvisibilityOn()
+    {
+        playerRenderer.enabled = false;
+
+    }
+    void InvisibilityOff()
+    {
+        playerRenderer.enabled = true;
+        
+    }
+
+    [ServerRpc]
+    void SendRendererCurrentServerRpc(bool czy)
+    {
+        playerRenderer.enabled = czy;
+        isRendererActive.Value = czy;
+    }
+
+    [ClientRpc]
+    void OnRendererChangedClientRpc(bool newvar)
+    {
+        isRendererActive.Value = newvar;
+        playerRenderer.enabled = newvar;
     }
 }

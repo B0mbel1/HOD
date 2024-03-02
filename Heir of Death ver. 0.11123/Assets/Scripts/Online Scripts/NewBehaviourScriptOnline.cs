@@ -18,7 +18,7 @@ public class NewBehaviourScriptOnline : NetworkBehaviour
         MenuPauzy.GameIsPaused = false;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (!IsOwner && !IsLocalPlayer) return;
         float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
