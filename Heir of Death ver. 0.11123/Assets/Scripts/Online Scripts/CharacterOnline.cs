@@ -6,12 +6,14 @@ public class CharacterOnline : ScriptableObject
 {
     [SerializeField] private int id = -1;
     [SerializeField] private string displayName = "New Display Name";
+    [SerializeField] private string displayBio = "New Display Bio";
     [SerializeField] private Sprite icon;
     [SerializeField] private GameObject introPrefab;
     [SerializeField] private NetworkObject gameplayPrefab;
 
     public int Id => id;
     public string DisplayName => displayName;
+    public string DisplayBio => displayBio;
     public Sprite Icon => icon;
 
     public GameObject IntroPrefab => introPrefab;

@@ -20,7 +20,7 @@ public class SlidingOnline : NetworkBehaviour
     private float startYScale;
 
     [Header("Keybinds")]
-    public KeyCode slideKey = KeyCode.LeftControl;
+    public KeyCode slideKey = KeyCode.LeftAlt;
     private float horizontalInput;
     private float verticalInput;
 
