@@ -1,23 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class AmmoDisplaying : MonoBehaviour
 {
-
     public Text ammo;
+
+    [SerializeField] private GameObject gun1;
+    //public static int gun1Ammo;
 
     void Start()
     {
         ammo = GetComponent<Text>();
     }
 
-    //GunSystem gunsystem;
-    shootingfinal shooting_final;
     void Update()
     {
-       ammo.text = GunSystemOnline.bulletsLeft.ToString();
-        //ammo.text = shootingfinal.bulletsLeft.ToString();
+        ammo.text = shootingfinal.bulletsLeft1.ToString();  
     }
 }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 697651014157221996}
   - component: {fileID: 4202308909095037168}
   - component: {fileID: 6822338575200743504}
+  - component: {fileID: 5300069803075435369}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -36,6 +37,7 @@ RectTransform:
   - {fileID: 7593137566166538505}
   - {fileID: 7928885739798006414}
   - {fileID: 9074328530551019068}
+  - {fileID: 3035597999578061408}
   - {fileID: 4085878376335451948}
   m_Father: {fileID: 3011345893718789671}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -107,6 +109,22 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &5300069803075435369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127356270372474736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b2d9fb04590334387d772a9e802170, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gun1: {fileID: 0}
+  gun2: {fileID: 0}
+  ammo1: {fileID: 6821828309120526527}
+  ammo2: {fileID: 2041024394326985782}
 --- !u!1 &496068792080272884
 GameObject:
   m_ObjectHideFlags: 0
@@ -317,6 +335,100 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &2041024394326985782
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3035597999578061408}
+  - component: {fileID: 1732892846341108247}
+  - component: {fileID: 7320062264411745424}
+  - component: {fileID: 7435915038155686191}
+  m_Layer: 5
+  m_Name: Ammo2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3035597999578061408
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041024394326985782}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2148625897427982325}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 778, y: -474}
+  m_SizeDelta: {x: 195.8327, y: 54.0145}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1732892846341108247
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041024394326985782}
+  m_CullTransparentMesh: 1
+--- !u!114 &7320062264411745424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041024394326985782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 40
+    m_FontStyle: 3
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: New Text
+--- !u!114 &7435915038155686191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041024394326985782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d31d53894e7f8e4390d853a2fb0eaee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammo: {fileID: 7320062264411745424}
+  gun1: {fileID: 0}
 --- !u!1 &2167817230289297634
 GameObject:
   m_ObjectHideFlags: 0
@@ -997,6 +1109,8 @@ MonoBehaviour:
   playerRigidbody: {fileID: 0}
   restingSize: 75
   maxSize: 100
+  zoomedSize: 25
+  zoomedSize2: 60
   speed: 2
 --- !u!1 &6665306001632507266
 GameObject:
@@ -1166,6 +1280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammo: {fileID: 8941748437062979355}
+  gun1: {fileID: 0}
 --- !u!1 &7602589824402196679
 GameObject:
   m_ObjectHideFlags: 0

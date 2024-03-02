@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Reka
+  - Noga
+  - Tors
+  - Glowa
   layers:
   - Default
   - TransparentFX
