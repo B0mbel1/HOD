@@ -9,7 +9,7 @@ public class GunSystemOnline : NetworkBehaviour
     public bool allowButtonHold;
     public static int bulletsLeft;
     int bulletsShot;
-    
+    public GameObject Pointer;
     bool shooting, reloading;
     bool readyToShoot;
     public Camera fpsCam;
@@ -35,7 +35,9 @@ public class GunSystemOnline : NetworkBehaviour
         if (!IsOwner) { return; }
 
         
-        MyInput();
+            MyInput();
+        
+            
         
             
     }
@@ -45,8 +47,7 @@ public class GunSystemOnline : NetworkBehaviour
         if (!MenuPauzy.GameIsPaused)
         {
 
-            if (!FreeTeleportationOnline.teleportState)
-            {
+            
                 if (allowButtonHold)
                 {
                     shooting = Input.GetKey(KeyCode.Mouse0);
@@ -67,8 +68,8 @@ public class GunSystemOnline : NetworkBehaviour
                     bulletsShot = bulletsPerTap;
                     Shoot();
                 }
-            }
 
+            
 
         }
     }

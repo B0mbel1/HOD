@@ -336,6 +336,7 @@ MonoBehaviour:
   magazineSize: 10
   bulletsPerTap: 1
   allowButtonHold: 1
+  Pointer: {fileID: 0}
   fpsCam: {fileID: 8587178065644207113}
   shootSound: {fileID: 8300000, guid: bf4fae68ea0966044962ac4e23e527e8, type: 3}
   reloadSound: {fileID: 8300000, guid: ea29e86108f09fa48a3d7e6fdd469b6d, type: 3}
@@ -3292,7 +3293,7 @@ Transform:
   m_GameObject: {fileID: 7366019331335905338}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 127.73, y: 32.9, z: 115.46}
+  m_LocalPosition: {x: 127.73, y: 33.5, z: 115.46}
   m_LocalScale: {x: 0.95, y: 0.95, z: 0.95}
   m_ConstrainProportionsScale: 0
   m_Children:

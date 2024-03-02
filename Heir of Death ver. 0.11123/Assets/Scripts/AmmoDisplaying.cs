@@ -17,7 +17,7 @@ public class AmmoDisplaying : MonoBehaviour
     shootingfinal shooting_final;
     void Update()
     {
-       // ammo.text = GunSystem.bulletsLeft.ToString();
-        ammo.text = shootingfinal.bulletsLeft.ToString();
+       ammo.text = GunSystemOnline.bulletsLeft.ToString();
+        //ammo.text = shootingfinal.bulletsLeft.ToString();
     }
 }

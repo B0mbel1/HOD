@@ -26,4 +26,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SelectCharacter.unity
     guid: 9cea3f20f2a0cb8478e0aabbe18ff7b2
+  - enabled: 1
+    path: Assets/Scenes/ForestOnline.unity
+    guid: 5dc59efb1f7a7d5438c0b866dc596461
+  - enabled: 1
+    path: Assets/Scenes/TrenchesOnline.unity
+    guid: a6ae7ecb04e0eb544bd997bf44ce77f3
   m_configObjects: {}

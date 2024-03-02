@@ -9,7 +9,7 @@ public class ServerManager : MonoBehaviour
     public Dictionary<ulong, ClientData> ClientData { get; private set; }
     private bool gameHasStarted;
 
-    [SerializeField] private string gameplaySceneName = "Forest";
+    [SerializeField] private string gameplaySceneName = "ForestOnline";
     [SerializeField] private string characterSelectSceneName = "SelectCharacter";
 
     private void Awake()

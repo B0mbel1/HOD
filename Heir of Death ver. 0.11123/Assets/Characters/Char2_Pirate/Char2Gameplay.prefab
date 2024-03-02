@@ -607,6 +607,7 @@ GameObject:
   - component: {fileID: 6640098494317767194}
   - component: {fileID: 4954487897023678299}
   - component: {fileID: 6040659569907727303}
+  - component: {fileID: 6389015214151739870}
   m_Layer: 0
   m_Name: Char2Gameplay
   m_TagString: Untagged
@@ -623,7 +624,7 @@ Transform:
   m_GameObject: {fileID: 1370538760696813027}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 121.884, y: 32.9, z: 132.39}
+  m_LocalPosition: {x: 121.884, y: 33.5, z: 132.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1075,6 +1076,29 @@ MonoBehaviour:
   door: {fileID: 0}
   doorSound: {fileID: 8300000, guid: 1b3f4a54430380f45a00e9d2adbcb2ec, type: 3}
   doorSource: {fileID: 0}
+--- !u!114 &6389015214151739870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370538760696813027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b6a45fa608a3ff4e958718057fb9491, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PowerTimer: {fileID: 2678926965143819321}
+  PowerTime: 3
+  StartingValue: 0
+  CooldownTime: 10
+  CooldownStartingValue: 0
+  UnlockTime: 0
+  active: 0
+  isActivated: 0
+  CanPressAbility: 1
+  audioSource: {fileID: 0}
+  invisibilitySound: {fileID: 0}
 --- !u!1 &1373518027538995736
 GameObject:
   m_ObjectHideFlags: 0
@@ -2241,7 +2265,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3935224811353803538}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b6a45fa608a3ff4e958718057fb9491, type: 3}
   m_Name: 
@@ -2252,6 +2276,7 @@ MonoBehaviour:
   CooldownTime: 10
   CooldownStartingValue: 0
   UnlockTime: 0
+  active: 0
   isActivated: 0
   CanPressAbility: 1
   audioSource: {fileID: 4856773005810138063}
@@ -3790,7 +3815,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6516835470644473762}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b6a45fa608a3ff4e958718057fb9491, type: 3}
   m_Name: 
@@ -3801,6 +3826,7 @@ MonoBehaviour:
   CooldownTime: 10
   CooldownStartingValue: 0
   UnlockTime: 0
+  active: 0
   isActivated: 0
   CanPressAbility: 1
   audioSource: {fileID: 4856773005810138063}
@@ -4141,6 +4167,7 @@ MonoBehaviour:
   magazineSize: 10
   bulletsPerTap: 1
   allowButtonHold: 1
+  Pointer: {fileID: 0}
   fpsCam: {fileID: 8060259704119935742}
   shootSound: {fileID: 8300000, guid: bf4fae68ea0966044962ac4e23e527e8, type: 3}
   reloadSound: {fileID: 8300000, guid: ea29e86108f09fa48a3d7e6fdd469b6d, type: 3}

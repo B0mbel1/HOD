@@ -9,6 +9,7 @@ public class CharacterSelectDisplay : NetworkBehaviour
     private NetworkList<CharacterSelectState> players;
     [SerializeField] private GameObject characterInfoPanel;
     [SerializeField] private TMP_Text characterNameText;
+    [SerializeField] private TMP_Text characterBioText;
     [SerializeField] private CharacterDatabase characterDatabase;
     [SerializeField] private Transform charactersHolder;
     [SerializeField] private CharacterSelectButton selectButtonPrefab;
@@ -94,6 +95,8 @@ public class CharacterSelectDisplay : NetworkBehaviour
         }
 
         characterNameText.text = character.DisplayName;
+
+        characterBioText.text = character.DisplayBio;
 
         characterInfoPanel.SetActive(true);
 

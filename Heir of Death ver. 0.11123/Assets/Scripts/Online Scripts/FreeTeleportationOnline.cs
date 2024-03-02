@@ -48,7 +48,10 @@ public class FreeTeleportationOnline : NetworkBehaviour
             if (Input.GetKeyDown(KeyCode.Q) && canTp == true)
             {
                 teleportState = !teleportState;
+                
             }
+            gun.SetActive(!teleportState);
+            pointer.SetActive(teleportState);
         }
     }
 
@@ -60,45 +63,35 @@ public class FreeTeleportationOnline : NetworkBehaviour
 
             if (teleportState == true)
             {
-                gun.SetActive(false);
-                pointer.SetActive(true);
-
+                
+                
                 Line();
 
-                if (Input.GetMouseButtonDown(0))
+                if (Input.GetKeyUp(KeyCode.Q))
                 {
-                    Teleport();
-                    IsTimerShown(true);
                     
-                    cooldownActivated = true;
-                    pointer.SetActive(false);
-                    gun.SetActive(true);
-                    StartCoroutine(waitWithTPstate());
-                    CooldownTime = CooldownStartingValue;
-                    canTp = false;
-                    audioSource.Play();
-
+                    Teleport();
+                    
+                    
                 }
-            }
-            else
-            {
-                pointer.SetActive(false);
-                gun.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.Mouse1))
+                {
+                    teleportState = false;
+                }
 
             }
+            
 
             if (cooldownActivated == true)
             {
                 CoodlwonCountdown();
+                
+
             }
         }
     }
 
-    IEnumerator waitWithTPstate()
-    {
-        yield return new WaitForSeconds(0.1f);
-        teleportState = false;
-    }
+    
 
     void Line()
     {
@@ -115,6 +108,15 @@ public class FreeTeleportationOnline : NetworkBehaviour
     void Teleport()
     {
         transform.position = teleportationSpot.transform.position;
+        IsTimerShown(true);
+        cooldownActivated = true;
+        
+
+        CooldownTime = CooldownStartingValue;
+        canTp = false;
+        audioSource.Play();
+        teleportState = false;
+        
         Debug.Log(teleportationSpot.transform.position);
     }
 
