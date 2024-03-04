@@ -976,8 +976,10 @@ GameObject:
   - component: {fileID: 4615816275408651985}
   - component: {fileID: 849480880160660194}
   - component: {fileID: 3183491344540075608}
+  - component: {fileID: 7297098505485598136}
   - component: {fileID: 7193512334870827583}
   - component: {fileID: 5178390385685946411}
+  - component: {fileID: 5531656100364577025}
   m_Layer: 0
   m_Name: AniCh3
   m_TagString: Untagged
@@ -1011,7 +1013,7 @@ Animator:
   m_GameObject: {fileID: 2044204743951857863}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 040de8544bdeab645b65694de761d55d, type: 3}
-  m_Controller: {fileID: 9100000, guid: 7e215b6bfb96ab9488f1cd377372414a, type: 2}
+  m_Controller: {fileID: 9100000, guid: 276b18a74856ea44eb13faeba1d28ee4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1029,9 +1031,21 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2044204743951857863}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eec611b770c8ea64abdf29470498c00f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7297098505485598136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2044204743951857863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 742f6699aec550847809ef7f4ee8b605, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &7193512334870827583
@@ -1062,6 +1076,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gun1: {fileID: 2453866719827625075}
   gun2: {fileID: 4518086769103066041}
+--- !u!114 &5531656100364577025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2044204743951857863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5157105814cc1a44fb93409a83de8391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 849480880160660194}
+  rifleanimations: {fileID: 9100000, guid: 152b84ef106f8124d90d130a1a31564f, type: 2}
+  gunanimations: {fileID: 9100000, guid: 276b18a74856ea44eb13faeba1d28ee4, type: 2}
 --- !u!1 &2098708389285618120
 GameObject:
   m_ObjectHideFlags: 0
