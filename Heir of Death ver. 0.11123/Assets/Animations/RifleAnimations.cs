@@ -1,6 +1,3 @@
-using JetBrains.Annotations;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RifleAnimations : MonoBehaviour
@@ -18,12 +15,11 @@ public class RifleAnimations : MonoBehaviour
     void Update()
     {
         bool isRunning = animator.GetBool("isRunning");
+        bool shooting = animator.GetBool("shooting");
         bool isSprinting = animator.GetBool("isSprinting");
         bool isCrouching = animator.GetBool("isCrouching");
         bool Backward = animator.GetBool("Backward");
         bool Jump = animator.GetBool("Jump");
-        bool BackwardLeft = animator.GetBool("BackwardLeft");
-        bool BackwardRight = animator.GetBool("BackwardRight");
         bool ForwardLeft = animator.GetBool("ForwardLeft");
         bool ForwardRight = animator.GetBool("ForwardRight");
         bool Left = animator.GetBool("Left");
@@ -36,6 +32,8 @@ public class RifleAnimations : MonoBehaviour
         bool sprintPressed = Input.GetKey("left shift");
         bool crouchPressed = Input.GetKey("left ctrl");
         bool jumpPressed = Input.GetKey("space");
+        bool altPressed = Input.GetKey("left alt");
+        bool LPMPressed = Input.GetKey("mouse 0");
 
         if (!isRunning && forwardPressed)
         {
@@ -44,6 +42,14 @@ public class RifleAnimations : MonoBehaviour
         if (isRunning && !forwardPressed)
         {
             animator.SetBool("isRunning", false);
+        }
+        if (!shooting && LPMPressed)
+        {
+           animator.SetBool("shooting", true);
+        }
+        if (shooting && !LPMPressed)
+        {
+            animator.SetBool("shooting", false);
         }
         if (!isCrouching && crouchPressed)
         {
@@ -86,11 +92,11 @@ public class RifleAnimations : MonoBehaviour
         {
             animator.SetBool("isCrouching", false);
         }
-        if (isRunning && !WtC && crouchPressed)
+        if (isSprinting && (!WtC && altPressed))
         {
             animator.SetBool("WtC", true);
         }
-        if (isRunning && WtC && !crouchPressed)
+        if (isSprinting && (WtC && !altPressed))
         {
             animator.SetBool("WtC", false);
         }

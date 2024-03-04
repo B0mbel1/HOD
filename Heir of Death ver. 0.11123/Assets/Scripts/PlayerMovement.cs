@@ -7,6 +7,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+
+    bool altPressed = Input.GetKey("left alt");
+    bool sprintPressed = Input.GetKey("left shift");
     [Header("Walking")]
     private float moveSpeed;
     public float walkSpeed;
@@ -164,7 +167,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void StateHandler()
     {
-        if (sliding)
+        if (sprintPressed && altPressed)
         {
             state = MovementState.sliding;
 
