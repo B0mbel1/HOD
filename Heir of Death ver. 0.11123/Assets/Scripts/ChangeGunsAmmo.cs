@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ChangeGunsAmmo : MonoBehaviour
@@ -25,13 +26,13 @@ public class ChangeGunsAmmo : MonoBehaviour
     {
         if (gun1.activeSelf == true && gun2.activeSelf == false)
         {
-            ammo1.active = true;
-            ammo2.active = false;
+            ammo1.gameObject.SetActive(true);
+            ammo2.gameObject.SetActive(false);
         }
         if (gun2.activeSelf == true && gun1.activeSelf == false)
         {
-            ammo2.active = true;
-            ammo1.active = false;
+            ammo2.gameObject.SetActive(true);
+            ammo1.gameObject.SetActive(false);
         }
     }
 }

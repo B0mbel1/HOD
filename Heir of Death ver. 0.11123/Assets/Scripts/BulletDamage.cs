@@ -77,6 +77,6 @@ public class BulletDamage : MonoBehaviour
 
     public void Update()
     {
-        Invoke("DestroyBullet", 0.1f);
+        //Invoke("DestroyBullet", 2);
     }
 }

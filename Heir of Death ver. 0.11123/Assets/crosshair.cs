@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class crosshair : MonoBehaviour
+public class crosshair : NetworkBehaviour
 {
     private RectTransform reticle; // The RecTransform of reticle UI element.
 
@@ -24,7 +25,7 @@ public class crosshair : MonoBehaviour
 
     private void Update()
     {
-
+        if (!IsOwner) { return; }
         // Check if player is currently moving and Lerp currentSize to the appropriate value.
         if (isMoving && !Input.GetMouseButton(1))
         {
