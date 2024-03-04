@@ -346,7 +346,7 @@ GameObject:
   - component: {fileID: 3035597999578061408}
   - component: {fileID: 1732892846341108247}
   - component: {fileID: 7320062264411745424}
-  - component: {fileID: 7435915038155686191}
+  - component: {fileID: 6174220464272639904}
   m_Layer: 5
   m_Name: Ammo2
   m_TagString: Untagged
@@ -415,7 +415,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: New Text
---- !u!114 &7435915038155686191
+--- !u!114 &6174220464272639904
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -424,11 +424,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2041024394326985782}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d31d53894e7f8e4390d853a2fb0eaee, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f11d35ebdbd5004095b080ca4869ad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammo: {fileID: 7320062264411745424}
-  gun1: {fileID: 0}
+  ammo2: {fileID: 7320062264411745424}
+  gun2: {fileID: 0}
 --- !u!1 &2167817230289297634
 GameObject:
   m_ObjectHideFlags: 0

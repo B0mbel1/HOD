@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Trenches.unity
     guid: 7327d1871e433064a93cddee0f525670
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TestScene.unity
     guid: 48090da31cde79a4495693bcf44479ff
   - enabled: 0

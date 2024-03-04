@@ -9,6 +9,7 @@ public class FreeTeleportationOnline : NetworkBehaviour
     public TeleportationSpotOnline teleportationSpot;
     public static bool teleportState;
     public GameObject gun;
+    public GameObject gun2;
     public GameObject pointer;
 
     Vector3 destination;
@@ -39,7 +40,7 @@ public class FreeTeleportationOnline : NetworkBehaviour
             IsTimerShown(false);
         }
     }
-
+    public int ktoraBron;
     private void Update()
     {
         if (Main.Power == 1)
@@ -48,10 +49,30 @@ public class FreeTeleportationOnline : NetworkBehaviour
             if (Input.GetKeyDown(KeyCode.Q) && canTp == true)
             {
                 teleportState = !teleportState;
-                
+                if (gun2.activeSelf == true && gun.activeSelf == false)
+                {
+                    ktoraBron = 2;
+                    gun2.SetActive(false);
+                }
+                if (gun2.activeSelf == false && gun.activeSelf == true)
+                {
+                    ktoraBron = 1;
+                    gun.SetActive(false);
+                }
             }
-            gun.SetActive(!teleportState);
+            //if(gun2.activeSelf == true && gun.activeSelf == false)
+            //{
+            //    gun.SetActive(teleportState);
+            //    gun2.SetActive(!teleportState);
+            //}
+            //if(gun2.activeSelf == false && gun.activeSelf == true)
+            //{
+            //    gun2.SetActive(teleportState);
+            //    gun.SetActive(!teleportState);
+            //}
             pointer.SetActive(teleportState);
+
+
         }
     }
 
@@ -63,30 +84,29 @@ public class FreeTeleportationOnline : NetworkBehaviour
 
             if (teleportState == true)
             {
-                
-                
                 Line();
 
                 if (Input.GetKeyUp(KeyCode.Q))
                 {
-                    
                     Teleport();
-                    
-                    
                 }
-                if (Input.GetKeyDown(KeyCode.Mouse1))
+                if(ktoraBron == 1)
                 {
-                    teleportState = false;
+                    gun.SetActive(true);
                 }
-
+                if(ktoraBron == 2)
+                {
+                    gun2.SetActive(true);
+                }
+                //if (Input.GetKeyDown(KeyCode.Mouse1))
+                //{
+                //    teleportState = false;
+                //}
             }
-            
 
             if (cooldownActivated == true)
             {
                 CoodlwonCountdown();
-                
-
             }
         }
     }

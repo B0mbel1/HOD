@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
 
-public class shootingfinal_2 : MonoBehaviour
+public class shootingfinal_2 : NetworkBehaviour
 {
     //Gun stats
     public int damage;
@@ -39,6 +40,7 @@ public class shootingfinal_2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!IsOwner) { return; }
         MyInput();
     }
 
@@ -66,10 +68,10 @@ public class shootingfinal_2 : MonoBehaviour
     {
         readyToShoot = false;
         // Utwórz pocisk na pozycji bulletSpawn
-        GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
+        GameObject bullet = NetworkManager.Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
 
         // Pobierz pozycjê myszy w przestrzeni œwiata
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = fpsCam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
         // SprawdŸ, czy raycast trafi³ w coœ

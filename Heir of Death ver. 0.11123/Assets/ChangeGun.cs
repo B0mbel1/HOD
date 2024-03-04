@@ -1,18 +1,21 @@
+using Unity.Netcode;
 using UnityEngine;
 
-public class ChangeGun : MonoBehaviour
+public class ChangeGun : NetworkBehaviour
 {
-    public GameObject gun1;
-    public GameObject gun2;
+    [SerializeField] public GameObject gun1;
+    [SerializeField] public GameObject gun2;
     
     void Start()
     {
-
+        gun2.SetActive(false);
     }
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Alpha1))
+        if (!IsOwner) return;
+        
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             gun1.SetActive(true);
             gun2.SetActive(false);
