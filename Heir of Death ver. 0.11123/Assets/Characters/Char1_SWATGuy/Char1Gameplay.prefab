@@ -516,7 +516,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  timeBetweenShooting: 0.5
+  timeBetweenShooting: 0.2
   spread: 0
   range: 100
   reloadTime: 1
@@ -529,7 +529,7 @@ MonoBehaviour:
   reloadSound: {fileID: 8300000, guid: ea29e86108f09fa48a3d7e6fdd469b6d, type: 3}
   bulletPrefab: {fileID: 8174539478665384341, guid: 1b84fa7f14eaeeb48819630b948724dd, type: 3}
   bulletSpawn: {fileID: 6871814919818303214}
-  bulletSpeed: 50
+  bulletSpeed: 100
 --- !u!1 &535606441097389940
 GameObject:
   m_ObjectHideFlags: 0
@@ -2297,13 +2297,13 @@ MonoBehaviour:
   timeBetweenShots: 0
   magazineSize: 7
   bulletsPerTap: 1
-  allowButtonHold: 1
+  allowButtonHold: 0
   fpsCam: {fileID: 4056057497597188311}
   shootSound: {fileID: 8300000, guid: bf4fae68ea0966044962ac4e23e527e8, type: 3}
   reloadSound: {fileID: 8300000, guid: ea29e86108f09fa48a3d7e6fdd469b6d, type: 3}
   bulletPrefab: {fileID: 8174539478665384341, guid: 1b84fa7f14eaeeb48819630b948724dd, type: 3}
   bulletSpawn: {fileID: 3902034040544385259}
-  bulletSpeed: 30
+  bulletSpeed: 100
 --- !u!1 &3027832687563353780
 GameObject:
   m_ObjectHideFlags: 0
@@ -3044,7 +3044,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 50
+  field of view: 60
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
