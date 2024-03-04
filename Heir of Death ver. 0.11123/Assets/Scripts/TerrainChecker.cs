@@ -1,6 +1,7 @@
+using Unity.Netcode;
 using UnityEngine;
 
-public class TerrainChecker : MonoBehaviour
+public class TerrainChecker : NetworkBehaviour
 {
     private float[] GetTextureMix(Vector3 playerPos, Terrain t)
     {
@@ -17,6 +18,10 @@ public class TerrainChecker : MonoBehaviour
             cellmix[i] = splatMapData[0, 0, i];
         }
         return cellmix;
+    }
+    public void Update()
+    {
+        if (!IsOwner) return;
     }
 
     public string GetLayerName(Vector3 playerPosition, Terrain terrain)

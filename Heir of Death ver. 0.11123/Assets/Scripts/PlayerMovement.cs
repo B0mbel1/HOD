@@ -69,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
     private FootStepsSwapper footStepsSwapper;
     private Character character;
     private Rigidbody rigid;
-    private bool isFootstepPlaying = false;
+    //private bool isFootstepPlaying = false;
     private bool wasAirborne = false;
 
     public enum MovementState

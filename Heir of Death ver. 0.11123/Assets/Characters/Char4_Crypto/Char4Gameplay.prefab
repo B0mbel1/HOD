@@ -1740,6 +1740,8 @@ MonoBehaviour:
   UnlockTime: 0
   isActivated: 0
   CanPressAbility: 1
+  isRendererActive:
+    m_InternalValue: 0
   audioSource: {fileID: 5558511241625903068}
   invisibilitySound: {fileID: 8300000, guid: 60125022a3e9b4640910291b6546b212, type: 3}
 --- !u!1 &4137370954091481257
@@ -2057,6 +2059,8 @@ MonoBehaviour:
   UnlockTime: 0
   isActivated: 0
   CanPressAbility: 1
+  isRendererActive:
+    m_InternalValue: 0
   audioSource: {fileID: 5558511241625903068}
   invisibilitySound: {fileID: 8300000, guid: 60125022a3e9b4640910291b6546b212, type: 3}
 --- !u!1 &4539773951371604858
@@ -4373,6 +4377,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5300069803075435369, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
+      propertyPath: gun1
+      value: 
+      objectReference: {fileID: 678383138044308239}
+    - target: {fileID: 5300069803075435369, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
+      propertyPath: gun2
+      value: 
+      objectReference: {fileID: 6205330185515697766}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

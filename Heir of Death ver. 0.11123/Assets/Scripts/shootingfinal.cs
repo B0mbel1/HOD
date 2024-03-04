@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.TextCore.Text;
 
-public class shootingfinal : MonoBehaviour
+public class shootingfinal : NetworkBehaviour
 {
     //Gun stats
     public int damage;
@@ -40,7 +42,8 @@ public class shootingfinal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MyInput();
+        if (!IsOwner) { return; }
+        MyInput();  //blad
     }
 
     private void MyInput()
@@ -58,7 +61,7 @@ public class shootingfinal : MonoBehaviour
                 if (readyToShoot && shooting && !reloading && bulletsLeft1 > 0)
                 {
                     bulletsShot = bulletsPerTap;
-                    Shoot();
+                    Shoot();    //blad
                 }
             }
         }
@@ -67,10 +70,10 @@ public class shootingfinal : MonoBehaviour
     {
         readyToShoot = false;
         // Utwórz pocisk na pozycji bulletSpawn
-        GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
+        GameObject bullet = NetworkManager.Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
 
         // Pobierz pozycjê myszy w przestrzeni œwiata
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = fpsCam.ScreenPointToRay(Input.mousePosition);                //blad
         RaycastHit hit;
 
         // SprawdŸ, czy raycast trafi³ w coœ
@@ -78,7 +81,7 @@ public class shootingfinal : MonoBehaviour
         {
             // Oblicz kierunek do miejsca trafienia
             Vector3 targetPosition = hit.point;
-            Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
+            Rigidbody bulletRigidbody =  bullet.GetComponent<Rigidbody>();
 
             // Przemieszczaj pocisk stopniowo w kierunku celu
             StartCoroutine(MoveBulletToPosition(bulletRigidbody, targetPosition, bulletSpeed));

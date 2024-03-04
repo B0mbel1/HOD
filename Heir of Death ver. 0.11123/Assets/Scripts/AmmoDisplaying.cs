@@ -1,8 +1,9 @@
 using System;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AmmoDisplaying : MonoBehaviour
+public class AmmoDisplaying : NetworkBehaviour
 {
     public Text ammo;
 
@@ -16,6 +17,7 @@ public class AmmoDisplaying : MonoBehaviour
 
     void Update()
     {
+        if (!IsOwner) { return; }
         ammo.text = shootingfinal.bulletsLeft1.ToString();  
     }
 }
