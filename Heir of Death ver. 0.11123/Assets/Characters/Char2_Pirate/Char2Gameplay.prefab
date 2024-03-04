@@ -3205,7 +3205,7 @@ MonoBehaviour:
   timeBetweenShots: 0
   magazineSize: 7
   bulletsPerTap: 1
-  allowButtonHold: 1
+  allowButtonHold: 0
   fpsCam: {fileID: 8060259704119935742}
   shootSound: {fileID: 8300000, guid: bf4fae68ea0966044962ac4e23e527e8, type: 3}
   reloadSound: {fileID: 8300000, guid: ea29e86108f09fa48a3d7e6fdd469b6d, type: 3}
