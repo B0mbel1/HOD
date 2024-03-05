@@ -1874,7 +1874,7 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.2
-  m_Height: 1.8
+  m_Height: 1.96
   m_Direction: 1
   m_Center: {x: 0, y: 0.95, z: 0}
 --- !u!114 &6403891200947662837
@@ -2050,6 +2050,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 742f6699aec550847809ef7f4ee8b605, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 8587178065644207113}
+  minValue: 0
+  maxValue: 1
 --- !u!114 &2688482481550659249
 MonoBehaviour:
   m_ObjectHideFlags: 0
