@@ -3718,6 +3718,7 @@ GameObject:
   - component: {fileID: 6707096828038124024}
   - component: {fileID: 1592972639841439920}
   - component: {fileID: 7087310651339588189}
+  - component: {fileID: 3090467818580947328}
   m_Layer: 0
   m_Name: VoidPirate
   m_TagString: Player
@@ -3916,6 +3917,22 @@ MonoBehaviour:
     m_InternalValue: 0
   audioSource: {fileID: 4856773005810138063}
   invisibilitySound: {fileID: 8300000, guid: 60125022a3e9b4640910291b6546b212, type: 3}
+--- !u!114 &3090467818580947328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6516835470644473762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5b75a3bd8540644dbc068486d6e7fdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialList:
+  - {fileID: 2100000, guid: b3496b102437b0a4da06063524e37c41, type: 2}
+  - {fileID: 2100000, guid: d09347eaf8dd60f4cb4147d0597ca3e0, type: 2}
+  - {fileID: 2100000, guid: 71b3f2db1c941e840b6b05b0eae65bb0, type: 2}
 --- !u!1 &6563322761929426705
 GameObject:
   m_ObjectHideFlags: 0

@@ -103,8 +103,55 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8221405021380514728, guid: ed02cfd0230e2724d8a0bc0529069180, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6156437927071062394}
+    - targetCorrespondingSourceObject: {fileID: 8221405021380514728, guid: ed02cfd0230e2724d8a0bc0529069180, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8600286330925014946}
   m_SourcePrefab: {fileID: 100100000, guid: ed02cfd0230e2724d8a0bc0529069180, type: 3}
+--- !u!1 &554180807698744013 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8221405021380514728, guid: ed02cfd0230e2724d8a0bc0529069180, type: 3}
+  m_PrefabInstance: {fileID: 8478189906542629221}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6156437927071062394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554180807698744013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+--- !u!114 &8600286330925014946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554180807698744013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5b75a3bd8540644dbc068486d6e7fdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialList:
+  - {fileID: 2100000, guid: b3496b102437b0a4da06063524e37c41, type: 2}
+  - {fileID: 2100000, guid: d09347eaf8dd60f4cb4147d0597ca3e0, type: 2}
+  - {fileID: 2100000, guid: 71b3f2db1c941e840b6b05b0eae65bb0, type: 2}
 --- !u!4 &8224186110104565390 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ed02cfd0230e2724d8a0bc0529069180, type: 3}

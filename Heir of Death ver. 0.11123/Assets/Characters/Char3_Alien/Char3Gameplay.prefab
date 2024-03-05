@@ -4150,6 +4150,7 @@ GameObject:
   - component: {fileID: 7646368980701242751}
   - component: {fileID: 7952294146411517504}
   - component: {fileID: 8660662796508092172}
+  - component: {fileID: 1765091096808089037}
   m_Layer: 0
   m_Name: Ch44
   m_TagString: Player
@@ -4193,7 +4194,6 @@ SkinnedMeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: faf3cb7babb1f304a843c67a791cf246, type: 2}
-  - {fileID: 2100000, guid: 8226bf6e20991a040a93ce4888d095bf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4338,6 +4338,22 @@ MonoBehaviour:
     m_InternalValue: 0
   audioSource: {fileID: 7127251563133961870}
   invisibilitySound: {fileID: 8300000, guid: 60125022a3e9b4640910291b6546b212, type: 3}
+--- !u!114 &1765091096808089037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9142503543426661451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 682c5f0605aad414e98acda024f94108, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialList:
+  - {fileID: 2100000, guid: faf3cb7babb1f304a843c67a791cf246, type: 2}
+  - {fileID: 2100000, guid: 02fe160cd31f57a4ba72780cff3c81ef, type: 2}
+  - {fileID: 2100000, guid: 8226bf6e20991a040a93ce4888d095bf, type: 2}
 --- !u!1 &9213754388763601796
 GameObject:
   m_ObjectHideFlags: 0
