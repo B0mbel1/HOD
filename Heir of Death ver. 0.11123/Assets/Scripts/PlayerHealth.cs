@@ -1,11 +1,16 @@
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
-public class PlayerHealth : MonoBehaviour
+
+public class PlayerHealth : NetworkBehaviour
 {
-    private static float health;
+    [SerializeField] public static CharacterID characterId;
+
+    public static float health;
     private static float lerpTimer;
-    public float maxHealth = 100f;
+    public float maxHealth = 100;
     public float chipSpeed = 2;
 
     public Image frontHealthBar;
@@ -16,14 +21,19 @@ public class PlayerHealth : MonoBehaviour
         health = maxHealth;
     }
 
+    public void OnHealthChanged(float oldValue, float newValue)
+    {
+        UpdateHealthUI();
+    }
+
     private void Update()
     {
+        //if (!IsOwner) { return; }
+
+
         health = Mathf.Clamp(health,0,maxHealth);
         UpdateHealthUI();
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            //TakeDamage(Random.Range(1,29));                 
-        }
+  
     }
 
     public void UpdateHealthUI()
@@ -49,15 +59,49 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    public static void TakeDamage(float damage)
-    {
-        health -= damage;
-        lerpTimer = 0f;
-    }
+    //public /*static*/ void TakeDamage(float damage)
+    //{
+    //    health -= damage;
+    //    lerpTimer = 0f;
+    //}
 
     public static void RestoreHealth(float healAmount)
     {
         health += healAmount;
         lerpTimer = 0f;
     }
+
+    [ServerRpc(RequireOwnership = false)]
+    public void CmdTakeDamageServerRpc(float damage)
+    {
+        RpcTakeDamageClientRpc(damage);
+    }
+
+    [ClientRpc]
+    private void RpcTakeDamageClientRpc(float damage)
+    {
+        if (IsOwner)
+        {
+            health -= damage;
+            lerpTimer = 0f;
+        }
+        if (IsClient)
+        {
+
+        }
+        
+    }
+
+    //[ServerRpc]
+    //public void CmdRestoreHealth(float healAmount)
+    //{
+    //    RpcRestoreHealth(healAmount);
+    //}
+
+    //[ClientRpc]
+    //private void RpcRestoreHealth(float healAmount)
+    //{
+    //    health += healAmount;
+    //    lerpTimer = 0f;
+    //}
 }
