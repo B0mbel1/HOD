@@ -79,5 +79,52 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4292352698409469397, guid: 89f7676e209a3834d84dcb990f811cc5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3927104034200418460}
+    - targetCorrespondingSourceObject: {fileID: 4292352698409469397, guid: 89f7676e209a3834d84dcb990f811cc5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8832512993679072047}
   m_SourcePrefab: {fileID: 100100000, guid: 89f7676e209a3834d84dcb990f811cc5, type: 3}
+--- !u!1 &638152834783648969 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4292352698409469397, guid: 89f7676e209a3834d84dcb990f811cc5, type: 3}
+  m_PrefabInstance: {fileID: 3695956207858800924}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3927104034200418460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638152834783648969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+--- !u!114 &8832512993679072047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638152834783648969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66fd7a99191aef8458b1c0675c7bde4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialList:
+  - {fileID: 2100000, guid: 999beba27e7a6974db305e8438687270, type: 2}
+  - {fileID: 2100000, guid: 6473b6c11ed28f4449dfd3404def138a, type: 2}
+  - {fileID: 2100000, guid: cabb7400f055a17439127c5814f1cfac, type: 2}

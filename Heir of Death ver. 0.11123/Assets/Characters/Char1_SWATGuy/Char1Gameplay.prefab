@@ -3963,6 +3963,7 @@ GameObject:
   - component: {fileID: 8594024245305257662}
   - component: {fileID: 1896343231766636043}
   - component: {fileID: 4948262807649311097}
+  - component: {fileID: 6202456637299799072}
   m_Layer: 0
   m_Name: ely_vanguardsoldier_kerwinatienza_Mesh
   m_TagString: Player
@@ -4128,6 +4129,22 @@ CapsuleCollider:
   m_Height: 1.9240688
   m_Direction: 1
   m_Center: {x: 0, y: 0.9, z: -0.05127972}
+--- !u!114 &6202456637299799072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6686530370709764877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66fd7a99191aef8458b1c0675c7bde4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialList:
+  - {fileID: 2100000, guid: 999beba27e7a6974db305e8438687270, type: 2}
+  - {fileID: 2100000, guid: 6473b6c11ed28f4449dfd3404def138a, type: 2}
+  - {fileID: 2100000, guid: cabb7400f055a17439127c5814f1cfac, type: 2}
 --- !u!1 &6715876792769866846
 GameObject:
   m_ObjectHideFlags: 0

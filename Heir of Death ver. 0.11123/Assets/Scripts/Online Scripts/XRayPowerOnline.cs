@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using Unity.Netcode;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -134,11 +131,6 @@ public class XRayPowerOnline : NetworkBehaviour
 
         PowerTimer.text = string.Format("{0:00} : {1:00}", minutes, seconds);
     }
-
-    
-
-    
-
     void CheckPlayers()
     {
         foreach(NetworkClient client in NetworkManager.ConnectedClientsList)
@@ -146,7 +138,6 @@ public class XRayPowerOnline : NetworkBehaviour
             if (client.ClientId != NetworkManager.LocalClientId)
             {
                 Renderer clientsRenderer = client.PlayerObject.GetComponentInChildren<Renderer>();
-                //defaultMaterial[client.ClientId] = clientsRenderer.material;
                 clientsRenderer.material.shader = XrayShader;
             }
         }
@@ -154,7 +145,6 @@ public class XRayPowerOnline : NetworkBehaviour
 
     void UncheckPlayers()
     {
-
         foreach (NetworkClient client in NetworkManager.ConnectedClientsList)
         {
             if (client.ClientId != NetworkManager.LocalClientId)
