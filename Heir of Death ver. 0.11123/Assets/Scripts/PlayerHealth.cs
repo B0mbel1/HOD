@@ -1,11 +1,17 @@
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
-public class PlayerHealth : MonoBehaviour
+
+public class PlayerHealth : NetworkBehaviour
 {
-    private static float health;
+    [SerializeField] public static CharacterID characterId;
+
+    public static NetworkVariable<float> health = new NetworkVariable<float>();
+
     private static float lerpTimer;
-    public float maxHealth = 100f;
+    public float maxHealth = 100;
     public float chipSpeed = 2;
 
     public Image frontHealthBar;
@@ -13,25 +19,29 @@ public class PlayerHealth : MonoBehaviour
 
     private void Start()
     {
-        health = maxHealth;
+        health.Value = maxHealth;
     }
 
     private void Update()
     {
-        health = Mathf.Clamp(health,0,maxHealth);
+        if (!IsOwner) { return; }
+        //health.Value = Mathf.Clamp(health.Value, 0, maxHealth);
+        //UpdateHealthUILocal();
+        health.Value = Mathf.Clamp(health.Value, 0, maxHealth);
         UpdateHealthUI();
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            //TakeDamage(Random.Range(1,29));                 
-        }
+    }
+
+    public override void OnNetworkSpawn()
+    {
+        base.OnNetworkSpawn();
     }
 
     public void UpdateHealthUI()
     {
         float fillF = frontHealthBar.fillAmount;
         float fillB = backHealthBar.fillAmount;
-        float hFraction = health / maxHealth;
-        if(fillB > hFraction)
+        float hFraction = health.Value / maxHealth;
+        if (fillB > hFraction)
         {
             frontHealthBar.fillAmount = hFraction;
             backHealthBar.color = Color.red;
@@ -39,25 +49,50 @@ public class PlayerHealth : MonoBehaviour
             float percentComplete = lerpTimer / chipSpeed;
             backHealthBar.fillAmount = Mathf.Lerp(fillB, fillF, percentComplete);
         }
-        if(fillF < hFraction)
+        if (fillF < hFraction)
         {
             backHealthBar.color = Color.green;
             backHealthBar.fillAmount = hFraction;
             lerpTimer += Time.deltaTime;
             float percentComplete = lerpTimer / chipSpeed;
-            frontHealthBar.fillAmount = Mathf.Lerp(fillF,backHealthBar.fillAmount,percentComplete);
+            frontHealthBar.fillAmount = Mathf.Lerp(fillF, backHealthBar.fillAmount, percentComplete);
         }
     }
 
-    public static void TakeDamage(float damage)
+    [ServerRpc(RequireOwnership = false)]
+    public void CmdTakeDamageServerRpc(float damage)
     {
-        health -= damage;
+        RpcTakeDamageClientRpc(damage);
+    }
+
+    [ClientRpc]
+    private void RpcTakeDamageClientRpc(float damage)
+    {
+        health.Value -= damage;
         lerpTimer = 0f;
     }
 
+    //[ServerRpc]
+    //public void CmdRestoreHealth(float healAmount)
+    //{
+    //    RpcRestoreHealth(healAmount);
+    //}
+
+    //[ClientRpc]
+    //private void RpcRestoreHealth(float healAmount)
+    //{
+    //    health += healAmount;
+    //    lerpTimer = 0f;
+    //}
+
     public static void RestoreHealth(float healAmount)
     {
-        health += healAmount;
+        health.Value += healAmount;
         lerpTimer = 0f;
     }
+
+    //public void OnHealthChanged(float oldValue, float newValue)
+    //{
+    //    UpdateHealthUI();
+    //}
 }
