@@ -4515,6 +4515,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player HUD
       objectReference: {fileID: 0}
+    - target: {fileID: 2417487989820071593, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
+      propertyPath: characterId
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3011345893718789671, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
       propertyPath: m_LocalPosition.x
       value: 309.39886

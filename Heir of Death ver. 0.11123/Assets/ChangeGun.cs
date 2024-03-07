@@ -15,16 +15,26 @@ public class ChangeGun : NetworkBehaviour
     {
         if (!IsOwner) return;
         
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-            gun1.SetActive(true);
             gun2.SetActive(false);
-        }
-
-        if(Input.GetKeyDown(KeyCode.Alpha2))
-        {
             gun1.SetActive(false);
-            gun2.SetActive(true);
+        }
+        else
+        {
+            if (!Input.GetKey(KeyCode.Q) && Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                gun1.SetActive(true);
+                gun2.SetActive(false);
+            }
+
+            if (!Input.GetKey(KeyCode.Q) && Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                gun1.SetActive(false);
+                gun2.SetActive(true);
+            }
+            
         }
     }
 }

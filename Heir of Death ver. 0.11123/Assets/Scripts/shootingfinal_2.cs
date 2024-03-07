@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
+using Unity.Netcode.Components;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
 
@@ -68,7 +69,7 @@ public class shootingfinal_2 : NetworkBehaviour
     {
         readyToShoot = false;
         // Utwórz pocisk na pozycji bulletSpawn
-        GameObject bullet = NetworkManager.Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
+        GameObject bullet = NetworkManager.Instantiate(bulletPrefab, bulletSpawn.transform.position, Quaternion.identity);
 
         // Pobierz pozycjê myszy w przestrzeni œwiata
         Ray ray = fpsCam.ScreenPointToRay(Input.mousePosition);
@@ -87,11 +88,11 @@ public class shootingfinal_2 : NetworkBehaviour
         else
         {
             // Jeœli raycast nie trafi³ w nic, pocisk bêdzie lecia³ w kierunku kursora myszy
-            Vector3 directionToMouse = (ray.origin + ray.direction * 100f - bulletSpawn.position).normalized;
+            Vector3 directionToMouse = (ray.origin + ray.direction * 100f - bulletSpawn.transform.position).normalized;
             Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
 
             // Oblicz docelow¹ pozycjê pocisku
-            Vector3 targetPosition = bulletSpawn.position + directionToMouse * 100f;
+            Vector3 targetPosition = bulletSpawn.transform.position + directionToMouse * 100f;
 
             // Przemieszczaj pocisk stopniowo w kierunku celu
             StartCoroutine(MoveBulletToPosition(bulletRigidbody, targetPosition, bulletSpeed));
@@ -114,10 +115,10 @@ public class shootingfinal_2 : NetworkBehaviour
 
     IEnumerator MoveBulletToPosition(Rigidbody bulletRigidbody, Vector3 targetPosition, float speed)
     {
-        while (Vector3.Distance(bulletRigidbody.position, targetPosition) > 0.1f)
+        while (Vector3.Distance(bulletRigidbody.transform.position, targetPosition) > 0.1f)
         {
             // Oblicz kierunek do celu
-            Vector3 direction = (targetPosition - bulletRigidbody.position).normalized;
+            Vector3 direction = (targetPosition - bulletRigidbody.transform.position).normalized;
 
             // Przemieszczaj pocisk w kierunku celu
             bulletRigidbody.MovePosition(bulletRigidbody.position + direction * speed * Time.deltaTime);

@@ -89,15 +89,16 @@ public class FreeTeleportationOnline : NetworkBehaviour
                 if (Input.GetKeyUp(KeyCode.Q))
                 {
                     Teleport();
+                    if (ktoraBron == 1)
+                    {
+                        gun.SetActive(true);
+                    }
+                    if (ktoraBron == 2)
+                    {
+                        gun2.SetActive(true);
+                    }
                 }
-                if(ktoraBron == 1)
-                {
-                    gun.SetActive(true);
-                }
-                if(ktoraBron == 2)
-                {
-                    gun2.SetActive(true);
-                }
+                
                 //if (Input.GetKeyDown(KeyCode.Mouse1))
                 //{
                 //    teleportState = false;
