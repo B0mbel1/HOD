@@ -1,6 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using Unity.Netcode;
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,14 +14,16 @@ public class InvisibilityPowerOnline : NetworkBehaviour
     public float CooldownTime;
     public float CooldownStartingValue;
     public float UnlockTime;
-    
+    //public bool localBool;
     public bool isActivated;
     public bool CanPressAbility = true;
-    public NetworkVariable<bool> isRendererActive;
-    //public NetworkVariable<Renderer> rendereronline;
+
+    public Renderer rendererLocal;
+
     public AudioSource audioSource;
     public AudioClip invisibilitySound;
-    NetworkObject netObject;
+
+
     private void Start()
     {
         if (!IsOwner) return;
@@ -33,21 +35,35 @@ public class InvisibilityPowerOnline : NetworkBehaviour
             StartingValue = PowerTime;
             CooldownStartingValue = CooldownTime;
 
-            playerRenderer = GetComponentInChildren<Renderer>();
-            
+            rendererLocal = GetComponentInChildren<Renderer>();
+
             IsTimerShown(false);
             IsPowerActivated(false);
             isActivated = false;
+
         }
+
+    }
+    private void Update()
+    {
+        if (!IsOwner) return;
+
+        if(Input.GetKeyDown(KeyCode.O))
+        {
+            Test();
+        }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Test2();
+        }
+
     }
 
     private void FixedUpdate()
     {
+
         if (!IsOwner) return;
-        if (IsClient)
-        {
-            OnRendererChangedClientRpc(isRendererActive.Value);
-        }
+
         if (Main.Power == 2)
         {
             if (CanPressAbility && Input.GetKeyDown(KeyCode.Q))
@@ -101,17 +117,47 @@ public class InvisibilityPowerOnline : NetworkBehaviour
     {
         if (activation == true)
         {
-            SendRendererCurrentServerRpc(false);
-            playerRenderer.enabled = false;
-            isActivated = true;
-            
+            if (IsOwner)
+            {
+
+                isActivated = true;
+                //rendererLocal.enabled = false;
+                //UnseeClientRpc();
+                //NetworkClient client = NetworkManager.LocalClient;
+                //SendFalseServerRpc(client.ClientId);
+                //Debug.Log(client.ClientId + "wysyla ze staje sie niewidzalny na serwer");
+
+            }
         }
         else
         {
-            SendRendererCurrentServerRpc(true);
-            isActivated = false;
-            playerRenderer.enabled = true;
+            if (IsOwner) {
+                isActivated = false;
+                //rendererLocal.enabled = true;
+                //SeeClientRpc();
+                //NetworkClient client = NetworkManager.LocalClient;
+                //SendTrueServerRpc(client.ClientId);
+                //Debug.Log(client.ClientId + "wysyla ze staje sie widzalny na serwer");
+            }
         }
+    }
+
+    void Test()
+    {
+       
+        NetworkClient client = NetworkManager.LocalClient;
+        Debug.Log(client.ClientId + " Nr wysyla ze staje sie niewidzalny na serwer");
+        SendFalseServerRpc(client.ClientId);
+        
+    }
+
+    void Test2()
+    {
+        
+        NetworkClient client = NetworkManager.LocalClient;
+        Debug.Log(client.ClientId + " Nr wysyla ze staje sie widzalny na serwer");
+        SendTrueServerRpc(client.ClientId);
+        
     }
 
     bool IsTimerShown(bool timerActive)
@@ -144,20 +190,63 @@ public class InvisibilityPowerOnline : NetworkBehaviour
     void InvisibilityOff()
     {
         playerRenderer.enabled = true;
-        
+
     }
 
     [ServerRpc]
-    void SendRendererCurrentServerRpc(bool czy)
+    public void SendFalseServerRpc(ulong client)
     {
-        playerRenderer.enabled = czy;
-        isRendererActive.Value = czy;
+        foreach(NetworkClient klient in NetworkManager.ConnectedClientsList)
+        {
+            if(klient.ClientId == client)
+            {
+                var renderer = klient.PlayerObject.GetComponentInChildren<Renderer>();
+                renderer.enabled = false;
+                Debug.Log("Na serwerze ustawiony jest niewidzialnosc dla klienta nr" + client);
+            }
+        }
+        UnseeClientRpc(client);
+    }
+
+    [ServerRpc]
+    public void SendTrueServerRpc(ulong client)
+    {
+        foreach (NetworkClient klient in NetworkManager.ConnectedClientsList)
+        {
+            if (klient.ClientId == client)
+            {
+                var renderer = klient.PlayerObject.GetComponentInChildren<Renderer>();
+                renderer.enabled = false;
+                Debug.Log("Na serwerze ustawiony jest widzialnosc dla klienta nr" + client);
+            }
+        }
+        SeeClientRpc(client);
     }
 
     [ClientRpc]
-    void OnRendererChangedClientRpc(bool newvar)
+    public void UnseeClientRpc(ulong client)
     {
-        isRendererActive.Value = newvar;
-        playerRenderer.enabled = newvar;
+        foreach(NetworkClient klient in NetworkManager.ConnectedClientsList)
+        {
+            if (klient.ClientId == client)
+            {
+                klient.PlayerObject.GetComponentInChildren<Renderer>().enabled = false;
+                Debug.Log("aktualizacja niewidzialnosci na kliencie nr" + client);
+            }
+        }
+    }
+
+    [ClientRpc]
+    public void SeeClientRpc(ulong client)
+    {
+        foreach (NetworkClient klient in NetworkManager.ConnectedClientsList)
+        {
+            if (klient.ClientId == client)
+            {
+                klient.PlayerObject.GetComponentInChildren<Renderer>().enabled = true;
+                Debug.Log("aktualizacja widzialnosci na kliencie nr" + client);
+            }
+        }
     }
 }
+

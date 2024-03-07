@@ -663,10 +663,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5986343681341445169, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
+      propertyPath: m_text
+      value: Wybieranie...
+      objectReference: {fileID: 0}
     - target: {fileID: 7585858182925046760, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
       propertyPath: characterBioText
       value: 
       objectReference: {fileID: 1448906575}
+    - target: {fileID: 8132669238264823230, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
+      propertyPath: m_text
+      value: "\u0141adowanie..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132669238264823230, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
+      propertyPath: m_fontSize
+      value: 36
+      objectReference: {fileID: 0}
     - target: {fileID: 8230621807863359962, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0

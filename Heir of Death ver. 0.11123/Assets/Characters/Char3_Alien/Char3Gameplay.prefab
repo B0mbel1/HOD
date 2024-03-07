@@ -4194,6 +4194,7 @@ SkinnedMeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: faf3cb7babb1f304a843c67a791cf246, type: 2}
+  - {fileID: 2100000, guid: faf3cb7babb1f304a843c67a791cf246, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4334,8 +4335,7 @@ MonoBehaviour:
   UnlockTime: 0
   isActivated: 0
   CanPressAbility: 1
-  isRendererActive:
-    m_InternalValue: 0
+  rendererLocal: {fileID: 0}
   audioSource: {fileID: 7127251563133961870}
   invisibilitySound: {fileID: 8300000, guid: 60125022a3e9b4640910291b6546b212, type: 3}
 --- !u!114 &1765091096808089037
