@@ -95,6 +95,7 @@ public class BulletDamage : NetworkBehaviour
         //Invoke("Destroy(gameObject)",0.1f); // Zniszcz kulkê na wszystkich klientach
 
         Destroy(gameObject);
+
     }
 
 

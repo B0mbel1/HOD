@@ -3601,6 +3601,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7547823438043440215}
+  - component: {fileID: 8653203444040976548}
   m_Layer: 0
   m_Name: mixamorig:Hips
   m_TagString: Untagged
@@ -3626,6 +3627,22 @@ Transform:
   - {fileID: 4264451906873450745}
   m_Father: {fileID: 8398647194563987187}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8653203444040976548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6452458451661543128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d5717d6cd854784ea93d0d8b4d10990, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  chipSpeed: 2
+  frontHealthBar: {fileID: 1738041752493435573}
+  backHealthBar: {fileID: 5814236395178663361}
 --- !u!1 &6474447800097657042
 GameObject:
   m_ObjectHideFlags: 0

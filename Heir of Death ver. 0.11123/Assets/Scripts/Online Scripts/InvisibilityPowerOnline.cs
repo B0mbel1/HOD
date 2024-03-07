@@ -22,6 +22,7 @@ public class InvisibilityPowerOnline : NetworkBehaviour
     public AudioSource audioSource;
     public AudioClip invisibilitySound;
     NetworkObject netObject;
+
     private void Start()
     {
         if (!IsOwner) return;
