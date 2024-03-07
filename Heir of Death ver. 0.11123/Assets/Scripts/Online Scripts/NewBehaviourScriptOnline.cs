@@ -8,6 +8,9 @@ public class NewBehaviourScriptOnline : NetworkBehaviour
 
     public Transform orientation;
 
+    
+
+
     float xRotation;
     float yRotation;
 
@@ -16,6 +19,7 @@ public class NewBehaviourScriptOnline : NetworkBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         MenuPauzy.GameIsPaused = false;
+        
     }
 
     void FixedUpdate()
@@ -27,7 +31,8 @@ public class NewBehaviourScriptOnline : NetworkBehaviour
         yRotation += mouseX;
         xRotation -= mouseY;
 
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        xRotation = Mathf.Clamp(xRotation, -70f, 40f);
+        
 
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
         orientation.rotation = Quaternion.Euler(0, yRotation, 0);

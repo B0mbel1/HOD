@@ -2374,8 +2374,10 @@ GameObject:
   - component: {fileID: 834252237942173063}
   - component: {fileID: 8937510978976830502}
   - component: {fileID: 8306950168457826001}
+  - component: {fileID: 759247024089689305}
   - component: {fileID: 4561716854433867482}
   - component: {fileID: 2949994545717478985}
+  - component: {fileID: 4787916758693784243}
   m_Layer: 0
   m_Name: AniCh2
   m_TagString: Untagged
@@ -2409,7 +2411,7 @@ Animator:
   m_GameObject: {fileID: 4141133177728275188}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: ed02cfd0230e2724d8a0bc0529069180, type: 3}
-  m_Controller: {fileID: 9100000, guid: 7e215b6bfb96ab9488f1cd377372414a, type: 2}
+  m_Controller: {fileID: 9100000, guid: fd453bc276f53f243b860ead17b6a9c6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2427,11 +2429,26 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4141133177728275188}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eec611b770c8ea64abdf29470498c00f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &759247024089689305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4141133177728275188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 742f6699aec550847809ef7f4ee8b605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 8060259704119935742}
+  minValue: 0
+  maxValue: 1
 --- !u!114 &4561716854433867482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2460,6 +2477,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gun1: {fileID: 6736592316617080383}
   gun2: {fileID: 5368188194080034748}
+--- !u!114 &4787916758693784243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4141133177728275188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5157105814cc1a44fb93409a83de8391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 8937510978976830502}
+  rifleanimations: {fileID: 9100000, guid: fd453bc276f53f243b860ead17b6a9c6, type: 2}
+  gunanimations: {fileID: 9100000, guid: 3ea818fe528f7634a9d5471c217e0576, type: 2}
 --- !u!1 &4273995719089753977
 GameObject:
   m_ObjectHideFlags: 0
