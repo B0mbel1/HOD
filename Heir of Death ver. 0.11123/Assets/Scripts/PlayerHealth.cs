@@ -5,10 +5,15 @@ using UnityEngine.Networking;
 
 
 public class PlayerHealth : NetworkBehaviour
+{ 
+
+
+public class PlayerHealth : NetworkBehaviour
 {
     [SerializeField] public static CharacterID characterId;
 
     public static NetworkVariable<float> health = new NetworkVariable<float>();
+
 
     private static float lerpTimer;
     public float maxHealth = 100;
@@ -17,13 +22,31 @@ public class PlayerHealth : NetworkBehaviour
     public Image frontHealthBar;
     public Image backHealthBar;
 
-    private void Start()
+    //private void Start()
+    //{
+    ////    health = maxHealth;
+    // }
+    public override void OnNetworkSpawn()
     {
+
         health.Value = maxHealth;
     }
 
+
+        if (IsHost)
+        {
+            health = 100;
+        }
+        if(IsClient && !IsHost)
+        {
+            health = 50;
+        }
+        
+        base.OnNetworkSpawn();
+    }
     private void Update()
     {
+
         if (!IsOwner) { return; }
         //health.Value = Mathf.Clamp(health.Value, 0, maxHealth);
         //UpdateHealthUILocal();
@@ -34,7 +57,16 @@ public class PlayerHealth : NetworkBehaviour
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
+
     }
+
+    //[ServerRpc(RequireOwnership = false)]
+    //private void TestServerRpc()
+    //{
+        // Update client's health based on the health value from Health component
+     //   health = Health.health1;
+    //}
+
 
     public void UpdateHealthUI()
     {
