@@ -1114,8 +1114,7 @@ MonoBehaviour:
   UnlockTime: 0
   isActivated: 0
   CanPressAbility: 1
-  isRendererActive:
-    m_InternalValue: 0
+  rendererLocal: {fileID: 0}
   audioSource: {fileID: 0}
   invisibilitySound: {fileID: 0}
 --- !u!1 &1373518027538995736
@@ -1182,7 +1181,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1373518027538995736}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d5717d6cd854784ea93d0d8b4d10990, type: 3}
   m_Name: 
@@ -1314,7 +1313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sensX: 400
   sensY: 400
-  orientation: {fileID: 0}
+  orientation: {fileID: 3040880498419603182}
 --- !u!1818360608 &2082134290420862739
 PositionConstraint:
   m_ObjectHideFlags: 0
@@ -3740,7 +3739,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6452458451661543128}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d5717d6cd854784ea93d0d8b4d10990, type: 3}
   m_Name: 
@@ -4053,8 +4052,7 @@ MonoBehaviour:
   UnlockTime: 0
   isActivated: 0
   CanPressAbility: 1
-  isRendererActive:
-    m_InternalValue: 0
+  rendererLocal: {fileID: 0}
   audioSource: {fileID: 4856773005810138063}
   invisibilitySound: {fileID: 8300000, guid: 60125022a3e9b4640910291b6546b212, type: 3}
 --- !u!114 &3090467818580947328
@@ -4983,7 +4981,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2417487989820071593, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2417487989820071593, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
       propertyPath: characterId
