@@ -73,7 +73,7 @@ public class PlayerHealth : NetworkBehaviour
     }
 
     [ClientRpc]
-    private void DamageClientRpc(float damage, ClientRpcParams clientRpcParams)
+    public void DamageClientRpc(float damage, ClientRpcParams clientRpcParams)
     {
         health -= damage;
         lerpTimer = 0f;

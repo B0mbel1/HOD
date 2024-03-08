@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -17,6 +18,7 @@ public class BulletDamage : NetworkBehaviour
             if (BetterAmmoScript.isBetterAmmoActivated == false)
             {
                 //playerHealth.CmdTakeDamageServerRpc(12);
+                playerHealth.DamageServerRpc(12f);
             }
         }
 

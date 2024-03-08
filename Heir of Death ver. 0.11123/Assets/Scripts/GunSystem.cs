@@ -57,18 +57,18 @@ public class GunSystem : MonoBehaviour
 
         if (Physics.Raycast(fpsCam.transform.position, transform.forward, out co, Mathf.Infinity))
         {
-            obrazeniaOK czyOK = co.collider.GetComponent<obrazeniaOK>();
-            if (czyOK != null)
-            {
-                if (BetterAmmoScript.isBetterAmmoActivated == true)
-                {
-                    czyOK.zadajObrazenia(damage + 3);
-                }
-                else
-                {
-                    czyOK.zadajObrazenia(damage);
-                }
-            }
+            //obrazeniaOK czyOK = co.collider.GetComponent<obrazeniaOK>();
+            //if (czyOK != null)
+            //{
+            //    if (BetterAmmoScript.isBetterAmmoActivated == true)
+            //    {
+            //        czyOK.zadajObrazenia(damage + 3);
+            //    }
+            //    else
+            //    {
+            //        czyOK.zadajObrazenia(damage);
+            //    }
+            //}
         }
 
         GameObject bullet = Instantiate(bulletPrefab);

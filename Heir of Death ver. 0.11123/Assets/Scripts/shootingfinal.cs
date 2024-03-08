@@ -67,6 +67,7 @@ public class shootingfinal : NetworkBehaviour
         readyToShoot = false;
         // Utwórz pocisk na pozycji bulletSpawn
         GameObject bullet = NetworkManager.Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
+        bullet.GetComponent<NetworkObject>().Spawn();
 
         // Pobierz pozycjê myszy w przestrzeni œwiata
         Ray ray = fpsCam.ScreenPointToRay(Input.mousePosition);               
@@ -76,7 +77,7 @@ public class shootingfinal : NetworkBehaviour
         if (Physics.Raycast(ray, out hit))
         {
             // Oblicz kierunek do miejsca trafienia
-            Vector3 targetPosition = hit.point;
+            Vector3 targetPosition = hit.point; 
             Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
 
             // Przemieszczaj pocisk stopniowo w kierunku celu
