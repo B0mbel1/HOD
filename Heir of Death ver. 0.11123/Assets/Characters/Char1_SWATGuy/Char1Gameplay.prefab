@@ -1599,7 +1599,6 @@ GameObject:
   - component: {fileID: 3757788837918017921}
   - component: {fileID: 4361354713182670248}
   - component: {fileID: 7928473494070720239}
-  - component: {fileID: 391950425448485840}
   m_Layer: 0
   m_Name: Char1Gameplay
   m_TagString: Untagged
@@ -2077,18 +2076,6 @@ MonoBehaviour:
   rendererLocal: {fileID: 0}
   audioSource: {fileID: 4473649211927422123}
   invisibilitySound: {fileID: 8300000, guid: 60125022a3e9b4640910291b6546b212, type: 3}
---- !u!114 &391950425448485840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2893557086950090720}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fffad736d500d044bf7c0d6f91da448, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2898455531196878150
 GameObject:
   m_ObjectHideFlags: 0
