@@ -7,7 +7,7 @@ public class RotationOnline : NetworkBehaviour
     public GameObject cam;
     public float rotationSpeed = 15f;
 
-    void FixedUpdate()
+    void LateUpdate()
     {
         if (IsClient)
         {

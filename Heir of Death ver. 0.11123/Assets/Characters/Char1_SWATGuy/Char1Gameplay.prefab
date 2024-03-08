@@ -3197,7 +3197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sensX: 400
   sensY: 400
-  orientation: {fileID: 0}
+  orientation: {fileID: 1554370936393702384}
 --- !u!1818360608 &991005782326999340
 PositionConstraint:
   m_ObjectHideFlags: 0

@@ -67,7 +67,6 @@ public class shootingfinal : NetworkBehaviour
         readyToShoot = false;
         // Utwórz pocisk na pozycji bulletSpawn
         GameObject bullet = NetworkManager.Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
-        bullet.GetComponent<NetworkObject>().Spawn();
 
         // Pobierz pozycjê myszy w przestrzeni œwiata
         Ray ray = fpsCam.ScreenPointToRay(Input.mousePosition);               
