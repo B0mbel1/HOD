@@ -8,8 +8,9 @@ public class ServerManager : MonoBehaviour
     public static ServerManager Instance { get; private set; }
     public Dictionary<ulong, ClientData> ClientData { get; private set; }
     private bool gameHasStarted;
+    [SerializeField] public List<string> SceneList = new List<string>();
 
-    [SerializeField] private string gameplaySceneName = "ForestOnline";
+    [SerializeField] private string gameplaySceneName = "";
     [SerializeField] private string characterSelectSceneName = "SelectCharacter";
 
     private void Awake()
@@ -39,6 +40,19 @@ public class ServerManager : MonoBehaviour
         NetworkManager.Singleton.OnServerStarted += OnNetworkReady;
         ClientData = new Dictionary<ulong, ClientData>();
         NetworkManager.Singleton.StartHost();
+    }
+
+    public void StopServer()
+    {
+        if (NetworkManager.Singleton != null)
+        {
+            NetworkManager.Singleton.ConnectionApprovalCallback -= ApprovalCheck;
+            NetworkManager.Singleton.OnServerStarted -= OnNetworkReady;
+        }
+        NetworkManager.Singleton.Shutdown();
+        NetworkManager networkManager = GameObject.FindObjectOfType<NetworkManager>();
+        Destroy(networkManager.gameObject);
+        Destroy(gameObject);
     }
 
     private void ApprovalCheck(NetworkManager.ConnectionApprovalRequest request, NetworkManager.ConnectionApprovalResponse response)
@@ -86,6 +100,7 @@ public class ServerManager : MonoBehaviour
     public void StartGame()
     {
         gameHasStarted = true;
+        gameplaySceneName = SceneList[0];
         NetworkManager.Singleton.SceneManager.LoadScene(gameplaySceneName, LoadSceneMode.Single);
     }
 }

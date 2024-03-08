@@ -624,6 +624,7 @@ GameObject:
   - component: {fileID: 4954487897023678299}
   - component: {fileID: 6040659569907727303}
   - component: {fileID: 6389015214151739870}
+  - component: {fileID: 7580876007040667215}
   m_Layer: 0
   m_Name: Char2Gameplay
   m_TagString: Untagged
@@ -1114,10 +1115,23 @@ MonoBehaviour:
   UnlockTime: 0
   isActivated: 0
   CanPressAbility: 1
-  isRendererActive:
-    m_InternalValue: 0
+  rendererLocal: {fileID: 0}
   audioSource: {fileID: 0}
   invisibilitySound: {fileID: 0}
+--- !u!114 &7580876007040667215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370538760696813027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fffad736d500d044bf7c0d6f91da448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthlocal: 0
+  script: {fileID: 0}
 --- !u!1 &1373518027538995736
 GameObject:
   m_ObjectHideFlags: 0
@@ -3947,8 +3961,7 @@ MonoBehaviour:
   UnlockTime: 0
   isActivated: 0
   CanPressAbility: 1
-  isRendererActive:
-    m_InternalValue: 0
+  rendererLocal: {fileID: 0}
   audioSource: {fileID: 4856773005810138063}
   invisibilitySound: {fileID: 8300000, guid: 60125022a3e9b4640910291b6546b212, type: 3}
 --- !u!114 &3090467818580947328
