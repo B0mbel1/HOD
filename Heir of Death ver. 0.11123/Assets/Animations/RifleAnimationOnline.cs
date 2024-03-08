@@ -4,9 +4,11 @@ using UnityEngine;
 public class RifleAnimationsOnline : NetworkBehaviour
 {
     Animator animator;
-    public Camera mainCamera; // Pole, w którym bêdziemy mogli przypisaæ kamerê
-    public float minValue = 0.0f; // Minimalna wartoœæ kamery
-    public float maxValue = 1.0f; // Maksymalna wartoœæ kamery
+    //public Camera mainCamera; // Pole, w którym bêdziemy mogli przypisaæ kamerê
+    public Transform cameraTransform;
+    public float convertedRotation;
+    public int roundedRotation;
+    float xRotation;
 
     void Start()
     {
@@ -19,32 +21,17 @@ public class RifleAnimationsOnline : NetworkBehaviour
     {
         if (!IsOwner) return;
 
-        if (mainCamera == null)
-        {
-            Debug.LogError("Main camera is not assigned!");
-            return;
-        }
 
-        // Pobierz rotacjê kamery
-        Vector3 cameraRotation = mainCamera.transform.rotation.eulerAngles;
+        // Get the rotation around the x-axis of the camera
+        float rotationX = cameraTransform.rotation.eulerAngles.x;
+       // float mouseY = Input.GetAxisRaw("Mouse Y");
+        //xRotation -= mouseY;
+        // Convert the rotation to float values with range -90 to 90
+        convertedRotation = NormalizeRotation(rotationX, -90f, 90f);
+       // convertedRotation = NormalizeRotation(xRotation, -30f, 90f);
+        roundedRotation = Mathf.RoundToInt(convertedRotation);
 
-        // Oblicz k¹t nachylenia w górê i w dó³ (-90 do 90 stopni)
-        float verticalAngle = cameraRotation.x;
-        if (verticalAngle > 180.0f)
-        {
-            verticalAngle -= 360.0f;
-        }
-
-        // Korekta orientacji w zale¿noœci od k¹ta nachylenia kamery
-        float correctedValue = verticalAngle > 0 ? 1.0f - Mathf.InverseLerp(0.0f, 90.0f, verticalAngle) : Mathf.InverseLerp(0.0f, -90.0f, verticalAngle);
-
-        // Ogranicz wartoœæ kamery do zakresu od minValue do maxValue
-        float clampedValue = Mathf.Clamp(correctedValue, minValue, maxValue);
-
-        // Ustaw wartoœæ kamery w animatorze
-        animator.SetFloat("camera", clampedValue);
-
-
+        animator.SetFloat("camera", roundedRotation);
 
 
         bool isRunning = animator.GetBool("isRunning");
@@ -219,5 +206,16 @@ public class RifleAnimationsOnline : NetworkBehaviour
         }
 
 
+    }
+    float NormalizeRotation(float rotation, float min, float max)
+    {
+        rotation = rotation % 360f;
+        if (rotation < 0)
+            rotation += 360f;
+
+        if (rotation > 180f)
+            rotation -= 360f;
+
+        return Mathf.Clamp(rotation, min, max);
     }
 }
