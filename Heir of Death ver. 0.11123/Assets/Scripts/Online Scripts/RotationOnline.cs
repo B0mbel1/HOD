@@ -19,7 +19,7 @@ public class RotationOnline : NetworkBehaviour
     void HandleRotationInput()
     {
         float toRotationY = cam.transform.eulerAngles.y;
-        transform.eulerAngles = new Vector3(transform.eulerAngles.x, toRotationY, transform.eulerAngles.z);
+        transform.eulerAngles = new Vector3(transform.eulerAngles.x, toRotationY , transform.eulerAngles.z);
         if (IsOwner)
         {
             CmdSendRotationToServerServerRpc(transform.rotation);

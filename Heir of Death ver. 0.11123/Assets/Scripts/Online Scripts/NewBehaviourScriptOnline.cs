@@ -22,7 +22,7 @@ public class NewBehaviourScriptOnline : NetworkBehaviour
         
     }
 
-    void FixedUpdate()
+    void LateUpdate()
     {
         if (!IsOwner && !IsLocalPlayer) return;
         float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
@@ -31,7 +31,8 @@ public class NewBehaviourScriptOnline : NetworkBehaviour
         yRotation += mouseX;
         xRotation -= mouseY;
 
-        xRotation = Mathf.Clamp(xRotation, -70f, 40f);
+        xRotation = Mathf.Clamp(xRotation, -30f, 70f);
+
         
 
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
