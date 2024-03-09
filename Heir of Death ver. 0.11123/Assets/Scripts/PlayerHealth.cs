@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerHealth : NetworkBehaviour
 {
     public static float health;
-
+    public  bool czyHost;
     private static float lerpTimer;
     public float maxHealth = 100;
     public float chipSpeed = 2;
@@ -24,7 +24,14 @@ public class PlayerHealth : NetworkBehaviour
     {
         if (!IsOwner) return;
 
-
+        if (IsHost)
+        {
+            czyHost = true;
+        }
+        if(IsClient && !IsHost)
+        {
+            czyHost = false;
+        }
 
         //Dzia³aj¹cy skrypt z zadawaniem obra¿eñ/////////////////////////
         if (Input.GetKeyDown(KeyCode.E) && IsHost)
@@ -82,6 +89,12 @@ public class PlayerHealth : NetworkBehaviour
 
     [ClientRpc]
     public void DamageClientRpc(float damage, ClientRpcParams clientRpcParams)
+    {
+        health -= damage;
+        lerpTimer = 0f;
+    }
+
+    public void Damage(float damage)
     {
         health -= damage;
         lerpTimer = 0f;

@@ -176,6 +176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5810532030722250902}
   - component: {fileID: 6503304019824392128}
+  - component: {fileID: 927154821482201122}
   m_Layer: 0
   m_Name: mixamorig:LeftForeArm
   m_TagString: Reka
@@ -222,6 +223,23 @@ CapsuleCollider:
   m_Height: 0.3
   m_Direction: 1
   m_Center: {x: 0, y: 0.18, z: 0}
+--- !u!114 &927154821482201122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429695129794132534}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d5717d6cd854784ea93d0d8b4d10990, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  czyHost: 0
+  maxHealth: 100
+  chipSpeed: 2
+  frontHealthBar: {fileID: 1920411748910534806}
+  backHealthBar: {fileID: 5911043497839962082}
 --- !u!1 &465860386417108078
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,7 +255,7 @@ GameObject:
   - component: {fileID: 6352285082123545396}
   m_Layer: 0
   m_Name: Gun1
-  m_TagString: Untagged
+  m_TagString: Bron
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -512,7 +530,7 @@ GameObject:
   - component: {fileID: 1503152350322510999}
   m_Layer: 0
   m_Name: SpawnBullet
-  m_TagString: Untagged
+  m_TagString: Bron
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -660,7 +678,7 @@ GameObject:
   - component: {fileID: 3818400105676461645}
   m_Layer: 0
   m_Name: Kula.001
-  m_TagString: Untagged
+  m_TagString: Bron
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -925,7 +943,7 @@ GameObject:
   - component: {fileID: 3758402601984923943}
   m_Layer: 0
   m_Name: Kostka.003
-  m_TagString: Untagged
+  m_TagString: Bron
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1234,7 +1252,7 @@ GameObject:
   - component: {fileID: 1949945537700141467}
   m_Layer: 0
   m_Name: Kostka.004
-  m_TagString: Untagged
+  m_TagString: Bron
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1409,6 +1427,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4401525167982262839}
   - component: {fileID: 3717974367618304235}
+  - component: {fileID: 6794794368349800397}
   m_Layer: 0
   m_Name: mixamorig:RightForeArm
   m_TagString: Reka
@@ -1455,6 +1474,23 @@ CapsuleCollider:
   m_Height: 0.3
   m_Direction: 1
   m_Center: {x: 0, y: 0.18, z: 0}
+--- !u!114 &6794794368349800397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2689346247387057569}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d5717d6cd854784ea93d0d8b4d10990, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  czyHost: 0
+  maxHealth: 100
+  chipSpeed: 2
+  frontHealthBar: {fileID: 1920411748910534806}
+  backHealthBar: {fileID: 5911043497839962082}
 --- !u!1 &2755699768191909536
 GameObject:
   m_ObjectHideFlags: 0
@@ -2033,7 +2069,7 @@ GameObject:
   - component: {fileID: 8023079103482429257}
   m_Layer: 0
   m_Name: Gun2
-  m_TagString: Untagged
+  m_TagString: Bron
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2772,7 +2808,7 @@ GameObject:
   - component: {fileID: 4811387107798256764}
   m_Layer: 0
   m_Name: Kostka.001
-  m_TagString: Untagged
+  m_TagString: Bron
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2855,7 +2891,7 @@ GameObject:
   - component: {fileID: 84099732169824467}
   m_Layer: 0
   m_Name: Kostka
-  m_TagString: Untagged
+  m_TagString: Bron
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3278,6 +3314,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6316053500358980632}
+  - component: {fileID: 2316791896052589186}
   m_Layer: 0
   m_Name: mixamorig:Hips
   m_TagString: Untagged
@@ -3303,6 +3340,23 @@ Transform:
   - {fileID: 3537463477266097635}
   m_Father: {fileID: 3439572917905964869}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2316791896052589186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5928285093882009032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d5717d6cd854784ea93d0d8b4d10990, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  czyHost: 0
+  maxHealth: 100
+  chipSpeed: 2
+  frontHealthBar: {fileID: 1920411748910534806}
+  backHealthBar: {fileID: 5911043497839962082}
 --- !u!1 &6016946692387733427
 GameObject:
   m_ObjectHideFlags: 0
@@ -3348,7 +3402,7 @@ GameObject:
   - component: {fileID: 7203695198652829354}
   m_Layer: 0
   m_Name: Kostka.005
-  m_TagString: Untagged
+  m_TagString: Bron
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3550,7 +3604,7 @@ GameObject:
   - component: {fileID: 6801140285245901895}
   m_Layer: 0
   m_Name: Kostka.002
-  m_TagString: Untagged
+  m_TagString: Bron
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3725,6 +3779,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7841637103684164455}
   - component: {fileID: 8061912477329824406}
+  - component: {fileID: 1371193747256690905}
   m_Layer: 0
   m_Name: mixamorig:RightArm
   m_TagString: Reka
@@ -3771,6 +3826,23 @@ CapsuleCollider:
   m_Height: 0.4
   m_Direction: 1
   m_Center: {x: 0, y: 0.08, z: 0}
+--- !u!114 &1371193747256690905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6330533544918541558}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d5717d6cd854784ea93d0d8b4d10990, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  czyHost: 0
+  maxHealth: 100
+  chipSpeed: 2
+  frontHealthBar: {fileID: 1920411748910534806}
+  backHealthBar: {fileID: 5911043497839962082}
 --- !u!1 &6499534672191519516
 GameObject:
   m_ObjectHideFlags: 0
@@ -4139,6 +4211,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3911482679220300870}
   - component: {fileID: 1392272856588425685}
+  - component: {fileID: 1305867307186323463}
   m_Layer: 0
   m_Name: mixamorig:LeftArm
   m_TagString: Reka
@@ -4185,6 +4258,23 @@ CapsuleCollider:
   m_Height: 0.4
   m_Direction: 1
   m_Center: {x: 0, y: 0.08, z: 0}
+--- !u!114 &1305867307186323463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6719403604442231176}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d5717d6cd854784ea93d0d8b4d10990, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  czyHost: 0
+  maxHealth: 100
+  chipSpeed: 2
+  frontHealthBar: {fileID: 1920411748910534806}
+  backHealthBar: {fileID: 5911043497839962082}
 --- !u!1 &6787179788241677859
 GameObject:
   m_ObjectHideFlags: 0
@@ -4198,7 +4288,7 @@ GameObject:
   - component: {fileID: 4554990323757268198}
   m_Layer: 0
   m_Name: Walec
-  m_TagString: Untagged
+  m_TagString: Bron
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4609,7 +4699,7 @@ GameObject:
   - component: {fileID: 1716077332125034637}
   m_Layer: 0
   m_Name: Kostka.006
-  m_TagString: Untagged
+  m_TagString: Bron
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4692,7 +4782,7 @@ GameObject:
   - component: {fileID: 4532775369252225610}
   m_Layer: 0
   m_Name: Kula
-  m_TagString: Untagged
+  m_TagString: Bron
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4893,7 +4983,7 @@ GameObject:
   - component: {fileID: 7287012120675114816}
   m_Layer: 0
   m_Name: smg2-kopia
-  m_TagString: Untagged
+  m_TagString: Bron
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5180,7 +5270,7 @@ GameObject:
   - component: {fileID: 8775446882669896000}
   m_Layer: 0
   m_Name: Kula.002
-  m_TagString: Untagged
+  m_TagString: Bron
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5263,7 +5353,7 @@ GameObject:
   - component: {fileID: 1724919759540661106}
   m_Layer: 0
   m_Name: kulka.001
-  m_TagString: Untagged
+  m_TagString: Bron
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5346,7 +5436,7 @@ GameObject:
   - component: {fileID: 5281227994242992332}
   m_Layer: 0
   m_Name: kulka.002
-  m_TagString: Untagged
+  m_TagString: Bron
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5778,6 +5868,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2167817230289297634, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
   m_PrefabInstance: {fileID: 1576734687714369836}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1920411748910534806 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1100852583709077946, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
+  m_PrefabInstance: {fileID: 1576734687714369836}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2852214998270963226 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3635730591757569846, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
@@ -5794,3 +5895,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3011345893718789671, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
   m_PrefabInstance: {fileID: 1576734687714369836}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5911043497839962082 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5181832715466589902, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
+  m_PrefabInstance: {fileID: 1576734687714369836}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

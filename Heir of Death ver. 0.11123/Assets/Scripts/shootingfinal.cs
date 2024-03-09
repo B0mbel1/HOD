@@ -59,7 +59,7 @@ public class shootingfinal : NetworkBehaviour
     {
         NetworkObject bulletInstance = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
         Rigidbody bulletRigidbody = bulletInstance.GetComponent<Rigidbody>();
-        //StartCoroutine(MoveBulletToPosition(bulletRigidbody, vector, bulletSpeed));
+        StartCoroutine(MoveBulletToPosition(bulletRigidbody, vector, bulletSpeed));
     }
 
     [ClientRpc]
@@ -67,7 +67,7 @@ public class shootingfinal : NetworkBehaviour
     {
         NetworkObject bulletInstance =Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
         Rigidbody bulletRigidbody = bulletInstance.GetComponent<Rigidbody>();
-        //StartCoroutine(MoveBulletToPosition(bulletRigidbody, vector, bulletSpeed));
+        StartCoroutine(MoveBulletToPosition(bulletRigidbody, vector, bulletSpeed));
     }
 
     [ServerRpc]
@@ -82,8 +82,9 @@ public class shootingfinal : NetworkBehaviour
         };
 
         BulletSpawnClientRpc(vector, clientRpcParams);
-
     }
+
+   
 
     private void MyInput()
     {
