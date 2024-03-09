@@ -18,7 +18,7 @@ public class NewBehaviourScriptOnline : NetworkBehaviour
         MenuPauzy.GameIsPaused = false;
     }
 
-    void FixedUpdate()
+    void LateUpdate()
     {
         if (!IsOwner && !IsLocalPlayer) return;
         float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
@@ -27,32 +27,9 @@ public class NewBehaviourScriptOnline : NetworkBehaviour
         yRotation += mouseX;
         xRotation -= mouseY;
 
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        xRotation = Mathf.Clamp(xRotation, -30f, 70f);
 
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
         orientation.rotation = Quaternion.Euler(0, yRotation, 0);
-        //SprawdzCo();
-    }
-
-    private void SprawdzCo()
-    {
-        if (!MenuPauzy.GameIsPaused)
-        {
-            if (!FreeTeleportation.teleportState)
-            {
-                if (Input.GetMouseButtonDown(0))
-                {
-                    RaycastHit co;
-                    if (Physics.Raycast(transform.position, transform.forward, out co, Mathf.Infinity))
-                    {
-                        obrazeniaOK czyOK = co.collider.GetComponent<obrazeniaOK>();
-                        if (czyOK != null)
-                        {
-                            czyOK.zadajObrazenia(10);
-                        }
-                    }
-                }
-            }
-        }
     }
 }

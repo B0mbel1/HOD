@@ -1,14 +1,11 @@
+using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Networking;
-
 
 public class PlayerHealth : NetworkBehaviour
 {
-    [SerializeField] public static CharacterID characterId;
-
-    public static NetworkVariable<float> health = new NetworkVariable<float>();
+    public static float health;
 
     private static float lerpTimer;
     public float maxHealth = 100;
@@ -19,16 +16,25 @@ public class PlayerHealth : NetworkBehaviour
 
     private void Start()
     {
-        health.Value = maxHealth;
+        health = maxHealth;
     }
 
     private void Update()
     {
-        if (!IsOwner) { return; }
-        //health.Value = Mathf.Clamp(health.Value, 0, maxHealth);
-        //UpdateHealthUILocal();
-        health.Value = Mathf.Clamp(health.Value, 0, maxHealth);
+        if (!IsOwner) return;
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            DamageClientRpc(12f, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
+        }
+
+        if (Input.GetKeyDown(KeyCode.T) && IsClient && !IsHost)
+        {
+            DamageServerRpc(12f);
+        }
+
         UpdateHealthUI();
+        //health = Mathf.Clamp(health, 0, maxHealth);
     }
 
     public override void OnNetworkSpawn()
@@ -40,7 +46,7 @@ public class PlayerHealth : NetworkBehaviour
     {
         float fillF = frontHealthBar.fillAmount;
         float fillB = backHealthBar.fillAmount;
-        float hFraction = health.Value / maxHealth;
+        float hFraction = health / maxHealth;
         if (fillB > hFraction)
         {
             frontHealthBar.fillAmount = hFraction;
@@ -59,40 +65,23 @@ public class PlayerHealth : NetworkBehaviour
         }
     }
 
-    [ServerRpc(RequireOwnership = false)]
-    public void CmdTakeDamageServerRpc(float damage)
+    [ServerRpc]
+    public void DamageServerRpc(float damage)
     {
-        RpcTakeDamageClientRpc(damage);
+        health -= damage;
+        lerpTimer = 0f;
     }
 
     [ClientRpc]
-    private void RpcTakeDamageClientRpc(float damage)
+    public void DamageClientRpc(float damage, ClientRpcParams clientRpcParams)
     {
-        health.Value -= damage;
+        health -= damage;
         lerpTimer = 0f;
     }
-
-    //[ServerRpc]
-    //public void CmdRestoreHealth(float healAmount)
-    //{
-    //    RpcRestoreHealth(healAmount);
-    //}
-
-    //[ClientRpc]
-    //private void RpcRestoreHealth(float healAmount)
-    //{
-    //    health += healAmount;
-    //    lerpTimer = 0f;
-    //}
 
     public static void RestoreHealth(float healAmount)
     {
-        health.Value += healAmount;
+        health += healAmount;
         lerpTimer = 0f;
     }
-
-    //public void OnHealthChanged(float oldValue, float newValue)
-    //{
-    //    UpdateHealthUI();
-    //}
 }

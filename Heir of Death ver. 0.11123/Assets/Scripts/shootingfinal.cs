@@ -1,10 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Globalization;
 using Unity.Netcode;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.TextCore.Text;
 
 public class shootingfinal : NetworkBehaviour
 {
@@ -61,7 +57,7 @@ public class shootingfinal : NetworkBehaviour
                 if (readyToShoot && shooting && !reloading && bulletsLeft1 > 0)
                 {
                     bulletsShot = bulletsPerTap;
-                    Shoot();    //blad
+                    Shoot();    
                 }
             }
         }
@@ -73,15 +69,15 @@ public class shootingfinal : NetworkBehaviour
         GameObject bullet = NetworkManager.Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
 
         // Pobierz pozycjê myszy w przestrzeni œwiata
-        Ray ray = fpsCam.ScreenPointToRay(Input.mousePosition);                //blad
+        Ray ray = fpsCam.ScreenPointToRay(Input.mousePosition);               
         RaycastHit hit;
 
         // SprawdŸ, czy raycast trafi³ w coœ
         if (Physics.Raycast(ray, out hit))
         {
             // Oblicz kierunek do miejsca trafienia
-            Vector3 targetPosition = hit.point;
-            Rigidbody bulletRigidbody =  bullet.GetComponent<Rigidbody>();
+            Vector3 targetPosition = hit.point; 
+            Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
 
             // Przemieszczaj pocisk stopniowo w kierunku celu
             StartCoroutine(MoveBulletToPosition(bulletRigidbody, targetPosition, bulletSpeed));
@@ -127,7 +123,7 @@ public class shootingfinal : NetworkBehaviour
             yield return null;
         }
     }
-    
+
     private void ResetShot()
     {
         readyToShoot = true;

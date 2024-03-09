@@ -1875,7 +1875,7 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.2
-  m_Height: 1.8
+  m_Height: 1.96
   m_Direction: 1
   m_Center: {x: 0, y: 0.95, z: 0}
 --- !u!114 &6403891200947662837
@@ -1995,8 +1995,10 @@ GameObject:
   - component: {fileID: 2217004620775099110}
   - component: {fileID: 8240552350350787284}
   - component: {fileID: 8565091763372917139}
+  - component: {fileID: 4738481665667830161}
   - component: {fileID: 2688482481550659249}
   - component: {fileID: 7888767460527069107}
+  - component: {fileID: 4789891899354796741}
   m_Layer: 0
   m_Name: AniCh4
   m_TagString: Untagged
@@ -2030,7 +2032,7 @@ Animator:
   m_GameObject: {fileID: 4180423518062223596}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 2e49eaaeb79b94d419e5469e87afbd7b, type: 3}
-  m_Controller: {fileID: 9100000, guid: 7e215b6bfb96ab9488f1cd377372414a, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8d16b75e80e88044fa4f72b69bf90089, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2048,11 +2050,26 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4180423518062223596}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eec611b770c8ea64abdf29470498c00f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4738481665667830161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4180423518062223596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 742f6699aec550847809ef7f4ee8b605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraTransform: {fileID: 7570526947925045626}
+  convertedRotation: 0
+  roundedRotation: 0
 --- !u!114 &2688482481550659249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2081,6 +2098,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gun1: {fileID: 678383138044308239}
   gun2: {fileID: 6205330185515697766}
+--- !u!114 &4789891899354796741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4180423518062223596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5157105814cc1a44fb93409a83de8391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 8240552350350787284}
+  rifleanimations: {fileID: 9100000, guid: 8d16b75e80e88044fa4f72b69bf90089, type: 2}
+  gunanimations: {fileID: 9100000, guid: 5b6cc2d54b98d174daec9d494f0fb2a0, type: 2}
 --- !u!1 &4210672674050084291
 GameObject:
   m_ObjectHideFlags: 0

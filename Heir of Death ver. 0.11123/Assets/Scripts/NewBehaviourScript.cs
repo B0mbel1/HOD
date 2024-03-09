@@ -30,27 +30,4 @@ public class NewBehaviourScript : MonoBehaviour
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
         orientation.rotation = Quaternion.Euler(0, yRotation, 0);
     }
-
-    private void SprawdzCo()
-    {
-        if (!MenuPauzy.GameIsPaused)
-        {
-            if (!FreeTeleportation.teleportState)
-            {
-                if (Input.GetMouseButtonDown(0))
-                {
-                    RaycastHit co;
-                    if (Physics.Raycast(transform.position, transform.forward, out co, Mathf.Infinity))
-                    {
-                        obrazeniaOK czyOK = co.collider.GetComponent<obrazeniaOK>();
-                        if (czyOK != null)
-                        {
-                            czyOK.zadajObrazenia(10);
-
-                        }
-                    }
-                }
-            }
-        }
-    }
 }
