@@ -5741,6 +5741,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 771728172258281313}
     m_Modifications:
+    - target: {fileID: 697651014157221996, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 2167817230289297634, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
       propertyPath: m_Name
       value: Player HUD
