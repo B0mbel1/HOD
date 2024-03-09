@@ -14,6 +14,7 @@ public class PlayerHealth : NetworkBehaviour
     public Image frontHealthBar;
     public Image backHealthBar;
 
+
     private void Start()
     {
         health = maxHealth;
@@ -23,15 +24,22 @@ public class PlayerHealth : NetworkBehaviour
     {
         if (!IsOwner) return;
 
-        if (Input.GetKeyDown(KeyCode.E))
+
+
+        //Dzia³aj¹cy skrypt z zadawaniem obra¿eñ/////////////////////////
+        if (Input.GetKeyDown(KeyCode.E) && IsHost)
         {
             DamageClientRpc(12f, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
+            
         }
 
         if (Input.GetKeyDown(KeyCode.T) && IsClient && !IsHost)
         {
             DamageServerRpc(12f);
+            
         }
+
+        //////////////////////////////////////////////
 
         UpdateHealthUI();
         //health = Mathf.Clamp(health, 0, maxHealth);
