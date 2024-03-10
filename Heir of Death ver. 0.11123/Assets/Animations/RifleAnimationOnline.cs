@@ -22,20 +22,14 @@ public class RifleAnimationsOnline : NetworkBehaviour
         if (!IsOwner) return;
 
 
-        // Get the rotation around the x-axis of the camera
+        
         float rotationX = cameraTransform.rotation.eulerAngles.x;
-       // float mouseY = Input.GetAxisRaw("Mouse Y");
-        //xRotation -= mouseY;
-        // Convert the rotation to float values with range -90 to 90
         convertedRotation = NormalizeRotation(rotationX, -90f, 90f);
-       // convertedRotation = NormalizeRotation(xRotation, -30f, 90f);
         roundedRotation = Mathf.RoundToInt(convertedRotation);
-
         animator.SetFloat("camera", roundedRotation);
 
 
         bool isRunning = animator.GetBool("isRunning");
-        bool shooting = animator.GetBool("shooting");
         bool isSprinting = animator.GetBool("isSprinting");
         bool isCrouching = animator.GetBool("isCrouching");
         bool Backward = animator.GetBool("Backward");
@@ -53,7 +47,6 @@ public class RifleAnimationsOnline : NetworkBehaviour
         bool crouchPressed = Input.GetKey("left ctrl");
         bool jumpPressed = Input.GetKey("space");
         bool altPressed = Input.GetKey("left alt");
-        bool LPMPressed = Input.GetKey("mouse 0");
 
         if (!isRunning && forwardPressed)
         {
@@ -63,16 +56,6 @@ public class RifleAnimationsOnline : NetworkBehaviour
         if (isRunning && !forwardPressed)
         {
             animator.SetBool("isRunning", false);
-        }
-
-        if (!shooting && LPMPressed)
-        {
-           animator.SetBool("shooting", true);
-        }
-
-        if (shooting && !LPMPressed)
-        {
-            animator.SetBool("shooting", false);
         }
 
         if (!isCrouching && crouchPressed)
