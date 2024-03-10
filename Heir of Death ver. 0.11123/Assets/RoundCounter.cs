@@ -5,54 +5,24 @@ using UnityEngine;
 
 public class RoundCounter : NetworkBehaviour
 {
-    public static RoundCounter Instance { get; private set; }
-    [SerializeField] public static int counter0;
-    [SerializeField] public static int counter1;
+    
+    [SerializeField] public static int counterhost;
+    [SerializeField] public static int counterclient;
 
-    private void Awake()
+    private void Update()
     {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        
+        if(!IsOwner) return;
+        Debug.Log("Host" + counterhost);
+        Debug.Log("Klient" + counterclient);
     }
 
-    private void Start()
+    public override void OnNetworkSpawn()
     {
-        counter0 = 0;
-        counter1 = 0;
+        counterhost = 0;
+        counterclient = 0;
     }
 
-    public void UpdateClientLocally()
-    {
-        counter1 += 1;
-    }
-
-    public void UpdateHostLocally()
-    {
-        counter0 += 1;
-    }
-
-    [ServerRpc(RequireOwnership = false)]
-    public void UpdateClientCounterServerRpc()
-    {
-        counter1 += 1;
-    }
-
-
-    [ClientRpc]
-    public void GetClientCounterClientRpc()
-    {
-        
-            counter0 += 1;
-        
-    }
+    
 
     
 }

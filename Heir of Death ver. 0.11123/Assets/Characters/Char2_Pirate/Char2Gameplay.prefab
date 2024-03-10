@@ -1132,6 +1132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {x: 0, y: 0, z: 0}
+  GetSpawnPosition: {fileID: 1370538760696813027}
   ownerRoundCountTxt: {fileID: 329971787762048978}
   opponentRoundCountTxt: {fileID: 6648148066683907695}
   dead: 0

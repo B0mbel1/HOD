@@ -13,7 +13,7 @@ public class HandleWinLose : NetworkBehaviour
     public void Update()
     {
         //if (!IsOwner) return;
-        if (RoundCounter.counter0 == 10)
+        if (RoundCounter.counterhost == 10)
         {
             ActivateWinScreen();
         }
@@ -55,8 +55,8 @@ public class HandleWinLose : NetworkBehaviour
 
     public void WyjdzZGry()
     {
-        RoundCounter.counter0 = 0;
-        RoundCounter.counter1 = 0;
+        RoundCounter.counterhost = 0;
+        RoundCounter.counterclient = 0;
         Time.timeScale = 1f;
         ServerManager.Instance.StopServer();
 
