@@ -32,6 +32,10 @@ public class PlayerHealth : NetworkBehaviour
         {
             DamageServerRpc(12f);
         }
+        if(Input.GetKeyDown(KeyCode.B))
+        {
+            health = health - 20;
+        }
 
         UpdateHealthUI();
         //health = Mathf.Clamp(health, 0, maxHealth);

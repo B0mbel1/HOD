@@ -12,7 +12,8 @@ public class HandleWinLose : NetworkBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.RightAlt))
+        //if (!IsOwner) return;
+        if (RoundCounter.counter0 == 10)
         {
             ActivateWinScreen();
         }
@@ -54,8 +55,12 @@ public class HandleWinLose : NetworkBehaviour
 
     public void WyjdzZGry()
     {
-        ServerManager.Instance.StopServer();
+        RoundCounter.counter0 = 0;
+        RoundCounter.counter1 = 0;
         Time.timeScale = 1f;
+        ServerManager.Instance.StopServer();
+
+        
         SceneManager.LoadScene("Menu");
     }
 }

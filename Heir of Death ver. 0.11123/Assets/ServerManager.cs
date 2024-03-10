@@ -103,4 +103,6 @@ public class ServerManager : MonoBehaviour
         gameplaySceneName = SceneList[0];
         NetworkManager.Singleton.SceneManager.LoadScene(gameplaySceneName, LoadSceneMode.Single);
     }
+
+    
 }
