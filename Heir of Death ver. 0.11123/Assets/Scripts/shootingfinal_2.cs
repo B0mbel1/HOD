@@ -25,7 +25,7 @@ public class shootingfinal_2 : NetworkBehaviour
     public AudioClip reloadSound;
     private AudioSource audioSource;
 
-    public GameObject bulletPrefab;
+    public NetworkObject bulletPrefab;
     public Transform bulletSpawn;
     public float bulletSpeed;
 
@@ -42,8 +42,53 @@ public class shootingfinal_2 : NetworkBehaviour
     void Update()
     {
         if (!IsOwner) { return; }
-        MyInput();
+
+        if (IsHost)
+        {
+            MyInput();
+        }
+        if (!IsHost)
+        {
+            MyInput();
+        }
     }
+
+    public override void OnNetworkSpawn()
+    {
+        base.OnNetworkSpawn();
+    }
+
+    [ServerRpc]
+    private void BulletSpawnServerRpc(Vector3 vector)
+    {
+        NetworkObject bulletInstance = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
+        Rigidbody bulletRigidbody = bulletInstance.GetComponent<Rigidbody>();
+        StartCoroutine(MoveBulletToPosition(bulletRigidbody, vector, bulletSpeed));
+    }
+
+    [ClientRpc]
+    private void BulletSpawnClientRpc(Vector3 vector, ClientRpcParams clientRpcParams)
+    {
+        NetworkObject bulletInstance = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
+        Rigidbody bulletRigidbody = bulletInstance.GetComponent<Rigidbody>();
+        StartCoroutine(MoveBulletToPosition(bulletRigidbody, vector, bulletSpeed));
+    }
+
+    [ServerRpc]
+    private void SynchroServerRpc(Vector3 vector)
+    {
+        ClientRpcParams clientRpcParams = new ClientRpcParams
+        {
+            Send = new ClientRpcSendParams
+            {
+                TargetClientIds = new ulong[] { 1 }
+            }
+        };
+
+        BulletSpawnClientRpc(vector, clientRpcParams);
+    }
+
+
 
     private void MyInput()
     {
@@ -56,46 +101,53 @@ public class shootingfinal_2 : NetworkBehaviour
 
                 if (Input.GetKeyDown(KeyCode.R) && bulletsLeft2 < magazineSize && !reloading) Reload();
 
-                //Shoot
                 if (readyToShoot && shooting && !reloading && bulletsLeft2 > 0)
                 {
                     bulletsShot = bulletsPerTap;
+
                     Shoot();
                 }
             }
         }
     }
+
     void Shoot()
     {
         readyToShoot = false;
-        // Utwórz pocisk na pozycji bulletSpawn
-        GameObject bullet = NetworkManager.Instantiate(bulletPrefab, bulletSpawn.transform.position, Quaternion.identity);
 
-        // Pobierz pozycjê myszy w przestrzeni œwiata
         Ray ray = fpsCam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        // SprawdŸ, czy raycast trafi³ w coœ
         if (Physics.Raycast(ray, out hit))
         {
-            // Oblicz kierunek do miejsca trafienia
             Vector3 targetPosition = hit.point;
-            Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
+            Vector3 newSpawn = bulletSpawn.position;
 
-            // Przemieszczaj pocisk stopniowo w kierunku celu
-            StartCoroutine(MoveBulletToPosition(bulletRigidbody, targetPosition, bulletSpeed));
+            if (IsHost)
+            {
+                BulletSpawnClientRpc(targetPosition, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 0, 1 } } });
+                BulletSpawnServerRpc(targetPosition);
+            }
+            if (!IsHost)
+            {
+                BulletSpawnServerRpc(targetPosition);
+                SynchroServerRpc(targetPosition);
+            }
         }
         else
         {
-            // Jeœli raycast nie trafi³ w nic, pocisk bêdzie lecia³ w kierunku kursora myszy
-            Vector3 directionToMouse = (ray.origin + ray.direction * 100f - bulletSpawn.transform.position).normalized;
-            Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
+            Vector3 targetPosition = hit.point;
 
-            // Oblicz docelow¹ pozycjê pocisku
-            Vector3 targetPosition = bulletSpawn.transform.position + directionToMouse * 100f;
-
-            // Przemieszczaj pocisk stopniowo w kierunku celu
-            StartCoroutine(MoveBulletToPosition(bulletRigidbody, targetPosition, bulletSpeed));
+            if (IsHost)
+            {
+                BulletSpawnServerRpc(targetPosition);
+                BulletSpawnClientRpc(targetPosition, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 0, 1 } } });
+            }
+            if (!IsHost)
+            {
+                BulletSpawnServerRpc(targetPosition);
+                SynchroServerRpc(targetPosition);
+            }
         }
 
         audioSource.PlayOneShot(shootSound);
@@ -115,10 +167,10 @@ public class shootingfinal_2 : NetworkBehaviour
 
     IEnumerator MoveBulletToPosition(Rigidbody bulletRigidbody, Vector3 targetPosition, float speed)
     {
-        while (Vector3.Distance(bulletRigidbody.transform.position, targetPosition) > 0.1f)
+        while (Vector3.Distance(bulletRigidbody.position, targetPosition) > 0.1f)
         {
             // Oblicz kierunek do celu
-            Vector3 direction = (targetPosition - bulletRigidbody.transform.position).normalized;
+            Vector3 direction = (targetPosition - bulletRigidbody.position).normalized;
 
             // Przemieszczaj pocisk w kierunku celu
             bulletRigidbody.MovePosition(bulletRigidbody.position + direction * speed * Time.deltaTime);
@@ -138,6 +190,7 @@ public class shootingfinal_2 : NetworkBehaviour
         audioSource.PlayOneShot(reloadSound);
         Invoke("ReloadFinished", reloadTime);
     }
+
     private void ReloadFinished()
     {
         bulletsLeft2 = magazineSize;
