@@ -21,7 +21,7 @@ public class RifleAnimationsOnline : NetworkBehaviour
     {
         if (!IsOwner) return;
 
-
+      
         
         float rotationX = cameraTransform.rotation.eulerAngles.x;
         convertedRotation = NormalizeRotation(rotationX, -90f, 90f);
