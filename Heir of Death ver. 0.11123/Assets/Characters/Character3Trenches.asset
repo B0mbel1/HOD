@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73d2a437a584f8442a6f71cfc297a179, type: 3}
+  m_Name: Character3Trenches
+  m_EditorClassIdentifier: 
+  id: 3
+  displayName: Rizael
+  displayBio: "W\u0119druj\u0105cy po \u015Bwiecie wysysacz dusz, szukaj\u0105cy
+    ofiar, kt\xF3re nie b\u0119d\u0105 ba\u0142y si\u0119 sta\u0107 z nim do walki.
+    Czyste uciele\u015Bnienie po\u017Cogi i sprytu. Nieprzewidywalny i nie znaj\u0105cy
+    znaczenia s\u0142owa poddanie. Po odbyciu dziesi\u0105tek tysi\u0119cy walk przysz\u0142a
+    pora na t\u0105 ostatni\u0105 w swoim \u017Cyciu..."
+  icon: {fileID: 21300000, guid: b2cd912eca73dde4795d3c91106e1e94, type: 3}
+  introPrefab: {fileID: 5541418207077098958, guid: fcc530ea9581e714885812a05a87b6a9, type: 3}
+  gameplayPrefab: {fileID: 5085903601916345769, guid: ed5ea1fe8dfd58b46b355062b0d8d961, type: 3}
