@@ -21,7 +21,7 @@ public class RoundHandler : NetworkBehaviour
         spawnPoint = NetworkManager.Singleton.ConnectedClients[NetworkManager.LocalClientId].PlayerObject.transform.position;
         dead = false;
         Debug.Log(spawnPoint);
-        counter = GetComponent<RoundCounter>();
+        counter = FindObjectOfType<RoundCounter>();
         base.OnNetworkSpawn();
         
     }
@@ -65,6 +65,7 @@ public class RoundHandler : NetworkBehaviour
 
     public void Die(ulong clientId)
     {
+
         if (IsHost)
         {
             counter.UpdateHostLocally();

@@ -34,17 +34,17 @@ public class PlayerHealth : NetworkBehaviour
         }
 
         //Dzia³aj¹cy skrypt z zadawaniem obra¿eñ/////////////////////////
-        if (Input.GetKeyDown(KeyCode.E) && IsHost)
-        {
-            DamageClientRpc(12f, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
+        //if (Input.GetKeyDown(KeyCode.E) && IsHost)
+        //{
+        //    DamageClientRpc(12f, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
             
-        }
+        //}
 
-        if (Input.GetKeyDown(KeyCode.T) && IsClient && !IsHost)
-        {
-            DamageServerRpc(12f);
+        //if (Input.GetKeyDown(KeyCode.T) && IsClient && !IsHost)
+        //{
+        //    DamageServerRpc(12f);
             
-        }
+        //}
         if(Input.GetKeyDown(KeyCode.B))
         {
             health = health - 20;
