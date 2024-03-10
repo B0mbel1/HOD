@@ -8,8 +8,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
-    bool altPressed = Input.GetKey("left alt");
-    bool sprintPressed = Input.GetKey("left shift");
+    bool altPressed; 
+    bool sprintPressed; 
     [Header("Walking")]
     private float moveSpeed;
     public float walkSpeed;
@@ -100,6 +100,8 @@ public class PlayerMovement : MonoBehaviour
         rigid = GetComponent<Rigidbody>();
 
         PlayLandingSound += TestPlayLandingSound;
+        altPressed = Input.GetKey("left alt");
+        sprintPressed = Input.GetKey("left shift");
     }
 
     void Update()

@@ -12,6 +12,13 @@ public class DisplayPlayerName : MonoBehaviour
 
     void Update()
     {
-        username.text = PlayfabManager.name;
+        if (PlayfabManager.name != null)
+        {
+            username.text = PlayfabManager.name;
+        }
+        else
+        {
+            username.text = "Goœæ";
+        }
     }
 }
