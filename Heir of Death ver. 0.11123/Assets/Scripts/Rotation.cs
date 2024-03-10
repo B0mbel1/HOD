@@ -1,11 +1,13 @@
+using Unity.Netcode;
 using UnityEngine;
 
-public class Rotation : MonoBehaviour
+public class Rotation : NetworkBehaviour
 {
     public GameObject cam;
 
-    void Update()
+    void FixedUpdate()
     {
+        if (!IsOwner) return;
         HandleRotationInput();
     }
 
