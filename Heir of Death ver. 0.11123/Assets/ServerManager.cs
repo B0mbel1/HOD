@@ -100,7 +100,7 @@ public class ServerManager : MonoBehaviour
     public void StartGame()
     {
         gameHasStarted = true;
-        gameplaySceneName = SceneList[0];
+        gameplaySceneName = SceneList[1];
         NetworkManager.Singleton.SceneManager.LoadScene(gameplaySceneName, LoadSceneMode.Single);
     }
 

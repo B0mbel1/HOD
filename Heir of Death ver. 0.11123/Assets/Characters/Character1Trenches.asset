@@ -24,4 +24,4 @@ MonoBehaviour:
     co powoduje, \u017Ce zaczynamy by\u0107 ni\u0105 sami..."
   icon: {fileID: 21300000, guid: 59e05ef13720c754b93c9c95a3513580, type: 3}
   introPrefab: {fileID: 4578970355672015949, guid: c640380a4e1cc5942a48106347102a70, type: 3}
-  gameplayPrefab: {fileID: 395039855420561295, guid: db23e52dba271594c88d63f3234a146d, type: 3}
+  gameplayPrefab: {fileID: 395039855420561295, guid: 182d0e639e6d41041a51415d436ea616, type: 3}

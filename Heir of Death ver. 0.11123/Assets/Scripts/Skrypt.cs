@@ -29,13 +29,14 @@ public class Skrypt : NetworkBehaviour
     [ServerRpc]
     public void BulletSpawnServerRpc()
     {
-        audioSource.Play();
+        NetworkLog.LogInfo("Nagrobek");
+        audioSource.PlayOneShot(ameno);
     }
 
     [ClientRpc]
     public void BulletSpawnClientRpc(ClientRpcParams clientRpcParams)
     {
-        audioSource.Play();
+        audioSource.PlayOneShot(ameno);
     }
 
     [ServerRpc]
