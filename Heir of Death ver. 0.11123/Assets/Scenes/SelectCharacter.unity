@@ -535,6 +535,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 935890435520816436, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
+      propertyPath: m_text
+      value: Wybieranie...
+      objectReference: {fileID: 0}
     - target: {fileID: 1242367671494295392, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
       propertyPath: m_fontSize
       value: 30
@@ -571,9 +575,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1962374641139834109, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
+      propertyPath: m_text
+      value: "\u0141adowanie..."
+      objectReference: {fileID: 0}
     - target: {fileID: 3127509610762614205, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
       propertyPath: m_Name
       value: CharacterSelect
+      objectReference: {fileID: 0}
+    - target: {fileID: 3400845734531091643, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
+      propertyPath: m_text
+      value: "\u0141adowanie..."
       objectReference: {fileID: 0}
     - target: {fileID: 3648590641235717445, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -587,6 +599,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.791
       objectReference: {fileID: 0}
+    - target: {fileID: 4104196667959965042, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
+      propertyPath: m_text
+      value: Wybieranie...
+      objectReference: {fileID: 0}
     - target: {fileID: 4172789517138272331, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
       propertyPath: m_text
       value: 
@@ -598,6 +614,10 @@ PrefabInstance:
     - target: {fileID: 4887979849583173846, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4930685072000198986, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
+      propertyPath: m_text
+      value: Wybieranie...
       objectReference: {fileID: 0}
     - target: {fileID: 5169024991814785370, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -666,6 +686,10 @@ PrefabInstance:
     - target: {fileID: 5986343681341445169, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
       propertyPath: m_text
       value: Wybieranie...
+      objectReference: {fileID: 0}
+    - target: {fileID: 7467961848040718533, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
+      propertyPath: m_text
+      value: "\u0141adowanie..."
       objectReference: {fileID: 0}
     - target: {fileID: 7585858182925046760, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
       propertyPath: characterBioText

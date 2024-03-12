@@ -63,21 +63,7 @@ public class Leaderboard : MonoBehaviour
         Debug.Log(error.GenerateErrorReport());
     }
 
-    public void SendLeaderboard(int score)
-    {
-        var request = new UpdatePlayerStatisticsRequest
-        {
-            Statistics = new List<StatisticUpdate>
-            {
-                new StatisticUpdate
-                {
-                    StatisticName = "KC",
-                    Value = score
-                }
-            }
-        };
-        PlayFabClientAPI.UpdatePlayerStatistics(request, OnLeaderboardUpdate, OnErrorL);
-    }
+    
 
     public void OnLeaderboardUpdate(UpdatePlayerStatisticsResult result)
     {

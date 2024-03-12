@@ -59,14 +59,14 @@ public class RoundHandler : NetworkBehaviour
     {
         if (dead == true)
         {
-            Die(intVar);
+            Die();
             //RespawnPlayer(NetworkManager.LocalClientId);
         }
     }
 
 
 
-    public void Die(int clientId)
+    public void Die()
     {
         if (!IsHost && IsClient)
         {
@@ -81,37 +81,28 @@ public class RoundHandler : NetworkBehaviour
         }
 
         Debug.Log("Destroying");
-        if (IsHost)
-        { 
-        //gameObject.GetComponent<NetworkObject>().Despawn();
-        NetworkObject playerPrefab = NetworkManager.ConnectedClientsList[clientId].PlayerObject;
-        playerPrefab.GetComponent<PlayerMovementOnline>().enabled = false;
-        playerPrefab.GetComponentInChildren<MeshRenderer>().enabled = false;
-        playerPrefab.GetComponentInChildren<shootingfinal>().enabled = false;
-        RespawnPlayer(clientId);
-        }
-        if (IsClient)
-        {
-            DieServerRpc(clientId);
-            RespawnPlayerServerRpc(clientId, spawnPoint);
-            dead = false;
-        }
+         
+        
+        
+        GetComponent<PlayerMovementOnline>().enabled = false;
+        GetComponentInChildren<MeshRenderer>().enabled = false;
+        GetComponentInChildren<shootingfinal>().enabled = false;
+        RespawnPlayer();
+        
+        
     }
 
-    public void RespawnPlayer(int clientId)
+    public void RespawnPlayer()
     {
 
-        // NetworkObject playerPrefab = Instantiate(NetworkManager.LocalClient.PlayerObject, new Vector3(0f, 1f, 0f), Quaternion.identity);
-        // playerPrefab.SpawnAsPlayerObject(clientId);
-        NetworkObject playerPrefab = NetworkManager.ConnectedClientsList[clientId].PlayerObject;
+        
+        GetComponentInChildren<MeshRenderer>().enabled = true;
+        GetComponent<PlayerMovementOnline>().enabled = true;
+        GetComponentInChildren<shootingfinal>().enabled = true;
         transform.position = spawnPoint;
-        playerPrefab.GetComponentInChildren<MeshRenderer>().enabled = true;
-        playerPrefab.GetComponent<PlayerMovementOnline>().enabled = true;
-        playerPrefab.GetComponentInChildren<shootingfinal>().enabled = true;
-
 
         dead = false;
-        // Invoke("RestoreHealth", 2f);
+        
     }
 
     
@@ -141,32 +132,5 @@ public class RoundHandler : NetworkBehaviour
         }
     }
 
-    [ServerRpc(RequireOwnership = false)]
-    public void DieServerRpc(int clientid)
-    {
-        NetworkObject playerPrefab = NetworkManager.ConnectedClientsList[clientid].PlayerObject;
-        playerPrefab.GetComponent<PlayerMovementOnline>().enabled = false;
-        playerPrefab.GetComponentInChildren<MeshRenderer>().enabled = false;
-        playerPrefab.GetComponentInChildren<shootingfinal>().enabled = false;
-    }
-
-    [ServerRpc(RequireOwnership = false)]
-    public void RespawnPlayerServerRpc(int clientid, Vector3 position)
-    {
-        NetworkObject playerPrefab = NetworkManager.ConnectedClientsList[clientid].PlayerObject;
-        playerPrefab.GetComponent<ClientNetworkTransform>().transform.position = position;
-        ChangeClientPositionClientRpc(position);
-        playerPrefab.GetComponentInChildren<MeshRenderer>().enabled = true;
-        playerPrefab.GetComponent<PlayerMovementOnline>().enabled = true;
-        playerPrefab.GetComponentInChildren<shootingfinal>().enabled = true;
-    }
-
-    [ClientRpc]
-    public void ChangeClientPositionClientRpc(Vector3 position)
-    {
-        if (!IsHost)
-        {
-            transform.position = position;
-        }
-    }
+    
 }

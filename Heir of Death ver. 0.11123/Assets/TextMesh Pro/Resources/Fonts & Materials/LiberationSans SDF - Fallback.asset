@@ -302,21 +302,6 @@ MonoBehaviour:
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
-  - m_Index: 259
-    m_Metrics:
-      m_Width: 46
-      m_Height: 59
-      m_HorizontalBearingX: 0
-      m_HorizontalBearingY: 59
-      m_HorizontalAdvance: 48
-    m_GlyphRect:
-      m_X: 105
-      m_Y: 10
-      m_Width: 46
-      m_Height: 59
-    m_Scale: 1
-    m_AtlasIndex: 0
-    m_ClassDefinitionType: 0
   - m_Index: 318
     m_Metrics:
       m_Width: 35
@@ -329,6 +314,21 @@ MonoBehaviour:
       m_Y: 423
       m_Width: 35
       m_Height: 63
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
+  - m_Index: 259
+    m_Metrics:
+      m_Width: 46
+      m_Height: 59
+      m_HorizontalBearingX: 0
+      m_HorizontalBearingY: 59
+      m_HorizontalAdvance: 48
+    m_GlyphRect:
+      m_X: 105
+      m_Y: 10
+      m_Width: 46
+      m_Height: 59
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
@@ -362,12 +362,12 @@ MonoBehaviour:
     m_GlyphIndex: 316
     m_Scale: 1
   - m_ElementType: 1
-    m_Unicode: 321
-    m_GlyphIndex: 259
-    m_Scale: 1
-  - m_ElementType: 1
     m_Unicode: 380
     m_GlyphIndex: 318
+    m_Scale: 1
+  - m_ElementType: 1
+    m_Unicode: 321
+    m_GlyphIndex: 259
     m_Scale: 1
   m_AtlasTextures:
   - {fileID: 28268798066460806}
@@ -403,14 +403,14 @@ MonoBehaviour:
     m_Y: 331
     m_Width: 54
     m_Height: 82
-  - m_X: 95
-    m_Y: 0
-    m_Width: 65
-    m_Height: 78
   - m_X: 0
     m_Y: 413
     m_Width: 54
     m_Height: 82
+  - m_X: 95
+    m_Y: 0
+    m_Width: 65
+    m_Height: 78
   m_FreeGlyphRects:
   - m_X: 57
     m_Y: 164
@@ -428,6 +428,10 @@ MonoBehaviour:
     m_Y: 331
     m_Width: 457
     m_Height: 180
+  - m_X: 0
+    m_Y: 495
+    m_Width: 511
+    m_Height: 16
   - m_X: 95
     m_Y: 78
     m_Width: 416
@@ -440,10 +444,6 @@ MonoBehaviour:
     m_Y: 0
     m_Width: 351
     m_Height: 511
-  - m_X: 0
-    m_Y: 495
-    m_Width: 511
-    m_Height: 16
   m_fontInfo:
     Name: Liberation Sans
     PointSize: 86
