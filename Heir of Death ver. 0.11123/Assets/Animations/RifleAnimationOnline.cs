@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -9,20 +10,25 @@ public class RifleAnimationsOnline : NetworkBehaviour
     public float convertedRotation;
     public int roundedRotation;
     float xRotation;
+    public static bool ziemia;
+    public float playerHeight;
+    public LayerMask whatIsGround;
 
     void Start()
     {
         animator= GetComponent<Animator>();
         
+        
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         if (!IsOwner) return;
 
-      
-        
+        ziemia= Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, whatIsGround);
+
+
         float rotationX = cameraTransform.rotation.eulerAngles.x;
         convertedRotation = NormalizeRotation(rotationX, -90f, 90f);
         roundedRotation = Mathf.RoundToInt(convertedRotation);
@@ -48,146 +54,151 @@ public class RifleAnimationsOnline : NetworkBehaviour
         bool jumpPressed = Input.GetKey("space");
         bool altPressed = Input.GetKey("left alt");
 
-        if (!isRunning && forwardPressed)
+        if (ziemia)
         {
-            animator.SetBool("isRunning", true);
-        }
 
-        if (isRunning && !forwardPressed)
-        {
-            animator.SetBool("isRunning", false);
-        }
 
-        if (!isCrouching && crouchPressed)
-        {
-            animator.SetBool("isCrouching", true);
-        }
 
-        if (isCrouching && !crouchPressed)
-        {
-            animator.SetBool("isCrouching", false);
-        }
+            if (!isRunning && forwardPressed)
+            {
+                animator.SetBool("isRunning", true);
+            }
 
-        if (!isSprinting && (forwardPressed && sprintPressed))
-        {
-            animator.SetBool("isSprinting", true);
-        }
+            if (isRunning && !forwardPressed)
+            {
+                animator.SetBool("isRunning", false);
+            }
 
-        if (isSprinting && (!forwardPressed && !sprintPressed))
-        {
-            animator.SetBool("isSprinting", false);
-        }
+            if (!isCrouching && crouchPressed)
+            {
+                animator.SetBool("isCrouching", true);
+            }
 
-        if (!isSprinting && (leftPressed && sprintPressed))
-        {
-            animator.SetBool("isSprinting", true);
-        }
+            if (isCrouching && !crouchPressed)
+            {
+                animator.SetBool("isCrouching", false);
+            }
 
-        if (isSprinting && (!leftPressed && !sprintPressed))
-        {
-            animator.SetBool("isSprinting", false);
-        }
+            if (!isSprinting && (forwardPressed && sprintPressed))
+            {
+                animator.SetBool("isSprinting", true);
+            }
 
-        if (!isSprinting && (rightPressed && sprintPressed))
-        {
-            animator.SetBool("isSprinting", true);
-        }
+            if (isSprinting && (!forwardPressed && !sprintPressed))
+            {
+                animator.SetBool("isSprinting", false);
+            }
 
-        if (isSprinting && (!rightPressed && !sprintPressed))
-        {
-            animator.SetBool("isSprinting", false);
-        }
+            if (!isSprinting && (leftPressed && sprintPressed))
+            {
+                animator.SetBool("isSprinting", true);
+            }
 
-        if (!isCrouching && (forwardPressed && crouchPressed))
-        {
-            animator.SetBool("isCrouching", true);
-        }
+            if (isSprinting && (!leftPressed && !sprintPressed))
+            {
+                animator.SetBool("isSprinting", false);
+            }
 
-        if (isCrouching && (!forwardPressed && !crouchPressed))
-        {
-            animator.SetBool("isCrouching", false);
-        }
+            if (!isSprinting && (rightPressed && sprintPressed))
+            {
+                animator.SetBool("isSprinting", true);
+            }
 
-        if (isSprinting && (!WtC && altPressed))
-        {
-            animator.SetBool("WtC", true);
-        }
+            if (isSprinting && (!rightPressed && !sprintPressed))
+            {
+                animator.SetBool("isSprinting", false);
+            }
 
-        if (isSprinting && (WtC && !altPressed))
-        {
-            animator.SetBool("WtC", false);
-        }
+            if (!isCrouching && (forwardPressed && crouchPressed))
+            {
+                animator.SetBool("isCrouching", true);
+            }
 
-        if (!Backward && backwardPressed)
-        {
-            animator.SetBool("Backward", true);
-        }
+            if (isCrouching && (!forwardPressed && !crouchPressed))
+            {
+                animator.SetBool("isCrouching", false);
+            }
 
-        if (Backward && !backwardPressed)
-        {
-            animator.SetBool("Backward", false);
-        }
+            if (isSprinting && (!WtC && altPressed))
+            {
+                animator.SetBool("WtC", true);
+            }
 
-        if (!isSprinting && (backwardPressed && sprintPressed))
-        {
-            animator.SetBool("isSprinting", true);
-        }
+            if (isSprinting && (WtC && !altPressed))
+            {
+                animator.SetBool("WtC", false);
+            }
 
-        if (isSprinting && (!backwardPressed && !sprintPressed))
-        {
-            animator.SetBool("isSprinting", false);
-        }
+            if (!Backward && backwardPressed)
+            {
+                animator.SetBool("Backward", true);
+            }
 
-        if (!ForwardLeft  && leftPressed)
-        {
-            animator.SetBool("ForwardLeft", true);
-        }
+            if (Backward && !backwardPressed)
+            {
+                animator.SetBool("Backward", false);
+            }
 
-        if (ForwardLeft && !leftPressed)
-        {
-            animator.SetBool("ForwardLeft", false);
-        }
+            if (!isSprinting && (backwardPressed && sprintPressed))
+            {
+                animator.SetBool("isSprinting", true);
+            }
 
-        if (!ForwardRight && rightPressed)
-        {
-            animator.SetBool("ForwardRight", true);
-        }
+            if (isSprinting && (!backwardPressed && !sprintPressed))
+            {
+                animator.SetBool("isSprinting", false);
+            }
 
-        if (ForwardRight && !rightPressed)
-        {
-            animator.SetBool("ForwardRight", false);
-        }
+            if (!ForwardLeft && leftPressed)
+            {
+                animator.SetBool("ForwardLeft", true);
+            }
 
-        if (!Left && leftPressed)
-        {
-            animator.SetBool("Left", true);
-        }
+            if (ForwardLeft && !leftPressed)
+            {
+                animator.SetBool("ForwardLeft", false);
+            }
 
-        if (Left && !leftPressed)
-        {
-            animator.SetBool("Left", false);
-        }
+            if (!ForwardRight && rightPressed)
+            {
+                animator.SetBool("ForwardRight", true);
+            }
 
-        if (!Right && rightPressed)
-        {
-            animator.SetBool("Right", true);
-        }
+            if (ForwardRight && !rightPressed)
+            {
+                animator.SetBool("ForwardRight", false);
+            }
 
-        if (Right && !rightPressed)
-        {
-            animator.SetBool("Right", false);
-        }
+            if (!Left && leftPressed)
+            {
+                animator.SetBool("Left", true);
+            }
 
-        if (!Jump && jumpPressed)
-        {
-            animator.SetBool("Jump", true);
-        }
+            if (Left && !leftPressed)
+            {
+                animator.SetBool("Left", false);
+            }
 
-        if (Jump && !jumpPressed)
-        {
-            animator.SetBool("Jump", false);
-        }
+            if (!Right && rightPressed)
+            {
+                animator.SetBool("Right", true);
+            }
 
+            if (Right && !rightPressed)
+            {
+                animator.SetBool("Right", false);
+            }
+
+            if (!Jump && jumpPressed)
+            {
+                animator.SetBool("Jump", true);
+            }
+
+            if (Jump && !jumpPressed)
+            {
+                animator.SetBool("Jump", false);
+            }
+        }
 
     }
     float NormalizeRotation(float rotation, float min, float max)

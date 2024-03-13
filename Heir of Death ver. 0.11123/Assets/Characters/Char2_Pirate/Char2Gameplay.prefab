@@ -2495,6 +2495,8 @@ MonoBehaviour:
   animator: {fileID: 8937510978976830502}
   rifleanimations: {fileID: 9100000, guid: fd453bc276f53f243b860ead17b6a9c6, type: 2}
   gunanimations: {fileID: 9100000, guid: 3ea818fe528f7634a9d5471c217e0576, type: 2}
+  gun1: {fileID: 6736592316617080383}
+  gun2: {fileID: 5368188194080034748}
 --- !u!1 &4273995719089753977
 GameObject:
   m_ObjectHideFlags: 0
