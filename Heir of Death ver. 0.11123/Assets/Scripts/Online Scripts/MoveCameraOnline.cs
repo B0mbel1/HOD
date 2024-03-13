@@ -19,7 +19,7 @@ public class MoveCameraOnline : NetworkBehaviour
         base.OnNetworkSpawn(); 
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (!IsOwner && !IsLocalPlayer) return;
         transform.position = cameraPosition.position;

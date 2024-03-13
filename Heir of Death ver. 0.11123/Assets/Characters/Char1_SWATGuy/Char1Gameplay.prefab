@@ -1233,7 +1233,7 @@ Transform:
   m_GameObject: {fileID: 2360858554460628363}
   serializedVersion: 2
   m_LocalRotation: {x: -3.7968527e-15, y: -3.1086245e-15, z: -5.684342e-14, w: 1}
-  m_LocalPosition: {x: -0.09085083, y: 5.018051, z: 0.14556885}
+  m_LocalPosition: {x: -0.27500916, y: 4.864148, z: 0.06929737}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1578,6 +1578,7 @@ GameObject:
   - component: {fileID: 4361354713182670248}
   - component: {fileID: 7928473494070720239}
   - component: {fileID: 3431224240255397763}
+  - component: {fileID: 8424777236628201647}
   m_Layer: 0
   m_Name: Char1Gameplay
   m_TagString: Untagged
@@ -1763,7 +1764,7 @@ MonoBehaviour:
   sprintSpeed: 10
   slideSpeed: 20
   crouchSpeed: 3
-  crouchYScale: 0.25
+  crouchYScale: 1
   playerHeight: 2
   groundDrag: 5
   jumpForce: 10
@@ -1803,9 +1804,9 @@ MonoBehaviour:
   SyncRotAngleX: 1
   SyncRotAngleY: 1
   SyncRotAngleZ: 1
-  SyncScaleX: 1
-  SyncScaleY: 1
-  SyncScaleZ: 1
+  SyncScaleX: 0
+  SyncScaleY: 0
+  SyncScaleZ: 0
   PositionThreshold: 0.001
   RotAngleThreshold: 0.01
   ScaleThreshold: 0.01
@@ -2030,7 +2031,7 @@ MonoBehaviour:
   playerObj: {fileID: 3439572917905964869}
   maxSlideTime: 0.75
   slideForce: 200
-  slideYScale: 0.5
+  slideYScale: 1
   slideKey: 308
 --- !u!114 &7928473494070720239
 MonoBehaviour:
@@ -2071,6 +2072,19 @@ MonoBehaviour:
   ownerRoundCountTxt: {fileID: 444770164824778225}
   opponentRoundCountTxt: {fileID: 6843950796179199052}
   dead: 0
+--- !u!114 &8424777236628201647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2893557086950090720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7cedbc4126d8fc449a1caa7888e9293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 5837352391608814823}
 --- !u!1 &2898455531196878150
 GameObject:
   m_ObjectHideFlags: 0
@@ -2582,7 +2596,7 @@ Transform:
   m_GameObject: {fileID: 3535830222847540803}
   serializedVersion: 2
   m_LocalRotation: {x: 0.000002715175, y: -0.00000205979, z: 0.00000046813938, w: 1}
-  m_LocalPosition: {x: -0.04, y: 0.01, z: -0.049}
+  m_LocalPosition: {x: -0.04, y: 0.010000005, z: -0.049000002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2599,14 +2613,14 @@ PositionConstraint:
   serializedVersion: 2
   m_Weight: 1
   m_TranslationAtRest: {x: -0.04, y: 0.01, z: -0.049}
-  m_TranslationOffset: {x: 0, y: 0, z: 0}
+  m_TranslationOffset: {x: -0.038265064, y: -0.20490474, z: -0.07602647}
   m_AffectTranslationX: 1
   m_AffectTranslationY: 1
   m_AffectTranslationZ: 1
-  m_Active: 0
+  m_Active: 1
   m_IsLocked: 1
   m_Sources:
-  - sourceTransform: {fileID: 430854267650850740}
+  - sourceTransform: {fileID: 6995095500370257474}
     weight: 1
 --- !u!1 &3592353976819050186
 GameObject:
@@ -2741,13 +2755,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4766032067825618968}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.22000122, z: 0.47000122}
+  m_LocalRotation: {x: 0, y: 0.13052616, z: 0, w: 0.9914449}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3848759414933796401}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 15, z: 0}
 --- !u!1 &4851742778251079758
 GameObject:
   m_ObjectHideFlags: 0
@@ -3102,7 +3116,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5837352391608814823}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.20793742, y: -0.6912196, z: -0.000000052154057, w: 0.692082}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.27500916, y: 4.864148, z: 0.06929737}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
@@ -5680,7 +5694,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8877713030863152460}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5312c3c001bdc34b8c3ce5548a4e12a, type: 3}
   m_Name: 
