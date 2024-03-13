@@ -65,6 +65,7 @@ public class RoundHandler : NetworkBehaviour
 
     public void Die(ulong clientId)
     {
+
         if (IsHost)
         {
             counter.UpdateHostLocally();

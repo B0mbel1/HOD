@@ -15,34 +15,30 @@ public class ShelterInteraction : NetworkBehaviour
         pickupSource = GetComponent<AudioSource>();
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (!IsOwner) return;
-        if (other.gameObject.tag == "Player")
-        {
-            interactionText.SetActive(true);
-        }
-    }
-
     private void OnTriggerStay(Collider other)
     {
-        if (!IsOwner) return;
-        if (other.gameObject.tag == "Player")
+        Skrypt1 player = other.GetComponentInParent<Skrypt1>();
+
+        if (player.czyHost == true)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (other.gameObject.tag == "Player")
             {
-                pickupSource.Play();
-                interactionText.SetActive(false);
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    player.BulletSpawnServerRpc();
+                }
             }
         }
-    }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (!IsOwner) return;
-        if (other.gameObject.tag == "Player")
+        if (player.czyHost == false)
         {
-            interactionText.SetActive(false);
+            if (other.gameObject.tag == "Player")
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    player.SynchroServerRpc();
+                }
+            }
         }
     }
 }
