@@ -253,7 +253,7 @@ GameObject:
   - component: {fileID: 3103311115415514624}
   - component: {fileID: 4132536431721094325}
   - component: {fileID: 6352285082123545396}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Gun1
   m_TagString: Bron
   m_Icon: {fileID: 0}
@@ -3140,7 +3140,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.2
+  near clip plane: 0.23
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -3148,7 +3148,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 127
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -3283,7 +3283,7 @@ CapsuleCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.12
