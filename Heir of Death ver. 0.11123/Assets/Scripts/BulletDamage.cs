@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class BulletDamage : NetworkBehaviour
 {
+    private void Start()
+    {
+        Destroy(gameObject,2f);
+    }
 
     void OnTriggerEnter(Collider other)
     {
@@ -13,27 +17,28 @@ public class BulletDamage : NetworkBehaviour
         {
             if (other.gameObject.tag == "Reka")
             {
-
                 if (BetterAmmoScript.isBetterAmmoActivated == true)
                 {
-
+                    playerHealth.DamageServerRpc(13f);
+                    Destroy(gameObject);
 
                 }
+
                 if (BetterAmmoScript.isBetterAmmoActivated == false)
                 {
-                    playerHealth.DamageServerRpc(12f);
+                    playerHealth.DamageServerRpc(10f);
                     Destroy(gameObject);
                 }
             }
 
             if (other.gameObject.tag == "Noga")
             {
-
                 if (BetterAmmoScript.isBetterAmmoActivated == true)
                 {
-
-
+                    playerHealth.DamageServerRpc(15f);
+                    Destroy(gameObject);
                 }
+
                 if (BetterAmmoScript.isBetterAmmoActivated == false)
                 {
                     playerHealth.DamageServerRpc(12f);
@@ -43,65 +48,58 @@ public class BulletDamage : NetworkBehaviour
 
             if (other.gameObject.tag == "Glowa")
             {
-
                 if (BetterAmmoScript.isBetterAmmoActivated == true)
                 {
-
-
+                    playerHealth.DamageServerRpc(23f);
+                    Destroy(gameObject);
                 }
+
                 if (BetterAmmoScript.isBetterAmmoActivated == false)
                 {
-                    playerHealth.DamageServerRpc(14f);
+                    playerHealth.DamageServerRpc(20f);
                     Destroy(gameObject);
                 }
             }
 
             if (other.gameObject.tag == "Tors")
             {
-
                 if (BetterAmmoScript.isBetterAmmoActivated == true)
-                {
-
-
-                }
-                if (BetterAmmoScript.isBetterAmmoActivated == false)
                 {
                     playerHealth.DamageServerRpc(18f);
                     Destroy(gameObject);
                 }
-            }
-            if (other.gameObject.tag == "Untagged")
-            {
-                Destroy(gameObject);
+
+                if (BetterAmmoScript.isBetterAmmoActivated == false)
+                {
+                    playerHealth.DamageServerRpc(15f);
+                    Destroy(gameObject);
+                }
             }
         }
-
-
 
         if (playerHealth.czyHost == false)
         {
             if (other.gameObject.tag == "Reka")
             {
-
                 if (BetterAmmoScript.isBetterAmmoActivated == true)
                 {
-                    
-
+                    playerHealth.DamageClientRpc(13f, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
+                    Destroy(gameObject);
                 }
+
                 if (BetterAmmoScript.isBetterAmmoActivated == false)
                 {
-                    playerHealth.DamageClientRpc(12f, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
+                    playerHealth.DamageClientRpc(10f, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
                     Destroy(gameObject);
                 }
             }
 
             if (other.gameObject.tag == "Noga")
             {
-
                 if (BetterAmmoScript.isBetterAmmoActivated == true)
                 {
-
-
+                    playerHealth.DamageClientRpc(15f, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
+                    Destroy(gameObject);
                 }
                 if (BetterAmmoScript.isBetterAmmoActivated == false)
                 {
@@ -112,15 +110,15 @@ public class BulletDamage : NetworkBehaviour
 
             if (other.gameObject.tag == "Glowa")
             {
-
                 if (BetterAmmoScript.isBetterAmmoActivated == true)
                 {
-
-
+                    playerHealth.DamageClientRpc(20f, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
+                    Destroy(gameObject);
                 }
+
                 if (BetterAmmoScript.isBetterAmmoActivated == false)
                 {
-                    playerHealth.DamageClientRpc(12f, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
+                    playerHealth.DamageClientRpc(20f, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
                     Destroy(gameObject);
                 }
             }
@@ -130,19 +128,15 @@ public class BulletDamage : NetworkBehaviour
 
                 if (BetterAmmoScript.isBetterAmmoActivated == true)
                 {
-
-
-                }
-                if (BetterAmmoScript.isBetterAmmoActivated == false)
-                {
-                    playerHealth.DamageClientRpc(12f, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
+                    playerHealth.DamageClientRpc(15f, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
                     Destroy(gameObject);
                 }
-            }
 
-            if(other.gameObject.tag == "Untagged")
-            {
-                Destroy(gameObject);
+                if (BetterAmmoScript.isBetterAmmoActivated == false)
+                {
+                    playerHealth.DamageClientRpc(15f, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
+                    Destroy(gameObject);
+                }
             }
         }
     }

@@ -21,6 +21,7 @@ public class PlayfabManager : MonoBehaviour
     public GameObject RegisterScreen;
     public static string name = null;
     
+    
     private void Start()
     {
         
@@ -83,6 +84,7 @@ public class PlayfabManager : MonoBehaviour
     void OnLoginSuccess(LoginResult result)
     {
         name = result.InfoResultPayload.PlayerProfile.DisplayName;
+        
         SceneManager.LoadScene("Menu");
     }
 

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73d2a437a584f8442a6f71cfc297a179, type: 3}
+  m_Name: Character4Trenches
+  m_EditorClassIdentifier: 
+  id: 4
+  displayName: Ben Herdgall
+  displayBio: "Zawodowy hitman, cz\u0142owiek elitarnej grupy asasyn\xF3w - Herraelis.
+    Znany by\u0142 jako \"Pan \u015Amierci\". W ci\u0105gu ponad 12 lat s\u0142u\u017Cenia
+    jako zawodowy morderca, wype\u0142ni\u0142 wszystkie powierzone mu zadania. Zgodnie
+    z kodeksem Herraelis je\u017Celi zab\xF3jca wype\u0142ni wszystkie zlecenia przez
+    pierwsze 13 lat przynale\u017Cno\u015Bci do bractwa uzyskuje wolno\u015B\u0107
+    i pieni\u0105dze. Benowi zosta\u0142o ostatnie zlecenie, jego celem jest \"Tanatos\".
+    Jednak\u017Ce to zlecenie okazuje si\u0119 by\u0107 czym\u015B innym od pozosta\u0142ych.."
+  icon: {fileID: 21300000, guid: bc07455bcbb763e4bb4f643788bb916b, type: 3}
+  introPrefab: {fileID: 7983146585644693607, guid: 67ee89f996910b94e84857b055f0ccbe, type: 3}
+  gameplayPrefab: {fileID: 8727896245451519565, guid: 9ad4752a363ebd44c9b47fcf133092cf, type: 3}
