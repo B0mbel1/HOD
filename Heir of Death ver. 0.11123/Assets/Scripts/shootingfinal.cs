@@ -30,9 +30,12 @@ public class shootingfinal : NetworkBehaviour
 
     void Start()
     {
+
         bulletsLeft1 = magazineSize;
         readyToShoot = true;
         audioSource = GetComponent<AudioSource>();
+
+
     }
 
     void Update()
@@ -53,21 +56,23 @@ public class shootingfinal : NetworkBehaviour
     {
         base.OnNetworkSpawn();
     }
-   
+
     [ServerRpc]
     private void BulletSpawnServerRpc(Vector3 vector)
     {
         NetworkObject bulletInstance = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
         Rigidbody bulletRigidbody = bulletInstance.GetComponent<Rigidbody>();
         StartCoroutine(MoveBulletToPosition(bulletRigidbody, vector, bulletSpeed));
+
     }
 
     [ClientRpc]
     private void BulletSpawnClientRpc(Vector3 vector, ClientRpcParams clientRpcParams)
     {
-        NetworkObject bulletInstance =Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
+        NetworkObject bulletInstance = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
         Rigidbody bulletRigidbody = bulletInstance.GetComponent<Rigidbody>();
         StartCoroutine(MoveBulletToPosition(bulletRigidbody, vector, bulletSpeed));
+
     }
 
     [ServerRpc]
@@ -119,7 +124,7 @@ public class shootingfinal : NetworkBehaviour
 
             if (IsHost)
             {
-                BulletSpawnClientRpc(targetPosition, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 0,1 } } });
+                BulletSpawnClientRpc(targetPosition, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
                 BulletSpawnServerRpc(targetPosition);
             }
             if (!IsHost)
@@ -131,11 +136,11 @@ public class shootingfinal : NetworkBehaviour
         else
         {
             Vector3 targetPosition = hit.point;
-            
+
             if (IsHost)
             {
                 BulletSpawnServerRpc(targetPosition);
-                BulletSpawnClientRpc(targetPosition, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 0,1 } } });
+                BulletSpawnClientRpc(targetPosition, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
             }
             if (!IsHost)
             {
@@ -161,7 +166,8 @@ public class shootingfinal : NetworkBehaviour
 
     IEnumerator MoveBulletToPosition(Rigidbody bulletRigidbody, Vector3 targetPosition, float speed)
     {
-        while (Vector3.Distance(bulletRigidbody.position, targetPosition) > 0.1f)
+
+        while (bulletRigidbody != null && Vector3.Distance(bulletRigidbody.position, targetPosition) > 0.1f)
         {
             // Oblicz kierunek do celu
             Vector3 direction = (targetPosition - bulletRigidbody.position).normalized;
@@ -171,6 +177,8 @@ public class shootingfinal : NetworkBehaviour
 
             yield return null;
         }
+
+
     }
 
     private void ResetShot()
