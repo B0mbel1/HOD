@@ -294,7 +294,6 @@ GameObject:
   m_Component:
   - component: {fileID: 18260241}
   - component: {fileID: 2779715}
-  - component: {fileID: 18260242}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -375,18 +374,6 @@ Transform:
   - {fileID: 18273371}
   m_Father: {fileID: 276266390}
   m_LocalEulerAnglesHint: {x: -59.55, y: 164.696, z: -176.432}
---- !u!114 &18260242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 17971245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &18273371
 Transform:
   m_ObjectHideFlags: 0
@@ -975,7 +962,6 @@ GameObject:
   m_Component:
   - component: {fileID: 25284199}
   - component: {fileID: 12579131}
-  - component: {fileID: 25627726}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -983,18 +969,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!114 &25627726
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 25627725}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &25652781
 GameObject:
   m_ObjectHideFlags: 0
@@ -2892,7 +2866,6 @@ GameObject:
   m_Component:
   - component: {fileID: 129842076}
   - component: {fileID: 109221816}
-  - component: {fileID: 129842077}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -3027,18 +3000,6 @@ Transform:
   - {fileID: 129850288}
   m_Father: {fileID: 276266390}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &129842077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 129569622}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &129850288
 Transform:
   m_ObjectHideFlags: 0
@@ -4782,7 +4743,6 @@ GameObject:
   m_Component:
   - component: {fileID: 179232167}
   - component: {fileID: 194072507}
-  - component: {fileID: 194072508}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -5090,18 +5050,6 @@ LODGroup:
     renderers:
     - renderer: {fileID: 176894519}
   m_Enabled: 0
---- !u!114 &194072508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 178974017}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &195133386
 GameObject:
   m_ObjectHideFlags: 0
@@ -5895,7 +5843,6 @@ GameObject:
   m_Component:
   - component: {fileID: 214894454}
   - component: {fileID: 233931542}
-  - component: {fileID: 233931543}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -6174,7 +6121,6 @@ GameObject:
   m_Component:
   - component: {fileID: 216215954}
   - component: {fileID: 232633842}
-  - component: {fileID: 232633843}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -6780,7 +6726,6 @@ GameObject:
   m_Component:
   - component: {fileID: 222866306}
   - component: {fileID: 209140126}
-  - component: {fileID: 223124325}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -6788,18 +6733,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!114 &223124325
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 223124324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &223154910
 GameObject:
   m_ObjectHideFlags: 0
@@ -7088,18 +7021,6 @@ LODGroup:
     renderers:
     - renderer: {fileID: 214388668}
   m_Enabled: 0
---- !u!114 &232633843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 216390594}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!205 &233931542
 LODGroup:
   m_ObjectHideFlags: 0
@@ -7127,18 +7048,6 @@ LODGroup:
     renderers:
     - renderer: {fileID: 216758616}
   m_Enabled: 0
---- !u!114 &233931543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 214560038}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &235292308
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7815,7 +7724,6 @@ GameObject:
   - component: {fileID: 278618395}
   - component: {fileID: 296051069}
   - component: {fileID: 1137405062}
-  - component: {fileID: 1137405063}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -8203,7 +8111,6 @@ GameObject:
   - component: {fileID: 280686726}
   - component: {fileID: 293954202}
   - component: {fileID: 1357937479}
-  - component: {fileID: 1357937480}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -12795,7 +12702,6 @@ GameObject:
   - component: {fileID: 518306021}
   - component: {fileID: 534457081}
   - component: {fileID: 1694712385}
-  - component: {fileID: 1694712386}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -14420,7 +14326,6 @@ GameObject:
   m_Component:
   - component: {fileID: 658383778}
   - component: {fileID: 637684114}
-  - component: {fileID: 658383779}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -14479,18 +14384,6 @@ Transform:
   - {fileID: 658502792}
   m_Father: {fileID: 276266390}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 5.403}
---- !u!114 &658383779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 658113452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &658398688
 Transform:
   m_ObjectHideFlags: 0
@@ -15113,7 +15006,6 @@ GameObject:
   m_Component:
   - component: {fileID: 673393277}
   - component: {fileID: 689735257}
-  - component: {fileID: 689735258}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -15227,7 +15119,6 @@ GameObject:
   - component: {fileID: 677312101}
   - component: {fileID: 694220291}
   - component: {fileID: 1431740055}
-  - component: {fileID: 1431740056}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -15574,18 +15465,6 @@ LODGroup:
     renderers:
     - renderer: {fileID: 671529243}
   m_Enabled: 0
---- !u!114 &689735258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 673645239}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &689834754
 GameObject:
   m_ObjectHideFlags: 0
@@ -19926,7 +19805,6 @@ GameObject:
   - component: {fileID: 871688592}
   - component: {fileID: 852154060}
   - component: {fileID: 871628035}
-  - component: {fileID: 871688593}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -20021,18 +19899,6 @@ Transform:
   - {fileID: 871698558}
   m_Father: {fileID: 276266390}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -78.05}
---- !u!114 &871688593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 871508922}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &871698558
 Transform:
   m_ObjectHideFlags: 0
@@ -22181,7 +22047,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1003097366}
   - component: {fileID: 989104502}
-  - component: {fileID: 1003284295}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -22189,18 +22054,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!114 &1003284295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1003284294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1003429102
 GameObject:
   m_ObjectHideFlags: 0
@@ -23102,7 +22955,6 @@ GameObject:
   - component: {fileID: 1041612012}
   - component: {fileID: 1059706588}
   - component: {fileID: 1850149639}
-  - component: {fileID: 1850149640}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -23499,7 +23351,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1043730157}
   - component: {fileID: 1057645789}
-  - component: {fileID: 1057645790}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -24014,18 +23865,6 @@ LODGroup:
     renderers:
     - renderer: {fileID: 1041444367}
   m_Enabled: 0
---- !u!114 &1057645790
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1043476195}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!205 &1059706588
 LODGroup:
   m_ObjectHideFlags: 0
@@ -24835,7 +24674,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1081081078}
   - component: {fileID: 1095858326}
-  - component: {fileID: 1095858327}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -25322,18 +25160,6 @@ LODGroup:
     renderers:
     - renderer: {fileID: 1078690520}
   m_Enabled: 0
---- !u!114 &1095858327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1080628902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!205 &1098327123
 LODGroup:
   m_ObjectHideFlags: 0
@@ -26654,18 +26480,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300008, guid: ee28604125df26b42b4f32ff15664954, type: 3}
---- !u!114 &1137405063
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 278817015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!205 &1138864329
 LODGroup:
   m_ObjectHideFlags: 0
@@ -29299,7 +29113,6 @@ GameObject:
   - component: {fileID: 1199982330}
   - component: {fileID: 1186583782}
   - component: {fileID: 1199635377}
-  - component: {fileID: 1199982331}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -29379,18 +29192,6 @@ Transform:
   - {fileID: 1199998872}
   m_Father: {fileID: 276266390}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1199982331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1199732252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1199992930
 Transform:
   m_ObjectHideFlags: 0
@@ -31331,7 +31132,6 @@ GameObject:
   - component: {fileID: 1254143493}
   - component: {fileID: 1274972505}
   - component: {fileID: 1254597272}
-  - component: {fileID: 1274972506}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -31746,7 +31546,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1258529369}
   - component: {fileID: 1245449853}
-  - component: {fileID: 1258785428}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -31754,18 +31553,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!114 &1258785428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1258785427}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &1260508119
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -32014,18 +31801,6 @@ LODGroup:
     renderers:
     - renderer: {fileID: 1256423793}
   m_Enabled: 0
---- !u!114 &1274972506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254519855}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!205 &1276210625
 LODGroup:
   m_ObjectHideFlags: 0
@@ -33513,7 +33288,6 @@ GameObject:
   - component: {fileID: 1342674976}
   - component: {fileID: 1362627132}
   - component: {fileID: 1640448362}
-  - component: {fileID: 1640448363}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -33631,7 +33405,6 @@ GameObject:
   - component: {fileID: 1344061262}
   - component: {fileID: 1361253226}
   - component: {fileID: 1797092691}
-  - component: {fileID: 1797092692}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -34099,18 +33872,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300004, guid: ee28604125df26b42b4f32ff15664954, type: 3}
---- !u!114 &1357937480
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 280936544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1358989161
 Transform:
   m_ObjectHideFlags: 0
@@ -34852,7 +34613,6 @@ GameObject:
   - component: {fileID: 1383683266}
   - component: {fileID: 1397183652}
   - component: {fileID: 1481386850}
-  - component: {fileID: 1481386851}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -34965,7 +34725,6 @@ GameObject:
   - component: {fileID: 1392997169}
   - component: {fileID: 1379604737}
   - component: {fileID: 1724145316}
-  - component: {fileID: 1724145317}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -35703,18 +35462,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300006, guid: ee28604125df26b42b4f32ff15664954, type: 3}
---- !u!114 &1431740056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 677117833}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &1432354153
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -36977,7 +36724,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1461037231}
   - component: {fileID: 1445697523}
-  - component: {fileID: 1461037232}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -37117,18 +36863,6 @@ Transform:
   - {fileID: 1460949313}
   m_Father: {fileID: 276266390}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1461037232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1460890245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &1461042314
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -37681,7 +37415,6 @@ GameObject:
   - component: {fileID: 1465429152}
   - component: {fileID: 1449445008}
   - component: {fileID: 1465839505}
-  - component: {fileID: 1465839506}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -37730,18 +37463,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300008, guid: 89bf544328b22bc4da0d56896518402a, type: 3}
---- !u!114 &1465839506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1465683118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1465847488
 GameObject:
   m_ObjectHideFlags: 0
@@ -38293,18 +38014,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
---- !u!114 &1481386851
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1383882030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1481701597
 GameObject:
   m_ObjectHideFlags: 0
@@ -39447,7 +39156,6 @@ GameObject:
   - component: {fileID: 1512940526}
   - component: {fileID: 1527867580}
   - component: {fileID: 1512777309}
-  - component: {fileID: 1527867581}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -39618,7 +39326,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1514497288
 GameObject:
   m_ObjectHideFlags: 0
@@ -40433,18 +40141,6 @@ LODGroup:
     renderers:
     - renderer: {fileID: 1510955442}
   m_Enabled: 0
---- !u!114 &1527867581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1512651474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1535313698
 Transform:
   m_ObjectHideFlags: 0
@@ -40956,7 +40652,6 @@ GameObject:
   - component: {fileID: 1537817113}
   - component: {fileID: 1519860351}
   - component: {fileID: 536830247}
-  - component: {fileID: 1538012150}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -40964,18 +40659,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!114 &1538012150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1538012149}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1538023309
 GameObject:
   m_ObjectHideFlags: 0
@@ -41503,7 +41186,6 @@ GameObject:
   - component: {fileID: 1547528644}
   - component: {fileID: 1560347636}
   - component: {fileID: 1547381485}
-  - component: {fileID: 1560347637}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -41926,7 +41608,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1556528043}
   - component: {fileID: 1576570859}
-  - component: {fileID: 1576570860}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -42187,18 +41868,6 @@ LODGroup:
     renderers:
     - renderer: {fileID: 1545095462}
   m_Enabled: 0
---- !u!114 &1560347637
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1547258314}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!205 &1561495990
 LODGroup:
   m_ObjectHideFlags: 0
@@ -42261,18 +41930,6 @@ LODGroup:
     renderers:
     - renderer: {fileID: 1558566223}
   m_Enabled: 0
---- !u!114 &1576570860
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1556344823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1595622926
 Transform:
   m_ObjectHideFlags: 0
@@ -43836,18 +43493,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300006, guid: ee28604125df26b42b4f32ff15664954, type: 3}
---- !u!114 &1640448363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1342417094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!33 &1644716499
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -45585,18 +45230,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300008, guid: febb57be43178314099a670e6907c6b2, type: 3}
---- !u!114 &1694712386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 518031363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &1696973488
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -46545,18 +46178,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300006, guid: 89bf544328b22bc4da0d56896518402a, type: 3}
---- !u!114 &1724145317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1392726847}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!33 &1724970151
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -47780,7 +47401,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1752230205}
   - component: {fileID: 1766621965}
-  - component: {fileID: 1766621966}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -48126,7 +47746,6 @@ GameObject:
   - component: {fileID: 1760846338}
   - component: {fileID: 1774758224}
   - component: {fileID: 1760749497}
-  - component: {fileID: 1774758225}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -48273,18 +47892,6 @@ LODGroup:
     renderers:
     - renderer: {fileID: 1750452703}
   m_Enabled: 0
---- !u!114 &1766621966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1752484147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1770428444
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -48460,18 +48067,6 @@ LODGroup:
     renderers:
     - renderer: {fileID: 1758894174}
   m_Enabled: 0
---- !u!114 &1774758225
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1760623422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!33 &1775639526
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -48677,7 +48272,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1778638537}
   - component: {fileID: 1799123693}
-  - component: {fileID: 1799123694}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -48857,18 +48451,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300006, guid: 8be2de3a24cb4d64ba4fb1bbdd89c6e8, type: 3}
---- !u!114 &1797092692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1343788932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1797452361
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48957,18 +48539,6 @@ LODGroup:
     renderers:
     - renderer: {fileID: 1780895151}
   m_Enabled: 0
---- !u!114 &1799123694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1778906627}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!33 &1812760681
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -50145,18 +49715,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300008, guid: 89bf544328b22bc4da0d56896518402a, type: 3}
---- !u!114 &1850149640
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1041341666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1855555308
 GameObject:
   m_ObjectHideFlags: 0
@@ -50490,7 +50048,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1881519003}
   - component: {fileID: 1897537927}
-  - component: {fileID: 1897537928}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -50888,18 +50445,6 @@ LODGroup:
     renderers:
     - renderer: {fileID: 1879071755}
   m_Enabled: 0
---- !u!114 &1897537928
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1881244541}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &1900715086
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -51308,7 +50853,6 @@ GameObject:
   - component: {fileID: 1904307036}
   - component: {fileID: 1891593018}
   - component: {fileID: 1904665369}
-  - component: {fileID: 1904665370}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -51376,18 +50920,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300006, guid: 89bf544328b22bc4da0d56896518402a, type: 3}
---- !u!114 &1904665370
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1904501424}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &1906492902
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -51562,7 +51094,6 @@ GameObject:
   - component: {fileID: 1912924851}
   - component: {fileID: 1933082755}
   - component: {fileID: 1912777120}
-  - component: {fileID: 1933082756}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -51999,18 +51530,6 @@ LODGroup:
     renderers:
     - renderer: {fileID: 1914817105}
   m_Enabled: 0
---- !u!114 &1933082756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1912654525}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1938097230
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -56021,7 +55540,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2053894554}
   - component: {fileID: 2069128070}
-  - component: {fileID: 2069128071}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -56090,18 +55608,6 @@ LODGroup:
     renderers:
     - renderer: {fileID: 2051939850}
   m_Enabled: 0
---- !u!114 &2069128071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2054144380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &2069854797
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -57521,7 +57027,6 @@ GameObject:
   - component: {fileID: 2127728780}
   - component: {fileID: 2146239120}
   - component: {fileID: 2127834587}
-  - component: {fileID: 2146239121}
   m_Layer: 6
   m_Name: Rock
   m_TagString: Untagged
@@ -57984,18 +57489,6 @@ LODGroup:
     renderers:
     - renderer: {fileID: 2130149148}
   m_Enabled: 0
---- !u!114 &2146239121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2127994986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &2147100880
 BoxCollider:
   m_ObjectHideFlags: 0
