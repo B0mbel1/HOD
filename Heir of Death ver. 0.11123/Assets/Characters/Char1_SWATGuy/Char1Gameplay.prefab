@@ -511,7 +511,7 @@ MonoBehaviour:
   timeBetweenShots: 0
   magazineSize: 30
   bulletsPerTap: 1
-  bulletSpeed: 100
+  bulletSpeed: 60
   allowButtonHold: 1
   fpsCam: {fileID: 4056057497597188311}
   shootSound: {fileID: 8300000, guid: bf4fae68ea0966044962ac4e23e527e8, type: 3}
@@ -1579,6 +1579,7 @@ GameObject:
   - component: {fileID: 7928473494070720239}
   - component: {fileID: 3431224240255397763}
   - component: {fileID: 8424777236628201647}
+  - component: {fileID: 7950939380232883975}
   m_Layer: 0
   m_Name: Char1Gameplay
   m_TagString: Untagged
@@ -2085,6 +2086,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 5837352391608814823}
+--- !u!114 &7950939380232883975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2893557086950090720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe4586f2577bf1b4c9f1904792311b5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionText: {fileID: 0}
+  door: {fileID: 0}
+  doorSound: {fileID: 0}
+  doorSource: {fileID: 0}
+  State:
+    m_InternalValue: 0
 --- !u!1 &2898455531196878150
 GameObject:
   m_ObjectHideFlags: 0
@@ -2362,7 +2381,7 @@ MonoBehaviour:
   reloadSound: {fileID: 8300000, guid: ea29e86108f09fa48a3d7e6fdd469b6d, type: 3}
   bulletPrefab: {fileID: 4516205014958727814, guid: 1b84fa7f14eaeeb48819630b948724dd, type: 3}
   bulletSpawn: {fileID: 3902034040544385259}
-  bulletSpeed: 100
+  bulletSpeed: 60
 --- !u!1 &3027832687563353780
 GameObject:
   m_ObjectHideFlags: 0
@@ -5372,6 +5391,10 @@ MonoBehaviour:
   cameraTransform: {fileID: 5364256205189576302}
   convertedRotation: 0
   roundedRotation: 0
+  playerHeight: 0
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &799652640481805453
 MonoBehaviour:
   m_ObjectHideFlags: 0

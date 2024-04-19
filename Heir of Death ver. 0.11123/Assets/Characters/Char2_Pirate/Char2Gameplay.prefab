@@ -2485,6 +2485,10 @@ MonoBehaviour:
   cameraTransform: {fileID: 6673479271759484311}
   convertedRotation: 0
   roundedRotation: 0
+  playerHeight: 0
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &4561716854433867482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3351,7 +3355,7 @@ MonoBehaviour:
   reloadSound: {fileID: 8300000, guid: ea29e86108f09fa48a3d7e6fdd469b6d, type: 3}
   bulletPrefab: {fileID: 4516205014958727814, guid: 1b84fa7f14eaeeb48819630b948724dd, type: 3}
   bulletSpawn: {fileID: 7891358629557811834}
-  bulletSpeed: 100
+  bulletSpeed: 60
 --- !u!1 &5453527879609817081
 GameObject:
   m_ObjectHideFlags: 0
@@ -4567,7 +4571,7 @@ MonoBehaviour:
   timeBetweenShots: 0
   magazineSize: 30
   bulletsPerTap: 1
-  bulletSpeed: 100
+  bulletSpeed: 60
   allowButtonHold: 1
   fpsCam: {fileID: 8060259704119935742}
   shootSound: {fileID: 8300000, guid: bf4fae68ea0966044962ac4e23e527e8, type: 3}
