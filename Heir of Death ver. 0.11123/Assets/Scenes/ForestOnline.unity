@@ -8820,7 +8820,7 @@ GameObject:
   - component: {fileID: 336052528}
   - component: {fileID: 340226494}
   - component: {fileID: 340226495}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: lo_Prop_ChurchBench_A_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11813,7 +11813,7 @@ GameObject:
   - component: {fileID: 479893290}
   - component: {fileID: 479011960}
   - component: {fileID: 483235062}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: lo_Prop_ChurchBench_A_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17307,7 +17307,7 @@ GameObject:
   - component: {fileID: 795952197}
   - component: {fileID: 795952198}
   - component: {fileID: 795952200}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: lo_Prop_Pulpit_A_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42295,7 +42295,7 @@ GameObject:
   - component: {fileID: 1616316184}
   - component: {fileID: 1615282602}
   - component: {fileID: 1611110242}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: lo_Prop_ChurchBench_A_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50676,7 +50676,7 @@ GameObject:
   - component: {fileID: 1900927082}
   - component: {fileID: 1896681122}
   - component: {fileID: 1902939263}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: lo_Prop_ChurchBench_A_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
