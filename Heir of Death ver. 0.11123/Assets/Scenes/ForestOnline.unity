@@ -108,13 +108,13 @@ NavMeshSettings:
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
-    agentSlope: 45
-    agentClimb: 0.4
+    agentSlope: 60
+    agentClimb: 0.5
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
-    minRegionArea: 2
-    manualCellSize: 0
-    cellSize: 0.16666667
+    minRegionArea: 1
+    manualCellSize: 1
+    cellSize: 0.05
     manualTileSize: 0
     tileSize: 256
     buildHeightMesh: 0
@@ -1257,7 +1257,6 @@ GameObject:
   - component: {fileID: 34079967}
   - component: {fileID: 35216709}
   - component: {fileID: 39432635}
-  - component: {fileID: 39432636}
   m_Layer: 8
   m_Name: Gravestone
   m_TagString: Untagged
@@ -1301,18 +1300,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.7578423, y: 2.3118448, z: 0.7578423}
   m_Center: {x: 0, y: 1.14642, z: -0.0031974912}
---- !u!114 &39432636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 37268005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &43760977
 GameObject:
   m_ObjectHideFlags: 0
@@ -3027,7 +3014,6 @@ GameObject:
   - component: {fileID: 133885973}
   - component: {fileID: 132889959}
   - component: {fileID: 128712471}
-  - component: {fileID: 133885974}
   m_Layer: 8
   m_Name: Gravestone
   m_TagString: Untagged
@@ -3256,18 +3242,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 130672859}
   m_Mesh: {fileID: 4300000, guid: 77f6b03b6e453ae479b40116e9371dba, type: 3}
---- !u!114 &133885974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 130672859}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &133923969
 Transform:
   m_ObjectHideFlags: 0
@@ -8601,7 +8575,6 @@ GameObject:
   - component: {fileID: 319659328}
   - component: {fileID: 320616794}
   - component: {fileID: 324765344}
-  - component: {fileID: 324765345}
   m_Layer: 8
   m_Name: Gravestone
   m_TagString: Untagged
@@ -8630,18 +8603,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.1518269, y: 2.0586739, z: 0.25698656}
   m_Center: {x: 0, y: 1.0212238, z: 0.0032029971}
---- !u!114 &324765345
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 322856138}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &335578388
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8799,7 +8760,6 @@ GameObject:
   m_Component:
   - component: {fileID: 337989318}
   - component: {fileID: 354069900}
-  - component: {fileID: 354069901}
   m_Layer: 8
   m_Name: Church Bench
   m_TagString: Untagged
@@ -9115,18 +9075,6 @@ LODGroup:
     renderers:
     - renderer: {fileID: 336052528}
   m_Enabled: 0
---- !u!114 &354069901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 337764842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &354521542
 GameObject:
   m_ObjectHideFlags: 0
@@ -10318,7 +10266,6 @@ GameObject:
   - component: {fileID: 386753798}
   - component: {fileID: 387717064}
   - component: {fileID: 391893080}
-  - component: {fileID: 391893081}
   m_Layer: 8
   m_Name: Gravestone
   m_TagString: Untagged
@@ -10374,18 +10321,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.2633486, y: 2.100029, z: 0.37173557}
   m_Center: {x: 0, y: 1.0484588, z: -0.007817768}
---- !u!114 &391893081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 389921998}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &398314789
 GameObject:
   m_ObjectHideFlags: 0
@@ -11213,7 +11148,6 @@ GameObject:
   m_Component:
   - component: {fileID: 431609318}
   - component: {fileID: 411449004}
-  - component: {fileID: 431848139}
   m_Layer: 6
   m_Name: Church Bench
   m_TagString: Untagged
@@ -11221,18 +11155,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!114 &431848139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 431848138}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &431922674
 GameObject:
   m_ObjectHideFlags: 0
@@ -13176,7 +13098,6 @@ GameObject:
   - component: {fileID: 558899872}
   - component: {fileID: 557936594}
   - component: {fileID: 553725346}
-  - component: {fileID: 560205113}
   m_Layer: 8
   m_Name: Gravestone
   m_TagString: Untagged
@@ -13199,18 +13120,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 32903139}
   m_LocalEulerAnglesHint: {x: 0, y: 63.427, z: -2.305}
---- !u!114 &560205113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 560151150}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &567745531
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15347,6 +15256,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6196657938215998703, guid: 36f22c868730b944189b4125f6f0c993, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6196657938215998703, guid: 36f22c868730b944189b4125f6f0c993, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2278587229
+      objectReference: {fileID: 0}
     - target: {fileID: 2798691124033318919, guid: 36f22c868730b944189b4125f6f0c993, type: 3}
       propertyPath: pickUptext
       value: 
@@ -15477,7 +15394,6 @@ GameObject:
   - component: {fileID: 690923000}
   - component: {fileID: 692059234}
   - component: {fileID: 696193180}
-  - component: {fileID: 696193181}
   m_Layer: 8
   m_Name: Gravestone
   m_TagString: Untagged
@@ -15636,18 +15552,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.7578423, y: 2.3118448, z: 0.7578423}
   m_Center: {x: 0, y: 1.14642, z: -0.0031974912}
---- !u!114 &696193181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 689834754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &699543556
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -16083,7 +15987,6 @@ GameObject:
   - component: {fileID: 717171854}
   - component: {fileID: 716070464}
   - component: {fileID: 719952336}
-  - component: {fileID: 719952337}
   m_Layer: 8
   m_Name: Gravestone
   m_TagString: Untagged
@@ -16162,18 +16065,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.2633486, y: 2.100029, z: 0.37173557}
   m_Center: {x: 0, y: 1.0484588, z: -0.007817768}
---- !u!114 &719952337
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 714077510}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &741092619
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -17673,7 +17564,6 @@ GameObject:
   - component: {fileID: 799224204}
   - component: {fileID: 800232854}
   - component: {fileID: 804596332}
-  - component: {fileID: 804596333}
   m_Layer: 8
   m_Name: Gravestone
   m_TagString: Untagged
@@ -18198,18 +18088,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.1518269, y: 2.0586739, z: 0.25698656}
   m_Center: {x: 0, y: 1.0212238, z: 0.0032029971}
---- !u!114 &804596333
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 798017542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &804719014
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18671,7 +18549,6 @@ GameObject:
   - component: {fileID: 822928380}
   - component: {fileID: 824021298}
   - component: {fileID: 828004002}
-  - component: {fileID: 828004003}
   m_Layer: 8
   m_Name: Gravestone
   m_TagString: Untagged
@@ -18727,18 +18604,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.2633486, y: 2.100029, z: 0.37173557}
   m_Center: {x: 0, y: 1.0484588, z: -0.007817768}
---- !u!114 &828004003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 826030644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &839776914
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19053,7 +18918,6 @@ GameObject:
   - component: {fileID: 848055792}
   - component: {fileID: 849209834}
   - component: {fileID: 853169680}
-  - component: {fileID: 853169681}
   m_Layer: 8
   m_Name: Gravestone
   m_TagString: Untagged
@@ -19172,18 +19036,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.1518269, y: 2.0586739, z: 0.25698656}
   m_Center: {x: 0, y: 1.0212238, z: 0.0032029971}
---- !u!114 &853169681
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 851424378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!33 &853300104
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -19219,7 +19071,6 @@ GameObject:
   - component: {fileID: 853300104}
   - component: {fileID: 852303610}
   - component: {fileID: 848125066}
-  - component: {fileID: 854543175}
   m_Layer: 8
   m_Name: Gravestone
   m_TagString: Untagged
@@ -19227,18 +19078,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!114 &854543175
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 854543174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &862606298
 GameObject:
   m_ObjectHideFlags: 0
@@ -22703,7 +22542,6 @@ GameObject:
   - component: {fileID: 1030320051}
   - component: {fileID: 1031326633}
   - component: {fileID: 1027568723}
-  - component: {fileID: 1031326634}
   m_Layer: 8
   m_Name: Gravestone
   m_TagString: Untagged
@@ -22845,18 +22683,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1031326634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1029346873}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1031502631
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25384,6 +25210,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6196657938215998703, guid: 36f22c868730b944189b4125f6f0c993, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6196657938215998703, guid: 36f22c868730b944189b4125f6f0c993, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2179243499
+      objectReference: {fileID: 0}
     - target: {fileID: 310190557432954917, guid: 36f22c868730b944189b4125f6f0c993, type: 3}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 0
@@ -25712,7 +25546,6 @@ GameObject:
   - component: {fileID: 1129566921}
   - component: {fileID: 1128439815}
   - component: {fileID: 1124427671}
-  - component: {fileID: 1130836960}
   m_Layer: 8
   m_Name: Gravestone
   m_TagString: Untagged
@@ -25735,18 +25568,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 32903139}
   m_LocalEulerAnglesHint: {x: 0, y: -59.7, z: 0}
---- !u!114 &1130836960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1130564353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1131439697
 GameObject:
   m_ObjectHideFlags: 0
@@ -26830,7 +26651,6 @@ GameObject:
   - component: {fileID: 1143951192}
   - component: {fileID: 1144919746}
   - component: {fileID: 1149172284}
-  - component: {fileID: 1149172285}
   m_Layer: 8
   m_Name: Gravestone
   m_TagString: Untagged
@@ -26932,18 +26752,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.7578423, y: 2.3118448, z: 0.7578423}
   m_Center: {x: 0, y: 1.14642, z: -0.0031974912}
---- !u!114 &1149172285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1142940066}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!33 &1149670686
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -27563,7 +27371,6 @@ GameObject:
   - component: {fileID: 1155901453}
   - component: {fileID: 1156897475}
   - component: {fileID: 1152589139}
-  - component: {fileID: 1156897476}
   m_Layer: 8
   m_Name: Gravestone
   m_TagString: Untagged
@@ -27621,18 +27428,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1156897476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1154838981}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &1157414425
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -27747,7 +27542,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1159048291}
   - component: {fileID: 1143686573}
-  - component: {fileID: 1159048292}
   m_Layer: 8
   m_Name: Chair A
   m_TagString: Untagged
@@ -27802,18 +27596,6 @@ Transform:
   - {fileID: 1158978469}
   m_Father: {fileID: 970458422}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1159048292
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1158830087}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!33 &1159729245
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -28630,7 +28412,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1185824295}
   - component: {fileID: 1200728723}
-  - component: {fileID: 1200728724}
   m_Layer: 8
   m_Name: Chair B
   m_TagString: Untagged
@@ -29280,18 +29061,6 @@ LODGroup:
     renderers:
     - renderer: {fileID: 1183476639}
   m_Enabled: 0
---- !u!114 &1200728724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1185612913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1201115455
 Transform:
   m_ObjectHideFlags: 0
@@ -29555,7 +29324,6 @@ GameObject:
   - component: {fileID: 1207778750}
   - component: {fileID: 1206644862}
   - component: {fileID: 1202442588}
-  - component: {fileID: 1207778751}
   m_Layer: 8
   m_Name: Gravestone
   m_TagString: Untagged
@@ -29648,18 +29416,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1204632888}
   m_Mesh: {fileID: 4300000, guid: d7cb020d98ed42541a8578c9f0523a48, type: 3}
---- !u!114 &1207778751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1204632888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &1208859211
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -29759,7 +29515,6 @@ GameObject:
   - component: {fileID: 1209852881}
   - component: {fileID: 1208859211}
   - component: {fileID: 1213028021}
-  - component: {fileID: 1213028022}
   m_Layer: 8
   m_Name: Gravestone
   m_TagString: Untagged
@@ -29788,18 +29543,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.7578423, y: 2.3118448, z: 0.7578423}
   m_Center: {x: 0, y: 1.14642, z: -0.0031974912}
---- !u!114 &1213028022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1210862891}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!205 &1217202410
 LODGroup:
   m_ObjectHideFlags: 0
@@ -29889,6 +29632,10 @@ PrefabInstance:
     - target: {fileID: 3923500225444035778, guid: 0599d8fe55dddf14eabc75dcd46bceb2, type: 3}
       propertyPath: m_Name
       value: Interaction
+      objectReference: {fileID: 0}
+    - target: {fileID: 3923500225444035778, guid: 0599d8fe55dddf14eabc75dcd46bceb2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8048236813511955674, guid: 0599d8fe55dddf14eabc75dcd46bceb2, type: 3}
       propertyPath: m_Pivot.x
@@ -34172,7 +33919,6 @@ GameObject:
   - component: {fileID: 1374277290}
   - component: {fileID: 1375667050}
   - component: {fileID: 1371480648}
-  - component: {fileID: 1375667051}
   m_Layer: 8
   m_Name: Gravestone
   m_TagString: Untagged
@@ -34266,18 +34012,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1375667051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1373228588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!205 &1379604737
 LODGroup:
   m_ObjectHideFlags: 0
@@ -35303,6 +35037,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6196657938215998703, guid: 36f22c868730b944189b4125f6f0c993, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6196657938215998703, guid: 36f22c868730b944189b4125f6f0c993, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4043395125
+      objectReference: {fileID: 0}
     - target: {fileID: 2798691124033318919, guid: 36f22c868730b944189b4125f6f0c993, type: 3}
       propertyPath: pickUptext
       value: 
@@ -35313,7 +35055,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7337443350774859568, guid: 36f22c868730b944189b4125f6f0c993, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 7969125548096789898, guid: 36f22c868730b944189b4125f6f0c993, type: 3}
       propertyPath: m_LocalPosition.x
@@ -39320,13 +39062,14 @@ GameObject:
   - component: {fileID: 1515843130}
   - component: {fileID: 1515843132}
   - component: {fileID: 1515843134}
+  - component: {fileID: 1515843135}
   m_Layer: 0
   m_Name: Church Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1514497288
 GameObject:
   m_ObjectHideFlags: 0
@@ -39738,6 +39481,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TransitionStateInfoList: []
   m_Animator: {fileID: 1515843129}
+--- !u!114 &1515843135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514099762}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 2112999226
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!205 &1519860351
 LODGroup:
   m_ObjectHideFlags: 0
@@ -41082,7 +40845,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1546480380}
   - component: {fileID: 1561495990}
-  - component: {fileID: 1561495991}
   m_Layer: 6
   m_Name: Church Bench
   m_TagString: Untagged
@@ -41454,7 +41216,6 @@ GameObject:
   - component: {fileID: 1549688794}
   - component: {fileID: 1548685992}
   - component: {fileID: 1544507608}
-  - component: {fileID: 1550665493}
   m_Layer: 8
   m_Name: Gravestone
   m_TagString: Untagged
@@ -41462,18 +41223,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!114 &1550665493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1550665492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &1554004247
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -41891,18 +41640,6 @@ LODGroup:
     renderers:
     - renderer: {fileID: 1544545546}
   m_Enabled: 0
---- !u!114 &1561495991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1546241488}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!205 &1576570859
 LODGroup:
   m_ObjectHideFlags: 0
@@ -41957,7 +41694,6 @@ GameObject:
   - component: {fileID: 1596942742}
   - component: {fileID: 1597908196}
   - component: {fileID: 1602119316}
-  - component: {fileID: 1602119317}
   m_Layer: 8
   m_Name: Gravestone
   m_TagString: Untagged
@@ -42036,18 +41772,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.1518269, y: 1.8723565, z: 0.25698656}
   m_Center: {x: 0, y: 0.928065, z: 0.0032029971}
---- !u!114 &1602119317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1595699544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1610659072
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43858,7 +43582,6 @@ GameObject:
   - component: {fileID: 1652445227}
   - component: {fileID: 1651023339}
   - component: {fileID: 1646836937}
-  - component: {fileID: 1652445228}
   m_Layer: 8
   m_Name: Gravestone
   m_TagString: Untagged
@@ -44018,18 +43741,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1649299629}
   m_Mesh: {fileID: 4300000, guid: d7cb020d98ed42541a8578c9f0523a48, type: 3}
---- !u!114 &1652445228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1649299629}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &1655987998
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -44988,7 +44699,6 @@ GameObject:
   - component: {fileID: 1685938522}
   - component: {fileID: 1684804500}
   - component: {fileID: 1680593924}
-  - component: {fileID: 1685938523}
   m_Layer: 8
   m_Name: Gravestone
   m_TagString: Untagged
@@ -45146,18 +44856,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1682815122}
   m_Mesh: {fileID: 4300000, guid: 8522374f9e5b06645abc4e7c8da3b6c8, type: 3}
---- !u!114 &1685938523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1682815122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!205 &1686006754
 LODGroup:
   m_ObjectHideFlags: 0
@@ -46354,7 +46052,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1737027791}
   - component: {fileID: 1723274117}
-  - component: {fileID: 1737252836}
   m_Layer: 6
   m_Name: Church Bench
   m_TagString: Untagged
@@ -46362,18 +46059,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!114 &1737252836
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1737252835}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1737256713
 GameObject:
   m_ObjectHideFlags: 0
@@ -47925,7 +47610,6 @@ GameObject:
   - component: {fileID: 1773866339}
   - component: {fileID: 1772994723}
   - component: {fileID: 1777197441}
-  - component: {fileID: 1777197442}
   m_Layer: 8
   m_Name: Gravestone
   m_TagString: Untagged
@@ -48130,18 +47814,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.6280701, y: 1.1779361, z: 0.2569866}
   m_Center: {x: 0.00000008940697, y: 0.57776344, z: 0}
---- !u!114 &1777197442
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1770720741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1778552383
 Transform:
   m_ObjectHideFlags: 0
@@ -48460,6 +48132,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4663747601988799208, guid: b190f27b8590e6740b67fac80c437988, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663747601988799208, guid: b190f27b8590e6740b67fac80c437988, type: 3}
       propertyPath: pickUptext
       value: 
       objectReference: {fileID: 1503699147}
@@ -48507,11 +48183,43 @@ PrefabInstance:
       propertyPath: m_Name
       value: Remedy 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6805859828886100800, guid: b190f27b8590e6740b67fac80c437988, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6805859828886100800, guid: b190f27b8590e6740b67fac80c437988, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 1797452363}
   m_SourcePrefab: {fileID: 100100000, guid: b190f27b8590e6740b67fac80c437988, type: 3}
+--- !u!1 &1797452362 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6805859828886100800, guid: b190f27b8590e6740b67fac80c437988, type: 3}
+  m_PrefabInstance: {fileID: 1797452361}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1797452363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797452362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 3970427281
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!205 &1799123693
 LODGroup:
   m_ObjectHideFlags: 0
@@ -49457,7 +49165,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1840333454}
   - component: {fileID: 1821286852}
-  - component: {fileID: 1840639395}
   m_Layer: 6
   m_Name: Church Bench
   m_TagString: Untagged
@@ -49465,18 +49172,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!114 &1840639395
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1840639394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1840646810
 GameObject:
   m_ObjectHideFlags: 0
@@ -49758,6 +49453,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4663747601988799208, guid: b190f27b8590e6740b67fac80c437988, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663747601988799208, guid: b190f27b8590e6740b67fac80c437988, type: 3}
       propertyPath: pickUptext
       value: 
       objectReference: {fileID: 1503699147}
@@ -49805,11 +49504,43 @@ PrefabInstance:
       propertyPath: m_Name
       value: Remedy 1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6805859828886100800, guid: b190f27b8590e6740b67fac80c437988, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6805859828886100800, guid: b190f27b8590e6740b67fac80c437988, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 1874398244}
   m_SourcePrefab: {fileID: 100100000, guid: b190f27b8590e6740b67fac80c437988, type: 3}
+--- !u!1 &1874398243 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6805859828886100800, guid: b190f27b8590e6740b67fac80c437988, type: 3}
+  m_PrefabInstance: {fileID: 1874398242}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1874398244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1874398243}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1379183635
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &1877970547 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 160078, guid: 19d091357490f6840bc24462233284ae, type: 3}
@@ -50240,6 +49971,7 @@ GameObject:
   - component: {fileID: 1896661347}
   - component: {fileID: 1896661348}
   - component: {fileID: 1896661349}
+  - component: {fileID: 1896661350}
   m_Layer: 6
   m_Name: Knock
   m_TagString: Untagged
@@ -50257,7 +49989,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.76, y: 1.5110016, z: 0.019997597}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.74}
+  m_LocalScale: {x: 0.8810761, y: 0.82785, z: 1.5147295}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1513753086}
@@ -50295,12 +50027,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe4586f2577bf1b4c9f1904792311b5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionText: {fileID: 1234039354}
   door: {fileID: 1514099762}
   doorSound: {fileID: 8300000, guid: 1b3f4a54430380f45a00e9d2adbcb2ec, type: 3}
   doorSource: {fileID: 1515843132}
-  State:
-    m_InternalValue: 0
 --- !u!82 &1896661349
 AudioSource:
   m_ObjectHideFlags: 0
@@ -50397,6 +50126,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1896661350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896661345}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 2727454163
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!65 &1896681122
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -50706,7 +50455,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1902646200}
   - component: {fileID: 1884811506}
-  - component: {fileID: 1902951573}
   m_Layer: 8
   m_Name: Church Bench
   m_TagString: Untagged
@@ -50714,18 +50462,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!114 &1902951573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1902951572}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1903123372
 GameObject:
   m_ObjectHideFlags: 0
@@ -52021,7 +51757,6 @@ GameObject:
   - component: {fileID: 1948792373}
   - component: {fileID: 1949930031}
   - component: {fileID: 1954426325}
-  - component: {fileID: 1954426326}
   m_Layer: 8
   m_Name: Gravestone
   m_TagString: Untagged
@@ -52553,18 +52288,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.1518269, y: 2.0586739, z: 0.25698656}
   m_Center: {x: 0, y: 1.0212238, z: 0.0032029971}
---- !u!114 &1954426326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1947979711}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1954434818
 Transform:
   m_ObjectHideFlags: 0
@@ -54141,7 +53864,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1999887227}
-  - component: {fileID: 1999887228}
   m_Layer: 6
   m_Name: Church Elements
   m_TagString: Untagged
@@ -54174,26 +53896,6 @@ Transform:
   - {fileID: 1546480380}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1999887228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1999887226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2377394633
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!64 &2001693526
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -56208,6 +55910,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Picking up
       objectReference: {fileID: 0}
+    - target: {fileID: 8368301438163803585, guid: 5747576516fd8e345a644bdde21b3ac1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8825989899759439658, guid: 5747576516fd8e345a644bdde21b3ac1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8825989899759439658, guid: 5747576516fd8e345a644bdde21b3ac1, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2296358287
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -57389,7 +57103,6 @@ GameObject:
   - component: {fileID: 2141923282}
   - component: {fileID: 2142923424}
   - component: {fileID: 2147100880}
-  - component: {fileID: 2147100881}
   m_Layer: 8
   m_Name: Gravestone
   m_TagString: Untagged
@@ -57510,18 +57223,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.1518269, y: 1.8723565, z: 0.25698656}
   m_Center: {x: 0, y: 0.928065, z: 0.0032029971}
---- !u!114 &2147100881
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2140684060}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb56d4bf17c127498b80b2f81231b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!222 &417142708073782889
 CanvasRenderer:
   m_ObjectHideFlags: 0
