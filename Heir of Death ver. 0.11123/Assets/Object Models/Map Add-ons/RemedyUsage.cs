@@ -17,15 +17,17 @@ public class RemedyUsage : NetworkBehaviour
 
         if (playerHealth != null)
         {
-            if (playerHealth.czyHost)
+            if (playerHealth.czyHost && IsServer)
             {
-                playerHealth.RestoreHealthClientRpc(10f, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 0 } } });
+                //playerHealth.RestoreHealthClientRpc(10f, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 0 } } });
+                playerHealth.RestoreHealthServerRpc(10f);
                 Destroy(gameObject);
             }
 
-            if (playerHealth.czyHost == false)
+            if (playerHealth.czyHost == false && (!IsServer))
             {
-                playerHealth.RestoreHealthClientRpc(10f, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
+                //playerHealth.RestoreHealthClientRpc(10f, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
+                playerHealth.SynchroServerRpc(10f);
                 Destroy(gameObject);
             }
         }

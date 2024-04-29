@@ -5,17 +5,14 @@ using UnityEngine.UI;
 
 public class PlayerHealth : NetworkBehaviour
 {
-    
     public static float health;
-    public  bool czyHost;
+    public bool czyHost;
     private static float lerpTimer;
     public float maxHealth = 100;
     public float chipSpeed = 2;
 
     public Image frontHealthBar;
     public Image backHealthBar;
-
-    
 
     private void Start()
     {
@@ -30,11 +27,10 @@ public class PlayerHealth : NetworkBehaviour
         {
             czyHost = true;
         }
-        if(IsClient && !IsHost)
+        if (IsClient && !IsHost)
         {
             czyHost = false;
         }
-
 
         //Dzia³aj¹cy skrypt z zadawaniem obra¿eñ/////////////////////////
         //if (Input.GetKeyDown(KeyCode.E) && IsHost)
@@ -53,8 +49,6 @@ public class PlayerHealth : NetworkBehaviour
             health = health - 20;
             Debug.Log("health:" + health);
         }
-
-        //////////////////////////////////////////////
 
         UpdateHealthUI();
         //health = Mathf.Clamp(health, 0, maxHealth);
@@ -108,6 +102,20 @@ public class PlayerHealth : NetworkBehaviour
         lerpTimer = 0f;
     }
 
+    [ServerRpc]
+    public void SynchroServerRpc(float healAmount)
+    {
+        ClientRpcParams clientRpcParams = new ClientRpcParams
+        {
+            Send = new ClientRpcSendParams
+            {
+                TargetClientIds = new ulong[] { 1 }
+            }
+        };
+
+        RestoreHealthClientRpc(healAmount, clientRpcParams);
+    }
+
     //public void RestoreHealth(float healAmount)
     //{
     //    health += healAmount;
@@ -118,21 +126,16 @@ public class PlayerHealth : NetworkBehaviour
     public void RestoreHealthServerRpc(float healAmount)
     {
         health += healAmount;
-        Debug.Log("Zycie po podniesieniu:" + health);
-        Debug.Log("Doda³o na serwerze:" + healAmount);
         healAmount = 0;
         lerpTimer = 0f;
-        
+
     }
 
     [ClientRpc]
     public void RestoreHealthClientRpc(float healAmount, ClientRpcParams clientRpcParams)
     {
         health += healAmount;
-        Debug.Log("Doda³o po podniesieniu:" + health);
-        Debug.Log("Doda³o na kliencie:" + healAmount);
         healAmount = 0;
         lerpTimer = 0f;
-        
     }
 }

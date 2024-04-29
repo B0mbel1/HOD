@@ -5301,6 +5301,7 @@ GameObject:
   - component: {fileID: 2207638637468220779}
   - component: {fileID: 799652640481805453}
   - component: {fileID: 2560428658579184535}
+  - component: {fileID: 1103576334604250073}
   m_Layer: 0
   m_Name: AniCh1
   m_TagString: Untagged
@@ -5404,6 +5405,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gun1: {fileID: 465860386417108078}
   gun2: {fileID: 2898455531196878150}
+--- !u!114 &1103576334604250073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8679530547833647370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bac3d69c192e7a449838466707c3bf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8690977866322722170
 GameObject:
   m_ObjectHideFlags: 0
@@ -5925,6 +5938,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 771728172258281313}
     m_Modifications:
     - target: {fileID: 779063723635051023, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
+      propertyPath: clip
+      value: 
+      objectReference: {fileID: 7337443350774859568, guid: 36f22c868730b944189b4125f6f0c993, type: 3}
+    - target: {fileID: 779063723635051023, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
       propertyPath: AmmoTimeReset
       value: 20
       objectReference: {fileID: 0}
@@ -5932,6 +5949,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player HUD
       objectReference: {fileID: 0}
+    - target: {fileID: 2417487989820071593, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
+      propertyPath: clip
+      value: 
+      objectReference: {fileID: 7337443350774859568, guid: 36f22c868730b944189b4125f6f0c993, type: 3}
     - target: {fileID: 2417487989820071593, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
       propertyPath: bullet
       value: 

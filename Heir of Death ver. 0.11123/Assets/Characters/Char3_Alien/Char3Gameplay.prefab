@@ -994,6 +994,7 @@ GameObject:
   - component: {fileID: 7193512334870827583}
   - component: {fileID: 5178390385685946411}
   - component: {fileID: 5531656100364577025}
+  - component: {fileID: 1085411299629212614}
   m_Layer: 0
   m_Name: AniCh3
   m_TagString: Untagged
@@ -1114,6 +1115,18 @@ MonoBehaviour:
   gunanimations: {fileID: 9100000, guid: 276b18a74856ea44eb13faeba1d28ee4, type: 2}
   gun1: {fileID: 2453866719827625075}
   gun2: {fileID: 4518086769103066041}
+--- !u!114 &1085411299629212614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2044204743951857863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bac3d69c192e7a449838466707c3bf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2098708389285618120
 GameObject:
   m_ObjectHideFlags: 0
