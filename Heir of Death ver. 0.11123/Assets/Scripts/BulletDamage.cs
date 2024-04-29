@@ -31,7 +31,6 @@ public class BulletDamage : NetworkBehaviour
         {
             if (playerHealth.czyHost == true)
             {
-
                 if (other.gameObject.tag == "Reka")
                 {
                     if (BetterAmmoScript.isBetterAmmoActivated == true)

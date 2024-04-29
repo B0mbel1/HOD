@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerHealth : NetworkBehaviour
 {
+    
     public static float health;
     public  bool czyHost;
     private static float lerpTimer;
@@ -14,6 +15,7 @@ public class PlayerHealth : NetworkBehaviour
     public Image frontHealthBar;
     public Image backHealthBar;
 
+    
 
     private void Start()
     {
@@ -33,21 +35,23 @@ public class PlayerHealth : NetworkBehaviour
             czyHost = false;
         }
 
+
         //Dzia³aj¹cy skrypt z zadawaniem obra¿eñ/////////////////////////
         //if (Input.GetKeyDown(KeyCode.E) && IsHost)
         //{
         //    DamageClientRpc(12f, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
-            
+
         //}
 
         //if (Input.GetKeyDown(KeyCode.T) && IsClient && !IsHost)
         //{
         //    DamageServerRpc(12f);
-            
+
         //}
-        if(Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.B))
         {
             health = health - 20;
+            Debug.Log("health:" + health);
         }
 
         //////////////////////////////////////////////
@@ -104,9 +108,31 @@ public class PlayerHealth : NetworkBehaviour
         lerpTimer = 0f;
     }
 
-    public static void RestoreHealth(float healAmount)
+    //public void RestoreHealth(float healAmount)
+    //{
+    //    health += healAmount;
+    //    lerpTimer = 0f;
+    //}
+
+    [ServerRpc]
+    public void RestoreHealthServerRpc(float healAmount)
     {
         health += healAmount;
+        Debug.Log("Zycie po podniesieniu:" + health);
+        Debug.Log("Doda³o na serwerze:" + healAmount);
+        healAmount = 0;
         lerpTimer = 0f;
+        
+    }
+
+    [ClientRpc]
+    public void RestoreHealthClientRpc(float healAmount, ClientRpcParams clientRpcParams)
+    {
+        health += healAmount;
+        Debug.Log("Doda³o po podniesieniu:" + health);
+        Debug.Log("Doda³o na kliencie:" + healAmount);
+        healAmount = 0;
+        lerpTimer = 0f;
+        
     }
 }

@@ -1,48 +1,38 @@
+using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class RemedyUsage : MonoBehaviour
-{ 
+public class RemedyUsage : NetworkBehaviour
+{
     public GameObject remedy;
-    public GameObject pickUptext;
 
-    private void Start()
-    {
-        pickUptext.SetActive(false);
-    }
+    //public void Update()
+    //{
+    //    if (!IsOwner) return;
+    //}
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        PlayerHealth playerHealth = other.GetComponentInParent<PlayerHealth>();
+
+        if (playerHealth != null)
         {
-            pickUptext.SetActive(true);
-        }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (playerHealth.czyHost)
             {
-                pickUptext.SetActive(false);
-                this.gameObject.SetActive(false);
-                remedy.SetActive(false);
-
-                PlayerHealth.RestoreHealth(10);
+                playerHealth.RestoreHealthClientRpc(10f, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 0 } } });
+                Destroy(gameObject);
             }
-        }
-    }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            pickUptext.SetActive(false);
+            if (playerHealth.czyHost == false)
+            {
+                playerHealth.RestoreHealthClientRpc(10f, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
+                Destroy(gameObject);
+            }
         }
     }
 }
 
-    
+
 
 
 

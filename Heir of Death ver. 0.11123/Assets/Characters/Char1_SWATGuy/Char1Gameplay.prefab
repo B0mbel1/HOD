@@ -1579,7 +1579,6 @@ GameObject:
   - component: {fileID: 7928473494070720239}
   - component: {fileID: 3431224240255397763}
   - component: {fileID: 8424777236628201647}
-  - component: {fileID: 7950939380232883975}
   m_Layer: 0
   m_Name: Char1Gameplay
   m_TagString: Untagged
@@ -1598,7 +1597,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 121.884, y: 33.5, z: 144.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3848759414933796401}
   - {fileID: 1399684105521463357}
@@ -2086,24 +2085,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 5837352391608814823}
---- !u!114 &7950939380232883975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2893557086950090720}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe4586f2577bf1b4c9f1904792311b5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactionText: {fileID: 0}
-  door: {fileID: 0}
-  doorSound: {fileID: 0}
-  doorSource: {fileID: 0}
-  State:
-    m_InternalValue: 0
 --- !u!1 &2898455531196878150
 GameObject:
   m_ObjectHideFlags: 0
@@ -4198,7 +4179,7 @@ CapsuleCollider:
   m_Radius: 0.15
   m_Height: 1.8
   m_Direction: 1
-  m_Center: {x: 0, y: 0.88, z: -0.05127972}
+  m_Center: {x: 0, y: 0.85, z: -0.05127972}
 --- !u!114 &6202456637299799072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5391,10 +5372,10 @@ MonoBehaviour:
   cameraTransform: {fileID: 5364256205189576302}
   convertedRotation: 0
   roundedRotation: 0
-  playerHeight: 0
+  playerHeight: 2
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!114 &799652640481805453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5943,6 +5924,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 771728172258281313}
     m_Modifications:
+    - target: {fileID: 779063723635051023, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
+      propertyPath: AmmoTimeReset
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 2167817230289297634, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
       propertyPath: m_Name
       value: Player HUD
@@ -6023,6 +6008,14 @@ PrefabInstance:
       propertyPath: gun1
       value: 
       objectReference: {fileID: 2898455531196878150}
+    - target: {fileID: 8087372784962087565, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8087372784962087565, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4069156427
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7435915038155686191, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
     m_RemovedGameObjects: []
