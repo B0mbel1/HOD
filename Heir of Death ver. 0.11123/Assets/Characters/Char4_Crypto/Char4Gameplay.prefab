@@ -1754,7 +1754,6 @@ GameObject:
   - component: {fileID: 2308471374156734638}
   - component: {fileID: 7519614026773144894}
   - component: {fileID: 5134947559622717559}
-  - component: {fileID: 6403891200947662837}
   - component: {fileID: 4991989416818050129}
   - component: {fileID: 2166405652767812377}
   m_Layer: 0
@@ -1950,29 +1949,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0.95, z: 0}
---- !u!114 &6403891200947662837
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4107443067253622844}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b6a45fa608a3ff4e958718057fb9491, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PowerTimer: {fileID: 768675449296913163}
-  PowerTime: 5
-  StartingValue: 0
-  CooldownTime: 10
-  CooldownStartingValue: 0
-  UnlockTime: 0
-  isActivated: 0
-  CanPressAbility: 1
-  rendererLocal: {fileID: 0}
-  audioSource: {fileID: 5558511241625903068}
-  invisibilitySound: {fileID: 8300000, guid: 60125022a3e9b4640910291b6546b212, type: 3}
 --- !u!114 &4991989416818050129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3562,6 +3538,7 @@ GameObject:
   - component: {fileID: 5288811358155950589}
   - component: {fileID: 9144877611838777494}
   - component: {fileID: 1172767353910340439}
+  - component: {fileID: 5733457624087209749}
   m_Layer: 0
   m_Name: Char4Gameplay
   m_TagString: Untagged
@@ -3732,7 +3709,7 @@ MonoBehaviour:
   gun: {fileID: 678383138044308239}
   gun2: {fileID: 0}
   pointer: {fileID: 2283631661825095805}
-  CooldownTime: 10
+  CooldownTime: 20
   CooldownStartingValue: 0
   cooldownActivated: 0
   canTp: 0
@@ -3968,7 +3945,7 @@ MonoBehaviour:
   PowerTimer: {fileID: 768675449296913163}
   PowerTime: 3
   StartingValue: 0
-  CooldownTime: 10
+  CooldownTime: 25
   CooldownStartingValue: 0
   UnlockTime: 0
   isActivated: 0
@@ -4029,6 +4006,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 5387732970571511840}
+--- !u!114 &5733457624087209749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7366019331335905338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b6a45fa608a3ff4e958718057fb9491, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PowerTimer: {fileID: 768675449296913163}
+  PowerTime: 5
+  StartingValue: 0
+  CooldownTime: 40
+  CooldownStartingValue: 0
+  UnlockTime: 0
+  isActivated: 0
+  CanPressAbility: 1
+  rendererLocal: {fileID: 0}
+  audioSource: {fileID: 5558511241625903068}
+  invisibilitySound: {fileID: 8300000, guid: 60125022a3e9b4640910291b6546b212, type: 3}
 --- !u!1 &7393263685595445350
 GameObject:
   m_ObjectHideFlags: 0

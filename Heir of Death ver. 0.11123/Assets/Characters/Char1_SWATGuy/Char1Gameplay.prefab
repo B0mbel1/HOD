@@ -1845,7 +1845,7 @@ MonoBehaviour:
   gun: {fileID: 465860386417108078}
   gun2: {fileID: 2898455531196878150}
   pointer: {fileID: 4535844888677968819}
-  CooldownTime: 10
+  CooldownTime: 20
   CooldownStartingValue: 0
   cooldownActivated: 0
   canTp: 0
@@ -2006,9 +2006,9 @@ MonoBehaviour:
   standardShader: {fileID: 4800000, guid: 9ccef8e3616d40a469a70696f7459dba, type: 3}
   defaultMaterial: []
   PowerTimer: {fileID: 2852214998270963226}
-  PowerTime: 5
+  PowerTime: 3
   StartingValue: 0
-  CooldownTime: 10
+  CooldownTime: 25
   CooldownStartingValue: 0
   UnlockTime: 0
   isActivated: 0
@@ -2040,15 +2040,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2893557086950090720}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b6a45fa608a3ff4e958718057fb9491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   PowerTimer: {fileID: 2852214998270963226}
-  PowerTime: 3
+  PowerTime: 5
   StartingValue: 0
-  CooldownTime: 10
+  CooldownTime: 40
   CooldownStartingValue: 0
   UnlockTime: 0
   isActivated: 0

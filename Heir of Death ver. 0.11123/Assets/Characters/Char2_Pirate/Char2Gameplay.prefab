@@ -891,7 +891,7 @@ MonoBehaviour:
   gun: {fileID: 6736592316617080383}
   gun2: {fileID: 5368188194080034748}
   pointer: {fileID: 4906388050332670081}
-  CooldownTime: 10
+  CooldownTime: 20
   CooldownStartingValue: 0
   cooldownActivated: 0
   canTp: 0
@@ -1031,7 +1031,7 @@ MonoBehaviour:
   PowerTimer: {fileID: 2678926965143819321}
   PowerTime: 3
   StartingValue: 0
-  CooldownTime: 10
+  CooldownTime: 25
   CooldownStartingValue: 0
   UnlockTime: 0
   isActivated: 0
@@ -1054,7 +1054,7 @@ MonoBehaviour:
   audiosource: {fileID: -4505095661799517857}
   audioSourcePower: {fileID: 1409678851686378350}
   stealth: {fileID: 8300000, guid: 3f90fd0ec57afbc478e312c8b5cae7c0, type: 3}
-  CooldownTime: 10
+  CooldownTime: 20
   CooldownStartingValue: 0
   cooldownActivated: 0
   PowerTime: 10
@@ -1086,22 +1086,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1370538760696813027}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b6a45fa608a3ff4e958718057fb9491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   PowerTimer: {fileID: 2678926965143819321}
-  PowerTime: 3
+  PowerTime: 5
   StartingValue: 0
-  CooldownTime: 10
+  CooldownTime: 40
   CooldownStartingValue: 0
   UnlockTime: 0
   isActivated: 0
   CanPressAbility: 1
   rendererLocal: {fileID: 0}
-  audioSource: {fileID: 0}
-  invisibilitySound: {fileID: 0}
+  audioSource: {fileID: 4856773005810138063}
+  invisibilitySound: {fileID: 8300000, guid: 60125022a3e9b4640910291b6546b212, type: 3}
 --- !u!114 &1017468746344348086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3873,7 +3873,6 @@ GameObject:
   - component: {fileID: 6990607404486837277}
   - component: {fileID: 6707096828038124024}
   - component: {fileID: 1592972639841439920}
-  - component: {fileID: 7087310651339588189}
   - component: {fileID: 3090467818580947328}
   - component: {fileID: 2487633111557703876}
   - component: {fileID: 6763278054952575600}
@@ -4051,29 +4050,6 @@ CapsuleCollider:
   m_Height: 0.63
   m_Direction: 1
   m_Center: {x: 0, y: 0.31, z: 0}
---- !u!114 &7087310651339588189
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6516835470644473762}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b6a45fa608a3ff4e958718057fb9491, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PowerTimer: {fileID: 2678926965143819321}
-  PowerTime: 5
-  StartingValue: 0
-  CooldownTime: 10
-  CooldownStartingValue: 0
-  UnlockTime: 0
-  isActivated: 0
-  CanPressAbility: 1
-  rendererLocal: {fileID: 0}
-  audioSource: {fileID: 4856773005810138063}
-  invisibilitySound: {fileID: 8300000, guid: 60125022a3e9b4640910291b6546b212, type: 3}
 --- !u!114 &3090467818580947328
 MonoBehaviour:
   m_ObjectHideFlags: 0
