@@ -5,7 +5,7 @@ public class ChangeGun : NetworkBehaviour
 {
     [SerializeField] public GameObject gun1;
     [SerializeField] public GameObject gun2;
-    
+
     void Start()
     {
         gun2.SetActive(false);
@@ -13,10 +13,11 @@ public class ChangeGun : NetworkBehaviour
 
     void Update()
     {
+
         if (!IsOwner) return;
         
         
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) && FreeTeleportationOnline.teleportState == true)
         {
             gun2.SetActive(false);
             gun1.SetActive(false);
