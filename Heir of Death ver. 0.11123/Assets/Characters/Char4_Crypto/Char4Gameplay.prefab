@@ -100,7 +100,6 @@ GameObject:
   - component: {fileID: 4582497567187551}
   - component: {fileID: 5725618142750165169}
   - component: {fileID: 8938421485870435583}
-  - component: {fileID: 1444325337248251590}
   - component: {fileID: 8805950288474259219}
   m_Layer: 0
   m_Name: Gun1
@@ -340,35 +339,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1444325337248251590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 678383138044308239}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d740e6df3fd3904fbb1b1027f46cc34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 40
-  timeBetweenShooting: 0.5
-  spread: 0
-  range: 100
-  reloadTime: 1
-  timeBetweenShots: 0
-  magazineSize: 10
-  bulletsPerTap: 1
-  allowButtonHold: 1
-  Pointer: {fileID: 0}
-  fpsCam: {fileID: 8587178065644207113}
-  shootSound: {fileID: 8300000, guid: bf4fae68ea0966044962ac4e23e527e8, type: 3}
-  reloadSound: {fileID: 8300000, guid: ea29e86108f09fa48a3d7e6fdd469b6d, type: 3}
-  Gun: {fileID: 678383138044308239}
-  bulletPrefab: {fileID: 8174539478665384341, guid: 1b84fa7f14eaeeb48819630b948724dd, type: 3}
-  bulletSpawn: {fileID: 7626588510292531218}
-  bulletSpeed: 30
 --- !u!114 &8805950288474259219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1756,6 +1726,7 @@ GameObject:
   - component: {fileID: 5134947559622717559}
   - component: {fileID: 4991989416818050129}
   - component: {fileID: 2166405652767812377}
+  - component: {fileID: 6850471014574780350}
   m_Layer: 0
   m_Name: Ch45
   m_TagString: Player
@@ -1979,6 +1950,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   czyHost: 0
   ameno: {fileID: 8300000, guid: 6129ca5650c09f14981cdf5c3ec2ad6f, type: 3}
+--- !u!114 &6850471014574780350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4107443067253622844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeeba82d6c788644cb0af26e40d6a71b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  XrayShader: {fileID: 4800000, guid: 9e91709555c69864093e1c5a90d49d51, type: 3}
+  standardShader: {fileID: 4800000, guid: 9ccef8e3616d40a469a70696f7459dba, type: 3}
+  defaultMaterial: []
+  PowerTimer: {fileID: 768675449296913163}
+  PowerTime: 3
+  StartingValue: 0
+  CooldownTime: 25
+  CooldownStartingValue: 0
+  UnlockTime: 0
+  isActivated: 0
+  CanPressAbility: 1
+  audioSource: {fileID: 4182630282508134211}
+  xrayPowerSound: {fileID: 8300000, guid: 0e10e865664114f4da6a873fece52abf, type: 3}
 --- !u!1 &4137370954091481257
 GameObject:
   m_ObjectHideFlags: 0
@@ -3000,7 +2996,6 @@ GameObject:
   - component: {fileID: 449208728091705698}
   - component: {fileID: 1263943771654773180}
   - component: {fileID: 4335270686026779918}
-  - component: {fileID: 9219879680770961603}
   - component: {fileID: 2539799755980613388}
   m_Layer: 0
   m_Name: Gun2
@@ -3240,33 +3235,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &9219879680770961603
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6205330185515697766}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8ee74b09396e4e4e9a06474100ab9d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 10
-  timeBetweenShooting: 0.5
-  spread: 0
-  range: 100
-  reloadTime: 1
-  timeBetweenShots: 0
-  magazineSize: 10
-  bulletsPerTap: 1
-  allowButtonHold: 1
-  bulletSpeed: 30
-  fpsCam: {fileID: 8587178065644207113}
-  shootSound: {fileID: 8300000, guid: bf4fae68ea0966044962ac4e23e527e8, type: 3}
-  reloadSound: {fileID: 8300000, guid: ea29e86108f09fa48a3d7e6fdd469b6d, type: 3}
-  bulletPrefab: {fileID: 8174539478665384341, guid: 1b84fa7f14eaeeb48819630b948724dd, type: 3}
-  bulletSpawn: {fileID: 1184115341659057856}
 --- !u!114 &2539799755980613388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3534,7 +3502,6 @@ GameObject:
   - component: {fileID: 2650335903135288739}
   - component: {fileID: 4182630282508134211}
   - component: {fileID: 5865588143948586436}
-  - component: {fileID: 1610555630271098564}
   - component: {fileID: 5288811358155950589}
   - component: {fileID: 9144877611838777494}
   - component: {fileID: 1172767353910340439}
@@ -3927,31 +3894,6 @@ MonoBehaviour:
   slideForce: 200
   slideYScale: 1
   slideKey: 306
---- !u!114 &1610555630271098564
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7366019331335905338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eeeba82d6c788644cb0af26e40d6a71b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  XrayShader: {fileID: 4800000, guid: 9e91709555c69864093e1c5a90d49d51, type: 3}
-  standardShader: {fileID: 4800000, guid: 9ccef8e3616d40a469a70696f7459dba, type: 3}
-  defaultMaterial: []
-  PowerTimer: {fileID: 768675449296913163}
-  PowerTime: 3
-  StartingValue: 0
-  CooldownTime: 25
-  CooldownStartingValue: 0
-  UnlockTime: 0
-  isActivated: 0
-  CanPressAbility: 1
-  audioSource: {fileID: 4182630282508134211}
-  xrayPowerSound: {fileID: 8300000, guid: 0e10e865664114f4da6a873fece52abf, type: 3}
 --- !u!114 &5288811358155950589
 MonoBehaviour:
   m_ObjectHideFlags: 0

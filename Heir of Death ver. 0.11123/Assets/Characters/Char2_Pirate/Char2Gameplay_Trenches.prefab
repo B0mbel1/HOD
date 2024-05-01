@@ -619,11 +619,11 @@ GameObject:
   - component: {fileID: 5421406742141908752}
   - component: {fileID: 1409678851686378350}
   - component: {fileID: 2084334011446808951}
-  - component: {fileID: 7981916041806279822}
   - component: {fileID: 6640098494317767194}
   - component: {fileID: 4954487897023678299}
   - component: {fileID: 6389015214151739870}
   - component: {fileID: 1017468746344348086}
+  - component: {fileID: 3346365758550592245}
   m_Layer: 0
   m_Name: Char2Gameplay_Trenches
   m_TagString: Untagged
@@ -1012,31 +1012,6 @@ MonoBehaviour:
   slideForce: 200
   slideYScale: 0.5
   slideKey: 306
---- !u!114 &7981916041806279822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1370538760696813027}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eeeba82d6c788644cb0af26e40d6a71b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  XrayShader: {fileID: 4800000, guid: 9e91709555c69864093e1c5a90d49d51, type: 3}
-  standardShader: {fileID: 4800000, guid: 9ccef8e3616d40a469a70696f7459dba, type: 3}
-  defaultMaterial: []
-  PowerTimer: {fileID: 2678926965143819321}
-  PowerTime: 3
-  StartingValue: 0
-  CooldownTime: 25
-  CooldownStartingValue: 0
-  UnlockTime: 0
-  isActivated: 0
-  CanPressAbility: 1
-  audioSource: {fileID: 1409678851686378350}
-  xrayPowerSound: {fileID: 8300000, guid: 0e10e865664114f4da6a873fece52abf, type: 3}
 --- !u!114 &6640098494317767194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1085,7 +1060,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1370538760696813027}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b6a45fa608a3ff4e958718057fb9491, type: 3}
   m_Name: 
@@ -1117,6 +1092,19 @@ MonoBehaviour:
   ownerRoundCountTxt: {fileID: 329971787762048978}
   opponentRoundCountTxt: {fileID: 6648148066683907695}
   dead: 0
+--- !u!114 &3346365758550592245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370538760696813027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7cedbc4126d8fc449a1caa7888e9293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 1425304927016696768}
 --- !u!1 &1373518027538995736
 GameObject:
   m_ObjectHideFlags: 0
@@ -1476,7 +1464,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1852471385776061403}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5312c3c001bdc34b8c3ce5548a4e12a, type: 3}
   m_Name: 
@@ -2381,6 +2369,7 @@ GameObject:
   - component: {fileID: 4561716854433867482}
   - component: {fileID: 2949994545717478985}
   - component: {fileID: 4787916758693784243}
+  - component: {fileID: 6994694154014167975}
   m_Layer: 0
   m_Name: AniCh2
   m_TagString: Untagged
@@ -2452,10 +2441,10 @@ MonoBehaviour:
   cameraTransform: {fileID: 6673479271759484311}
   convertedRotation: 0
   roundedRotation: 0
-  playerHeight: 0
+  playerHeight: 0.63
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!114 &4561716854433867482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2499,8 +2488,20 @@ MonoBehaviour:
   animator: {fileID: 8937510978976830502}
   rifleanimations: {fileID: 9100000, guid: fd453bc276f53f243b860ead17b6a9c6, type: 2}
   gunanimations: {fileID: 9100000, guid: 3ea818fe528f7634a9d5471c217e0576, type: 2}
-  gun1: {fileID: 0}
-  gun2: {fileID: 0}
+  gun1: {fileID: 6736592316617080383}
+  gun2: {fileID: 5368188194080034748}
+--- !u!114 &6994694154014167975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4141133177728275188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bac3d69c192e7a449838466707c3bf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4273995719089753977
 GameObject:
   m_ObjectHideFlags: 0
@@ -3851,6 +3852,7 @@ GameObject:
   - component: {fileID: 2487633111557703876}
   - component: {fileID: 6763278054952575600}
   - component: {fileID: 4594932689909267326}
+  - component: {fileID: 4817921154778495477}
   m_Layer: 0
   m_Name: VoidPirate
   m_TagString: Player
@@ -4032,7 +4034,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6516835470644473762}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b6a45fa608a3ff4e958718057fb9491, type: 3}
   m_Name: 
@@ -4040,7 +4042,7 @@ MonoBehaviour:
   PowerTimer: {fileID: 2678926965143819321}
   PowerTime: 5
   StartingValue: 0
-  CooldownTime: 10
+  CooldownTime: 40
   CooldownStartingValue: 0
   UnlockTime: 0
   isActivated: 0
@@ -4188,6 +4190,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   czyHost: 0
   shelter: {fileID: 8300000, guid: 83d9933be6081d441a2f56c41d4d92c2, type: 3}
+--- !u!114 &4817921154778495477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6516835470644473762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeeba82d6c788644cb0af26e40d6a71b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  XrayShader: {fileID: 4800000, guid: 9e91709555c69864093e1c5a90d49d51, type: 3}
+  standardShader: {fileID: 4800000, guid: 9ccef8e3616d40a469a70696f7459dba, type: 3}
+  defaultMaterial: []
+  PowerTimer: {fileID: 2678926965143819321}
+  PowerTime: 3
+  StartingValue: 0
+  CooldownTime: 25
+  CooldownStartingValue: 0
+  UnlockTime: 0
+  isActivated: 0
+  CanPressAbility: 1
+  audioSource: {fileID: 1409678851686378350}
+  xrayPowerSound: {fileID: 8300000, guid: 0e10e865664114f4da6a873fece52abf, type: 3}
 --- !u!1 &6563322761929426705
 GameObject:
   m_ObjectHideFlags: 0

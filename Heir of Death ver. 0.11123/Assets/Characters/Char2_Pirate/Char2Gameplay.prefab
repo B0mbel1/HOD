@@ -619,7 +619,6 @@ GameObject:
   - component: {fileID: 5421406742141908752}
   - component: {fileID: 1409678851686378350}
   - component: {fileID: 2084334011446808951}
-  - component: {fileID: 7981916041806279822}
   - component: {fileID: 6640098494317767194}
   - component: {fileID: 4954487897023678299}
   - component: {fileID: 6389015214151739870}
@@ -1013,31 +1012,6 @@ MonoBehaviour:
   slideForce: 200
   slideYScale: 1
   slideKey: 306
---- !u!114 &7981916041806279822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1370538760696813027}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eeeba82d6c788644cb0af26e40d6a71b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  XrayShader: {fileID: 4800000, guid: 9e91709555c69864093e1c5a90d49d51, type: 3}
-  standardShader: {fileID: 4800000, guid: 9ccef8e3616d40a469a70696f7459dba, type: 3}
-  defaultMaterial: []
-  PowerTimer: {fileID: 2678926965143819321}
-  PowerTime: 3
-  StartingValue: 0
-  CooldownTime: 25
-  CooldownStartingValue: 0
-  UnlockTime: 0
-  isActivated: 0
-  CanPressAbility: 1
-  audioSource: {fileID: 1409678851686378350}
-  xrayPowerSound: {fileID: 8300000, guid: 0e10e865664114f4da6a873fece52abf, type: 3}
 --- !u!114 &6640098494317767194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3876,6 +3850,7 @@ GameObject:
   - component: {fileID: 3090467818580947328}
   - component: {fileID: 2487633111557703876}
   - component: {fileID: 6763278054952575600}
+  - component: {fileID: 419037380950048435}
   m_Layer: 0
   m_Name: VoidPirate
   m_TagString: Player
@@ -4176,6 +4151,31 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &419037380950048435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6516835470644473762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeeba82d6c788644cb0af26e40d6a71b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  XrayShader: {fileID: 4800000, guid: 9e91709555c69864093e1c5a90d49d51, type: 3}
+  standardShader: {fileID: 4800000, guid: 9ccef8e3616d40a469a70696f7459dba, type: 3}
+  defaultMaterial: []
+  PowerTimer: {fileID: 2678926965143819321}
+  PowerTime: 3
+  StartingValue: 0
+  CooldownTime: 25
+  CooldownStartingValue: 0
+  UnlockTime: 0
+  isActivated: 0
+  CanPressAbility: 1
+  audioSource: {fileID: 1409678851686378350}
+  xrayPowerSound: {fileID: 8300000, guid: 0e10e865664114f4da6a873fece52abf, type: 3}
 --- !u!1 &6563322761929426705
 GameObject:
   m_ObjectHideFlags: 0

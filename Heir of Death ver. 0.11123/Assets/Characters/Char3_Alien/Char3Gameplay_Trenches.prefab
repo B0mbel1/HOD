@@ -241,11 +241,11 @@ GameObject:
   - component: {fileID: 1414894111974110289}
   - component: {fileID: 5216663574078469239}
   - component: {fileID: 8700084666496256221}
-  - component: {fileID: 755105704287536684}
   - component: {fileID: 1449365290145370965}
   - component: {fileID: 89835157824672242}
   - component: {fileID: 7793085956478894868}
   - component: {fileID: 7407400151778881231}
+  - component: {fileID: 8187146226755483027}
   m_Layer: 0
   m_Name: Char3Gameplay_Trenches
   m_TagString: Untagged
@@ -634,31 +634,6 @@ MonoBehaviour:
   slideForce: 200
   slideYScale: 0.5
   slideKey: 306
---- !u!114 &755105704287536684
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1318587044675773895}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eeeba82d6c788644cb0af26e40d6a71b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  XrayShader: {fileID: 4800000, guid: 9e91709555c69864093e1c5a90d49d51, type: 3}
-  standardShader: {fileID: 4800000, guid: 9ccef8e3616d40a469a70696f7459dba, type: 3}
-  defaultMaterial: []
-  PowerTimer: {fileID: 7373685105483022243}
-  PowerTime: 3
-  StartingValue: 0
-  CooldownTime: 25
-  CooldownStartingValue: 0
-  UnlockTime: 0
-  isActivated: 0
-  CanPressAbility: 1
-  audioSource: {fileID: 5216663574078469239}
-  xrayPowerSound: {fileID: 8300000, guid: 0e10e865664114f4da6a873fece52abf, type: 3}
 --- !u!114 &1449365290145370965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -739,6 +714,19 @@ MonoBehaviour:
   rendererLocal: {fileID: 0}
   audioSource: {fileID: 7127251563133961870}
   invisibilitySound: {fileID: 8300000, guid: 60125022a3e9b4640910291b6546b212, type: 3}
+--- !u!114 &8187146226755483027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318587044675773895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7cedbc4126d8fc449a1caa7888e9293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 6382019073397861001}
 --- !u!1 &1445746478025300273
 GameObject:
   m_ObjectHideFlags: 0
@@ -1004,6 +992,7 @@ GameObject:
   - component: {fileID: 7193512334870827583}
   - component: {fileID: 5178390385685946411}
   - component: {fileID: 5531656100364577025}
+  - component: {fileID: 9167597799368676191}
   m_Layer: 0
   m_Name: AniCh3
   m_TagString: Untagged
@@ -1124,6 +1113,18 @@ MonoBehaviour:
   gunanimations: {fileID: 9100000, guid: 276b18a74856ea44eb13faeba1d28ee4, type: 2}
   gun1: {fileID: 2453866719827625075}
   gun2: {fileID: 4518086769103066041}
+--- !u!114 &9167597799368676191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2044204743951857863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bac3d69c192e7a449838466707c3bf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2098708389285618120
 GameObject:
   m_ObjectHideFlags: 0
@@ -3062,7 +3063,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6097858115072567412}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5312c3c001bdc34b8c3ce5548a4e12a, type: 3}
   m_Name: 
@@ -4328,6 +4329,7 @@ GameObject:
   - component: {fileID: 2444331528487895803}
   - component: {fileID: 1005136646120375508}
   - component: {fileID: 9049601593661140130}
+  - component: {fileID: 595511019456592032}
   m_Layer: 0
   m_Name: Ch44
   m_TagString: Player
@@ -4632,6 +4634,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   czyHost: 0
   shelter: {fileID: 8300000, guid: 83d9933be6081d441a2f56c41d4d92c2, type: 3}
+--- !u!114 &595511019456592032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9142503543426661451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeeba82d6c788644cb0af26e40d6a71b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  XrayShader: {fileID: 4800000, guid: 9e91709555c69864093e1c5a90d49d51, type: 3}
+  standardShader: {fileID: 4800000, guid: 9ccef8e3616d40a469a70696f7459dba, type: 3}
+  defaultMaterial: []
+  PowerTimer: {fileID: 7373685105483022243}
+  PowerTime: 3
+  StartingValue: 0
+  CooldownTime: 25
+  CooldownStartingValue: 0
+  UnlockTime: 0
+  isActivated: 0
+  CanPressAbility: 1
+  audioSource: {fileID: 5216663574078469239}
+  xrayPowerSound: {fileID: 8300000, guid: 0e10e865664114f4da6a873fece52abf, type: 3}
 --- !u!1 &9213754388763601796
 GameObject:
   m_ObjectHideFlags: 0
