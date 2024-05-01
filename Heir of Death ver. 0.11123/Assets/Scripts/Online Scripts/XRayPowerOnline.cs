@@ -32,7 +32,8 @@ public class XRayPowerOnline : NetworkBehaviour
             StartingValue = PowerTime;
             CooldownStartingValue = CooldownTime;
 
-            Renderer renderer = GetComponent<Renderer>();
+            
+            SkinnedMeshRenderer renderer = GetComponent<SkinnedMeshRenderer>();
             if (renderer != null)
             {
                 standardShader = renderer.material.shader;
@@ -46,7 +47,7 @@ public class XRayPowerOnline : NetworkBehaviour
 
     private void FixedUpdate()
     {
-        if (!IsOwner) return;
+        //if (!IsOwner) return;
         if (Main.Power == 3)
         {
             if (CanPressAbility && Input.GetKeyDown(KeyCode.Q))
@@ -98,16 +99,34 @@ public class XRayPowerOnline : NetworkBehaviour
 
     void IsPowerActivated(bool activation)
     {
-        if (activation == true)
+        if (IsHost)
         {
-            CheckPlayers();
-            isActivated = true;
+            if (activation == true)
+            {
+                SynchroCheckPlayersServerRpc(0);
+                isActivated = true;
+            }
+            else
+            {
+                SynchroUncheckPlayersServerRpc(0);
+                isActivated = false;
+            }
         }
-        else
+        if(!IsHost && IsClient)
         {
-            UncheckPlayers();
-            isActivated = false;
+            if (activation == true)
+            {
+
+                SynchroCheckPlayersServerRpc(1);
+                isActivated = true;
+            }
+            else
+            {
+                SynchroUncheckPlayersServerRpc(1);
+                isActivated = false;
+            }
         }
+        
     }
 
     bool IsTimerShown(bool timerActive)
@@ -131,27 +150,87 @@ public class XRayPowerOnline : NetworkBehaviour
 
         PowerTimer.text = string.Format("{0:00} : {1:00}", minutes, seconds);
     }
-    void CheckPlayers()
+
+    [ClientRpc]
+    void CheckPlayersClientRpc(ClientRpcParams clientRpcParams)
     {
-        foreach(NetworkClient client in NetworkManager.ConnectedClientsList)
+        //foreach (NetworkClient client in NetworkManager.ConnectedClientsList)
+        //{
+        //    if (client.ClientId != NetworkManager.LocalClientId)
+        //    {
+        //        SkinnedMeshRenderer clientsRenderer = client.PlayerObject.GetComponentInParent<SkinnedMeshRenderer>();
+        //        if (clientsRenderer != null && XrayShader != null)
+        //        {
+        //            clientsRenderer.material.shader = XrayShader;
+        //        }
+        //    }
+        //}
+
+        SkinnedMeshRenderer renderer = GetComponent<SkinnedMeshRenderer>();
+
+        if (renderer != null && XrayShader != null)
         {
-            if (client.ClientId != NetworkManager.LocalClientId)
-            {
-                Renderer clientsRenderer = client.PlayerObject.GetComponentInChildren<Renderer>();
-                clientsRenderer.material.shader = XrayShader;
-            }
+            renderer.material.shader = XrayShader;
         }
+        else
+        {
+            Debug.LogError("Renderer or myCustomShader is not set.");
+        }
+
     }
 
-    void UncheckPlayers()
+    [ClientRpc]
+    void UncheckPlayersClientRpc(ClientRpcParams clientRpcParams)
     {
-        foreach (NetworkClient client in NetworkManager.ConnectedClientsList)
+        //foreach (NetworkClient client in NetworkManager.ConnectedClientsList)
+        //{
+        //    if (client.ClientId != NetworkManager.LocalClientId)
+        //    {
+        //        SkinnedMeshRenderer clientsRenderer = client.PlayerObject.GetComponentInParent<SkinnedMeshRenderer>();
+        //        if (clientsRenderer != null && XrayShader != null)
+        //        {
+        //            clientsRenderer.material.shader = standardShader;
+        //        }
+        //    }
+        //}
+        SkinnedMeshRenderer renderer2 = GetComponent<SkinnedMeshRenderer>();
+
+        if (renderer2 != null && standardShader != null)
         {
-            if (client.ClientId != NetworkManager.LocalClientId)
-            {
-                Renderer clientsRenderer = client.PlayerObject.GetComponentInChildren<Renderer>();
-                clientsRenderer.material.shader = standardShader;
-            }
+            renderer2.material.shader = standardShader;
         }
+        else
+        {
+            Debug.LogError("Renderer or myCustomShader is not set.");
+        }
+
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    private void SynchroCheckPlayersServerRpc(ulong a)
+    {
+        ClientRpcParams clientRpcParams = new ClientRpcParams
+        {
+            Send = new ClientRpcSendParams
+            {
+                TargetClientIds = new ulong[] { a }
+            }
+        };
+
+        CheckPlayersClientRpc(clientRpcParams);
+    }
+
+    [ServerRpc(RequireOwnership =false)]
+    private void SynchroUncheckPlayersServerRpc(ulong b)
+    {
+        ClientRpcParams clientRpcParams = new ClientRpcParams
+        {
+            Send = new ClientRpcSendParams
+            {
+                TargetClientIds = new ulong[] { b }
+            }
+        };
+
+        UncheckPlayersClientRpc(clientRpcParams);
     }
 }
