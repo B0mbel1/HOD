@@ -4048,7 +4048,7 @@ MonoBehaviour:
   isActivated: 0
   CanPressAbility: 1
   rendererLocal: {fileID: 0}
-  audioSource: {fileID: 4856773005810138063}
+  audioSource: {fileID: 6763278054952575600}
   invisibilitySound: {fileID: 8300000, guid: 60125022a3e9b4640910291b6546b212, type: 3}
 --- !u!114 &3090467818580947328
 MonoBehaviour:

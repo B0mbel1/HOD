@@ -244,7 +244,6 @@ GameObject:
   - component: {fileID: 1449365290145370965}
   - component: {fileID: 89835157824672242}
   - component: {fileID: 7793085956478894868}
-  - component: {fileID: 7407400151778881231}
   - component: {fileID: 8187146226755483027}
   m_Layer: 0
   m_Name: Char3Gameplay_Trenches
@@ -691,29 +690,6 @@ MonoBehaviour:
   ownerRoundCountTxt: {fileID: 5182985659225125960}
   opponentRoundCountTxt: {fileID: 2250415639504045557}
   dead: 0
---- !u!114 &7407400151778881231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1318587044675773895}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b6a45fa608a3ff4e958718057fb9491, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PowerTimer: {fileID: 7373685105483022243}
-  PowerTime: 5
-  StartingValue: 0
-  CooldownTime: 40
-  CooldownStartingValue: 0
-  UnlockTime: 0
-  isActivated: 0
-  CanPressAbility: 1
-  rendererLocal: {fileID: 0}
-  audioSource: {fileID: 7127251563133961870}
-  invisibilitySound: {fileID: 8300000, guid: 60125022a3e9b4640910291b6546b212, type: 3}
 --- !u!114 &8187146226755483027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4330,6 +4306,7 @@ GameObject:
   - component: {fileID: 1005136646120375508}
   - component: {fileID: 9049601593661140130}
   - component: {fileID: 595511019456592032}
+  - component: {fileID: 5805633354675907518}
   m_Layer: 0
   m_Name: Ch44
   m_TagString: Player
@@ -4657,8 +4634,31 @@ MonoBehaviour:
   UnlockTime: 0
   isActivated: 0
   CanPressAbility: 1
-  audioSource: {fileID: 5216663574078469239}
+  audioSource: {fileID: 1005136646120375508}
   xrayPowerSound: {fileID: 8300000, guid: 0e10e865664114f4da6a873fece52abf, type: 3}
+--- !u!114 &5805633354675907518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9142503543426661451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b6a45fa608a3ff4e958718057fb9491, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PowerTimer: {fileID: 7373685105483022243}
+  PowerTime: 5
+  StartingValue: 0
+  CooldownTime: 40
+  CooldownStartingValue: 0
+  UnlockTime: 0
+  isActivated: 0
+  CanPressAbility: 1
+  rendererLocal: {fileID: 0}
+  audioSource: {fileID: 1005136646120375508}
+  invisibilitySound: {fileID: 8300000, guid: 60125022a3e9b4640910291b6546b212, type: 3}
 --- !u!1 &9213754388763601796
 GameObject:
   m_ObjectHideFlags: 0

@@ -3978,6 +3978,7 @@ GameObject:
   - component: {fileID: 1957511151863102794}
   - component: {fileID: 319139528588435666}
   - component: {fileID: 8810964240550898018}
+  - component: {fileID: 8883922137036013503}
   m_Layer: 0
   m_Name: ely_vanguardsoldier_kerwinatienza_Mesh
   m_TagString: Player
@@ -4183,7 +4184,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6129ca5650c09f14981cdf5c3ec2ad6f, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -4294,6 +4295,29 @@ MonoBehaviour:
   CanPressAbility: 1
   audioSource: {fileID: 7880918967208541998}
   xrayPowerSound: {fileID: 8300000, guid: 0e10e865664114f4da6a873fece52abf, type: 3}
+--- !u!114 &8883922137036013503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6686530370709764877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b6a45fa608a3ff4e958718057fb9491, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PowerTimer: {fileID: 2852214998270963226}
+  PowerTime: 5
+  StartingValue: 0
+  CooldownTime: 40
+  CooldownStartingValue: 0
+  UnlockTime: 0
+  isActivated: 0
+  CanPressAbility: 1
+  rendererLocal: {fileID: 0}
+  audioSource: {fileID: 319139528588435666}
+  invisibilitySound: {fileID: 8300000, guid: 60125022a3e9b4640910291b6546b212, type: 3}
 --- !u!1 &6715876792769866846
 GameObject:
   m_ObjectHideFlags: 0
@@ -5806,7 +5830,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3439572917905964869}
-  - component: {fileID: 5907061725776426966}
   m_Layer: 0
   m_Name: Char1_Ely
   m_TagString: Untagged
@@ -5831,29 +5854,6 @@ Transform:
   - {fileID: 6316053500358980632}
   m_Father: {fileID: 1491241262748418810}
   m_LocalEulerAnglesHint: {x: 0, y: 15, z: 0}
---- !u!114 &5907061725776426966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8944096177639745024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b6a45fa608a3ff4e958718057fb9491, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PowerTimer: {fileID: 2852214998270963226}
-  PowerTime: 5
-  StartingValue: 0
-  CooldownTime: 8
-  CooldownStartingValue: 0
-  UnlockTime: 0
-  isActivated: 0
-  CanPressAbility: 1
-  rendererLocal: {fileID: 0}
-  audioSource: {fileID: 4473649211927422123}
-  invisibilitySound: {fileID: 8300000, guid: 60125022a3e9b4640910291b6546b212, type: 3}
 --- !u!1 &9097564978223602822
 GameObject:
   m_ObjectHideFlags: 0
