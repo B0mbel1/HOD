@@ -54,7 +54,7 @@ public class XRayPowerOnline : NetworkBehaviour
             {
                 IsPowerActivated(true);
                 CanPressAbility = false;
-                UnlockTime = (Time.time + 10f) + PowerTime;
+                UnlockTime = (Time.time + 25f) + PowerTime;
                 audioSource.Play();
             }
 
