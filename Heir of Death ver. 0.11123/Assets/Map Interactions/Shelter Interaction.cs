@@ -19,26 +19,30 @@ public class ShelterInteraction : NetworkBehaviour
     {
         Skrypt1 player = other.GetComponentInParent<Skrypt1>();
 
-        if (player.czyHost == true)
+        if (player != null)
         {
-            if (other.gameObject.tag == "Player")
+            if (player.czyHost == true)
             {
-                if (Input.GetKeyDown(KeyCode.E))
+                if (other.gameObject.tag == "Player")
                 {
-                    player.BulletSpawnServerRpc();
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        player.BulletSpawnServerRpc();
+                    }
                 }
             }
-        }
 
-        if (player.czyHost == false)
-        {
-            if (other.gameObject.tag == "Player")
+            if (player.czyHost == false)
             {
-                if (Input.GetKeyDown(KeyCode.E))
+                if (other.gameObject.tag == "Player")
                 {
-                    player.SynchroServerRpc();
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        player.SynchroServerRpc();
+                    }
                 }
             }
         }
+           
     }
 }
