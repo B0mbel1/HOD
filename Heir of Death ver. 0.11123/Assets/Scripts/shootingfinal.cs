@@ -127,7 +127,7 @@ public class shootingfinal : NetworkBehaviour
                 BulletSpawnClientRpc(targetPosition, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
                 BulletSpawnServerRpc(targetPosition);
             }
-            if (!IsHost)
+            if (!IsHost && IsClient)
             {
                 BulletSpawnServerRpc(targetPosition);
                 SynchroServerRpc(targetPosition);
@@ -142,7 +142,7 @@ public class shootingfinal : NetworkBehaviour
                 BulletSpawnServerRpc(targetPosition);
                 BulletSpawnClientRpc(targetPosition, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
             }
-            if (!IsHost)
+            if (!IsHost && IsClient)
             {
                 BulletSpawnServerRpc(targetPosition);
                 SynchroServerRpc(targetPosition);
