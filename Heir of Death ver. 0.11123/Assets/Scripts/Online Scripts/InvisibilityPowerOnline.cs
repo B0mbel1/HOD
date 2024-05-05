@@ -156,27 +156,36 @@ public class InvisibilityPowerOnline : NetworkBehaviour
             if (activation)
             {
                 HostPowerServerRpc(false, true);
-                SynchroPowerServerRpc(false, true,1);
+                SynchroPowerServerRpc(false, true, 1);
+                //ClientPowerCLientRpc(false,true, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
+                isActivated = true;
+
             }
             else
             {
                 HostPowerServerRpc(true, false);
                 SynchroPowerServerRpc(true, false, 1);
+                //ClientPowerCLientRpc(true, false, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
+                isActivated = false;
             }
         }
         if (IsClient && !IsHost)
         {
             if (activation)
             {
-                ClientPowerCLientRpc(false,true, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
+                //HostPowerServerRpc(false, true);
                 SynchroPowerServerRpc(false, true, 0);
-                //Dodaæ host?
+                //ClientPowerCLientRpc(true, false, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 0 } } });
+
+                isActivated = true;
             }
-            else
+            if(activation == false)
             {
-                ClientPowerCLientRpc(true,false, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
+                //HostPowerServerRpc(true, false);
                 SynchroPowerServerRpc(true, false, 0);
-                //Dodaæ host?
+                //ClientPowerCLientRpc(true, false, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 0 } } });
+
+                isActivated = false;
             }
         }
     }
