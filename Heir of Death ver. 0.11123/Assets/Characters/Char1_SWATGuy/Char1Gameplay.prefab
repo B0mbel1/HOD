@@ -4307,7 +4307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b6a45fa608a3ff4e958718057fb9491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PowerTimer: {fileID: 2852214998270963226}
+  PowerTimer: {fileID: 0}
   PowerTime: 5
   StartingValue: 0
   CooldownTime: 40
@@ -4315,7 +4315,7 @@ MonoBehaviour:
   UnlockTime: 0
   isActivated: 0
   CanPressAbility: 1
-  rendererLocal: {fileID: 0}
+  rendererLocal: {fileID: 1896343231766636043}
   audioSource: {fileID: 319139528588435666}
   invisibilitySound: {fileID: 8300000, guid: 60125022a3e9b4640910291b6546b212, type: 3}
 --- !u!1 &6715876792769866846
