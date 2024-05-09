@@ -74,7 +74,20 @@ public class InvisibilityPowerOnline : NetworkBehaviour
                 IsPowerActivated(true);
                 CanPressAbility = false;
                 UnlockTime = (Time.time + 40f) + PowerTime; //Zmieniæ 40 je¿eli chcemy inny cooldown
-                audioSource.Play();
+
+
+                if (IsHost)
+                {
+                    audioSource.PlayOneShot(invisibilitySound);
+                    SynchroDzwiekServerRpc(1);
+                }
+
+                if (!IsHost && IsClient)
+                {
+                    audioSource.PlayOneShot(invisibilitySound);
+                    SynchroDzwiekServerRpc(0);
+                }
+                //audioSource.Play();
             }
 
             if (!CanPressAbility && Time.fixedTime >= UnlockTime)
@@ -210,6 +223,27 @@ public class InvisibilityPowerOnline : NetworkBehaviour
         float seconds = Mathf.FloorToInt(currentTime % 60);
 
         PowerTimer.text = string.Format("{0:00} : {1:00}", minutes, seconds);
+    }
+
+    [ClientRpc]
+    public void dzwiekINVClientRpc(ClientRpcParams clientRpcParams)
+    {
+        audioSource.PlayOneShot(invisibilitySound);
+        audioSource.volume = 0.4f;
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    private void SynchroDzwiekServerRpc(ulong a)
+    {
+        ClientRpcParams clientRpcParams = new ClientRpcParams
+        {
+            Send = new ClientRpcSendParams
+            {
+                TargetClientIds = new ulong[] { a }
+            }
+        };
+
+        dzwiekINVClientRpc(clientRpcParams);
     }
 
     //void IsPowerActivated(bool activation)

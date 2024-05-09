@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
@@ -88,6 +89,7 @@ public class FreeTeleportationOnline : NetworkBehaviour
 
                 if (Input.GetKeyUp(KeyCode.Q))
                 {
+
                     Teleport();
                     if (ktoraBron == 1)
                     {
@@ -135,7 +137,22 @@ public class FreeTeleportationOnline : NetworkBehaviour
 
         CooldownTime = CooldownStartingValue;
         canTp = false;
-        audioSource.Play();
+
+        if (IsHost)
+        {
+            audioSource.PlayOneShot(teleportationSound);
+            SynchroDzwiekServerRpc(1);
+        }
+
+        if(!IsHost && IsClient)
+        {
+            audioSource.PlayOneShot(teleportationSound);
+            SynchroDzwiekServerRpc(0);
+        }
+
+
+
+
         teleportState = false;
         
         Debug.Log(teleportationSpot.transform.position);
@@ -174,5 +191,27 @@ public class FreeTeleportationOnline : NetworkBehaviour
         float seconds = Mathf.FloorToInt(currentTime % 60);
 
         PowerTimer.text = string.Format("{0:00} : {1:00}", minutes, seconds);
+    }
+
+
+    [ClientRpc]
+    public void dzwiekTPClientRpc(ClientRpcParams clientRpcParams)
+    {
+        audioSource.PlayOneShot(teleportationSound);
+        audioSource.volume = 0.4f;
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    private void SynchroDzwiekServerRpc(ulong a)
+    {
+        ClientRpcParams clientRpcParams = new ClientRpcParams
+        {
+            Send = new ClientRpcSendParams
+            {
+                TargetClientIds = new ulong[] { a }
+            }
+        };
+
+        dzwiekTPClientRpc(clientRpcParams);
     }
 }

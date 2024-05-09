@@ -55,7 +55,19 @@ public class XRayPowerOnline : NetworkBehaviour
                 IsPowerActivated(true);
                 CanPressAbility = false;
                 UnlockTime = (Time.time + 25f) + PowerTime;
-                audioSource.Play();
+
+                if (IsHost)
+                {
+                    audioSource.PlayOneShot(xrayPowerSound);
+                    SynchroDzwiekServerRpc(1);
+                }
+
+                if (!IsHost && IsClient)
+                {
+                    audioSource.PlayOneShot(xrayPowerSound);
+                    SynchroDzwiekServerRpc(0);
+                }
+               // audioSource.Play();
             }
 
             if (!CanPressAbility && Time.fixedTime >= UnlockTime)
@@ -232,5 +244,26 @@ public class XRayPowerOnline : NetworkBehaviour
         };
 
         UncheckPlayersClientRpc(clientRpcParams);
+    }
+
+    [ClientRpc]
+    public void dzwiekXRAYClientRpc(ClientRpcParams clientRpcParams)
+    {
+        audioSource.PlayOneShot(xrayPowerSound);
+        audioSource.volume = 0.4f;
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    private void SynchroDzwiekServerRpc(ulong a)
+    {
+        ClientRpcParams clientRpcParams = new ClientRpcParams
+        {
+            Send = new ClientRpcSendParams
+            {
+                TargetClientIds = new ulong[] { a }
+            }
+        };
+
+        dzwiekXRAYClientRpc(clientRpcParams);
     }
 }
