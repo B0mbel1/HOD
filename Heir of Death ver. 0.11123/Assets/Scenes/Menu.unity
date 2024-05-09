@@ -7439,10 +7439,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Gra polega na strzelaniu z r\xF3znych broni do przeciwnika. Do dyspozycji
-    gracza b\u0119d\u0105 dodatkowe umiej\u0119tno\u015Bci. Gra rozgrywana jest na
-    specjalnych mapach. Wygrywa ten kto zdob\u0119dzie odpowiedni\u0105 liczb\u0119
-    zab\xF3jstw."
+  m_text: "\u2022Masz do wyboru jedn\u0105 z 4 postaci\n\u2022Ka\u017Cda posta\u0107
+    ma unikatow\u0105 moc oraz bronie\n\u2022Mecz rozgrywa si\u0119 na jednej z dw\xF3ch
+    map\n\u2022Gdy osi\u0105gniesz wyznaczon\u0105 ilo\u015B\u0107 zab\xF3jstw wygrywasz\n\u2022Na
+    mapie znajduj\u0105 si\u0119 ulepszenia amunicji oraz apteczki\n\u2022Na mapach
+    ukryte s\u0105 sekrety i interakcje, powodzenia w odnalezieniu ich"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
