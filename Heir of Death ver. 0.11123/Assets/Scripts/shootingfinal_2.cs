@@ -25,6 +25,8 @@ public class shootingfinal_2 : NetworkBehaviour
     public AudioClip reloadSound;
     private AudioSource audioSource;
 
+
+    public GameObject pozycjaAS;
     public NetworkObject bulletPrefab;
     public Transform bulletSpawn;
     public float bulletSpeed;
@@ -88,7 +90,44 @@ public class shootingfinal_2 : NetworkBehaviour
         BulletSpawnClientRpc(vector, clientRpcParams);
     }
 
+    private void Metoda(AudioSource audioSource)
+    {
+        audioSource.gameObject.transform.position = pozycjaAS.transform.position;
+        if (IsHost)
+        {
+            AudioSource.PlayClipAtPoint(shootSound, audioSource.gameObject.transform.position);
+        }
+        if (!IsHost && IsClient)
+        {
+            AudioSource.PlayClipAtPoint(shootSound, audioSource.gameObject.transform.position);
+        }
+    }
 
+    [ClientRpc]
+    public void ClientMetodaClientRpc(ClientRpcParams clientRpcParams)
+    {
+        Metoda(audioSource);
+    }
+
+    [ServerRpc]
+    public void HostMetodaServerRpc()
+    {
+        Metoda(audioSource);
+    }
+
+    [ServerRpc/*(RequireOwnership = false)*/]
+    public void SynchroServerRpc(ulong player)
+    {
+        ClientRpcParams clientRpcParams = new ClientRpcParams
+        {
+            Send = new ClientRpcSendParams
+            {
+                TargetClientIds = new ulong[] { player }
+            }
+        };
+        ClientMetodaClientRpc(clientRpcParams);
+        Debug.LogWarning("Synchro dzwiek");
+    }
 
     private void MyInput()
     {
@@ -127,11 +166,18 @@ public class shootingfinal_2 : NetworkBehaviour
             {
                 BulletSpawnClientRpc(targetPosition, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
                 BulletSpawnServerRpc(targetPosition);
+
+                HostMetodaServerRpc(); //TO DZIA£A
+                                       //Requires ownership nwm czy coœ da³o
+                SynchroServerRpc(1);
             }
             if (!IsHost && IsClient)
             {
                 BulletSpawnServerRpc(targetPosition);
                 SynchroServerRpc(targetPosition);
+
+                HostMetodaServerRpc();//TO DZIA£A
+                SynchroServerRpc(0);//TO DZIA£A
             }
         }
         else
@@ -142,11 +188,19 @@ public class shootingfinal_2 : NetworkBehaviour
             {
                 BulletSpawnServerRpc(targetPosition);
                 BulletSpawnClientRpc(targetPosition, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
+
+
+                HostMetodaServerRpc(); //TO DZIA£A
+                                       //Requires ownership nwm czy coœ da³o
+                SynchroServerRpc(1);
             }
             if (!IsHost && IsClient)
             {
                 BulletSpawnServerRpc(targetPosition);
                 SynchroServerRpc(targetPosition);
+
+                HostMetodaServerRpc();//TO DZIA£A
+                SynchroServerRpc(0);//TO DZIA£A
             }
         }
 

@@ -799,6 +799,37 @@ MonoBehaviour:
   zoomFOV: 30
   defaultFOV: 60
   zoomSpeed: 5
+--- !u!1 &1732144165902484443
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7089671800485240536}
+  m_Layer: 0
+  m_Name: AS2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7089671800485240536
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732144165902484443}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8936504682500149107}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1817376281048466599
 GameObject:
   m_ObjectHideFlags: 0
@@ -3173,6 +3204,7 @@ Transform:
   m_Children:
   - {fileID: 4973621285244736465}
   - {fileID: 1184115341659057856}
+  - {fileID: 7089671800485240536}
   m_Father: {fileID: 4363550036697317886}
   m_LocalEulerAnglesHint: {x: -60.2, y: -70.051, z: 170.348}
 --- !u!64 &449208728091705698
@@ -3413,6 +3445,7 @@ MonoBehaviour:
   fpsCam: {fileID: 8587178065644207113}
   shootSound: {fileID: 8300000, guid: bf4fae68ea0966044962ac4e23e527e8, type: 3}
   reloadSound: {fileID: 8300000, guid: ea29e86108f09fa48a3d7e6fdd469b6d, type: 3}
+  pozycjaAS: {fileID: 1732144165902484443}
   bulletPrefab: {fileID: 4516205014958727814, guid: 1b84fa7f14eaeeb48819630b948724dd, type: 3}
   bulletSpawn: {fileID: 1184115341659057856}
   bulletSpeed: 60

@@ -189,11 +189,19 @@ public class shootingfinal : NetworkBehaviour
             {
                 BulletSpawnServerRpc(targetPosition);
                 BulletSpawnClientRpc(targetPosition, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
+
+                HostMetodaServerRpc(); //TO DZIA£A
+                                       //Requires ownership nwm czy coœ da³o
+
+                SynchroServerRpc(1);
             }
             if (!IsHost && IsClient)
             {
                 BulletSpawnServerRpc(targetPosition);
                 SynchroServerRpc(targetPosition);
+
+                HostMetodaServerRpc();//TO DZIA£A
+                SynchroServerRpc(0);//TO DZIA£A
             }
         }
 
