@@ -21,9 +21,11 @@ public class QuietMovementOnline : NetworkBehaviour
     public bool CanPressAbility = true;
     public float UnlockTime;
 
+
+
     void Start()
     {
-        if(!IsOwner) return;   
+        if (!IsOwner) return;
         if (Main.Power == 4)
         {
             audioSourcePower.clip = stealth;
@@ -44,15 +46,27 @@ public class QuietMovementOnline : NetworkBehaviour
         {
             if (CanPressAbility && Input.GetKeyDown(KeyCode.Q))
             {
+                PlayerMovementOnline.czyWyslacDzwiek = false;
                 IsPowerActivated(true);
                 CanPressAbility = false;
-                UnlockTime = (Time.time + 10f) + PowerTime;
+                UnlockTime = (Time.time + 20f) + PowerTime;
                 audioSourcePower.Play();
+                if (IsHost)
+                {
+                    SynchroDzwiekServerRpc(1);
+
+                }
+
+                if(!IsHost && IsClient)
+                {
+                    SynchroDzwiekServerRpc(0);
+                }
             }
 
             if (!CanPressAbility && Time.fixedTime >= UnlockTime)
             {
                 CanPressAbility = true;
+
             }
 
             if (isActivated)
@@ -67,6 +81,7 @@ public class QuietMovementOnline : NetworkBehaviour
                     PowerTime = StartingValue;
                     IsTimerShown(true);
                     IsPowerActivated(false);
+                    PlayerMovementOnline.czyWyslacDzwiek = true;
                 }
                 CooldownTime = CooldownStartingValue;
             }
@@ -124,5 +139,28 @@ public class QuietMovementOnline : NetworkBehaviour
         float seconds = Mathf.FloorToInt(currentTime % 60);
 
         PowerTimer.text = string.Format("{0:00} : {1:00}", minutes, seconds);
+    }
+
+
+    [ClientRpc]
+    public void dzwiekQuietClientRpc(ClientRpcParams clientRpcParams)
+    {
+        audioSourcePower.volume = 0.3f;
+        audioSourcePower.PlayOneShot(stealth);
+       
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    private void SynchroDzwiekServerRpc(ulong a)
+    {
+        ClientRpcParams clientRpcParams = new ClientRpcParams
+        {
+            Send = new ClientRpcSendParams
+            {
+                TargetClientIds = new ulong[] { a }
+            }
+        };
+
+        dzwiekQuietClientRpc(clientRpcParams);
     }
 }

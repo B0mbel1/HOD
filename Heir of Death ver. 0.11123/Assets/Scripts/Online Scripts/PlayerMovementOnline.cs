@@ -66,8 +66,8 @@ public class PlayerMovementOnline : NetworkBehaviour
     [SerializeField][Range(0f, 1f)] private float runstepLenghten;
     [SerializeField] private float stepInterval;
 
-
-
+    
+    public bool wyslanie;
     public GameObject pozycjaASC;
     private AudioSource audioSource;
     private float nextStep;
@@ -110,6 +110,8 @@ public class PlayerMovementOnline : NetworkBehaviour
     void Update()
     {
         if (!IsOwner) { return; }
+
+      
 
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, whatIsGround);
         MyInput();
@@ -350,6 +352,8 @@ public class PlayerMovementOnline : NetworkBehaviour
 
     private float lastFootstepTime;
 
+
+    public static bool czyWyslacDzwiek = true;
     private void ProgressStepCycle(float speed)
     {
         if (rigid.velocity.sqrMagnitude > 0 && (moveDirection.x != 0 || moveDirection.y != 0))
@@ -366,13 +370,12 @@ public class PlayerMovementOnline : NetworkBehaviour
         {
             PlayFootStepAudio();
 
-            if (IsHost)
+            if (IsHost && czyWyslacDzwiek)
             {
                 SynchroServerRpc(1);
             }
-            if (!IsHost && IsClient)
+            if (!IsHost && IsClient && czyWyslacDzwiek)
             {
-
                 SynchroServerRpc(0);
             }
         }

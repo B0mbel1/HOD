@@ -1862,6 +1862,7 @@ MonoBehaviour:
   isWalking: 0
   runstepLenghten: 0
   stepInterval: 0
+  wyslanie: 0
   pozycjaASC: {fileID: 1619620074519817495}
   sliding: 0
 --- !u!114 &5524521242997546051
@@ -1964,7 +1965,7 @@ MonoBehaviour:
   audiosource: {fileID: 4052604206674687796}
   audioSourcePower: {fileID: 7880918967208541998}
   stealth: {fileID: 8300000, guid: 3f90fd0ec57afbc478e312c8b5cae7c0, type: 3}
-  CooldownTime: 10
+  CooldownTime: 20
   CooldownStartingValue: 0
   cooldownActivated: 0
   PowerTime: 10

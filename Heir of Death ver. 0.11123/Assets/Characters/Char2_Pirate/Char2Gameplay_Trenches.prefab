@@ -859,6 +859,7 @@ MonoBehaviour:
   isWalking: 0
   runstepLenghten: 0
   stepInterval: 0
+  wyslanie: 0
   pozycjaASC: {fileID: 2355823068504962005}
   sliding: 0
 --- !u!114 &-8807793041116188683
