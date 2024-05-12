@@ -1693,6 +1693,7 @@ Transform:
   - {fileID: 1399684105521463357}
   - {fileID: 8158040103556728461}
   - {fileID: 4335802034800357131}
+  - {fileID: 10836365683508024}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &395039855420561295
@@ -1872,9 +1873,11 @@ MonoBehaviour:
   footStepsSounds: []
   jumpSound: {fileID: 0}
   landSound: {fileID: 0}
+  enemyStepSound: {fileID: 8300000, guid: 633354760db591f4691e4613aad53e7f, type: 3}
   isWalking: 0
   runstepLenghten: 0
   stepInterval: 0
+  pozycjaASC: {fileID: 6810326977526875054}
   sliding: 0
 --- !u!114 &5524521242997546051
 MonoBehaviour:
@@ -4613,6 +4616,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &6810326977526875054
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 10836365683508024}
+  m_Layer: 0
+  m_Name: ASC
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &10836365683508024
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6810326977526875054}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 771728172258281313}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6827460600553786699
 GameObject:
   m_ObjectHideFlags: 0

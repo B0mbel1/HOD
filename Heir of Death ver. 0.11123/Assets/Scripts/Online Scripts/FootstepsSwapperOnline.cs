@@ -15,6 +15,7 @@ public class FootStepsSwapperOnline : NetworkBehaviour
 
     void Start()
     {
+
         checker = NetworkManager.gameObject.AddComponent<TerrainChecker>();
         pMovement = GetComponent<PlayerMovementOnline>();
     }
