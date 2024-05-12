@@ -46,7 +46,7 @@ public class shootingfinal : NetworkBehaviour
         {
             MyInput();
         }
-        if (!IsHost)
+        if (!IsHost && IsClient)
         {
             MyInput();
         }
@@ -125,7 +125,6 @@ public class shootingfinal : NetworkBehaviour
             }
         };
         ClientMetodaClientRpc(clientRpcParams);
-        Debug.LogWarning("Synchro dzwiek");
     }
 
     private void MyInput()
@@ -219,6 +218,8 @@ public class shootingfinal : NetworkBehaviour
             Reload();
         }
     }
+
+   
 
     IEnumerator MoveBulletToPosition(Rigidbody bulletRigidbody, Vector3 targetPosition, float speed)
     {
