@@ -4,140 +4,158 @@ using UnityEngine;
 
 public class BulletDamage : NetworkBehaviour
 {
+    public string groundLayerName = "whatIsGround";
+    public float rotationSpeed = 50f;
+
     private void Start()
     {
-        Destroy(gameObject,2f);
+        RotateSphereHorizontally();
+        Destroy(gameObject, 2f);
+    }
+
+    void RotateSphereHorizontally()
+    {
+        // Oblicz now¹ rotacjê
+        float rotationAmount = rotationSpeed * Time.deltaTime;
+        Quaternion targetRotation = Quaternion.Euler(90f, rotationAmount, 0f);
+
+        // Zastosuj rotacjê do transformacji kuli
+        transform.rotation *= targetRotation;
     }
 
     void OnTriggerEnter(Collider other)
     {
         PlayerHealth playerHealth = other.GetComponentInParent<PlayerHealth>();
 
-        if (playerHealth.czyHost == true)
+        if(playerHealth != null)
         {
-            if (other.gameObject.tag == "Reka")
+            if (playerHealth.czyHost == true)
             {
-                if (BetterAmmoScript.isBetterAmmoActivated == true)
+                if (other.gameObject.tag == "Reka")
                 {
-                    playerHealth.DamageServerRpc(13f);
-                    Destroy(gameObject);
+                    if (BetterAmmoScript.isBetterAmmoActivated == true)
+                    {
+                        playerHealth.DamageServerRpc(13f);
+                        Destroy(gameObject);
 
+                    }
+
+                    if (BetterAmmoScript.isBetterAmmoActivated == false)
+                    {
+                        playerHealth.DamageServerRpc(10f);
+                        Destroy(gameObject);
+                    }
                 }
 
-                if (BetterAmmoScript.isBetterAmmoActivated == false)
+                if (other.gameObject.tag == "Noga")
                 {
-                    playerHealth.DamageServerRpc(10f);
-                    Destroy(gameObject);
+                    if (BetterAmmoScript.isBetterAmmoActivated == true)
+                    {
+                        playerHealth.DamageServerRpc(15f);
+                        Destroy(gameObject);
+                    }
+
+                    if (BetterAmmoScript.isBetterAmmoActivated == false)
+                    {
+                        playerHealth.DamageServerRpc(12f);
+                        Destroy(gameObject);
+                    }
+                }
+
+                if (other.gameObject.tag == "Glowa")
+                {
+                    if (BetterAmmoScript.isBetterAmmoActivated == true)
+                    {
+                        playerHealth.DamageServerRpc(23f);
+                        Destroy(gameObject);
+                    }
+
+                    if (BetterAmmoScript.isBetterAmmoActivated == false)
+                    {
+                        playerHealth.DamageServerRpc(20f);
+                        Destroy(gameObject);
+                    }
+                }
+
+                if (other.gameObject.tag == "Tors")
+                {
+                    if (BetterAmmoScript.isBetterAmmoActivated == true)
+                    {
+                        playerHealth.DamageServerRpc(18f);
+                        Destroy(gameObject);
+                    }
+
+                    if (BetterAmmoScript.isBetterAmmoActivated == false)
+                    {
+                        playerHealth.DamageServerRpc(15f);
+                        Destroy(gameObject);
+                    }
                 }
             }
 
-            if (other.gameObject.tag == "Noga")
+            if (playerHealth.czyHost == false)
             {
-                if (BetterAmmoScript.isBetterAmmoActivated == true)
+                if (other.gameObject.tag == "Reka")
                 {
-                    playerHealth.DamageServerRpc(15f);
-                    Destroy(gameObject);
+                    if (BetterAmmoScript.isBetterAmmoActivated == true)
+                    {
+                        playerHealth.DamageClientRpc(13f, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
+                        Destroy(gameObject);
+                    }
+
+                    if (BetterAmmoScript.isBetterAmmoActivated == false)
+                    {
+                        playerHealth.DamageClientRpc(10f, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
+                        Destroy(gameObject);
+                    }
                 }
 
-                if (BetterAmmoScript.isBetterAmmoActivated == false)
+                if (other.gameObject.tag == "Noga")
                 {
-                    playerHealth.DamageServerRpc(12f);
-                    Destroy(gameObject);
-                }
-            }
-
-            if (other.gameObject.tag == "Glowa")
-            {
-                if (BetterAmmoScript.isBetterAmmoActivated == true)
-                {
-                    playerHealth.DamageServerRpc(23f);
-                    Destroy(gameObject);
-                }
-
-                if (BetterAmmoScript.isBetterAmmoActivated == false)
-                {
-                    playerHealth.DamageServerRpc(20f);
-                    Destroy(gameObject);
-                }
-            }
-
-            if (other.gameObject.tag == "Tors")
-            {
-                if (BetterAmmoScript.isBetterAmmoActivated == true)
-                {
-                    playerHealth.DamageServerRpc(18f);
-                    Destroy(gameObject);
+                    if (BetterAmmoScript.isBetterAmmoActivated == true)
+                    {
+                        playerHealth.DamageClientRpc(15f, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
+                        Destroy(gameObject);
+                    }
+                    if (BetterAmmoScript.isBetterAmmoActivated == false)
+                    {
+                        playerHealth.DamageClientRpc(12f, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
+                        Destroy(gameObject);
+                    }
                 }
 
-                if (BetterAmmoScript.isBetterAmmoActivated == false)
+                if (other.gameObject.tag == "Glowa")
                 {
-                    playerHealth.DamageServerRpc(15f);
-                    Destroy(gameObject);
+                    if (BetterAmmoScript.isBetterAmmoActivated == true)
+                    {
+                        playerHealth.DamageClientRpc(20f, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
+                        Destroy(gameObject);
+                    }
+
+                    if (BetterAmmoScript.isBetterAmmoActivated == false)
+                    {
+                        playerHealth.DamageClientRpc(20f, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
+                        Destroy(gameObject);
+                    }
+                }
+
+                if (other.gameObject.tag == "Tors")
+                {
+
+                    if (BetterAmmoScript.isBetterAmmoActivated == true)
+                    {
+                        playerHealth.DamageClientRpc(15f, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
+                        Destroy(gameObject);
+                    }
+
+                    if (BetterAmmoScript.isBetterAmmoActivated == false)
+                    {
+                        playerHealth.DamageClientRpc(15f, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
+                        Destroy(gameObject);
+                    }
                 }
             }
         }
-
-        if (playerHealth.czyHost == false)
-        {
-            if (other.gameObject.tag == "Reka")
-            {
-                if (BetterAmmoScript.isBetterAmmoActivated == true)
-                {
-                    playerHealth.DamageClientRpc(13f, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
-                    Destroy(gameObject);
-                }
-
-                if (BetterAmmoScript.isBetterAmmoActivated == false)
-                {
-                    playerHealth.DamageClientRpc(10f, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
-                    Destroy(gameObject);
-                }
-            }
-
-            if (other.gameObject.tag == "Noga")
-            {
-                if (BetterAmmoScript.isBetterAmmoActivated == true)
-                {
-                    playerHealth.DamageClientRpc(15f, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
-                    Destroy(gameObject);
-                }
-                if (BetterAmmoScript.isBetterAmmoActivated == false)
-                {
-                    playerHealth.DamageClientRpc(12f, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
-                    Destroy(gameObject);
-                }
-            }
-
-            if (other.gameObject.tag == "Glowa")
-            {
-                if (BetterAmmoScript.isBetterAmmoActivated == true)
-                {
-                    playerHealth.DamageClientRpc(20f, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
-                    Destroy(gameObject);
-                }
-
-                if (BetterAmmoScript.isBetterAmmoActivated == false)
-                {
-                    playerHealth.DamageClientRpc(20f, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
-                    Destroy(gameObject);
-                }
-            }
-
-            if (other.gameObject.tag == "Tors")
-            {
-
-                if (BetterAmmoScript.isBetterAmmoActivated == true)
-                {
-                    playerHealth.DamageClientRpc(15f, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
-                    Destroy(gameObject);
-                }
-
-                if (BetterAmmoScript.isBetterAmmoActivated == false)
-                {
-                    playerHealth.DamageClientRpc(15f, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
-                    Destroy(gameObject);
-                }
-            }
-        }
+        
     }
 }

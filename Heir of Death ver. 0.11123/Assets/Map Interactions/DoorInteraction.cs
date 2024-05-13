@@ -1,86 +1,105 @@
 using System.Collections;
+using System.Collections.Generic;
+using TMPro;
 using Unity.Netcode;
 using UnityEngine;
 
 public class DoorInteraction : NetworkBehaviour
 {
-    public GameObject interactionText;
     public GameObject door;
-
     public AudioClip doorSound;
     public AudioSource doorSource;
 
     private Animator doorAnimator;
-    private bool isOpened;
+    public bool isOpened;
+    public bool czyHost;
 
     void Start()
     {
-        interactionText.SetActive(false);
         doorSource = GetComponent<AudioSource>();
         doorAnimator = door.GetComponent<Animator>();
         isOpened = false;
     }
 
-    private void OnTriggerEnter(Collider other)
+    void Update()
     {
         if (!IsOwner) return;
-        if (other.gameObject.tag == "Player")
-        {
-            interactionText.SetActive(true);
-        }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (!IsOwner) return;
-        if (other.gameObject.tag == "Player")
+        //if (!IsOwner) return;
+       
+        if (IsHost)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (other.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.E))
             {
-                interactionText.SetActive(false);
-                StartCoroutine(OpenDoor());
+                OpenDoorClientRpc(new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
+                OpenDoorServerRpc();
+                SynchroServerRpc(1);
+            }
+        }
+        if (!IsHost && IsClient == true)
+        {
+            if (other.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.E))
+            {
+                OpenDoorServerRpc();
+                SynchroServerRpc(0);
             }
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    public override void OnNetworkSpawn()
     {
-        if (!IsOwner) return;
-        if (other.gameObject.tag == "Player")
-        {
-            interactionText.SetActive(false);
-        }
+        base.OnNetworkSpawn();
     }
 
-    IEnumerator OpenDoor()
+    [ServerRpc(RequireOwnership = false)]
+    public void SynchroServerRpc(ulong player)
     {
-        if (isOpened == false)
+        ClientRpcParams clientRpcParams = new ClientRpcParams
         {
-            doorAnimator.SetBool("canOpen", true);
+            Send = new ClientRpcSendParams
+            {
+                TargetClientIds = new ulong[] { player }
+            }
+        };
+        OpenDoorClientRpc(clientRpcParams);
+    }
+
+    [ClientRpc]
+    public void OpenDoorClientRpc(ClientRpcParams clientRpcParams)
+    {
+        SezamieOtworzSie();
+    }
+
+    [ServerRpc]
+    public void OpenDoorServerRpc()
+    {
+        SezamieOtworzSie();
+    }
+
+    public void SezamieOtworzSie()
+    {
+        if (!isOpened)
+        {
             if (doorSound != null && doorSource != null)
             {
                 doorSource.PlayOneShot(doorSound);
-                doorAnimator.Play("OpenDoor", 1);
+                doorAnimator.Play("Open Door", 0);
                 isOpened = true;
             }
         }
-        else if (isOpened == true)
+        else
         {
-            doorAnimator.SetBool("canClose", true);
             if (doorSound != null && doorSource != null)
             {
                 doorSource.PlayOneShot(doorSound);
-                doorAnimator.Play("CloseDoor", 1);
+                doorAnimator.Play("Close Door", 0);
                 isOpened = false;
-                yield return new WaitForSeconds(1.5f);
-                doorAnimator.Rebind();
             }
         }
     }
-
-    IEnumerator doorRebind()
-    {
-        yield return new WaitForSeconds(1.5f);
-    }
 }
+
 

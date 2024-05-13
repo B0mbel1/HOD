@@ -8,30 +8,108 @@ public class AnimationControllerSwitcherOnline : NetworkBehaviour
     public Animator animator;
     public RuntimeAnimatorController rifleanimations;
     public RuntimeAnimatorController gunanimations;
-    //public MonoBehaviour script1; 
-    //public MonoBehaviour script2;
+    [SerializeField] private GameObject gun1;
+    [SerializeField] private GameObject gun2;
 
-    void Update()
+
+    void LateUpdate()
     {
         if(!IsOwner) { return; }
-        // Sprawdzamy, czy klawisz 1 zosta³ naciœniêty
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+
+        if (IsHost)
         {
-            animator.runtimeAnimatorController = rifleanimations;
-           // if (script1 != null)
-           ////     script1.enabled = true;
-            //if (script2 != null)
-            //    script2.enabled = false;
+            if (gun1.activeSelf == true && gun2.activeSelf == false)
+            {
+                //animator.runtimeAnimatorController = rifleanimations;
+
+                HostRifleServerRpc();
+                ClientRifleClientRpc(new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
+            }
+
+            if (gun2.activeSelf == true && gun1.activeSelf == false)
+            {
+                //animator.runtimeAnimatorController = gunanimations;
+
+                HostPistolServerRpc();
+
+                ClientPistolClientRpc(new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
+            }
         }
 
-        // Sprawdzamy, czy klawisz 2 zosta³ naciœniêty
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if(!IsHost && IsClient)
         {
-            animator.runtimeAnimatorController = gunanimations;
-           // if (script1 != null)
-           //     script1.enabled = false;
-           // if (script2 != null)
-           //     script2.enabled = true;
+            if (gun1.activeSelf == true && gun2.activeSelf == false)
+            {
+                //animator.runtimeAnimatorController = rifleanimations;
+                HostRifleServerRpc();
+                SynchroRifleServerRpc(1);
+            }
+
+            if (gun2.activeSelf == true && gun1.activeSelf == false)
+            {
+                //animator.runtimeAnimatorController = gunanimations;
+                HostPistolServerRpc();
+                SynchroPistolServerRpc(1);
+
+            }
         }
+    }
+
+    public void changeAnimation(RuntimeAnimatorController gun)
+    {
+        animator.runtimeAnimatorController = gun;
+    }
+
+
+    [ServerRpc]
+    public void HostRifleServerRpc()
+    {
+        animator.runtimeAnimatorController = rifleanimations;
+    }
+
+    [ServerRpc]
+    public void HostPistolServerRpc()
+    {
+        animator.runtimeAnimatorController = gunanimations;
+    }
+
+    [ClientRpc]
+    public void ClientRifleClientRpc(ClientRpcParams clientRpcParams)
+    {
+        animator.runtimeAnimatorController = rifleanimations;
+    }
+
+    [ClientRpc]
+    public void ClientPistolClientRpc(ClientRpcParams clientRpcParams)
+    {
+        animator.runtimeAnimatorController = gunanimations;
+    }
+
+    [ServerRpc]
+    public void SynchroRifleServerRpc(ulong player)
+    {
+        ClientRpcParams clientRpcParams = new ClientRpcParams
+        {
+            Send = new ClientRpcSendParams
+            {
+                TargetClientIds = new ulong[] { player }
+            }
+        };
+
+        ClientRifleClientRpc(clientRpcParams);
+    }
+
+    [ServerRpc]
+    public void SynchroPistolServerRpc(ulong player)
+    {
+        ClientRpcParams clientRpcParams = new ClientRpcParams
+        {
+            Send = new ClientRpcSendParams
+            {
+                TargetClientIds = new ulong[] { player }
+            }
+        };
+
+        ClientPistolClientRpc(clientRpcParams);
     }
 }

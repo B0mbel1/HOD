@@ -135,6 +135,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1729870057539633798}
+  - component: {fileID: 8087372784962087565}
   - component: {fileID: 2417487989820071593}
   m_Layer: 5
   m_Name: Health Bar
@@ -166,6 +167,26 @@ RectTransform:
   m_AnchoredPosition: {x: -655, y: -479}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &8087372784962087565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496068792080272884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1476683090
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!114 &2417487989820071593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -496,8 +517,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 36, y: 42}
-  m_SizeDelta: {x: 175, y: 50}
+  m_AnchoredPosition: {x: 62.18, y: 42}
+  m_SizeDelta: {x: 199.3591, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8863388543650425777
 CanvasRenderer:
@@ -933,7 +954,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AmmoTimeLeft: 20
-  AmmoTimeReset: 0
+  AmmoTimeReset: 20
   AmmoTimer: {fileID: 6080667620912511108}
 --- !u!1 &5538026956856521235
 GameObject:
@@ -2214,6 +2235,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 771.6, y: 433.9}
-  m_SizeDelta: {x: 300, y: 150}
+  m_AnchoredPosition: {x: 694.8688, y: 433.9}
+  m_SizeDelta: {x: 453.4624, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}

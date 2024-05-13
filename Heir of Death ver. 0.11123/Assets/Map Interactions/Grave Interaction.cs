@@ -1,48 +1,58 @@
+using System.Collections.Generic;
 using Unity.Netcode;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GraveInteraction : NetworkBehaviour
 {
-    public GameObject interactionText;
     public GameObject grave;
-
-    public AudioClip horrorSound;
-    public AudioSource pickupSource;
+    public bool czyHost;
+    public AudioClip screamSound;
+    public AudioSource screamSource;
 
     void Start()
     {
-        interactionText.SetActive(false);
-        pickupSource = GetComponent<AudioSource>();
+        screamSource = GetComponent<AudioSource>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void Update()
     {
         if (!IsOwner) return;
-        if (other.gameObject.tag == "Player")
-        {
-            interactionText.SetActive(true);
-        }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (!IsOwner) return;
-        if (other.gameObject.tag == "Player")
+        Skrypt player = other.GetComponentInParent<Skrypt>();
+
+        if(player != null)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (player.czyHost == true)
             {
-                pickupSource.Play();
-                interactionText.SetActive(false);
+                if (other.gameObject.tag == "Player")
+                {
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        player.BulletSpawnServerRpc();
+                    }
+                }
+            }
+
+            if (player.czyHost == false)
+            {
+                if (other.gameObject.tag == "Player")
+                {
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        player.SynchroServerRpc();
+                    }
+                }
             }
         }
+        
     }
 
-    private void OnTriggerExit(Collider other)
+    public override void OnNetworkSpawn()
     {
-        if (!IsOwner) return;
-        if (other.gameObject.tag == "Player")
-        {
-            interactionText.SetActive(false);
-        }
+        base.OnNetworkSpawn();
     }
 }
