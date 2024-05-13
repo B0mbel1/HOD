@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(AudioSource))]
 
@@ -59,10 +61,14 @@ public class PlayerMovementOnline : NetworkBehaviour
     [SerializeField] private List<AudioClip> footStepsSounds = new List<AudioClip>();
     [SerializeField] private AudioClip jumpSound;
     [SerializeField] private AudioClip landSound;
+    [SerializeField] private AudioClip enemyStepSound;
     [SerializeField] private bool isWalking;
     [SerializeField][Range(0f, 1f)] private float runstepLenghten;
     [SerializeField] private float stepInterval;
 
+    
+    public bool wyslanie;
+    public GameObject pozycjaASC;
     private AudioSource audioSource;
     private float nextStep;
     private float stepCycle;
@@ -98,42 +104,52 @@ public class PlayerMovementOnline : NetworkBehaviour
         character = GetComponent<Character>();
         rigid = GetComponent<Rigidbody>();
 
-        PlayLandingSound += TestPlayLandingSound;
+        PlayLandingSound += TestPlayLandingSound;   //ZMIANA
     }
 
     void Update()
     {
-        if (!IsOwner) return;
-        {
-            grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, whatIsGround);
-            MyInput();
-            SpeedControl();
-            StateHandler();
+        if (!IsOwner) { return; }
 
+      
+
+        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, whatIsGround);
+        MyInput();
+        SpeedControl();
+
+        if (IsHost)
+        {
             ProgressStepCycle(1f);
 
-            if (grounded)
-            {
-                rb.drag = groundDrag;
-            }
-            else
-            {
-                rb.drag = 0;
-            }
+        }
+        if (!IsHost && IsClient)
+        {
+            ProgressStepCycle(1f);
+        }
 
-            if (wasAirborne && grounded && rb.velocity.y <= 0)
-            {
-                PlayLandingSound.Invoke(this, EventArgs.Empty);
-            }
+        StateHandler();
 
-            if (!grounded && rb.velocity.y <= 0)
-            {
-                wasAirborne = true;
-            }
-            else
-            {
-                wasAirborne = false;
-            }
+        if (grounded)
+        {
+            rb.drag = groundDrag;
+        }
+        else
+        {
+            rb.drag = 0;
+        }
+
+        if (wasAirborne && grounded && rb.velocity.y <= 0)
+        {
+            PlayLandingSound.Invoke(this, EventArgs.Empty); //ZMIANA
+        }
+
+        if (!grounded && rb.velocity.y <= 0)
+        {
+            wasAirborne = true;
+        }
+        else
+        {
+            wasAirborne = false;
         }
     }
 
@@ -297,7 +313,7 @@ public class PlayerMovementOnline : NetworkBehaviour
 
     void ResetJump()
     {
-        
+
         readyToJump = true;
         exitingSlope = false;
     }
@@ -326,7 +342,7 @@ public class PlayerMovementOnline : NetworkBehaviour
     }
 
     public event EventHandler PlayLandingSound;
-    private void TestPlayLandingSound(object sender, EventArgs e)
+    private void TestPlayLandingSound(object sender, EventArgs e)        //ZMIANA
     {
         footStepsSwapper.CheckLayer();
         audioSource.clip = landSound;
@@ -336,6 +352,8 @@ public class PlayerMovementOnline : NetworkBehaviour
 
     private float lastFootstepTime;
 
+
+    public static bool czyWyslacDzwiek = true;
     private void ProgressStepCycle(float speed)
     {
         if (rigid.velocity.sqrMagnitude > 0 && (moveDirection.x != 0 || moveDirection.y != 0))
@@ -347,14 +365,31 @@ public class PlayerMovementOnline : NetworkBehaviour
             return;
         }
         nextStep = stepCycle + stepInterval;
+
         if (!audioSource.isPlaying)
         {
             PlayFootStepAudio();
+
+            if (IsHost && czyWyslacDzwiek)
+            {
+                SynchroServerRpc(1);
+            }
+            if (!IsHost && IsClient && czyWyslacDzwiek)
+            {
+                SynchroServerRpc(0);
+            }
         }
+    }
+
+    [ClientRpc]
+    private void TestClientRpc(ClientRpcParams clientRpcParams)
+    {
+        audioSource.PlayOneShot(landSound);
     }
 
     private void PlayFootStepAudio()
     {
+        audioSource.gameObject.transform.position = pozycjaASC.transform.position;
         footStepsSwapper.CheckLayer();
 
         if (!grounded)
@@ -363,9 +398,11 @@ public class PlayerMovementOnline : NetworkBehaviour
         }
         int a = UnityEngine.Random.Range(1, footStepsSounds.Count);
         audioSource.clip = footStepsSounds[a];
-        audioSource.PlayOneShot(audioSource.clip);
         footStepsSounds[a] = footStepsSounds[0];
         footStepsSounds[0] = audioSource.clip;
+
+        audioSource.spatialBlend = 1;
+        audioSource.PlayOneShot(audioSource.clip);
     }
 
     public void SwapFootsteps(FootStepCollection collection)
@@ -377,6 +414,45 @@ public class PlayerMovementOnline : NetworkBehaviour
         }
         jumpSound = collection.jumpSound;
         landSound = collection.landSound;
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    private void MetodaServerRpc()
+    {
+        Metoda(audioSource);
+
+    }
+
+    [ClientRpc]
+    private void MetodaClientRpc(ClientRpcParams clientRpcParams)
+    {
+        Metoda(audioSource);
+    }
+
+    [ServerRpc]
+    private void SynchroServerRpc(ulong player)
+    {
+        ClientRpcParams clientRpcParams = new ClientRpcParams
+        {
+            Send = new ClientRpcSendParams
+            {
+                TargetClientIds = new ulong[] { player }
+            }
+        };
+        MetodaClientRpc(clientRpcParams);
+    }
+
+    private void Metoda(AudioSource audioSource)
+    {
+        audioSource.gameObject.transform.position = pozycjaASC.transform.position;
+        if (IsHost)
+        {
+            AudioSource.PlayClipAtPoint(enemyStepSound, audioSource.gameObject.transform.position);
+        }
+        if (!IsHost && IsClient)
+        {
+            AudioSource.PlayClipAtPoint(enemyStepSound, audioSource.gameObject.transform.position);
+        }
     }
 }
 

@@ -15,18 +15,101 @@ public class AnimationControllerSwitcherOnline : NetworkBehaviour
     void LateUpdate()
     {
         if(!IsOwner) { return; }
-        // Sprawdzamy, czy klawisz 1 zosta³ naciœniêty
-        if (gun1.activeSelf == true && gun2.activeSelf == false)
+
+        if (IsHost)
         {
-            animator.runtimeAnimatorController = rifleanimations;
-           
+            if (gun1.activeSelf == true && gun2.activeSelf == false)
+            {
+                //animator.runtimeAnimatorController = rifleanimations;
+
+                HostRifleServerRpc();
+                ClientRifleClientRpc(new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
+            }
+
+            if (gun2.activeSelf == true && gun1.activeSelf == false)
+            {
+                //animator.runtimeAnimatorController = gunanimations;
+
+                HostPistolServerRpc();
+
+                ClientPistolClientRpc(new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
+            }
         }
 
-        // Sprawdzamy, czy klawisz 2 zosta³ naciœniêty
-        if (gun2.activeSelf == true && gun1.activeSelf == false)
+        if(!IsHost && IsClient)
         {
-            animator.runtimeAnimatorController = gunanimations;
-           
+            if (gun1.activeSelf == true && gun2.activeSelf == false)
+            {
+                //animator.runtimeAnimatorController = rifleanimations;
+                HostRifleServerRpc();
+                SynchroRifleServerRpc(1);
+            }
+
+            if (gun2.activeSelf == true && gun1.activeSelf == false)
+            {
+                //animator.runtimeAnimatorController = gunanimations;
+                HostPistolServerRpc();
+                SynchroPistolServerRpc(1);
+
+            }
         }
+    }
+
+    public void changeAnimation(RuntimeAnimatorController gun)
+    {
+        animator.runtimeAnimatorController = gun;
+    }
+
+
+    [ServerRpc]
+    public void HostRifleServerRpc()
+    {
+        animator.runtimeAnimatorController = rifleanimations;
+    }
+
+    [ServerRpc]
+    public void HostPistolServerRpc()
+    {
+        animator.runtimeAnimatorController = gunanimations;
+    }
+
+    [ClientRpc]
+    public void ClientRifleClientRpc(ClientRpcParams clientRpcParams)
+    {
+        animator.runtimeAnimatorController = rifleanimations;
+    }
+
+    [ClientRpc]
+    public void ClientPistolClientRpc(ClientRpcParams clientRpcParams)
+    {
+        animator.runtimeAnimatorController = gunanimations;
+    }
+
+    [ServerRpc]
+    public void SynchroRifleServerRpc(ulong player)
+    {
+        ClientRpcParams clientRpcParams = new ClientRpcParams
+        {
+            Send = new ClientRpcSendParams
+            {
+                TargetClientIds = new ulong[] { player }
+            }
+        };
+
+        ClientRifleClientRpc(clientRpcParams);
+    }
+
+    [ServerRpc]
+    public void SynchroPistolServerRpc(ulong player)
+    {
+        ClientRpcParams clientRpcParams = new ClientRpcParams
+        {
+            Send = new ClientRpcSendParams
+            {
+                TargetClientIds = new ulong[] { player }
+            }
+        };
+
+        ClientPistolClientRpc(clientRpcParams);
     }
 }

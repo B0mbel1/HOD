@@ -6,14 +6,13 @@ using UnityEngine.UI;
 public class PlayerHealth : NetworkBehaviour
 {
     public static float health;
-    public  bool czyHost;
+    public bool czyHost;
     private static float lerpTimer;
     public float maxHealth = 100;
     public float chipSpeed = 2;
 
     public Image frontHealthBar;
     public Image backHealthBar;
-
 
     private void Start()
     {
@@ -28,7 +27,7 @@ public class PlayerHealth : NetworkBehaviour
         {
             czyHost = true;
         }
-        if(IsClient && !IsHost)
+        if (IsClient && !IsHost)
         {
             czyHost = false;
         }
@@ -37,20 +36,19 @@ public class PlayerHealth : NetworkBehaviour
         //if (Input.GetKeyDown(KeyCode.E) && IsHost)
         //{
         //    DamageClientRpc(12f, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
-            
+
         //}
 
         //if (Input.GetKeyDown(KeyCode.T) && IsClient && !IsHost)
         //{
         //    DamageServerRpc(12f);
-            
+
         //}
-        if(Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.B))
         {
             health = health - 20;
+            Debug.Log("health:" + health);
         }
-
-        //////////////////////////////////////////////
 
         UpdateHealthUI();
         //health = Mathf.Clamp(health, 0, maxHealth);
@@ -104,9 +102,40 @@ public class PlayerHealth : NetworkBehaviour
         lerpTimer = 0f;
     }
 
-    public static void RestoreHealth(float healAmount)
+    [ServerRpc]
+    public void SynchroServerRpc(float healAmount)
+    {
+        ClientRpcParams clientRpcParams = new ClientRpcParams
+        {
+            Send = new ClientRpcSendParams
+            {
+                TargetClientIds = new ulong[] { 1 }
+            }
+        };
+
+        RestoreHealthClientRpc(healAmount, clientRpcParams);
+    }
+
+    //public void RestoreHealth(float healAmount)
+    //{
+    //    health += healAmount;
+    //    lerpTimer = 0f;
+    //}
+
+    [ServerRpc]
+    public void RestoreHealthServerRpc(float healAmount)
     {
         health += healAmount;
+        healAmount = 0;
+        lerpTimer = 0f;
+
+    }
+
+    [ClientRpc]
+    public void RestoreHealthClientRpc(float healAmount, ClientRpcParams clientRpcParams)
+    {
+        health += healAmount;
+        healAmount = 0;
         lerpTimer = 0f;
     }
 }

@@ -1,7 +1,12 @@
+using System;
 using System.Collections.Generic;
+using System.Net;
+using TMPro;
 using Unity.Netcode;
+using Unity.Netcode.Transports.UTP;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ServerManager : MonoBehaviour
 {
@@ -13,9 +18,16 @@ public class ServerManager : MonoBehaviour
     [SerializeField] private string gameplaySceneName = "";
     [SerializeField] private string characterSelectSceneName = "SelectCharacter";
 
+    //UI do IP
+    [SerializeField] TextMeshProUGUI ipAddressText;
+    [SerializeField] InputField ip;
+
+    [SerializeField] string ipAddress;
+    [SerializeField] UnityTransport transport;
+
     private void Awake()
     {
-        if(Instance != null && Instance != this)
+        if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
         }
@@ -26,8 +38,15 @@ public class ServerManager : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+
+
+    }
+
     public void StartServer()
     {
+
         NetworkManager.Singleton.ConnectionApprovalCallback += ApprovalCheck;
         NetworkManager.Singleton.OnServerStarted += OnNetworkReady;
         ClientData = new Dictionary<ulong, ClientData>();
@@ -40,6 +59,18 @@ public class ServerManager : MonoBehaviour
         NetworkManager.Singleton.OnServerStarted += OnNetworkReady;
         ClientData = new Dictionary<ulong, ClientData>();
         NetworkManager.Singleton.StartHost();
+        GetLocalIPAddress();
+    }
+
+    public void StartClient()
+    {
+        //NetworkManager.Singleton.ConnectionApprovalCallback += ApprovalCheck;
+
+        ipAddress = ip.text;
+        SetIpAddress(ipAddress);
+
+        NetworkManager.Singleton.StartClient();
+       
     }
 
     public void StopServer()
@@ -70,6 +101,33 @@ public class ServerManager : MonoBehaviour
         ClientData[request.ClientNetworkId] = new ClientData(request.ClientNetworkId);
 
         Debug.Log("Added client " + request.ClientNetworkId);
+
+        Debug.Log("IP:" + GetLocalIPAddress());
+
+    }
+
+    //Wyœwietla IP hosta
+    public string GetLocalIPAddress()
+    {
+        var host = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName());
+        foreach (var ip in host.AddressList)
+        {
+            if (ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+            {
+                ipAddressText.text = ip.ToString();
+                ipAddress = ip.ToString();
+                return ip.ToString();
+            }
+        }
+
+        throw new System.Exception("No network adapters with an IPv4 address in the system!");
+    }
+
+    //Ustawia IP clienta
+    public void SetIpAddress(string ipAddress)
+    {
+        transport = NetworkManager.Singleton.GetComponent<UnityTransport>();
+        transport.ConnectionData.Address = ipAddress;
     }
 
     private void OnNetworkReady()
@@ -80,9 +138,9 @@ public class ServerManager : MonoBehaviour
 
     private void OnClientDisconnect(ulong clientId)
     {
-        if(ClientData.ContainsKey(clientId))
+        if (ClientData.ContainsKey(clientId))
         {
-            if(ClientData.Remove(clientId))
+            if (ClientData.Remove(clientId))
             {
                 Debug.Log("Removed client " + clientId);
             }
@@ -91,11 +149,12 @@ public class ServerManager : MonoBehaviour
 
     public void SetCharacter(ulong clientId, int characterId)
     {
-        if(ClientData.TryGetValue(clientId, out ClientData data))
+        if (ClientData.TryGetValue(clientId, out ClientData data))
         {
             data.characterId = characterId;
         }
     }
+
 
     public void StartGame()
     {
@@ -104,5 +163,4 @@ public class ServerManager : MonoBehaviour
         NetworkManager.Singleton.SceneManager.LoadScene(gameplaySceneName, LoadSceneMode.Single);
     }
 
-    
 }

@@ -1,7 +1,8 @@
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BetterAmmoScript : MonoBehaviour
+public class BetterAmmoScript : NetworkBehaviour
 {
     public float AmmoTimeLeft;
     public float AmmoTimeReset;

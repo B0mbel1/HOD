@@ -1,47 +1,44 @@
+using System.Collections.Generic;
+using Unity.Netcode;
+using Unity.Networking.Transport;
+using UnityEngine.Networking;
 using UnityEngine;
 
-public class PickupScript : MonoBehaviour
+public class AmmoUsage : NetworkBehaviour
 {
-    public GameObject pickUptext;
     public GameObject clip;
 
-    public AudioClip pickupSound;
-    public AudioSource pickupSource;
+    public bool czyHost;
 
-    private void Start()
-    {
-        pickUptext.SetActive(false);
-        pickupSource = GetComponent<AudioSource>();
-    }
+    //void Update()
+    //{
+    //    if (!IsOwner) return;
+    //}
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        AmmoScript ammoScript = other.GetComponentInParent<AmmoScript>();
+        PlayerHealth playerHealth = other.GetComponentInParent<PlayerHealth>();
+        if (playerHealth != null)
         {
-            pickUptext.SetActive(true);
-        }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (playerHealth.czyHost && IsServer) 
             {
-                pickUptext.SetActive(false);
-                this.gameObject.SetActive(false);
-                clip.SetActive(false);
-                BetterAmmoScript.isBetterAmmoPicked = true;
-                BetterAmmoScript.TimerActivation = true;
+                Debug.Log("Host wzia³");
+                ammoScript.GetAmmoServerRpc();
+                Destroy(gameObject);
+            }
+
+            if (playerHealth.czyHost == false && (!IsServer))
+            {
+                Debug.Log("Client wzia³");
+                ammoScript.SynchroServerRpc();
+                Destroy(gameObject);
             }
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            pickUptext.SetActive(false);
-        }
-    }
+    
+
+    
+
 }
