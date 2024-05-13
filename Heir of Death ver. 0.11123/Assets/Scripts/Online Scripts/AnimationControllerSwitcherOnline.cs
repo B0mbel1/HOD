@@ -8,25 +8,30 @@ public class AnimationControllerSwitcherOnline : NetworkBehaviour
     public Animator animator;
     public RuntimeAnimatorController rifleanimations;
     public RuntimeAnimatorController gunanimations;
-    [SerializeField] private GameObject gun1;
-    [SerializeField] private GameObject gun2;
+    //public MonoBehaviour script1; 
+    //public MonoBehaviour script2;
 
-
-    void LateUpdate()
+    void Update()
     {
         if(!IsOwner) { return; }
         // Sprawdzamy, czy klawisz 1 zosta³ naciœniêty
-        if (gun1.activeSelf == true && gun2.activeSelf == false)
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             animator.runtimeAnimatorController = rifleanimations;
-           
+           // if (script1 != null)
+           ////     script1.enabled = true;
+            //if (script2 != null)
+            //    script2.enabled = false;
         }
 
         // Sprawdzamy, czy klawisz 2 zosta³ naciœniêty
-        if (gun2.activeSelf == true && gun1.activeSelf == false)
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             animator.runtimeAnimatorController = gunanimations;
-           
+           // if (script1 != null)
+           //     script1.enabled = false;
+           // if (script2 != null)
+           //     script2.enabled = true;
         }
     }
 }

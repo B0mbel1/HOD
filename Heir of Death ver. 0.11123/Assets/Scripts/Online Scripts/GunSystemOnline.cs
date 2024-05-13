@@ -78,24 +78,8 @@ public class GunSystemOnline : NetworkBehaviour
     {
         
             readyToShoot = false;
-
             RaycastHit co;
-            if (Physics.Raycast(fpsCam.transform.position, transform.forward, out co, Mathf.Infinity))
-            {
-                //obrazeniaOK czyOK = co.collider.GetComponent<obrazeniaOK>();
-                //if (czyOK != null)
-                //{
-                //    if (BetterAmmoScript.isBetterAmmoActivated == true)
-                //    {
-                //        czyOK.zadajObrazenia(damage + 3);
-                //    }
-                //    else
-                //    {
-                //        czyOK.zadajObrazenia(damage);
-                //    }
-                //}
-            }
-
+            
             GameObject bullet = Instantiate(bulletPrefab);
             Physics.IgnoreCollision(bullet.GetComponent<Collider>(), bulletSpawn.parent.GetComponent<Collider>());
             bullet.transform.position = bulletSpawn.position;

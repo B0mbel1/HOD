@@ -178,7 +178,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d5717d6cd854784ea93d0d8b4d10990, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  czyHost: 0
   maxHealth: 100
   chipSpeed: 2
   frontHealthBar: {fileID: 1100852583709077946}
@@ -1512,7 +1511,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 0}
   restingSize: 75
-  maxSize: 140
+  maxSize: 100
   zoomedSize: 25
   zoomedSize2: 60
   speed: 2
