@@ -17424,7 +17424,7 @@ GameObject:
   - component: {fileID: 795952195}
   - component: {fileID: 795243535}
   - component: {fileID: 790703983}
-  - component: {fileID: 795952199}
+  - component: {fileID: 795952201}
   - component: {fileID: 795952197}
   - component: {fileID: 795952198}
   - component: {fileID: 795952200}
@@ -17626,6 +17626,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionText: {fileID: 1234039354}
   pulpit: {fileID: 792954589}
+  czyHost: 0
   amenoSound: {fileID: 8300000, guid: 6129ca5650c09f14981cdf5c3ec2ad6f, type: 3}
   amenoSource: {fileID: 0}
 --- !u!82 &795952198
@@ -17724,26 +17725,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &795952199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 792769339}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3856846114
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!114 &795952200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17757,6 +17738,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   footStepCollection: {fileID: 11400000, guid: c092ca59f4b5e9146b89e1fd2715e3d9, type: 2}
+--- !u!114 &795952201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792769339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 108441680
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!33 &796965499
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -22281,71 +22282,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.8999996, y: 5.308179, z: 0.9000006}
   m_Center: {x: -0.0017127842, y: 2.629953, z: -0.00055743754}
---- !u!1 &1004612315
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1004612318}
-  - component: {fileID: 1004612316}
-  - component: {fileID: 1004612317}
-  m_Layer: 0
-  m_Name: RoundCounter
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1004612316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1004612315}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2267395252
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
---- !u!114 &1004612317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1004612315}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29b1e86083c492b4994e10f17fcafde9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1004612318
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1004612315}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 249.8, y: 43.6, z: 218.7}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1005139270
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -30236,13 +30172,41 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3923500225444035778, guid: 0599d8fe55dddf14eabc75dcd46bceb2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1234039356}
   m_SourcePrefab: {fileID: 100100000, guid: 0599d8fe55dddf14eabc75dcd46bceb2, type: 3}
 --- !u!1 &1234039354 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8248281638997441600, guid: 0599d8fe55dddf14eabc75dcd46bceb2, type: 3}
   m_PrefabInstance: {fileID: 1234039353}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1234039355 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3923500225444035778, guid: 0599d8fe55dddf14eabc75dcd46bceb2, type: 3}
+  m_PrefabInstance: {fileID: 1234039353}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1234039356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234039355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 2711697220
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!65 &1234191039
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39654,7 +39618,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1514497288
 GameObject:
   m_ObjectHideFlags: 0
@@ -50778,6 +50742,8 @@ MonoBehaviour:
   door: {fileID: 1514099762}
   doorSound: {fileID: 8300000, guid: 1b3f4a54430380f45a00e9d2adbcb2ec, type: 3}
   doorSource: {fileID: 1515843132}
+  State:
+    m_InternalValue: 0
 --- !u!82 &1896661349
 AudioSource:
   m_ObjectHideFlags: 0
@@ -59782,4 +59748,3 @@ SceneRoots:
   - {fileID: 1845173903}
   - {fileID: 181064882}
   - {fileID: 1745368118}
-  - {fileID: 1004612318}

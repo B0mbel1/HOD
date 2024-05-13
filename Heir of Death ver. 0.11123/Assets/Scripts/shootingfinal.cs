@@ -84,8 +84,6 @@ public class shootingfinal : NetworkBehaviour
         BulletSpawnClientRpc(vector, clientRpcParams);
     }
 
-   
-
     private void MyInput()
     {
         if (!MenuPauzy.GameIsPaused)

@@ -6,7 +6,7 @@ public class BulletDamage : NetworkBehaviour
 {
     private void Start()
     {
-        Destroy(gameObject,2f);
+        Destroy(gameObject, 2f);
     }
 
     void OnTriggerEnter(Collider other)
