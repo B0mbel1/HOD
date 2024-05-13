@@ -23,4 +23,4 @@ MonoBehaviour:
     Jednak\u017Ce to zlecenie okazuje si\u0119 by\u0107 czym\u015B innym od pozosta\u0142ych.."
   icon: {fileID: 21300000, guid: bc07455bcbb763e4bb4f643788bb916b, type: 3}
   introPrefab: {fileID: 7983146585644693607, guid: 67ee89f996910b94e84857b055f0ccbe, type: 3}
-  gameplayPrefab: {fileID: 8727896245451519565, guid: 44ff54cfb5b192b489272256b81ba011, type: 3}
+  gameplayPrefab: {fileID: 8727896245451519565, guid: 9ad4752a363ebd44c9b47fcf133092cf, type: 3}
