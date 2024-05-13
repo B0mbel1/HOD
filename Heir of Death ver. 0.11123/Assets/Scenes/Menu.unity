@@ -2049,7 +2049,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &145168553
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2091,7 +2091,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &152233089
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8503,7 +8503,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -28750,6 +28750,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1665595908}
   - component: {fileID: 1665595909}
+  - component: {fileID: 1665595910}
   m_Layer: 5
   m_Name: Online
   m_TagString: Untagged
@@ -28794,6 +28795,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa39b9b5e82f64846902eefe41fef526, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1665595910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665595907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b41db6f0193e18c4bbb980120f294770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ipAddressText: {fileID: 0}
+  ip: {fileID: 0}
+  ipAddress: 
+  transport: {fileID: 0}
 --- !u!1 &1671668168
 GameObject:
   m_ObjectHideFlags: 0

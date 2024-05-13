@@ -63,14 +63,14 @@ public class OnlineFeaturesHandler : MonoBehaviour
     public void GotoLogowanie()
     {
         Cleanup();
-        SceneManager.LoadScene("WelcomeScreen");
+        SceneManager.LoadScene("WelcomeScreen", LoadSceneMode.Additive);
     }
 
     public void GotoNewLogowanie()
     {
         Cleanup();
         PlayfabManager.name = null;
-        SceneManager.LoadScene("WelcomeScreen");
+        SceneManager.LoadScene("WelcomeScreen", LoadSceneMode.Additive);
     }
 
     void Cleanup()
