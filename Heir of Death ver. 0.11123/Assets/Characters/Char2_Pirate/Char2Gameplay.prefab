@@ -864,6 +864,7 @@ MonoBehaviour:
   isWalking: 0
   runstepLenghten: 0
   stepInterval: 0
+  wyslanie: 0
   pozycjaASC: {fileID: 424755069667686663}
   sliding: 0
 --- !u!114 &-8807793041116188683
@@ -1124,9 +1125,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {x: 0, y: 0, z: 0}
+  GetSpawnPosition: {fileID: 1370538760696813027}
   ownerRoundCountTxt: {fileID: 329971787762048978}
   opponentRoundCountTxt: {fileID: 6648148066683907695}
   dead: 0
+  ulongVar: 0
+  intVar: 0
 --- !u!114 &8198014783028438391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2519,10 +2523,6 @@ MonoBehaviour:
   cameraTransform: {fileID: 6673479271759484311}
   convertedRotation: 0
   roundedRotation: 0
-  playerHeight: 0.63
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!114 &4561716854433867482
 MonoBehaviour:
   m_ObjectHideFlags: 0

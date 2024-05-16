@@ -79,6 +79,10 @@ public class OnlineFeaturesHandler : MonoBehaviour
         {
             Destroy(NetworkManager.Singleton.gameObject);
         }
+        if(ServerManager.Instance != null)
+        {
+            Destroy(ServerManager.Instance.gameObject);
+        }
     }
 
     ////////////////////////////////////////////////////////////////

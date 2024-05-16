@@ -39,7 +39,7 @@ public class MenuPauzyOnline : NetworkBehaviour
         GameIsPaused = true;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        Leaderboard tablica = new Leaderboard();
+        //Leaderboard tablica = new Leaderboard();
         //tablica.SendLeaderboard(Damaging.wynik);
     }
 
@@ -48,14 +48,17 @@ public class MenuPauzyOnline : NetworkBehaviour
         if (IsHost)
         {
             NetworkManager.Singleton.Shutdown();
+            
         }
 
         if (IsClient)
         {
             NetworkManager.Singleton.DisconnectClient(OwnerClientId);
+            
         }
-
+        
         Cleanup();
+
         Time.timeScale = 1f;
 
         SceneManager.LoadScene("Menu");
@@ -66,6 +69,7 @@ public class MenuPauzyOnline : NetworkBehaviour
         if (NetworkManager.Singleton != null)
         {
             Destroy(NetworkManager.Singleton.gameObject);
+            Destroy(ServerManager.Instance.gameObject);
         }
     }
 }

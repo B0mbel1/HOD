@@ -692,9 +692,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {x: 0, y: 0, z: 0}
+  GetSpawnPosition: {fileID: 1318587044675773895}
   ownerRoundCountTxt: {fileID: 5182985659225125960}
   opponentRoundCountTxt: {fileID: 2250415639504045557}
   dead: 0
+  ulongVar: 0
+  intVar: 0
 --- !u!114 &4015080038632841905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1019,7 +1022,7 @@ Animator:
   m_GameObject: {fileID: 2044204743951857863}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 040de8544bdeab645b65694de761d55d, type: 3}
-  m_Controller: {fileID: 9100000, guid: 152b84ef106f8124d90d130a1a31564f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 276b18a74856ea44eb13faeba1d28ee4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1057,10 +1060,6 @@ MonoBehaviour:
   cameraTransform: {fileID: 1648950954711052170}
   convertedRotation: 0
   roundedRotation: 0
-  playerHeight: 2
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!114 &7193512334870827583
 MonoBehaviour:
   m_ObjectHideFlags: 0

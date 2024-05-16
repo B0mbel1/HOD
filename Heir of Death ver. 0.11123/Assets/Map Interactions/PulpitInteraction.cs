@@ -1,56 +1,48 @@
-using System.Collections.Generic;
 using Unity.Netcode;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PulpitInteraction : NetworkBehaviour
 {
     public GameObject interactionText;
     public GameObject pulpit;
-    public bool czyHost;
+
     public AudioClip amenoSound;
     public AudioSource amenoSource;
- 
+
     void Start()
     {
         interactionText.SetActive(false);
         amenoSource = GetComponent<AudioSource>();
     }
 
-    public void Update()
+    private void OnTriggerEnter(Collider other)
     {
         if (!IsOwner) return;
+        if (other.gameObject.tag == "Player")
+        {
+            interactionText.SetActive(true);
+        }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        Skrypt player = other.GetComponentInParent<Skrypt>();
-       
-        if (player.czyHost == true)
+        if (!IsOwner) return;
+        if (other.gameObject.tag == "Player")
         {
-            if (other.gameObject.tag == "Player")
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    player.BulletSpawnServerRpc();
-                }
-            }
-        }
-
-        if(player.czyHost == false)
-        {
-            if (other.gameObject.tag == "Player")
-            {
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                   player.SynchroServerRpc();
-                }
+                amenoSource.Play();
+                interactionText.SetActive(false);
             }
         }
     }
 
-    public override void OnNetworkSpawn()
+    private void OnTriggerExit(Collider other)
     {
-        base.OnNetworkSpawn();
+        if (!IsOwner) return;
+        if (other.gameObject.tag == "Player")
+        {
+            interactionText.SetActive(false);
+        }
     }
 }

@@ -4,6 +4,7 @@ using System.Net;
 using TMPro;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -19,11 +20,13 @@ public class ServerManager : MonoBehaviour
     [SerializeField] private string characterSelectSceneName = "SelectCharacter";
 
     //UI do IP
+
     [SerializeField] TextMeshProUGUI ipAddressText;
     [SerializeField] InputField ip;
 
     [SerializeField] string ipAddress;
-    [SerializeField] UnityTransport transport;
+    [SerializeField] UnityTransport transport ;
+    
 
     private void Awake()
     {
@@ -41,7 +44,7 @@ public class ServerManager : MonoBehaviour
     void Start()
     {
 
-
+        
     }
 
     public void StartServer()
@@ -159,7 +162,7 @@ public class ServerManager : MonoBehaviour
     public void StartGame()
     {
         gameHasStarted = true;
-        gameplaySceneName = SceneList[0];
+        gameplaySceneName = SceneList[1];
         NetworkManager.Singleton.SceneManager.LoadScene(gameplaySceneName, LoadSceneMode.Single);
     }
 
