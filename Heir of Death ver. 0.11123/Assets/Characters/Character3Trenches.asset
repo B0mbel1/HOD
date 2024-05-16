@@ -21,4 +21,4 @@ MonoBehaviour:
     pora na t\u0105 ostatni\u0105 w swoim \u017Cyciu..."
   icon: {fileID: 21300000, guid: b2cd912eca73dde4795d3c91106e1e94, type: 3}
   introPrefab: {fileID: 5541418207077098958, guid: fcc530ea9581e714885812a05a87b6a9, type: 3}
-  gameplayPrefab: {fileID: 5085903601916345769, guid: ed5ea1fe8dfd58b46b355062b0d8d961, type: 3}
+  gameplayPrefab: {fileID: 5085903601916345769, guid: 442146fac65868e40aff1e749747e374, type: 3}

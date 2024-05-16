@@ -63,14 +63,14 @@ public class OnlineFeaturesHandler : MonoBehaviour
     public void GotoLogowanie()
     {
         Cleanup();
-        SceneManager.LoadScene("WelcomeScreen", LoadSceneMode.Additive);
+        SceneManager.LoadScene("WelcomeScreen");
     }
 
     public void GotoNewLogowanie()
     {
         Cleanup();
         PlayfabManager.name = null;
-        SceneManager.LoadScene("WelcomeScreen", LoadSceneMode.Additive);
+        SceneManager.LoadScene("WelcomeScreen");
     }
 
     void Cleanup()
@@ -78,6 +78,10 @@ public class OnlineFeaturesHandler : MonoBehaviour
         if (NetworkManager.Singleton != null)
         {
             Destroy(NetworkManager.Singleton.gameObject);
+        }
+        if(ServerManager.Instance != null)
+        {
+            Destroy(ServerManager.Instance.gameObject);
         }
     }
 

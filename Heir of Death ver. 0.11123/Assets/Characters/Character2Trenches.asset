@@ -26,4 +26,4 @@ MonoBehaviour:
     ca\u0142e Symperion."
   icon: {fileID: 21300000, guid: 12a998e1e9891bb408df09f3fda7d959, type: 3}
   introPrefab: {fileID: 1795839604808385621, guid: 87f81d4bd5522af4ea58a9cf34d9b2ce, type: 3}
-  gameplayPrefab: {fileID: 4217453867588923020, guid: 71a41023d8d476d4a80607e7a16e5c5e, type: 3}
+  gameplayPrefab: {fileID: 4217453867588923020, guid: 8d290fa61ff663a4bb24ccaa1ff1a371, type: 3}
