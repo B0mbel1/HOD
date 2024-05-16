@@ -26,6 +26,8 @@ public class ServerManager : MonoBehaviour
 
     [SerializeField] string ipAddress;
     [SerializeField] UnityTransport transport ;
+
+    public static string AdresIP;
     
 
     private void Awake()
@@ -117,7 +119,9 @@ public class ServerManager : MonoBehaviour
         {
             if (ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
             {
-                ipAddressText.text = ip.ToString();
+                //ipAddressText.text = ip.ToString();
+
+                AdresIP = ip.ToString();
                 ipAddress = ip.ToString();
                 return ip.ToString();
             }
