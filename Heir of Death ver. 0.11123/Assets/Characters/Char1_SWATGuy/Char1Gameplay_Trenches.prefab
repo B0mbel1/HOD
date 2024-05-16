@@ -2100,7 +2100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {x: 0, y: 0, z: 0}
-  GetSpawnPosition: {fileID: 0}
+  GetSpawnPosition: {fileID: 2893557086950090720}
   ownerRoundCountTxt: {fileID: 444770164824778225}
   opponentRoundCountTxt: {fileID: 6843950796179199052}
   dead: 0
@@ -3202,7 +3202,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.15
+  near clip plane: 0.2
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -5430,6 +5430,7 @@ GameObject:
   - component: {fileID: 2207638637468220779}
   - component: {fileID: 799652640481805453}
   - component: {fileID: 2560428658579184535}
+  - component: {fileID: 6167851967940038943}
   m_Layer: 0
   m_Name: AniCh1
   m_TagString: Untagged
@@ -5501,10 +5502,6 @@ MonoBehaviour:
   cameraTransform: {fileID: 5364256205189576302}
   convertedRotation: 0
   roundedRotation: 0
-  playerHeight: 1.8
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!114 &799652640481805453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5533,6 +5530,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gun1: {fileID: 465860386417108078}
   gun2: {fileID: 2898455531196878150}
+--- !u!114 &6167851967940038943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8679530547833647370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bac3d69c192e7a449838466707c3bf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8690977866322722170
 GameObject:
   m_ObjectHideFlags: 0
@@ -6135,7 +6144,7 @@ PrefabInstance:
       objectReference: {fileID: 2898455531196878150}
     - target: {fileID: 8087372784962087565, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
       propertyPath: GlobalObjectIdHash
-      value: 3725579188
+      value: 2704813986
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7435915038155686191, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}

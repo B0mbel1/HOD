@@ -263,7 +263,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 17.25, y: 15.27, z: 99.09}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3733551027766838867}
@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1013665565
+  GlobalObjectIdHash: 2336945707
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
   ActiveSceneSynchronization: 1
@@ -692,7 +692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {x: 0, y: 0, z: 0}
-  GetSpawnPosition: {fileID: 0}
+  GetSpawnPosition: {fileID: 1318587044675773895}
   ownerRoundCountTxt: {fileID: 5182985659225125960}
   opponentRoundCountTxt: {fileID: 2250415639504045557}
   dead: 0
@@ -1060,10 +1060,6 @@ MonoBehaviour:
   cameraTransform: {fileID: 1648950954711052170}
   convertedRotation: 0
   roundedRotation: 0
-  playerHeight: 2
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!114 &7193512334870827583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3340,7 +3336,7 @@ Transform:
   m_GameObject: {fileID: 6382019073397861001}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.047673553, y: 5.009598, z: 0.22920215}
+  m_LocalPosition: {x: -0.12859091, y: 4.878001, z: -0.114893734}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3377,7 +3373,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.08
+  near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -4230,7 +4226,7 @@ Transform:
   m_GameObject: {fileID: 8664196768629763387}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.042, y: 0.047, z: 0.245}
+  m_LocalPosition: {x: -0.07099899, y: 0, z: 0.110001475}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4246,15 +4242,15 @@ PositionConstraint:
   m_Enabled: 1
   serializedVersion: 2
   m_Weight: 1
-  m_TranslationAtRest: {x: -0.042, y: 0.047, z: 0.245}
-  m_TranslationOffset: {x: -0.04200301, y: -0.19017887, z: 0.15602484}
+  m_TranslationAtRest: {x: -0.071, y: 0, z: 0.11}
+  m_TranslationOffset: {x: -0.07100025, y: -0.23717883, z: 0.021026775}
   m_AffectTranslationX: 1
   m_AffectTranslationY: 1
   m_AffectTranslationZ: 1
   m_Active: 1
   m_IsLocked: 1
   m_Sources:
-  - sourceTransform: {fileID: 0}
+  - sourceTransform: {fileID: 5391935749394539427}
     weight: 1
 --- !u!1 &8738481258182658414
 GameObject:
@@ -5007,7 +5003,7 @@ PrefabInstance:
       objectReference: {fileID: 4518086769103066041}
     - target: {fileID: 8087372784962087565, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
       propertyPath: GlobalObjectIdHash
-      value: 1013665565
+      value: 353496391
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

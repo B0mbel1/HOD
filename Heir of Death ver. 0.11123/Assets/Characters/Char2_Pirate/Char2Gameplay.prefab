@@ -1125,7 +1125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {x: 0, y: 0, z: 0}
-  GetSpawnPosition: {fileID: 0}
+  GetSpawnPosition: {fileID: 1370538760696813027}
   ownerRoundCountTxt: {fileID: 329971787762048978}
   opponentRoundCountTxt: {fileID: 6648148066683907695}
   dead: 0
@@ -1279,7 +1279,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.15
+  near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -2523,10 +2523,6 @@ MonoBehaviour:
   cameraTransform: {fileID: 6673479271759484311}
   convertedRotation: 0
   roundedRotation: 0
-  playerHeight: 0.63
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!114 &4561716854433867482
 MonoBehaviour:
   m_ObjectHideFlags: 0

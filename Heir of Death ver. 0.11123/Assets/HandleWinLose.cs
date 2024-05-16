@@ -48,6 +48,12 @@ public class HandleWinLose : NetworkBehaviour
                 leaderboardUpdated = true;
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            Debug.Log("Licznik klienta" + " " + RoundCounter.counterclient);
+            Debug.Log("Licznik hosta" + " " + RoundCounter.counterhost);
+        }
     }
 
     public override void OnNetworkDespawn()
@@ -65,6 +71,7 @@ public class HandleWinLose : NetworkBehaviour
         
     }
 
+    
     public void ActivateLoseScreen()
     {
         loseScreen.SetActive(true);
@@ -73,6 +80,8 @@ public class HandleWinLose : NetworkBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
+
+    
 
     public void WyjdzZGry()
     {

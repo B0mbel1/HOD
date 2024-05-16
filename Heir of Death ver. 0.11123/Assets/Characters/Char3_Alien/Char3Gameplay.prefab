@@ -692,7 +692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {x: 0, y: 0, z: 0}
-  GetSpawnPosition: {fileID: 0}
+  GetSpawnPosition: {fileID: 1318587044675773895}
   ownerRoundCountTxt: {fileID: 5182985659225125960}
   opponentRoundCountTxt: {fileID: 2250415639504045557}
   dead: 0
@@ -1060,10 +1060,6 @@ MonoBehaviour:
   cameraTransform: {fileID: 1648950954711052170}
   convertedRotation: 0
   roundedRotation: 0
-  playerHeight: 2
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!114 &7193512334870827583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3278,7 +3274,7 @@ Transform:
   m_GameObject: {fileID: 6382019073397861001}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.047668457, y: 5.009598, z: 0.22921228}
+  m_LocalPosition: {x: -0.12858582, y: 4.8779984, z: -0.11487341}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3315,7 +3311,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.08
+  near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -4213,7 +4209,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4199089143905459621}
-  - component: {fileID: 6219542560264462429}
+  - component: {fileID: 8765948825579588463}
   m_Layer: 0
   m_Name: cameraPlace
   m_TagString: Untagged
@@ -4230,13 +4226,13 @@ Transform:
   m_GameObject: {fileID: 8664196768629763387}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.042, y: 0.04699999, z: 0.245}
+  m_LocalPosition: {x: -0.07099724, y: 0.000000029802322, z: 0.11000194}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5207754364541657796}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1818360608 &6219542560264462429
+--- !u!1818360608 &8765948825579588463
 PositionConstraint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4246,8 +4242,8 @@ PositionConstraint:
   m_Enabled: 1
   serializedVersion: 2
   m_Weight: 1
-  m_TranslationAtRest: {x: -0.042, y: 0.047, z: 0.245}
-  m_TranslationOffset: {x: -0.04200301, y: -0.19017887, z: 0.15602484}
+  m_TranslationAtRest: {x: -0.071, y: 0, z: 0.11}
+  m_TranslationOffset: {x: -0.07100025, y: -0.23717883, z: 0.021026775}
   m_AffectTranslationX: 1
   m_AffectTranslationY: 1
   m_AffectTranslationZ: 1

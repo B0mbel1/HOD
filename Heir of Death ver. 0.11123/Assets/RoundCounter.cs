@@ -12,8 +12,8 @@ public class RoundCounter : NetworkBehaviour
     private void Update()
     {
         if(!IsOwner) return;
-        Debug.Log("Host" + counterhost);
-        Debug.Log("Klient" + counterclient);
+        //Debug.Log("Host" + counterhost);
+        //Debug.Log("Klient" + counterclient);
     }
 
     public override void OnNetworkSpawn()

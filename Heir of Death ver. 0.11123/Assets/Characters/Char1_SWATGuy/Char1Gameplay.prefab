@@ -65,7 +65,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5589131913242165098}
-  - component: {fileID: 3636443828194870317}
   m_Layer: 7
   m_Name: AS
   m_TagString: Untagged
@@ -88,26 +87,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4068499771633618227}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3636443828194870317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 240593245450896942}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 4069156427
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!1 &301857069750278643
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,7 +572,7 @@ MonoBehaviour:
   UnlockTime: 0
   isActivated: 0
   CanPressAbility: 1
-  rendererLocal: {fileID: 0}
+  rendererLocal: {fileID: 8164861330298392429}
   audioSource: {fileID: 4473649211927422123}
   invisibilitySound: {fileID: 8300000, guid: 60125022a3e9b4640910291b6546b212, type: 3}
 --- !u!1 &535606441097389940
@@ -2115,7 +2094,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {x: 0, y: 0, z: 0}
-  GetSpawnPosition: {fileID: 0}
+  GetSpawnPosition: {fileID: 2893557086950090720}
   ownerRoundCountTxt: {fileID: 444770164824778225}
   opponentRoundCountTxt: {fileID: 6843950796179199052}
   dead: 0
@@ -2160,6 +2139,7 @@ GameObject:
   - component: {fileID: 4925181003048660335}
   - component: {fileID: 8023079103482429257}
   - component: {fileID: 7168542318850935725}
+  - component: {fileID: 5766602441662715563}
   m_Layer: 0
   m_Name: Gun2
   m_TagString: Bron
@@ -2447,9 +2427,62 @@ MonoBehaviour:
   UnlockTime: 0
   isActivated: 0
   CanPressAbility: 1
-  rendererLocal: {fileID: 0}
+  rendererLocal: {fileID: 5766602441662715563}
   audioSource: {fileID: 4473649211927422123}
   invisibilitySound: {fileID: 8300000, guid: 60125022a3e9b4640910291b6546b212, type: 3}
+--- !u!137 &5766602441662715563
+SkinnedMeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2898455531196878150}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 3
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
+  m_Mesh: {fileID: 0}
+  m_Bones: []
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 0}
+  m_AABB:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_DirtyAABB: 0
 --- !u!1 &3027832687563353780
 GameObject:
   m_ObjectHideFlags: 0
@@ -3241,7 +3274,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.15
+  near clip plane: 0.23
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -4414,7 +4447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b6a45fa608a3ff4e958718057fb9491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PowerTimer: {fileID: 0}
+  PowerTimer: {fileID: 2852214998270963226}
   PowerTime: 5
   StartingValue: 0
   CooldownTime: 40
@@ -5251,6 +5284,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7287012120675114816}
+  - component: {fileID: 8164861330298392429}
   m_Layer: 0
   m_Name: smg2-kopia
   m_TagString: Bron
@@ -5286,6 +5320,59 @@ Transform:
   - {fileID: 2733982493925330713}
   m_Father: {fileID: 4068499771633618227}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!137 &8164861330298392429
+SkinnedMeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7956587611043005946}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 3
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
+  m_Mesh: {fileID: 0}
+  m_Bones: []
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 0}
+  m_AABB:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_DirtyAABB: 0
 --- !u!1 &7964312403613851648
 GameObject:
   m_ObjectHideFlags: 0
@@ -5500,10 +5587,6 @@ MonoBehaviour:
   cameraTransform: {fileID: 5364256205189576302}
   convertedRotation: 0
   roundedRotation: 0
-  playerHeight: 2
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!114 &799652640481805453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6158,14 +6241,14 @@ PrefabInstance:
       objectReference: {fileID: 2898455531196878150}
     - target: {fileID: 8087372784962087565, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8087372784962087565, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 4069156427
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 7435915038155686191, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
