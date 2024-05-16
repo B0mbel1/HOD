@@ -1062,7 +1062,7 @@ Transform:
   m_GameObject: {fileID: 2255731604096024370}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.047, y: 0, z: 0.20700002}
+  m_LocalPosition: {x: -0.0439993, y: 0.062001035, z: 0.12900019}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1078,15 +1078,15 @@ PositionConstraint:
   m_Enabled: 1
   serializedVersion: 2
   m_Weight: 1
-  m_TranslationAtRest: {x: -0.047, y: -0, z: 0.207}
-  m_TranslationOffset: {x: -0.047000375, y: -0.20560013, z: 0.13960993}
+  m_TranslationAtRest: {x: -0.044, y: 0.062, z: 0.129}
+  m_TranslationOffset: {x: -0.04400072, y: 0.06200043, z: 0.12900007}
   m_AffectTranslationX: 1
   m_AffectTranslationY: 1
   m_AffectTranslationZ: 1
   m_Active: 1
   m_IsLocked: 1
   m_Sources:
-  - sourceTransform: {fileID: 370803791777968270}
+  - sourceTransform: {fileID: 9027417661440808378}
     weight: 1
 --- !u!1 &2283631661825095805
 GameObject:
@@ -2236,7 +2236,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2217004620775099110}
   - component: {fileID: 8240552350350787284}
-  - component: {fileID: 8565091763372917139}
   - component: {fileID: 4738481665667830161}
   - component: {fileID: 2688482481550659249}
   - component: {fileID: 7888767460527069107}
@@ -2286,18 +2285,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8565091763372917139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4180423518062223596}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eec611b770c8ea64abdf29470498c00f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4738481665667830161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2716,7 +2703,7 @@ Transform:
   m_GameObject: {fileID: 5387732970571511840}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0065612793, y: 5.1380043, z: 0.39265192}
+  m_LocalPosition: {x: -0.045296807, y: 5.017, z: 0.414}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2820,15 +2807,15 @@ PositionConstraint:
   m_Enabled: 1
   serializedVersion: 2
   m_Weight: 1
-  m_TranslationAtRest: {x: 0.00033729957, y: 5.138, z: -0.153}
-  m_TranslationOffset: {x: 0, y: 0.211483, z: -0.17532602}
+  m_TranslationAtRest: {x: -0.045296807, y: 5.017, z: 0.414}
+  m_TranslationOffset: {x: 0, y: -0.09552002, z: 0.07438296}
   m_AffectTranslationX: 1
   m_AffectTranslationY: 1
   m_AffectTranslationZ: 1
   m_Active: 1
   m_IsLocked: 1
   m_Sources:
-  - sourceTransform: {fileID: 8085245551813217788}
+  - sourceTransform: {fileID: 0}
     weight: 1
 --- !u!1 &5546597007187701899
 GameObject:
