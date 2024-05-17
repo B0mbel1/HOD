@@ -3237,7 +3237,7 @@ Transform:
   m_GameObject: {fileID: 5837352391608814823}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.27500916, y: 4.864148, z: 0.06929737}
+  m_LocalPosition: {x: -0.27500916, y: 4.864148, z: 0.33000004}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3274,7 +3274,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.23
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -3327,8 +3327,8 @@ PositionConstraint:
   m_Enabled: 1
   serializedVersion: 2
   m_Weight: 1
-  m_TranslationAtRest: {x: -0.029373169, y: 4.87, z: 0.041709483}
-  m_TranslationOffset: {x: -0.10270691, y: 0.11394215, z: 0.2936626}
+  m_TranslationAtRest: {x: -0.27500916, y: 4.864148, z: 0.33}
+  m_TranslationOffset: {x: -0.10270691, y: 0.11394215, z: 0.5543653}
   m_AffectTranslationX: 1
   m_AffectTranslationY: 1
   m_AffectTranslationZ: 1
@@ -5511,7 +5511,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1491241262748418810}
   - component: {fileID: 7749195110203591039}
-  - component: {fileID: 6155256758433793197}
   - component: {fileID: 2207638637468220779}
   - component: {fileID: 799652640481805453}
   - component: {fileID: 2560428658579184535}
@@ -5560,18 +5559,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6155256758433793197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8679530547833647370}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eec611b770c8ea64abdf29470498c00f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2207638637468220779
 MonoBehaviour:
   m_ObjectHideFlags: 0
