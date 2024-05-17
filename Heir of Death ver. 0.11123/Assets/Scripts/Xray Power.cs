@@ -6,6 +6,8 @@ public class XrayPower : MonoBehaviour
     public Shader XrayShader;
     public Shader standardShader;
     public Text PowerTimer;
+    public AudioSource audioSource;
+    public AudioClip xrayPowerSound;
 
     public float PowerTime;
     public float StartingValue;
@@ -16,9 +18,6 @@ public class XrayPower : MonoBehaviour
     public bool isActivated;
     public bool CanPressAbility = true;
 
-    public AudioSource audioSource;
-    public AudioClip xrayPowerSound;
-    
     private void Start()
     {
         audioSource.clip = xrayPowerSound;

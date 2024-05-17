@@ -1,7 +1,4 @@
-using System.Collections.Generic;
 using Unity.Netcode;
-using Unity.Networking.Transport;
-using UnityEngine.Networking;
 using UnityEngine;
 
 public class AmmoUsage : NetworkBehaviour
@@ -9,11 +6,6 @@ public class AmmoUsage : NetworkBehaviour
     public GameObject clip;
 
     public bool czyHost;
-
-    //void Update()
-    //{
-    //    if (!IsOwner) return;
-    //}
 
     void OnTriggerEnter(Collider other)
     {
@@ -36,9 +28,4 @@ public class AmmoUsage : NetworkBehaviour
             }
         }
     }
-
-    
-
-    
-
 }

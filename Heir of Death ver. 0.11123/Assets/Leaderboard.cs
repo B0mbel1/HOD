@@ -63,8 +63,6 @@ public class Leaderboard : MonoBehaviour
         Debug.Log(error.GenerateErrorReport());
     }
 
-    
-
     public void OnLeaderboardUpdate(UpdatePlayerStatisticsResult result)
     {
 
@@ -78,6 +76,7 @@ public class Leaderboard : MonoBehaviour
             StartPosition = 0,
             MaxResultsCount = 10
         };
+
         PlayFabClientAPI.GetLeaderboard(request, OnLeaderboardGet, OnErrorL);
     }
 

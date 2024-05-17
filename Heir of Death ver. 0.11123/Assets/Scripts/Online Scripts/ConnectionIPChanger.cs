@@ -1,21 +1,13 @@
-using UnityEngine;
-using Unity.Netcode.Transports.UTP;
+using TMPro;
 using Unity.Netcode;
+using UnityEngine;
 
 public class ConnectionIPChanger : NetworkBehaviour
 {
+    [SerializeField] TextMeshProUGUI ipAddressText;
 
-    void Start()
-    {
-        if (IsHost)
-        {
-            NetworkManager.GetComponent<UnityTransport>().ConnectionData.Address = default;
-        }
-    }
-
-    // Update is called once per frame
     void Update()
     {
-
+        ipAddressText.text = ServerManager.AdresIP;
     }
 }

@@ -1,7 +1,6 @@
 using System.Linq;
 using Unity.Netcode;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 
 public class CharacterSpawner : NetworkBehaviour
 {
@@ -38,6 +37,7 @@ public class CharacterSpawner : NetworkBehaviour
                     Debug.Log(client.Value.clientId + " pozycja " + characterSpawnPoint.x + " " + characterSpawnPoint.y + " " + characterSpawnPoint.z);
                 }
             }
+
             SpawnHost();
         }
     }

@@ -1,46 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
-using Unity.Netcode.Components;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 
 public class shootingfinal_2 : NetworkBehaviour
 {
-    //Gun stats
-    public int damage;
-    public float timeBetweenShooting, spread, range, reloadTime, timeBetweenShots;
-    public int magazineSize, bulletsPerTap;
-    public bool allowButtonHold;
+    public float timeBetweenShooting, spread, range, reloadTime, timeBetweenShots, bulletSpeed;
     public static int bulletsLeft2;
+    public int magazineSize, bulletsPerTap, damage;
     int bulletsShot;
-
-    //bools 
+    public bool allowButtonHold;
     bool shooting, readyToShoot, reloading;
 
-    //Reference
     public Camera fpsCam;
-
     public AudioClip shootSound;
     public AudioClip reloadSound;
     private AudioSource audioSource;
-
-
     public GameObject pozycjaAS;
     public NetworkObject bulletPrefab;
     public Transform bulletSpawn;
-    public float bulletSpeed;
 
-    // Start is called before the first frame update
     void Start()
     {
         bulletsLeft2 = magazineSize;
         readyToShoot = true;
         audioSource = GetComponent<AudioSource>();
-
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!IsOwner) { return; }
@@ -49,6 +35,7 @@ public class shootingfinal_2 : NetworkBehaviour
         {
             MyInput();
         }
+
         if (!IsHost)
         {
             MyInput();
@@ -115,7 +102,7 @@ public class shootingfinal_2 : NetworkBehaviour
         Metoda(audioSource);
     }
 
-    [ServerRpc/*(RequireOwnership = false)*/]
+    [ServerRpc]
     public void SynchroServerRpc(ulong player)
     {
         ClientRpcParams clientRpcParams = new ClientRpcParams
@@ -126,7 +113,6 @@ public class shootingfinal_2 : NetworkBehaviour
             }
         };
         ClientMetodaClientRpc(clientRpcParams);
-        Debug.LogWarning("Synchro dzwiek");
     }
 
     private void MyInput()
@@ -167,8 +153,7 @@ public class shootingfinal_2 : NetworkBehaviour
                 BulletSpawnClientRpc(targetPosition, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
                 BulletSpawnServerRpc(targetPosition);
 
-                HostMetodaServerRpc(); //TO DZIA£A
-                                       //Requires ownership nwm czy coœ da³o
+                HostMetodaServerRpc();
                 SynchroServerRpc(1);
             }
             if (!IsHost && IsClient)
@@ -176,8 +161,8 @@ public class shootingfinal_2 : NetworkBehaviour
                 BulletSpawnServerRpc(targetPosition);
                 SynchroServerRpc(targetPosition);
 
-                HostMetodaServerRpc();//TO DZIA£A
-                SynchroServerRpc(0);//TO DZIA£A
+                HostMetodaServerRpc();
+                SynchroServerRpc(0);
             }
         }
         else
@@ -190,17 +175,17 @@ public class shootingfinal_2 : NetworkBehaviour
                 BulletSpawnClientRpc(targetPosition, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
 
 
-                HostMetodaServerRpc(); //TO DZIA£A
-                                       //Requires ownership nwm czy coœ da³o
+                HostMetodaServerRpc();
                 SynchroServerRpc(1);
             }
+
             if (!IsHost && IsClient)
             {
                 BulletSpawnServerRpc(targetPosition);
                 SynchroServerRpc(targetPosition);
 
-                HostMetodaServerRpc();//TO DZIA£A
-                SynchroServerRpc(0);//TO DZIA£A
+                HostMetodaServerRpc();
+                SynchroServerRpc(0);
             }
         }
 
@@ -212,7 +197,10 @@ public class shootingfinal_2 : NetworkBehaviour
         Invoke("ResetShot", timeBetweenShooting);
 
         if (bulletsShot > 0 && bulletsLeft2 > 0)
+        {
             Invoke("Shoot", timeBetweenShots);
+        }
+
         if (bulletsLeft2 == 0)
         {
             Reload();
@@ -223,10 +211,7 @@ public class shootingfinal_2 : NetworkBehaviour
     {
         while (Vector3.Distance(bulletRigidbody.position, targetPosition) > 0.1f)
         {
-            // Oblicz kierunek do celu
             Vector3 direction = (targetPosition - bulletRigidbody.position).normalized;
-
-            // Przemieszczaj pocisk w kierunku celu
             bulletRigidbody.MovePosition(bulletRigidbody.position + direction * speed * Time.deltaTime);
 
             yield return null;

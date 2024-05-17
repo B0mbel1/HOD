@@ -24,6 +24,7 @@ public class GunSystem : MonoBehaviour
         readyToShoot = true;
         audioSource = GetComponent<AudioSource>();
     }
+
     private void Update()
     {
         MyInput();

@@ -21,12 +21,6 @@ public class PlayfabManager : MonoBehaviour
     public GameObject RegisterScreen;
     public static string name = null;
     
-    
-    private void Start()
-    {
-        
-    }
-
     public class PlayerData
     {
         public int position;

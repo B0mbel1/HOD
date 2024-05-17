@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,6 +10,9 @@ public class FreeTeleportationOnline : NetworkBehaviour
     public GameObject gun;
     public GameObject gun2;
     public GameObject pointer;
+    public Text PowerTimer;
+    public AudioSource audioSource;
+    public AudioClip teleportationSound;
 
     Vector3 destination;
 
@@ -20,15 +21,10 @@ public class FreeTeleportationOnline : NetworkBehaviour
     public bool cooldownActivated;
     public bool canTp;
 
-    public Text PowerTimer;
-
-    public AudioSource audioSource;
-    public AudioClip teleportationSound;
-    
-
     private void Start()
     {
         if (!IsOwner) return;
+
         if (Main.Power == 1)
         {
             audioSource.clip = teleportationSound;
@@ -41,7 +37,9 @@ public class FreeTeleportationOnline : NetworkBehaviour
             IsTimerShown(false);
         }
     }
+
     public int ktoraBron;
+
     private void Update()
     {
         if (Main.Power == 1)
@@ -61,19 +59,7 @@ public class FreeTeleportationOnline : NetworkBehaviour
                     gun.SetActive(false);
                 }
             }
-            //if(gun2.activeSelf == true && gun.activeSelf == false)
-            //{
-            //    gun.SetActive(teleportState);
-            //    gun2.SetActive(!teleportState);
-            //}
-            //if(gun2.activeSelf == false && gun.activeSelf == true)
-            //{
-            //    gun2.SetActive(teleportState);
-            //    gun.SetActive(!teleportState);
-            //}
             pointer.SetActive(teleportState);
-
-
         }
     }
 
@@ -100,11 +86,6 @@ public class FreeTeleportationOnline : NetworkBehaviour
                         gun2.SetActive(true);
                     }
                 }
-                
-                //if (Input.GetKeyDown(KeyCode.Mouse1))
-                //{
-                //    teleportState = false;
-                //}
             }
 
             if (cooldownActivated == true)
@@ -113,8 +94,6 @@ public class FreeTeleportationOnline : NetworkBehaviour
             }
         }
     }
-
-    
 
     void Line()
     {
@@ -133,7 +112,6 @@ public class FreeTeleportationOnline : NetworkBehaviour
         transform.position = teleportationSpot.transform.position;
         IsTimerShown(true);
         cooldownActivated = true;
-        
 
         CooldownTime = CooldownStartingValue;
         canTp = false;
@@ -144,17 +122,14 @@ public class FreeTeleportationOnline : NetworkBehaviour
             SynchroDzwiekServerRpc(1);
         }
 
-        if(!IsHost && IsClient)
+        if (!IsHost && IsClient)
         {
             audioSource.PlayOneShot(teleportationSound);
             SynchroDzwiekServerRpc(0);
         }
 
-
-
-
         teleportState = false;
-        
+
         Debug.Log(teleportationSpot.transform.position);
     }
 

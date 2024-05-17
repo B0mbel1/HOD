@@ -37,7 +37,6 @@ public class MenuPauzy : MonoBehaviour
         GameIsPaused = true;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        
     }
 
     public void LoadMenu()

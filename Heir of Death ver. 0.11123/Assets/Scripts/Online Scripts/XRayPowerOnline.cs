@@ -23,7 +23,7 @@ public class XRayPowerOnline : NetworkBehaviour
 
     private void Start()
     {
-        if(!IsOwner) return;
+        if (!IsOwner) return;
         if (Main.Power == 3)
         {
             audioSource.clip = xrayPowerSound;
@@ -32,7 +32,7 @@ public class XRayPowerOnline : NetworkBehaviour
             StartingValue = PowerTime;
             CooldownStartingValue = CooldownTime;
 
-            
+
             SkinnedMeshRenderer renderer = GetComponent<SkinnedMeshRenderer>();
             if (renderer != null)
             {
@@ -47,7 +47,6 @@ public class XRayPowerOnline : NetworkBehaviour
 
     private void FixedUpdate()
     {
-        //if (!IsOwner) return;
         if (Main.Power == 3)
         {
             if (CanPressAbility && Input.GetKeyDown(KeyCode.Q))
@@ -67,7 +66,6 @@ public class XRayPowerOnline : NetworkBehaviour
                     audioSource.PlayOneShot(xrayPowerSound);
                     SynchroDzwiekServerRpc(0);
                 }
-               // audioSource.Play();
             }
 
             if (!CanPressAbility && Time.fixedTime >= UnlockTime)
@@ -124,7 +122,8 @@ public class XRayPowerOnline : NetworkBehaviour
                 isActivated = false;
             }
         }
-        if(!IsHost && IsClient)
+
+        if (!IsHost && IsClient)
         {
             if (activation == true)
             {
@@ -138,7 +137,6 @@ public class XRayPowerOnline : NetworkBehaviour
                 isActivated = false;
             }
         }
-        
     }
 
     bool IsTimerShown(bool timerActive)
@@ -166,18 +164,6 @@ public class XRayPowerOnline : NetworkBehaviour
     [ClientRpc]
     void CheckPlayersClientRpc(ClientRpcParams clientRpcParams)
     {
-        //foreach (NetworkClient client in NetworkManager.ConnectedClientsList)
-        //{
-        //    if (client.ClientId != NetworkManager.LocalClientId)
-        //    {
-        //        SkinnedMeshRenderer clientsRenderer = client.PlayerObject.GetComponentInParent<SkinnedMeshRenderer>();
-        //        if (clientsRenderer != null && XrayShader != null)
-        //        {
-        //            clientsRenderer.material.shader = XrayShader;
-        //        }
-        //    }
-        //}
-
         SkinnedMeshRenderer renderer = GetComponent<SkinnedMeshRenderer>();
 
         if (renderer != null && XrayShader != null)
@@ -188,23 +174,11 @@ public class XRayPowerOnline : NetworkBehaviour
         {
             Debug.LogError("Renderer or myCustomShader is not set.");
         }
-
     }
 
     [ClientRpc]
     void UncheckPlayersClientRpc(ClientRpcParams clientRpcParams)
     {
-        //foreach (NetworkClient client in NetworkManager.ConnectedClientsList)
-        //{
-        //    if (client.ClientId != NetworkManager.LocalClientId)
-        //    {
-        //        SkinnedMeshRenderer clientsRenderer = client.PlayerObject.GetComponentInParent<SkinnedMeshRenderer>();
-        //        if (clientsRenderer != null && XrayShader != null)
-        //        {
-        //            clientsRenderer.material.shader = standardShader;
-        //        }
-        //    }
-        //}
         SkinnedMeshRenderer renderer2 = GetComponent<SkinnedMeshRenderer>();
 
         if (renderer2 != null && standardShader != null)
@@ -215,7 +189,6 @@ public class XRayPowerOnline : NetworkBehaviour
         {
             Debug.LogError("Renderer or myCustomShader is not set.");
         }
-
     }
 
     [ServerRpc(RequireOwnership = false)]
@@ -232,7 +205,7 @@ public class XRayPowerOnline : NetworkBehaviour
         CheckPlayersClientRpc(clientRpcParams);
     }
 
-    [ServerRpc(RequireOwnership =false)]
+    [ServerRpc(RequireOwnership = false)]
     private void SynchroUncheckPlayersServerRpc(ulong b)
     {
         ClientRpcParams clientRpcParams = new ClientRpcParams

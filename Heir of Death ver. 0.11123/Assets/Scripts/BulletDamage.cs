@@ -15,11 +15,9 @@ public class BulletDamage : NetworkBehaviour
 
     void RotateSphereHorizontally()
     {
-        // Oblicz now¹ rotacjê
         float rotationAmount = rotationSpeed * Time.deltaTime;
         Quaternion targetRotation = Quaternion.Euler(90f, rotationAmount, 0f);
-
-        // Zastosuj rotacjê do transformacji kuli
+        
         transform.rotation *= targetRotation;
     }
 
@@ -156,6 +154,5 @@ public class BulletDamage : NetworkBehaviour
                 }
             }
         }
-        
     }
 }

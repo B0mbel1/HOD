@@ -9,11 +9,6 @@ public class LoadTick : MonoBehaviour
     public Toggle t4;
     public Toggle t5;
     
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         if(Main.Character == 1)

@@ -23,6 +23,7 @@ public class BetterAmmoScript : NetworkBehaviour
         {
             isBetterAmmoActivated = true;
             AmmoTimer.GetComponent<Text>().enabled = true;
+
             if (AmmoTimeLeft > 0)
             {
                 AmmoTimeLeft -= Time.deltaTime;

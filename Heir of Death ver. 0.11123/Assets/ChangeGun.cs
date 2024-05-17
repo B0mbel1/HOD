@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Security.Cryptography;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -15,7 +14,6 @@ public class ChangeGun : NetworkBehaviour
 
     void Update()
     {
-
         if (!IsOwner) return;
 
         if (IsHost)
@@ -29,21 +27,15 @@ public class ChangeGun : NetworkBehaviour
             {
                 if (!Input.GetKey(KeyCode.Q) && Input.GetKeyDown(KeyCode.Alpha1))
                 {
-                    //gun1.SetActive(true);
-                    //gun2.SetActive(false);
                     HostShowGunServerRpc(true, false);
                     ShowGunClientRpc(true,false, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
                 }
 
                 if (!Input.GetKey(KeyCode.Q) && Input.GetKeyDown(KeyCode.Alpha2))
                 {
-                    //gun1.SetActive(false);
-                    //gun2.SetActive(true);
                     HostShowGunServerRpc(false, true);
                     ShowGunClientRpc(false, true, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
-
                 }
-
             }
         }
 
@@ -70,8 +62,7 @@ public class ChangeGun : NetworkBehaviour
             }
         }
     }
-
-
+    
     public void ShowGun(bool show1, bool show2)
     {
         gun1.SetActive(show1);
@@ -103,7 +94,4 @@ public class ChangeGun : NetworkBehaviour
 
         ShowGunClientRpc(show1, show2, clientRpcParams);
     }
-
-
-
 }

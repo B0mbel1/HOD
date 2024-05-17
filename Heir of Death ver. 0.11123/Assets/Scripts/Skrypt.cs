@@ -4,6 +4,7 @@ using UnityEngine;
 public class Skrypt : NetworkBehaviour
 {
     public bool czyHost;
+
     public AudioClip ameno;
     private AudioSource audioSource;
     
@@ -20,6 +21,7 @@ public class Skrypt : NetworkBehaviour
         {
             czyHost = true;
         }
+
         if (IsClient && !IsHost)
         {
             czyHost = false;

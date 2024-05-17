@@ -11,7 +11,6 @@ public class SoundScripts : MonoBehaviour
     [SerializeField] private List<Transform> CanvaChildren;
 
     [SerializeField] private Slider sfxSlider;
-  
 
     public void Update()
     {
@@ -44,8 +43,8 @@ public class SoundScripts : MonoBehaviour
         {
             SetsfxVolume();
         }
-
     }
+
     public void TurnOffAudioSources(Transform parent)
     {
         foreach (Transform child in parent)
@@ -57,7 +56,7 @@ public class SoundScripts : MonoBehaviour
                 audioSource.enabled = false;
             }
 
-            TurnOffAudioSources(child); 
+            TurnOffAudioSources(child);
         }
     }
 
@@ -95,12 +94,9 @@ public class SoundScripts : MonoBehaviour
     private void LoadVolume()
     {
         musicSlider.value = PlayerPrefs.GetFloat("musicVolume");
-
         sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume");
 
-
         SetMusicVolume();
-
         SetsfxVolume();
     }
 }

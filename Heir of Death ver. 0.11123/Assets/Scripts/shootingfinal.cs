@@ -1,41 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using Unity.Netcode;
-using Unity.Netcode.Components;
 using UnityEngine;
 
 public class shootingfinal : NetworkBehaviour
 {
-    //Gun stats
-    public int damage;
-    public float timeBetweenShooting, spread, range, reloadTime, timeBetweenShots;
-    public int magazineSize, bulletsPerTap;
+    public float timeBetweenShooting, spread, range, reloadTime, timeBetweenShots, bulletSpeed;
+    public int magazineSize, bulletsPerTap, damage;
     public static int bulletsLeft1;
     int bulletsShot;
-    public float bulletSpeed;
-
-    //bools 
-    bool shooting, readyToShoot, reloading;
     public bool allowButtonHold;
+    bool shooting, readyToShoot, reloading;
 
     public Camera fpsCam;
     public AudioClip shootSound;
     public AudioClip reloadSound;
     private AudioSource audioSource;
-
     public GameObject pozycjaAS;
     public NetworkObject bulletPrefab;
     public Transform bulletSpawn;
 
     void Start()
     {
-
         bulletsLeft1 = magazineSize;
         readyToShoot = true;
         audioSource = GetComponent<AudioSource>();
-
-
     }
 
     void Update()
@@ -46,6 +35,7 @@ public class shootingfinal : NetworkBehaviour
         {
             MyInput();
         }
+
         if (!IsHost && IsClient)
         {
             MyInput();
@@ -63,7 +53,6 @@ public class shootingfinal : NetworkBehaviour
         NetworkObject bulletInstance = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
         Rigidbody bulletRigidbody = bulletInstance.GetComponent<Rigidbody>();
         StartCoroutine(MoveBulletToPosition(bulletRigidbody, vector, bulletSpeed));
-
     }
 
     [ClientRpc]
@@ -72,7 +61,6 @@ public class shootingfinal : NetworkBehaviour
         NetworkObject bulletInstance = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
         Rigidbody bulletRigidbody = bulletInstance.GetComponent<Rigidbody>();
         StartCoroutine(MoveBulletToPosition(bulletRigidbody, vector, bulletSpeed));
-
     }
 
     [ServerRpc]
@@ -92,10 +80,12 @@ public class shootingfinal : NetworkBehaviour
     private void Metoda(AudioSource audioSource)
     {
         audioSource.gameObject.transform.position = pozycjaAS.transform.position;
+
         if (IsHost)
         {
             AudioSource.PlayClipAtPoint(shootSound, audioSource.gameObject.transform.position);
         }
+
         if (!IsHost && IsClient)
         {
             AudioSource.PlayClipAtPoint(shootSound, audioSource.gameObject.transform.position);
@@ -165,9 +155,7 @@ public class shootingfinal : NetworkBehaviour
                 BulletSpawnClientRpc(targetPosition, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
                 BulletSpawnServerRpc(targetPosition);
 
-                HostMetodaServerRpc(); //TO DZIA£A
-                                       //Requires ownership nwm czy coœ da³o
-
+                HostMetodaServerRpc();
                 SynchroServerRpc(1);
             }
 
@@ -176,8 +164,8 @@ public class shootingfinal : NetworkBehaviour
                 BulletSpawnServerRpc(targetPosition);
                 SynchroServerRpc(targetPosition);
 
-                HostMetodaServerRpc();//TO DZIA£A
-                SynchroServerRpc(0);//TO DZIA£A
+                HostMetodaServerRpc();
+                SynchroServerRpc(0);
             }
         }
         else
@@ -189,18 +177,17 @@ public class shootingfinal : NetworkBehaviour
                 BulletSpawnServerRpc(targetPosition);
                 BulletSpawnClientRpc(targetPosition, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
 
-                HostMetodaServerRpc(); //TO DZIA£A
-                                       //Requires ownership nwm czy coœ da³o
-
+                HostMetodaServerRpc();
                 SynchroServerRpc(1);
             }
+
             if (!IsHost && IsClient)
             {
                 BulletSpawnServerRpc(targetPosition);
                 SynchroServerRpc(targetPosition);
 
-                HostMetodaServerRpc();//TO DZIA£A
-                SynchroServerRpc(0);//TO DZIA£A
+                HostMetodaServerRpc();
+                SynchroServerRpc(0);
             }
         }
 
@@ -212,30 +199,25 @@ public class shootingfinal : NetworkBehaviour
         Invoke("ResetShot", timeBetweenShooting);
 
         if (bulletsShot > 0 && bulletsLeft1 > 0)
+        {
             Invoke("Shoot", timeBetweenShots);
+        }
+
         if (bulletsLeft1 == 0)
         {
             Reload();
         }
     }
 
-   
-
     IEnumerator MoveBulletToPosition(Rigidbody bulletRigidbody, Vector3 targetPosition, float speed)
     {
-
         while (bulletRigidbody != null && Vector3.Distance(bulletRigidbody.position, targetPosition) > 0.1f)
         {
-            // Oblicz kierunek do celu
             Vector3 direction = (targetPosition - bulletRigidbody.position).normalized;
-
-            // Przemieszczaj pocisk w kierunku celu
             bulletRigidbody.MovePosition(bulletRigidbody.position + direction * speed * Time.deltaTime);
 
             yield return null;
         }
-
-
     }
 
     private void ResetShot()

@@ -12,23 +12,15 @@ public class RifleAnimationsOnline : NetworkBehaviour
 
     void Start()
     {
-        animator= GetComponent<Animator>();
-        
+        animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!IsOwner) return;
 
-
-        // Get the rotation around the x-axis of the camera
         float rotationX = cameraTransform.rotation.eulerAngles.x;
-       // float mouseY = Input.GetAxisRaw("Mouse Y");
-        //xRotation -= mouseY;
-        // Convert the rotation to float values with range -90 to 90
         convertedRotation = NormalizeRotation(rotationX, -90f, 90f);
-       // convertedRotation = NormalizeRotation(xRotation, -30f, 90f);
         roundedRotation = Mathf.RoundToInt(convertedRotation);
 
         animator.SetFloat("camera", roundedRotation);
@@ -67,7 +59,7 @@ public class RifleAnimationsOnline : NetworkBehaviour
 
         if (!shooting && LPMPressed)
         {
-           animator.SetBool("shooting", true);
+            animator.SetBool("shooting", true);
         }
 
         if (shooting && !LPMPressed)
@@ -155,7 +147,7 @@ public class RifleAnimationsOnline : NetworkBehaviour
             animator.SetBool("isSprinting", false);
         }
 
-        if (!ForwardLeft  && leftPressed)
+        if (!ForwardLeft && leftPressed)
         {
             animator.SetBool("ForwardLeft", true);
         }
@@ -205,8 +197,8 @@ public class RifleAnimationsOnline : NetworkBehaviour
             animator.SetBool("Jump", false);
         }
 
-
     }
+
     float NormalizeRotation(float rotation, float min, float max)
     {
         rotation = rotation % 360f;

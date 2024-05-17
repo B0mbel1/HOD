@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
@@ -27,23 +26,12 @@ public class PlayerHealth : NetworkBehaviour
         {
             czyHost = true;
         }
+
         if (IsClient && !IsHost)
         {
             czyHost = false;
         }
-
-        //Dzia³aj¹cy skrypt z zadawaniem obra¿eñ/////////////////////////
-        //if (Input.GetKeyDown(KeyCode.E) && IsHost)
-        //{
-        //    DamageClientRpc(12f, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
-
-        //}
-
-        //if (Input.GetKeyDown(KeyCode.T) && IsClient && !IsHost)
-        //{
-        //    DamageServerRpc(12f);
-
-        //}
+        
         if (Input.GetKeyDown(KeyCode.B))
         {
             health = health - 20;
@@ -51,7 +39,6 @@ public class PlayerHealth : NetworkBehaviour
         }
 
         UpdateHealthUI();
-        //health = Mathf.Clamp(health, 0, maxHealth);
     }
 
     public override void OnNetworkSpawn()
@@ -64,6 +51,7 @@ public class PlayerHealth : NetworkBehaviour
         float fillF = frontHealthBar.fillAmount;
         float fillB = backHealthBar.fillAmount;
         float hFraction = health / maxHealth;
+
         if (fillB > hFraction)
         {
             frontHealthBar.fillAmount = hFraction;
@@ -72,6 +60,7 @@ public class PlayerHealth : NetworkBehaviour
             float percentComplete = lerpTimer / chipSpeed;
             backHealthBar.fillAmount = Mathf.Lerp(fillB, fillF, percentComplete);
         }
+
         if (fillF < hFraction)
         {
             backHealthBar.color = Color.green;
@@ -116,19 +105,12 @@ public class PlayerHealth : NetworkBehaviour
         RestoreHealthClientRpc(healAmount, clientRpcParams);
     }
 
-    //public void RestoreHealth(float healAmount)
-    //{
-    //    health += healAmount;
-    //    lerpTimer = 0f;
-    //}
-
     [ServerRpc]
     public void RestoreHealthServerRpc(float healAmount)
     {
         health += healAmount;
         healAmount = 0;
         lerpTimer = 0f;
-
     }
 
     [ClientRpc]
