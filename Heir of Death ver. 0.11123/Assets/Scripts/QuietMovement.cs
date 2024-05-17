@@ -8,18 +8,13 @@ public class QuietMovement : MonoBehaviour
     public AudioSource audioSourcePower;
     public AudioClip stealth;
 
-    public float CooldownTime;
-    public float CooldownStartingValue;
-    public bool cooldownActivated;
-    public float PowerTime;
-    public float StartingValue;
-    public bool isActivated;
-    public bool CanPressAbility = true;
-    public float UnlockTime;
+    public float CooldownTime, CooldownStartingValue, PowerTime, StartingValue, UnlockTime;
+    public bool cooldownActivated, isActivated, CanPressAbility = true;
 
     void Start()
     {
         audioSourcePower.clip = stealth;
+
         if(Main.Power == 4)
         {
             IsTimerShown(false);

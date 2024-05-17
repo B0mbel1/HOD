@@ -1,6 +1,4 @@
-using System.Collections.Generic;
 using Unity.Netcode;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class GraveInteraction : NetworkBehaviour
@@ -48,7 +46,6 @@ public class GraveInteraction : NetworkBehaviour
                 }
             }
         }
-        
     }
 
     public override void OnNetworkSpawn()

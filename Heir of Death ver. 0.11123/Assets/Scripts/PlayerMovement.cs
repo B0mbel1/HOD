@@ -7,7 +7,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
     bool altPressed; 
     bool sprintPressed; 
     [Header("Walking")]
@@ -107,10 +106,10 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, whatIsGround);
+
         MyInput();
         SpeedControl();
         StateHandler();
-
         ProgressStepCycle(1f);
 
         if (grounded)
@@ -341,11 +340,14 @@ public class PlayerMovement : MonoBehaviour
         {
             stepCycle += (rigid.velocity.sqrMagnitude + (speed * (isWalking ? 1f : runstepLenghten))) * Time.fixedDeltaTime;
         }
+
         if (!(stepCycle > nextStep))
         {
             return;
         }
+
         nextStep = stepCycle + stepInterval;
+
         if (!audioSource.isPlaying)
         {
             PlayFootStepAudio();

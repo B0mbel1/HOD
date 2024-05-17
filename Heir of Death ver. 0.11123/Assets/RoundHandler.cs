@@ -1,12 +1,7 @@
-
 using System;
 using TMPro;
-using Unity.Multiplayer.Samples.Utilities.ClientAuthority;
 using Unity.Netcode;
-
 using UnityEngine;
-
-
 
 public class RoundHandler : NetworkBehaviour
 {
@@ -20,18 +15,16 @@ public class RoundHandler : NetworkBehaviour
 
     public override void OnNetworkSpawn()
     {
-
         spawnPoint = GetSpawnPosition.transform.position;
         dead = false;
         Debug.Log(spawnPoint);
         base.OnNetworkSpawn();
         ulongVar = NetworkManager.LocalClientId;
         intVar = Convert.ToInt32(ulongVar.ToString());
-
     }
+
     private void Update()
     {
-
         if (!IsOwner) return;
         if (PlayerHealth.health <= 0)
         {
@@ -49,10 +42,6 @@ public class RoundHandler : NetworkBehaviour
             ownerRoundCountTxt.text = RoundCounter.counterclient.ToString();
             opponentRoundCountTxt.text = RoundCounter.counterhost.ToString();
         }
-
-        
-
-
     }
 
     private void FixedUpdate()
@@ -63,8 +52,6 @@ public class RoundHandler : NetworkBehaviour
             //RespawnPlayer(NetworkManager.LocalClientId);
         }
     }
-
-
 
     public void Die()
     {
@@ -81,31 +68,22 @@ public class RoundHandler : NetworkBehaviour
         }
 
         Debug.Log("Destroying");
-         
-        
-        
+
         GetComponent<PlayerMovementOnline>().enabled = false;
         GetComponentInChildren<MeshRenderer>().enabled = false;
         GetComponentInChildren<shootingfinal>().enabled = false;
         RespawnPlayer();
-        
-        
     }
 
     public void RespawnPlayer()
     {
-
-        
         GetComponentInChildren<MeshRenderer>().enabled = true;
         GetComponent<PlayerMovementOnline>().enabled = true;
         GetComponentInChildren<shootingfinal>().enabled = true;
+
         transform.position = spawnPoint;
-
         dead = false;
-        
     }
-
-    
 
     public void HostRoundWin()
     {
@@ -127,10 +105,8 @@ public class RoundHandler : NetworkBehaviour
     public void UpdateClientRoundWinClientRpc()
     {
         if (!IsHost)
-        { 
-        RoundCounter.counterclient += 1;
+        {
+            RoundCounter.counterclient += 1;
         }
     }
-
-    
 }

@@ -1,13 +1,11 @@
-using UnityEngine;
-using Unity.Netcode.Transports.UTP;
-using Unity.Netcode;
 using TMPro;
+using Unity.Netcode;
+using UnityEngine;
 
 public class ConnectionIPChanger : NetworkBehaviour
 {
     [SerializeField] TextMeshProUGUI ipAddressText;
 
-    
     void Update()
     {
         ipAddressText.text = ServerManager.AdresIP;

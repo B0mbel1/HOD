@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -52,6 +50,7 @@ public class SlidingOnline : NetworkBehaviour
     private void FixedUpdate()
     {
         if (!IsOwner) return;
+
         if (pm.sliding)
         {
             SlidingMovement();

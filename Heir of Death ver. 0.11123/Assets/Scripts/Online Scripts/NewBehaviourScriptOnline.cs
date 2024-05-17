@@ -5,11 +5,10 @@ public class NewBehaviourScriptOnline : NetworkBehaviour
 {
     public float sensX;
     public float sensY;
-
-    public Transform orientation;
-
     float xRotation;
     float yRotation;
+
+    public Transform orientation;
 
     void Start()
     {

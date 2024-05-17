@@ -10,15 +10,18 @@ public class TerrainChecker : NetworkBehaviour
 
         int mapX = Mathf.RoundToInt((playerPos.x - tPosition.x) / tData.size.x * tData.alphamapWidth);
         int mapZ = Mathf.RoundToInt((playerPos.z - tPosition.z) / tData.size.z * tData.alphamapHeight);
-        float[,,] splatMapData = tData.GetAlphamaps(mapX, mapZ, 1, 1);
 
+        float[,,] splatMapData = tData.GetAlphamaps(mapX, mapZ, 1, 1);
         float[] cellmix = new float[splatMapData.GetUpperBound(2) + 1];
+
         for (int i = 0; i < cellmix.Length; i++)
         {
             cellmix[i] = splatMapData[0, 0, i];
         }
+
         return cellmix;
     }
+
     public void Update()
     {
         if (!IsOwner) return;

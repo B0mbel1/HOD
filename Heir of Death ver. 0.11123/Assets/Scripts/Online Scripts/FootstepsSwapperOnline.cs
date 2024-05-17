@@ -1,9 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
-
-
 
 public class FootStepsSwapperOnline : NetworkBehaviour
 {
@@ -15,10 +11,10 @@ public class FootStepsSwapperOnline : NetworkBehaviour
 
     void Start()
     {
-
         checker = NetworkManager.gameObject.AddComponent<TerrainChecker>();
         pMovement = GetComponent<PlayerMovementOnline>();
     }
+
     public void Update()
     {
        if (!IsOwner) return;
@@ -37,6 +33,7 @@ public class FootStepsSwapperOnline : NetworkBehaviour
                 if (currentLayer != checker.GetLayerName(transform.position, t))
                 {
                     currentLayer = checker.GetLayerName(transform.position, t);
+
                     foreach (FootStepCollection collection in terrainFootstepCollection)
                     {
                         if (currentLayer == collection.name)
@@ -46,6 +43,7 @@ public class FootStepsSwapperOnline : NetworkBehaviour
                     }
                 }
             }
+
             if (hit.transform.GetComponent<SurfaceType>() != null)
             {
                 FootStepCollection collection = hit.transform.GetComponent<SurfaceType>().footStepCollection;

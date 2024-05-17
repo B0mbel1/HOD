@@ -4,11 +4,6 @@ using UnityEngine;
 public class DisplayPlayerName : MonoBehaviour
 {
     public TextMeshProUGUI username;
-    
-    void Start()
-    {
-        
-    }
 
     void Update()
     {

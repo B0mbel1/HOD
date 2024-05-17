@@ -3,16 +3,16 @@ using UnityEngine;
 
 public class PlayerWeapon : MonoBehaviour
 {
-    public GameObject bulletPrefab;
-    public Transform bulletSpawn;
     public float bulletSpeed = 1;
     public float lifeTime = 3;
     public int maxAmmo = 6;
     private int currentAmmo;
     private bool isReloading = false;
+
+    public GameObject bulletPrefab;
+    public Transform bulletSpawn;
     public AudioClip shootSound;
     public AudioClip reloadSound;
-
     private AudioSource audioSource;
 
     void Start()
@@ -43,7 +43,7 @@ public class PlayerWeapon : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.R)) 
+            if (Input.GetKeyDown(KeyCode.R))
             {
                 StartCoroutine(Reload());
             }

@@ -1,10 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using Unity.Netcode;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(AudioSource))]
 
@@ -47,13 +45,11 @@ public class PlayerMovementOnline : NetworkBehaviour
     private RaycastHit slopeHit;
     private bool exitingSlope;
 
-    public Transform orientation;
-
     float horizontalInput;
     float verticalInput;
-
     Vector3 moveDirection;
 
+    public Transform orientation;
     Rigidbody rb;
 
     public MovementState state;
@@ -65,7 +61,6 @@ public class PlayerMovementOnline : NetworkBehaviour
     [SerializeField] private bool isWalking;
     [SerializeField][Range(0f, 1f)] private float runstepLenghten;
     [SerializeField] private float stepInterval;
-
     
     public bool wyslanie;
     public GameObject pozycjaASC;
@@ -92,36 +87,36 @@ public class PlayerMovementOnline : NetworkBehaviour
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        
         rb.freezeRotation = true;
         readyToJump = true;
         startYScale = transform.localScale.y;
-
-        footStepsSwapper = GetComponent<FootStepsSwapperOnline>();
         stepCycle = 0f;
         nextStep = stepCycle / 2f;
+
+        footStepsSwapper = GetComponent<FootStepsSwapperOnline>();
+        rb = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
         character = GetComponent<Character>();
         rigid = GetComponent<Rigidbody>();
 
-        PlayLandingSound += TestPlayLandingSound;   //ZMIANA
+        PlayLandingSound += TestPlayLandingSound;
     }
 
     void Update()
     {
         if (!IsOwner) { return; }
 
-      
-
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, whatIsGround);
+
         MyInput();
         SpeedControl();
 
         if (IsHost)
         {
             ProgressStepCycle(1f);
-
         }
+
         if (!IsHost && IsClient)
         {
             ProgressStepCycle(1f);
@@ -140,7 +135,7 @@ public class PlayerMovementOnline : NetworkBehaviour
 
         if (wasAirborne && grounded && rb.velocity.y <= 0)
         {
-            PlayLandingSound.Invoke(this, EventArgs.Empty); //ZMIANA
+            PlayLandingSound.Invoke(this, EventArgs.Empty); 
         }
 
         if (!grounded && rb.velocity.y <= 0)
@@ -155,7 +150,6 @@ public class PlayerMovementOnline : NetworkBehaviour
 
     void FixedUpdate()
     {
-        //if (!IsOwner) return;
         MovePlayer();
     }
 
@@ -199,13 +193,11 @@ public class PlayerMovementOnline : NetworkBehaviour
                 desiredMoveSpeed = sprintSpeed;
             }
         }
-
         else if (Input.GetKey(crouchKey))
         {
             state = MovementState.crouching;
             desiredMoveSpeed = crouchSpeed;
         }
-
         else if (grounded && Input.GetKey(sprintKey))
         {
             state = MovementState.sprinting;
@@ -213,13 +205,11 @@ public class PlayerMovementOnline : NetworkBehaviour
             isWalking = true;
             ProgressStepCycle(2f);
         }
-
         else if (grounded)
         {
             state = MovementState.walking;
             desiredMoveSpeed = walkSpeed;
         }
-
         else
         {
             state = MovementState.air;
@@ -267,7 +257,6 @@ public class PlayerMovementOnline : NetworkBehaviour
                 rb.AddForce(Vector3.down * 80f, ForceMode.Force);
             }
         }
-
         else if (grounded)
         {
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
@@ -313,7 +302,6 @@ public class PlayerMovementOnline : NetworkBehaviour
 
     void ResetJump()
     {
-
         readyToJump = true;
         exitingSlope = false;
     }
@@ -342,7 +330,7 @@ public class PlayerMovementOnline : NetworkBehaviour
     }
 
     public event EventHandler PlayLandingSound;
-    private void TestPlayLandingSound(object sender, EventArgs e)        //ZMIANA
+    private void TestPlayLandingSound(object sender, EventArgs e)       
     {
         footStepsSwapper.CheckLayer();
         audioSource.clip = landSound;
@@ -351,19 +339,20 @@ public class PlayerMovementOnline : NetworkBehaviour
     }
 
     private float lastFootstepTime;
-
-
     public static bool czyWyslacDzwiek = true;
+
     private void ProgressStepCycle(float speed)
     {
         if (rigid.velocity.sqrMagnitude > 0 && (moveDirection.x != 0 || moveDirection.y != 0))
         {
             stepCycle += (rigid.velocity.sqrMagnitude + (speed * (isWalking ? 1f : runstepLenghten))) * Time.fixedDeltaTime;
         }
+
         if (!(stepCycle > nextStep))
         {
             return;
         }
+
         nextStep = stepCycle + stepInterval;
 
         if (!audioSource.isPlaying)
@@ -374,6 +363,7 @@ public class PlayerMovementOnline : NetworkBehaviour
             {
                 SynchroServerRpc(1);
             }
+
             if (!IsHost && IsClient && czyWyslacDzwiek)
             {
                 SynchroServerRpc(0);
@@ -412,6 +402,7 @@ public class PlayerMovementOnline : NetworkBehaviour
         {
             footStepsSounds.Add(collection.footstepSound[i]);
         }
+
         jumpSound = collection.jumpSound;
         landSound = collection.landSound;
     }
@@ -420,7 +411,6 @@ public class PlayerMovementOnline : NetworkBehaviour
     private void MetodaServerRpc()
     {
         Metoda(audioSource);
-
     }
 
     [ClientRpc]
@@ -439,6 +429,7 @@ public class PlayerMovementOnline : NetworkBehaviour
                 TargetClientIds = new ulong[] { player }
             }
         };
+
         MetodaClientRpc(clientRpcParams);
     }
 
@@ -455,6 +446,3 @@ public class PlayerMovementOnline : NetworkBehaviour
         }
     }
 }
-
-
-

@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -9,8 +7,8 @@ public class DoorInteraction : NetworkBehaviour
     public GameObject door;
     public AudioClip doorSound;
     public AudioSource doorSource;
-
     private Animator doorAnimator;
+    
     public bool isOpened;
     public bool czyHost;
 
@@ -28,8 +26,6 @@ public class DoorInteraction : NetworkBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        //if (!IsOwner) return;
-       
         if (IsHost)
         {
             if (other.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.E))
@@ -39,6 +35,7 @@ public class DoorInteraction : NetworkBehaviour
                 SynchroServerRpc(1);
             }
         }
+
         if (!IsHost && IsClient == true)
         {
             if (other.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.E))

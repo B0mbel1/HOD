@@ -13,6 +13,7 @@ public class AnimiationsOnline : NetworkBehaviour
     void Update()
     {
         if (!IsOwner) return;
+
         if (Input.GetKey("w") || Input.GetKey("s") || Input.GetKey("a") || Input.GetKey("d"))
         {
             animator.SetBool("isWalking", true);

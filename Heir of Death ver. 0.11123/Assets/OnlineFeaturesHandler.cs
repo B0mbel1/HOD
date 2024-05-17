@@ -1,11 +1,8 @@
-using JetBrains.Annotations;
 using PlayFab;
 using PlayFab.ClientModels;
-using System;
 using System.Collections.Generic;
 using TMPro;
 using Unity.Netcode;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -53,8 +50,6 @@ public class OnlineFeaturesHandler : MonoBehaviour
         }
     }
 
-    
-
     public void DisplayInfoAboutLogin()
     {
         Info.text = "Aby skorzystaæ z tych funkcji zaloguj siê";
@@ -85,9 +80,6 @@ public class OnlineFeaturesHandler : MonoBehaviour
         }
     }
 
-    ////////////////////////////////////////////////////////////////
-    ///
-
     public void SendLvl(int wynik)
     {
         var request = new UpdatePlayerStatisticsRequest
@@ -116,7 +108,6 @@ public class OnlineFeaturesHandler : MonoBehaviour
         GetLvl();
     }
 
-
     public void GetLvl()
     {
         var request = new GetLeaderboardRequest
@@ -135,14 +126,9 @@ public class OnlineFeaturesHandler : MonoBehaviour
             if(item.DisplayName == PlayfabManager.name)
             {
                 PoziomNumberTXT.text = item.StatValue.ToString();
-
-
             }
         }
     }
-
-    ////////////////////////////////////////////////////////////////////////
-    ///
 
     public void GetLeaderboard()
     {
@@ -175,14 +161,17 @@ public class OnlineFeaturesHandler : MonoBehaviour
                 Debug.Log(wynik);
                 zaokraglenie = (int)wynik;
                 Debug.Log(zaokraglenie);
+
                 if (wynik > zaokraglenie)
                 {
                     zaokraglenie++;
                 }
+
                 if(zaokraglenie <= 0)
                 {
                     zaokraglenie = 0;
                 }
+
                 SendLvl(zaokraglenie);
             }
         }

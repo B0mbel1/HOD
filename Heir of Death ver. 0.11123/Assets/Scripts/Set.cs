@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
@@ -10,9 +8,9 @@ public class Set : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI ipAddressText;
     [SerializeField] InputField ip;
+    [SerializeField] UnityTransport transport;
 
     [SerializeField] string ipAddress;
-    [SerializeField] UnityTransport transport;
 
     private void Awake()
     {

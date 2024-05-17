@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -9,7 +8,7 @@ public class Health : NetworkBehaviour
 
     private void Update()
     {
-        if (!IsOwner) return; // Only allow local player to interact with health
+        if (!IsOwner) return;
 
         if (Input.GetKeyDown(KeyCode.L))
         {
@@ -17,10 +16,6 @@ public class Health : NetworkBehaviour
             {
                 DamageServerRpc(5);
             }
-            //else if (IsClient)
-            //{
-            //   DamageClient(5);
-            //}
         }
     }
 
@@ -43,10 +38,4 @@ public class Health : NetworkBehaviour
     {
         health1 = health.Value;
     }
-
-  
-
-
-
-
 }

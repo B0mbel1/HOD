@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class CharacterSelectDisplay : NetworkBehaviour
 {
-    private NetworkList<CharacterSelectState> players;
     [SerializeField] private GameObject characterInfoPanel;
     [SerializeField] private TMP_Text characterNameText;
     [SerializeField] private TMP_Text characterBioText;
@@ -16,6 +15,8 @@ public class CharacterSelectDisplay : NetworkBehaviour
     [SerializeField] private PlayerCard[] playerCards;
     [SerializeField] private Transform introSpawnPoint;
     [SerializeField] private Button lockInButton;
+
+    private NetworkList<CharacterSelectState> players;
     private GameObject introInstance;
     private List<CharacterSelectButton> characterButtons = new List<CharacterSelectButton>();
 

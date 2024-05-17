@@ -1,7 +1,5 @@
 using PlayFab;
 using PlayFab.ClientModels;
-using PlayFab.EventsModels;
-using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
@@ -11,12 +9,12 @@ public class HandleWinLose : NetworkBehaviour
 {
     public GameObject winScreen;
     public GameObject loseScreen;
+
     public int wynik;
     private bool leaderboardUpdated = false;
 
     public void Update()
     {
-        //if (!IsOwner) return;
         if (RoundCounter.counterhost >= 10 && !leaderboardUpdated)
         {
             if (IsHost)
@@ -26,6 +24,7 @@ public class HandleWinLose : NetworkBehaviour
                 ActivateWinScreen();
                 leaderboardUpdated = true;
             }
+
             if (!IsHost && IsClient)
             {
                 ActivateLoseScreen();
@@ -40,6 +39,7 @@ public class HandleWinLose : NetworkBehaviour
                 ActivateLoseScreen();
                 leaderboardUpdated = true;
             }
+
             if (!IsHost && IsClient)
             {
                 wynik = 1;
@@ -58,9 +58,9 @@ public class HandleWinLose : NetworkBehaviour
 
     public override void OnNetworkDespawn()
     {
-        
         base.OnNetworkDespawn();
     }
+
     public void ActivateWinScreen()
     {
         winScreen.SetActive(true);
@@ -68,10 +68,8 @@ public class HandleWinLose : NetworkBehaviour
         
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        
     }
 
-    
     public void ActivateLoseScreen()
     {
         loseScreen.SetActive(true);
@@ -81,16 +79,12 @@ public class HandleWinLose : NetworkBehaviour
         Cursor.visible = true;
     }
 
-    
-
     public void WyjdzZGry()
     {
         RoundCounter.counterhost = 0;
         RoundCounter.counterclient = 0;
         Time.timeScale = 1f;
         ServerManager.Instance.StopServer();
-
-        
         SceneManager.LoadScene("Menu");
     }
 
@@ -107,6 +101,7 @@ public class HandleWinLose : NetworkBehaviour
                 }
             }
         };
+
         PlayFabClientAPI.UpdatePlayerStatistics(request, OnLeaderboardUpdate, OnErrorL);
     }
 
@@ -115,8 +110,6 @@ public class HandleWinLose : NetworkBehaviour
         Debug.Log(error.ErrorMessage);
         Debug.Log(error.GenerateErrorReport());
     }
-
-
 
     public void OnLeaderboardUpdate(UpdatePlayerStatisticsResult result)
     {

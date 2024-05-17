@@ -11,46 +11,37 @@ public class AnimationControllerSwitcherOnline : NetworkBehaviour
     [SerializeField] private GameObject gun1;
     [SerializeField] private GameObject gun2;
 
-
     void LateUpdate()
     {
-        if(!IsOwner) { return; }
+        if (!IsOwner) { return; }
 
         if (IsHost)
         {
             if (gun1.activeSelf == true && gun2.activeSelf == false)
             {
-                //animator.runtimeAnimatorController = rifleanimations;
-
                 HostRifleServerRpc();
                 ClientRifleClientRpc(new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
             }
 
             if (gun2.activeSelf == true && gun1.activeSelf == false)
             {
-                //animator.runtimeAnimatorController = gunanimations;
-
                 HostPistolServerRpc();
-
                 ClientPistolClientRpc(new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
             }
         }
 
-        if(!IsHost && IsClient)
+        if (!IsHost && IsClient)
         {
             if (gun1.activeSelf == true && gun2.activeSelf == false)
             {
-                //animator.runtimeAnimatorController = rifleanimations;
                 HostRifleServerRpc();
                 SynchroRifleServerRpc(1);
             }
 
             if (gun2.activeSelf == true && gun1.activeSelf == false)
             {
-                //animator.runtimeAnimatorController = gunanimations;
                 HostPistolServerRpc();
                 SynchroPistolServerRpc(1);
-
             }
         }
     }
@@ -59,7 +50,6 @@ public class AnimationControllerSwitcherOnline : NetworkBehaviour
     {
         animator.runtimeAnimatorController = gun;
     }
-
 
     [ServerRpc]
     public void HostRifleServerRpc()

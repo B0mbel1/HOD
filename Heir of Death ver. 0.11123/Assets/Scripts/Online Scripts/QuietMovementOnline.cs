@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 
 public class QuietMovementOnline : NetworkBehaviour
@@ -21,11 +18,10 @@ public class QuietMovementOnline : NetworkBehaviour
     public bool CanPressAbility = true;
     public float UnlockTime;
 
-
-
     void Start()
     {
         if (!IsOwner) return;
+
         if (Main.Power == 4)
         {
             audioSourcePower.clip = stealth;
@@ -42,6 +38,7 @@ public class QuietMovementOnline : NetworkBehaviour
     void FixedUpdate()
     {
         if (!IsOwner) return;
+
         if (Main.Power == 4)
         {
             if (CanPressAbility && Input.GetKeyDown(KeyCode.Q))
@@ -51,13 +48,14 @@ public class QuietMovementOnline : NetworkBehaviour
                 CanPressAbility = false;
                 UnlockTime = (Time.time + 20f) + PowerTime;
                 audioSourcePower.Play();
+
                 if (IsHost)
                 {
                     SynchroDzwiekServerRpc(1);
 
                 }
 
-                if(!IsHost && IsClient)
+                if (!IsHost && IsClient)
                 {
                     SynchroDzwiekServerRpc(0);
                 }
@@ -141,13 +139,11 @@ public class QuietMovementOnline : NetworkBehaviour
         PowerTimer.text = string.Format("{0:00} : {1:00}", minutes, seconds);
     }
 
-
     [ClientRpc]
     public void dzwiekQuietClientRpc(ClientRpcParams clientRpcParams)
     {
         audioSourcePower.volume = 0.3f;
         audioSourcePower.PlayOneShot(stealth);
-       
     }
 
     [ServerRpc(RequireOwnership = false)]

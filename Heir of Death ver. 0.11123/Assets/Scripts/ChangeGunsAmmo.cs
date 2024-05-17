@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class ChangeGunsAmmo : MonoBehaviour
@@ -11,7 +8,6 @@ public class ChangeGunsAmmo : MonoBehaviour
     [SerializeField] private GameObject ammo1;
     [SerializeField] private GameObject ammo2;
 
-
     void Start()
     {
         gun1.GetComponent<GameObject>();
@@ -20,7 +16,6 @@ public class ChangeGunsAmmo : MonoBehaviour
         ammo1.GetComponent<GameObject>();
         ammo2.GetComponent<GameObject>();
     }
-
     
     void Update()
     {
