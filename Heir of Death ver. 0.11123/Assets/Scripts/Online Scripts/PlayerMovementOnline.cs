@@ -50,7 +50,7 @@ public class PlayerMovementOnline : NetworkBehaviour
     Vector3 moveDirection;
 
     public Transform orientation;
-    Rigidbody rb;
+    public Rigidbody rb;
 
     public MovementState state;
 
@@ -61,7 +61,7 @@ public class PlayerMovementOnline : NetworkBehaviour
     [SerializeField] private bool isWalking;
     [SerializeField][Range(0f, 1f)] private float runstepLenghten;
     [SerializeField] private float stepInterval;
-    
+
     public bool wyslanie;
     public GameObject pozycjaASC;
     private AudioSource audioSource;
@@ -87,7 +87,7 @@ public class PlayerMovementOnline : NetworkBehaviour
 
     void Start()
     {
-        
+
         rb.freezeRotation = true;
         readyToJump = true;
         startYScale = transform.localScale.y;
@@ -135,7 +135,7 @@ public class PlayerMovementOnline : NetworkBehaviour
 
         if (wasAirborne && grounded && rb.velocity.y <= 0)
         {
-            PlayLandingSound.Invoke(this, EventArgs.Empty); 
+            PlayLandingSound.Invoke(this, EventArgs.Empty);
         }
 
         if (!grounded && rb.velocity.y <= 0)
@@ -330,7 +330,7 @@ public class PlayerMovementOnline : NetworkBehaviour
     }
 
     public event EventHandler PlayLandingSound;
-    private void TestPlayLandingSound(object sender, EventArgs e)       
+    private void TestPlayLandingSound(object sender, EventArgs e)
     {
         footStepsSwapper.CheckLayer();
         audioSource.clip = landSound;
