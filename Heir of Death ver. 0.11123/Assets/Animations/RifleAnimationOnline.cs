@@ -4,7 +4,7 @@ using UnityEngine;
 public class RifleAnimationsOnline : NetworkBehaviour
 {
     Animator animator;
-    //public Camera mainCamera; // Pole, w którym bêdziemy mogli przypisaæ kamerê
+   
     public Transform cameraTransform;
     public float convertedRotation;
     public int roundedRotation;

@@ -6,7 +6,6 @@ public class AmmoScript : NetworkBehaviour
     [ServerRpc]
     public void GetAmmoServerRpc()
     {
-        //this.gameObject.SetActive(false);
         BetterAmmoScript.isBetterAmmoPicked = true;
         BetterAmmoScript.TimerActivation = true;
     }
@@ -14,7 +13,6 @@ public class AmmoScript : NetworkBehaviour
     [ClientRpc]
     public void GetAmmoClientRpc(ClientRpcParams clientRpcParams)
     {
-        //this.gameObject.SetActive(false);
         BetterAmmoScript.isBetterAmmoPicked = true;
         BetterAmmoScript.TimerActivation = true;
     }
