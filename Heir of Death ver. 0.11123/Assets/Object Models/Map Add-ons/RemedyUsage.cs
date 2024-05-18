@@ -14,15 +14,47 @@ public class RemedyUsage : NetworkBehaviour
             if (playerHealth.czyHost && IsServer)
             {
                 playerHealth.RestoreHealthServerRpc(10f);
-                Destroy(gameObject);
+
+                destroyRemedyServerRpc();
+                destroySynchroRemedyServerRpc(1);
             }
 
             if (playerHealth.czyHost == false && (!IsServer))
             {
                 playerHealth.SynchroServerRpc(10f);
-                Destroy(gameObject);
+
+
+                destroyRemedyServerRpc();
+                destroySynchroRemedyServerRpc(1);
+                destroySynchroRemedyServerRpc(0);
             }
         }
+    }
+
+    [ServerRpc]
+    public void destroyRemedyServerRpc()
+    {
+        gameObject.SetActive(false);
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    public void destroySynchroRemedyServerRpc(ulong a)
+    {
+        ClientRpcParams clientRpcParams = new ClientRpcParams
+        {
+            Send = new ClientRpcSendParams
+            {
+                TargetClientIds = new ulong[] { a }
+            }
+        };
+
+        destroyRemedyClientRpc(clientRpcParams);
+    }
+
+    [ClientRpc]
+    public void destroyRemedyClientRpc(ClientRpcParams clientRpcParams)
+    {
+        gameObject.SetActive(false);
     }
 }
 
