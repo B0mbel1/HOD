@@ -8,7 +8,6 @@ public class AmmoDisplaying_2 : NetworkBehaviour
     public Text ammo2;
 
     [SerializeField] private GameObject gun2;
-    //public static int gun1Ammo;
 
     void Start()
     {
