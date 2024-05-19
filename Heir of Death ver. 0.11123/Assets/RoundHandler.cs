@@ -12,7 +12,7 @@ public class RoundHandler : NetworkBehaviour
     public bool dead;
     public ulong ulongVar;
     public int intVar;
-    
+
     public static bool odnow;
 
     public override void OnNetworkSpawn()
@@ -23,10 +23,12 @@ public class RoundHandler : NetworkBehaviour
         base.OnNetworkSpawn();
         ulongVar = NetworkManager.LocalClientId;
         intVar = Convert.ToInt32(ulongVar.ToString());
+
     }
 
     private void Update()
     {
+
         if (!IsOwner) return;
 
         if (PlayerHealth.health <= 0)
@@ -55,6 +57,11 @@ public class RoundHandler : NetworkBehaviour
             Die();
             //RespawnPlayer(NetworkManager.LocalClientId);
         }
+        if(TimerScript.TimeLeft == 0)
+        {
+            RespawnPlayer();
+            TimerScript.TimeLeft = 15f;             //Ustawiæ na 90
+        }
     }
 
     public void Die()
@@ -72,7 +79,7 @@ public class RoundHandler : NetworkBehaviour
         }
 
         Debug.Log("Destroying");
-       
+
         GetComponent<PlayerMovementOnline>().enabled = false;
         GetComponentInChildren<MeshRenderer>().enabled = false;
         GetComponentInChildren<shootingfinal>().enabled = false;
@@ -89,6 +96,8 @@ public class RoundHandler : NetworkBehaviour
         dead = false;
 
         odnow = false;
+
+        TimerScript.TimeLeft = 15f;             //
     }
 
     public void HostRoundWin()

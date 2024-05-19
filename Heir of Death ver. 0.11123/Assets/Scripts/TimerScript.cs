@@ -4,7 +4,7 @@ using Unity.Netcode;
 
 public class TimerScript : NetworkBehaviour
 {
-    public float TimeLeft;
+    public static float TimeLeft = 15f;     //Ustawiæ na 90f;
     public bool TimerOn = false;
 
     public Text RoundTimer;
@@ -13,11 +13,10 @@ public class TimerScript : NetworkBehaviour
     {
         TimerOn = true;
     }
-    
+
     void Update()
     {
-        if(!IsOwner) return;
-
+        if (!IsOwner) return;
 
         if (IsHost)
         {
@@ -30,14 +29,13 @@ public class TimerScript : NetworkBehaviour
                 }
                 else
                 {
-                    Debug.Log("Koniec Rundy");
                     TimeLeft = 0;
-                    TimerOn = false;
+                    //TimerOn = false;
                 }
             }
         }
 
-        if(!IsHost && IsClient)
+        if (!IsHost && IsClient)
         {
             if (TimerOn)
             {
@@ -48,16 +46,15 @@ public class TimerScript : NetworkBehaviour
                 }
                 else
                 {
-                    Debug.Log("Koniec Rundy");
                     TimeLeft = 0;
-                    TimerOn = false;
+                    //TimerOn = false;
                 }
             }
         }
-        
+
     }
 
-    void UpdateTimer(float currentTime)
+    public void UpdateTimer(float currentTime)
     {
         currentTime += 1;
 
