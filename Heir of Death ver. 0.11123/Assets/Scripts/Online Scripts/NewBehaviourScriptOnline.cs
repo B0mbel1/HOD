@@ -14,21 +14,30 @@ public class NewBehaviourScriptOnline : NetworkBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        MenuPauzy.GameIsPaused = false;
+        MenuPauzyOnline.GameIsPaused = false;
     }
 
     void FixedUpdate()
     {
         if (!IsOwner && !IsLocalPlayer) return;
-        float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
-        float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
 
-        yRotation += mouseX;
-        xRotation -= mouseY;
+        if(MenuPauzyOnline.GameIsPaused == false)
+        {
+            float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
+            float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
 
-        xRotation = Mathf.Clamp(xRotation, -30f, 70f);
+            yRotation += mouseX;
+            xRotation -= mouseY;
 
-        transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
-        orientation.rotation = Quaternion.Euler(0, yRotation, 0);
+            xRotation = Mathf.Clamp(xRotation, -30f, 70f);
+
+            transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
+            orientation.rotation = Quaternion.Euler(0, yRotation, 0);
+        }
+        else
+        {
+
+        }
+        
     }
 }

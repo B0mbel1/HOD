@@ -41,7 +41,7 @@ public class QuietMovementOnline : NetworkBehaviour
 
         if (Main.Power == 4)
         {
-            if (CanPressAbility && Input.GetKeyDown(KeyCode.Q))
+            if (CanPressAbility && Input.GetKeyDown(KeyCode.Q) && MenuPauzyOnline.GameIsPaused == false)
             {
                 PlayerMovementOnline.czyWyslacDzwiek = false;
                 IsPowerActivated(true);

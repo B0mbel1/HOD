@@ -31,15 +31,20 @@ public class shootingfinal_2 : NetworkBehaviour
     {
         if (!IsOwner) { return; }
 
-        if (IsHost)
+
+        if (MenuPauzyOnline.GameIsPaused == false)
         {
-            MyInput();
+            if (IsHost)
+            {
+                MyInput();
+            }
+
+            if (!IsHost)
+            {
+                MyInput();
+            }
         }
 
-        if (!IsHost)
-        {
-            MyInput();
-        }
     }
 
     public override void OnNetworkSpawn()

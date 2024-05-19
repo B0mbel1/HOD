@@ -49,7 +49,7 @@ public class XRayPowerOnline : NetworkBehaviour
     {
         if (Main.Power == 3)
         {
-            if (CanPressAbility && Input.GetKeyDown(KeyCode.Q))
+            if (CanPressAbility && Input.GetKeyDown(KeyCode.Q) && MenuPauzyOnline.GameIsPaused == false)
             {
                 IsPowerActivated(true);
                 CanPressAbility = false;

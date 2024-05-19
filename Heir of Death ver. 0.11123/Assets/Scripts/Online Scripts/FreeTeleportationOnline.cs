@@ -45,7 +45,7 @@ public class FreeTeleportationOnline : NetworkBehaviour
         if (Main.Power == 1)
         {
             if (!IsOwner) return;
-            if (Input.GetKey(KeyCode.Q) && canTp == true)
+            if (Input.GetKey(KeyCode.Q) && canTp == true && MenuPauzyOnline.GameIsPaused == false)
             {
                 teleportState = !teleportState;
                 if (gun2.activeSelf == true && gun.activeSelf == false)

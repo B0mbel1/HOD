@@ -18,20 +18,43 @@ public class TimerScript : NetworkBehaviour
     {
         if(!IsOwner) return;
 
-        if(TimerOn)
+
+        if (IsHost)
         {
-            if(TimeLeft > 0)
+            if (TimerOn)
             {
-                TimeLeft -= Time.deltaTime;
-                UpdateTimer(TimeLeft);
-            }
-            else
-            {
-                Debug.Log("Koniec Rundy");
-                TimeLeft = 0;
-                TimerOn = false;
+                if (TimeLeft > 0)
+                {
+                    TimeLeft -= Time.deltaTime;
+                    UpdateTimer(TimeLeft);
+                }
+                else
+                {
+                    Debug.Log("Koniec Rundy");
+                    TimeLeft = 0;
+                    TimerOn = false;
+                }
             }
         }
+
+        if(!IsHost && IsClient)
+        {
+            if (TimerOn)
+            {
+                if (TimeLeft > 0)
+                {
+                    TimeLeft -= Time.deltaTime;
+                    UpdateTimer(TimeLeft);
+                }
+                else
+                {
+                    Debug.Log("Koniec Rundy");
+                    TimeLeft = 0;
+                    TimerOn = false;
+                }
+            }
+        }
+        
     }
 
     void UpdateTimer(float currentTime)
@@ -43,4 +66,5 @@ public class TimerScript : NetworkBehaviour
 
         RoundTimer.text = string.Format("{0:00} : {1:00}", minutes, seconds);
     }
+
 }

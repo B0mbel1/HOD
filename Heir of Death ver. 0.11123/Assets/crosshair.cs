@@ -22,26 +22,30 @@ public class crosshair : NetworkBehaviour
     {
         if (!IsOwner) { return; }
 
-        if (isMoving && !Input.GetMouseButton(1))
-        {
-            currentSize = Mathf.Lerp(currentSize, maxSize, Time.deltaTime * speed);
-        }
 
-        if (isMoving && Input.GetMouseButton(1))
+        if (MenuPauzyOnline.GameIsPaused == false)
         {
-            currentSize = Mathf.Lerp(currentSize, zoomedSize2, Time.deltaTime * speed);
-        }
+            if (isMoving && !Input.GetMouseButton(1))
+            {
+                currentSize = Mathf.Lerp(currentSize, maxSize, Time.deltaTime * speed);
+            }
 
-        if (Input.GetMouseButton(1) && !isMoving)
-        {
-            currentSize = Mathf.Lerp(currentSize, zoomedSize, Time.deltaTime * speed);
-        }
-        else
-        {
-            currentSize = Mathf.Lerp(currentSize, restingSize, Time.deltaTime * speed);
-        }
+            if (isMoving && Input.GetMouseButton(1))
+            {
+                currentSize = Mathf.Lerp(currentSize, zoomedSize2, Time.deltaTime * speed);
+            }
 
-        reticle.sizeDelta = new Vector2(currentSize, currentSize);
+            if (Input.GetMouseButton(1) && !isMoving)
+            {
+                currentSize = Mathf.Lerp(currentSize, zoomedSize, Time.deltaTime * speed);
+            }
+            else
+            {
+                currentSize = Mathf.Lerp(currentSize, restingSize, Time.deltaTime * speed);
+            }
+
+            reticle.sizeDelta = new Vector2(currentSize, currentSize);
+        }
     }
 
     bool isMoving
