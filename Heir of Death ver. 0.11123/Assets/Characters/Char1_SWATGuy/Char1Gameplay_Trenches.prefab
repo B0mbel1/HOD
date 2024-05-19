@@ -6125,6 +6125,10 @@ PrefabInstance:
       propertyPath: gun2
       value: 
       objectReference: {fileID: 2898455531196878150}
+    - target: {fileID: 6297806380319108427, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3725579188
+      objectReference: {fileID: 0}
     - target: {fileID: 7435915038155686191, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
       propertyPath: gun1
       value: 
