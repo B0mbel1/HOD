@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -34,7 +33,7 @@ public class AmmoUsage : NetworkBehaviour
         }
     }
 
-    [ServerRpc]
+    [ServerRpc(RequireOwnership = false)]
     public void destroyObjectServerRpc()
     {
         gameObject.SetActive(false);

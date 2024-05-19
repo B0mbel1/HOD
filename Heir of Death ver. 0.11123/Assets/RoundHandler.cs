@@ -12,6 +12,8 @@ public class RoundHandler : NetworkBehaviour
     public bool dead;
     public ulong ulongVar;
     public int intVar;
+    
+    public static bool odnow;
 
     public override void OnNetworkSpawn()
     {
@@ -26,9 +28,11 @@ public class RoundHandler : NetworkBehaviour
     private void Update()
     {
         if (!IsOwner) return;
+
         if (PlayerHealth.health <= 0)
         {
             dead = true;
+            odnow = true;
             PlayerHealth.health = 100;
         }
 
@@ -68,7 +72,7 @@ public class RoundHandler : NetworkBehaviour
         }
 
         Debug.Log("Destroying");
-
+       
         GetComponent<PlayerMovementOnline>().enabled = false;
         GetComponentInChildren<MeshRenderer>().enabled = false;
         GetComponentInChildren<shootingfinal>().enabled = false;
@@ -83,6 +87,8 @@ public class RoundHandler : NetworkBehaviour
 
         transform.position = spawnPoint;
         dead = false;
+
+        odnow = false;
     }
 
     public void HostRoundWin()
