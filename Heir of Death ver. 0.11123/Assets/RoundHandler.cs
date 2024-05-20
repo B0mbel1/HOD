@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using TMPro;
 using Unity.Netcode;
 using UnityEngine;
@@ -52,17 +53,66 @@ public class RoundHandler : NetworkBehaviour
 
     private void FixedUpdate()
     {
+        if (!IsOwner) return;
+
         if (dead == true)
         {
-            Die();
+            if (IsHost)
+            {
+                Die();
+            }
+
+            if(!IsHost && IsClient)
+            {
+                Die();
+                respawnSynchroServerRpc(0);
+            }
+
+            setTimeServerRpc();
+            setTimeSynchroServerRpc(1);
             //RespawnPlayer(NetworkManager.LocalClientId);
         }
-        if(TimerScript.TimeLeft == 0)
+
+        if (TimerScript.TimeLeft == 0)
         {
-            RespawnPlayer();
-            TimerScript.TimeLeft = 15f;             //Ustawiæ na 90
+            if (IsHost)
+            {
+                RespawnPlayer();
+            }
+
+            if (!IsHost && IsClient)
+            {
+                RespawnPlayer();
+            }
         }
     }
+
+    [ServerRpc]
+    public void setTimeServerRpc()
+    {
+        TimerScript.TimeLeft = 90;
+    }
+
+    [ClientRpc]
+    public void setTimeClientRpc()
+    {
+        TimerScript.TimeLeft = 90;
+    }
+
+    [ServerRpc]
+    public void setTimeSynchroServerRpc(ulong a)
+    {
+        ClientRpcParams clientRpcParams = new ClientRpcParams
+        {
+            Send = new ClientRpcSendParams
+            {
+                TargetClientIds = new ulong[] { a }
+            }
+        };
+
+        respawnClientRpc(clientRpcParams);
+    }
+
 
     public void Die()
     {
@@ -83,6 +133,7 @@ public class RoundHandler : NetworkBehaviour
         GetComponent<PlayerMovementOnline>().enabled = false;
         GetComponentInChildren<MeshRenderer>().enabled = false;
         GetComponentInChildren<shootingfinal>().enabled = false;
+
         RespawnPlayer();
     }
 
@@ -97,8 +148,41 @@ public class RoundHandler : NetworkBehaviour
 
         odnow = false;
 
-        TimerScript.TimeLeft = 15f;             //
+        PlayerHealth.health = 100;
+
+        TimerScript.TimeLeft = 90f;             //Zmieniæ
     }
+
+    [ServerRpc]
+    public void respawnServerRpc()
+    {
+        RespawnPlayer();
+    }
+
+    [ClientRpc]
+    public void respawnClientRpc(ClientRpcParams clientRpcParams)
+    {
+        RespawnPlayer();
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    public void respawnSynchroServerRpc(ulong a)
+    {
+        ClientRpcParams clientRpcParams = new ClientRpcParams
+        {
+            Send = new ClientRpcSendParams
+            {
+                TargetClientIds = new ulong[] { a }
+            }
+        };
+
+        respawnClientRpc(clientRpcParams);
+    }
+
+
+
+
+
 
     public void HostRoundWin()
     {
