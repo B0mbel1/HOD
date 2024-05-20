@@ -26,9 +26,22 @@ public class RoundHandler : NetworkBehaviour
         intVar = Convert.ToInt32(ulongVar.ToString());
 
     }
+    public static bool klientDed, hostDed;
 
     private void Update()
     {
+        if (IsHost && PlayerHealth.health <= 0)
+        {
+            //respawn2ServerRpc(true);
+
+            respawnClientRpc(new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
+
+        }
+
+        if (!IsHost && IsClient && PlayerHealth.health <= 0)
+        {
+            respawnServerRpc(true);
+        }
 
         if (!IsOwner) return;
 
@@ -55,17 +68,31 @@ public class RoundHandler : NetworkBehaviour
     {
         if (!IsOwner) return;
 
+        if (klientDed == true)
+        {
+            //respawnSynchroServerRpc(1);
+            RespawnPlayer();
+            klientDed = false;
+        }
+        if (hostDed == true)
+        {
+            //respawnSynchroServerRpc(0);
+            RespawnPlayer();
+            hostDed = false;
+        }
+
         if (dead == true)
         {
             if (IsHost)
             {
                 Die();
+                RespawnPlayer();
             }
 
-            if(!IsHost && IsClient)
+            if (!IsHost && IsClient)
             {
                 Die();
-                respawnSynchroServerRpc(0);
+                RespawnPlayer();
             }
 
             setTimeServerRpc();
@@ -87,16 +114,18 @@ public class RoundHandler : NetworkBehaviour
         }
     }
 
+
+
     [ServerRpc]
     public void setTimeServerRpc()
     {
-        TimerScript.TimeLeft = 90;
+        TimerScript.TimeLeft = 10;       //ZMIANA
     }
 
     [ClientRpc]
     public void setTimeClientRpc()
     {
-        TimerScript.TimeLeft = 90;
+        TimerScript.TimeLeft = 10;          //ZMIANA
     }
 
     [ServerRpc]
@@ -134,7 +163,7 @@ public class RoundHandler : NetworkBehaviour
         GetComponentInChildren<MeshRenderer>().enabled = false;
         GetComponentInChildren<shootingfinal>().enabled = false;
 
-        RespawnPlayer();
+        //RespawnPlayer();
     }
 
     public void RespawnPlayer()
@@ -150,19 +179,25 @@ public class RoundHandler : NetworkBehaviour
 
         PlayerHealth.health = 100;
 
-        TimerScript.TimeLeft = 90f;             //Zmieniæ
+        TimerScript.TimeLeft = 10f;              //ZMIANA
     }
 
-    [ServerRpc]
-    public void respawnServerRpc()
+    [ServerRpc(RequireOwnership =false)]
+    public void respawnServerRpc(bool klient)
     {
-        RespawnPlayer();
+        klientDed = klient;
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    public void respawn2ServerRpc(bool host)
+    {
+        hostDed = host;
     }
 
     [ClientRpc]
     public void respawnClientRpc(ClientRpcParams clientRpcParams)
     {
-        RespawnPlayer();
+        hostDed = true;
     }
 
     [ServerRpc(RequireOwnership = false)]
@@ -175,7 +210,6 @@ public class RoundHandler : NetworkBehaviour
                 TargetClientIds = new ulong[] { a }
             }
         };
-
         respawnClientRpc(clientRpcParams);
     }
 
