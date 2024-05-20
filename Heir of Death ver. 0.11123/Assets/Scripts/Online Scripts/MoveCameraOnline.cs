@@ -9,7 +9,7 @@ public class MoveCameraOnline : NetworkBehaviour
 
     void Start()
     {
-        MenuPauzy.GameIsPaused = false;
+        MenuPauzyOnline.GameIsPaused = false;
     }
 
     public override void OnNetworkSpawn()

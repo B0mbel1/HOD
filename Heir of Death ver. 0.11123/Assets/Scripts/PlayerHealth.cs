@@ -7,7 +7,7 @@ public class PlayerHealth : NetworkBehaviour
     public static float health;
     public bool czyHost;
     private static float lerpTimer;
-    public float maxHealth = 100;
+    public const float maxHealth = 100;
     public float chipSpeed = 2;
 
     public Image frontHealthBar;
@@ -31,15 +31,22 @@ public class PlayerHealth : NetworkBehaviour
         {
             czyHost = false;
         }
-        
+
+        if (health > 100)
+        {
+            health = 100;
+            Debug.Log("By³o powy¿ej 100 a teraz jest:" + health);
+        }
+
         if (Input.GetKeyDown(KeyCode.B))
         {
-            health = health - 20;
-            Debug.Log("health:" + health);
+            health -= 20;
+            Debug.Log("Zada³em 20 i jest teraz:" + health);
         }
 
         UpdateHealthUI();
     }
+
 
     public override void OnNetworkSpawn()
     {
@@ -91,8 +98,11 @@ public class PlayerHealth : NetworkBehaviour
         lerpTimer = 0f;
     }
 
+
+
+
     [ServerRpc]
-    public void SynchroServerRpc(float healAmount)
+    public void SynchroServerRpc()
     {
         ClientRpcParams clientRpcParams = new ClientRpcParams
         {
@@ -102,22 +112,22 @@ public class PlayerHealth : NetworkBehaviour
             }
         };
 
-        RestoreHealthClientRpc(healAmount, clientRpcParams);
+        RestoreHealthClientRpc(clientRpcParams);
     }
 
     [ServerRpc]
-    public void RestoreHealthServerRpc(float healAmount)
+    public void RestoreHealthServerRpc()
     {
-        health += healAmount;
-        healAmount = 0;
+        health += 100f;
         lerpTimer = 0f;
     }
 
     [ClientRpc]
-    public void RestoreHealthClientRpc(float healAmount, ClientRpcParams clientRpcParams)
+    public void RestoreHealthClientRpc(ClientRpcParams clientRpcParams)
     {
-        health += healAmount;
-        healAmount = 0;
+        health += 100f;
         lerpTimer = 0f;
+
+        Debug.Log(health);
     }
 }

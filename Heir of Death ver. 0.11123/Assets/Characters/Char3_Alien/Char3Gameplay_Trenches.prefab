@@ -323,6 +323,7 @@ MonoBehaviour:
   crouchKey: 306
   maxSlopeAngle: 90
   orientation: {fileID: 3906779403736150809}
+  rb: {fileID: 1220779563828839871}
   state: 0
   footStepsSounds: []
   jumpSound: {fileID: 0}
@@ -420,13 +421,13 @@ MonoBehaviour:
   gun: {fileID: 2453866719827625075}
   gun2: {fileID: 4518086769103066041}
   pointer: {fileID: 3894148104098353959}
+  PowerTimer: {fileID: 7373685105483022243}
+  audioSource: {fileID: 5216663574078469239}
+  teleportationSound: {fileID: 8300000, guid: 887b60822a85405438f4fe2816d10695, type: 3}
   CooldownTime: 20
   CooldownStartingValue: 0
   cooldownActivated: 0
   canTp: 0
-  PowerTimer: {fileID: 7373685105483022243}
-  audioSource: {fileID: 5216663574078469239}
-  teleportationSound: {fileID: 8300000, guid: 887b60822a85405438f4fe2816d10695, type: 3}
   ktoraBron: 0
 --- !u!82 &1414894111974110289
 AudioSource:
@@ -1685,6 +1686,7 @@ MonoBehaviour:
   magazineSize: 10
   bulletsPerTap: 1
   allowButtonHold: 1
+  bulletSpeed: 30
   Pointer: {fileID: 0}
   fpsCam: {fileID: 8084421255392309025}
   shootSound: {fileID: 8300000, guid: bf4fae68ea0966044962ac4e23e527e8, type: 3}
@@ -1692,7 +1694,6 @@ MonoBehaviour:
   Gun: {fileID: 2453866719827625075}
   bulletPrefab: {fileID: 8174539478665384341, guid: 1b84fa7f14eaeeb48819630b948724dd, type: 3}
   bulletSpawn: {fileID: 5444960901268469526}
-  bulletSpeed: 30
 --- !u!114 &588928836750851133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1705,15 +1706,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d073e23c40eba3745805a61d9884eb11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
   timeBetweenShooting: 0.2
   spread: 0
   range: 100
   reloadTime: 1
   timeBetweenShots: 0
+  bulletSpeed: 100
   magazineSize: 30
   bulletsPerTap: 1
-  bulletSpeed: 100
+  damage: 0
   allowButtonHold: 1
   fpsCam: {fileID: 8084421255392309025}
   shootSound: {fileID: 8300000, guid: bf4fae68ea0966044962ac4e23e527e8, type: 3}
@@ -2771,14 +2772,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62af050314dd8c443a0a02c0d2317f0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
   timeBetweenShooting: 0.5
   spread: 0
   range: 100
   reloadTime: 1
   timeBetweenShots: 0
+  bulletSpeed: 100
   magazineSize: 7
   bulletsPerTap: 1
+  damage: 0
   allowButtonHold: 0
   fpsCam: {fileID: 8084421255392309025}
   shootSound: {fileID: 8300000, guid: bf4fae68ea0966044962ac4e23e527e8, type: 3}
@@ -2786,7 +2788,6 @@ MonoBehaviour:
   pozycjaAS: {fileID: 6705610157548305747}
   bulletPrefab: {fileID: 4516205014958727814, guid: 1b84fa7f14eaeeb48819630b948724dd, type: 3}
   bulletSpawn: {fileID: 8646773397069564761}
-  bulletSpeed: 100
 --- !u!1 &4725664440096817884
 GameObject:
   m_ObjectHideFlags: 0

@@ -267,7 +267,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   czyHost: 0
-  maxHealth: 100
   chipSpeed: 2
   frontHealthBar: {fileID: 1920411748910534806}
   backHealthBar: {fileID: 5911043497839962082}
@@ -536,15 +535,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d073e23c40eba3745805a61d9884eb11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
   timeBetweenShooting: 0.2
   spread: 0
   range: 100
   reloadTime: 1
   timeBetweenShots: 0
+  bulletSpeed: 60
   magazineSize: 30
   bulletsPerTap: 1
-  bulletSpeed: 60
+  damage: 0
   allowButtonHold: 1
   fpsCam: {fileID: 4056057497597188311}
   shootSound: {fileID: 8300000, guid: bf4fae68ea0966044962ac4e23e527e8, type: 3}
@@ -1848,6 +1847,7 @@ MonoBehaviour:
   crouchKey: 306
   maxSlopeAngle: 90
   orientation: {fileID: 1554370936393702384}
+  rb: {fileID: 5907505511407296597}
   state: 0
   footStepsSounds: []
   jumpSound: {fileID: 0}
@@ -1918,13 +1918,13 @@ MonoBehaviour:
   gun: {fileID: 465860386417108078}
   gun2: {fileID: 2898455531196878150}
   pointer: {fileID: 4535844888677968819}
+  PowerTimer: {fileID: 2852214998270963226}
+  audioSource: {fileID: 7880918967208541998}
+  teleportationSound: {fileID: 8300000, guid: 887b60822a85405438f4fe2816d10695, type: 3}
   CooldownTime: 20
   CooldownStartingValue: 0
   cooldownActivated: 0
   canTp: 0
-  PowerTimer: {fileID: 2852214998270963226}
-  audioSource: {fileID: 7880918967208541998}
-  teleportationSound: {fileID: 8300000, guid: 887b60822a85405438f4fe2816d10695, type: 3}
   ktoraBron: 0
 --- !u!114 &3821388990757779296
 MonoBehaviour:
@@ -2391,14 +2391,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62af050314dd8c443a0a02c0d2317f0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
   timeBetweenShooting: 0.5
   spread: 0
   range: 100
   reloadTime: 1
   timeBetweenShots: 0
+  bulletSpeed: 60
   magazineSize: 7
   bulletsPerTap: 1
+  damage: 0
   allowButtonHold: 0
   fpsCam: {fileID: 4056057497597188311}
   shootSound: {fileID: 8300000, guid: bf4fae68ea0966044962ac4e23e527e8, type: 3}
@@ -2406,7 +2407,6 @@ MonoBehaviour:
   pozycjaAS: {fileID: 1296740470276784249}
   bulletPrefab: {fileID: 4516205014958727814, guid: 1b84fa7f14eaeeb48819630b948724dd, type: 3}
   bulletSpawn: {fileID: 3902034040544385259}
-  bulletSpeed: 60
 --- !u!114 &7168542318850935725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3504,7 +3504,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   czyHost: 0
-  maxHealth: 100
   chipSpeed: 2
   frontHealthBar: {fileID: 1920411748910534806}
   backHealthBar: {fileID: 5911043497839962082}
@@ -4566,7 +4565,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   czyHost: 0
-  maxHealth: 100
   chipSpeed: 2
   frontHealthBar: {fileID: 1920411748910534806}
   backHealthBar: {fileID: 5911043497839962082}
@@ -6236,6 +6234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
+    - {fileID: 2417487989820071593, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

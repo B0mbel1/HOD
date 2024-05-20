@@ -1,5 +1,6 @@
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.SceneManagement;
 
 public class MenuPauzyOnline : NetworkBehaviour
@@ -30,15 +31,17 @@ public class MenuPauzyOnline : NetworkBehaviour
         Canvas.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+
     }
 
     void Pause()
     {
         Canvas.SetActive(true);
-        Time.timeScale = 0f;
+        Time.timeScale = 1f;
         GameIsPaused = true;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+
         //Leaderboard tablica = new Leaderboard();
         //tablica.SendLeaderboard(Damaging.wynik);
     }

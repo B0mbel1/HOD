@@ -50,7 +50,7 @@ public class PlayerMovementOnline : NetworkBehaviour
     Vector3 moveDirection;
 
     public Transform orientation;
-    Rigidbody rb;
+    public Rigidbody rb;
 
     public MovementState state;
 
@@ -61,7 +61,7 @@ public class PlayerMovementOnline : NetworkBehaviour
     [SerializeField] private bool isWalking;
     [SerializeField][Range(0f, 1f)] private float runstepLenghten;
     [SerializeField] private float stepInterval;
-    
+
     public bool wyslanie;
     public GameObject pozycjaASC;
     private AudioSource audioSource;
@@ -87,7 +87,7 @@ public class PlayerMovementOnline : NetworkBehaviour
 
     void Start()
     {
-        
+
         rb.freezeRotation = true;
         readyToJump = true;
         startYScale = transform.localScale.y;
@@ -107,45 +107,53 @@ public class PlayerMovementOnline : NetworkBehaviour
     {
         if (!IsOwner) { return; }
 
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, whatIsGround);
-
-        MyInput();
-        SpeedControl();
-
-        if (IsHost)
+        if (MenuPauzyOnline.GameIsPaused == false)
         {
-            ProgressStepCycle(1f);
-        }
+            grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, whatIsGround);
 
-        if (!IsHost && IsClient)
-        {
-            ProgressStepCycle(1f);
-        }
+            MyInput();
+            SpeedControl();
 
-        StateHandler();
+            if (IsHost)
+            {
+                ProgressStepCycle(1f);
+            }
 
-        if (grounded)
-        {
-            rb.drag = groundDrag;
+            if (!IsHost && IsClient)
+            {
+                ProgressStepCycle(1f);
+            }
+
+            StateHandler();
+
+            if (grounded)
+            {
+                rb.drag = groundDrag;
+            }
+            else
+            {
+                rb.drag = 0;
+            }
+
+            if (wasAirborne && grounded && rb.velocity.y <= 0)
+            {
+                PlayLandingSound.Invoke(this, EventArgs.Empty);
+            }
+
+            if (!grounded && rb.velocity.y <= 0)
+            {
+                wasAirborne = true;
+            }
+            else
+            {
+                wasAirborne = false;
+            }
         }
         else
         {
-            rb.drag = 0;
-        }
 
-        if (wasAirborne && grounded && rb.velocity.y <= 0)
-        {
-            PlayLandingSound.Invoke(this, EventArgs.Empty); 
         }
-
-        if (!grounded && rb.velocity.y <= 0)
-        {
-            wasAirborne = true;
-        }
-        else
-        {
-            wasAirborne = false;
-        }
+        
     }
 
     void FixedUpdate()
@@ -330,7 +338,7 @@ public class PlayerMovementOnline : NetworkBehaviour
     }
 
     public event EventHandler PlayLandingSound;
-    private void TestPlayLandingSound(object sender, EventArgs e)       
+    private void TestPlayLandingSound(object sender, EventArgs e)
     {
         footStepsSwapper.CheckLayer();
         audioSource.clip = landSound;

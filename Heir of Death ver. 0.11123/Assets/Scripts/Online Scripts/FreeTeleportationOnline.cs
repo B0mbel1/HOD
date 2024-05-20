@@ -45,7 +45,7 @@ public class FreeTeleportationOnline : NetworkBehaviour
         if (Main.Power == 1)
         {
             if (!IsOwner) return;
-            if (Input.GetKeyDown(KeyCode.Q) && canTp == true)
+            if (Input.GetKey(KeyCode.Q) && canTp == true && MenuPauzyOnline.GameIsPaused == false)
             {
                 teleportState = !teleportState;
                 if (gun2.activeSelf == true && gun.activeSelf == false)
@@ -73,9 +73,8 @@ public class FreeTeleportationOnline : NetworkBehaviour
             {
                 Line();
 
-                if (Input.GetKeyUp(KeyCode.Q))
+                if (Input.GetKey(KeyCode.Q))
                 {
-
                     Teleport();
                     if (ktoraBron == 1)
                     {

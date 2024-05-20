@@ -11,21 +11,51 @@ public class AmmoUsage : NetworkBehaviour
     {
         AmmoScript ammoScript = other.GetComponentInParent<AmmoScript>();
         PlayerHealth playerHealth = other.GetComponentInParent<PlayerHealth>();
+
         if (playerHealth != null)
         {
-            if (playerHealth.czyHost && IsServer) 
+            if (playerHealth.czyHost && IsServer)
             {
-                Debug.Log("Host wzia³");
                 ammoScript.GetAmmoServerRpc();
-                Destroy(gameObject);
+                
+                destroyObjectServerRpc();
+                destroySynchroObjectServerRpc(1);
             }
 
-            if (playerHealth.czyHost == false && (!IsServer))
+            if (playerHealth.czyHost == false && IsClient)
             {
-                Debug.Log("Client wzia³");
                 ammoScript.SynchroServerRpc();
-                Destroy(gameObject);
+                
+                destroyObjectServerRpc();
+                destroySynchroObjectServerRpc(0);
+                destroySynchroObjectServerRpc(1);
             }
         }
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    public void destroyObjectServerRpc()
+    {
+        gameObject.SetActive(false);
+    }
+
+    [ServerRpc(RequireOwnership =false)]
+    public void destroySynchroObjectServerRpc(ulong a)
+    {
+        ClientRpcParams clientRpcParams = new ClientRpcParams
+        {
+            Send = new ClientRpcSendParams
+            {
+                TargetClientIds = new ulong[] { a }
+            }
+        };
+
+        destroyObjectClientRpc(clientRpcParams);
+    }
+
+    [ClientRpc]
+    public void destroyObjectClientRpc(ClientRpcParams clientRpcParams)
+    {
+        gameObject.SetActive(false);
     }
 }
