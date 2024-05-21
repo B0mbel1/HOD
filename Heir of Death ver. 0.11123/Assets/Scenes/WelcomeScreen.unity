@@ -403,7 +403,7 @@ GameObject:
   - component: {fileID: 259850962}
   - component: {fileID: 259850961}
   m_Layer: 5
-  m_Name: message
+  m_Name: messageP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -935,7 +935,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnSelect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 865124217}
+        m_TargetAssemblyTypeName: TabReg, Assembly-CSharp
+        m_MethodName: usernameSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnDeselect:
     m_PersistentCalls:
       m_Calls: []
@@ -1130,7 +1142,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnSelect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 865124217}
+        m_TargetAssemblyTypeName: TabReg, Assembly-CSharp
+        m_MethodName: passwordSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnDeselect:
     m_PersistentCalls:
       m_Calls: []
@@ -1357,7 +1381,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnSelect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 865124217}
+        m_TargetAssemblyTypeName: TabReg, Assembly-CSharp
+        m_MethodName: password2Selected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnDeselect:
     m_PersistentCalls:
       m_Calls: []
@@ -2281,7 +2317,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Login
+  m_text: "Nazwa u\u017Cyt."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2543,7 +2579,7 @@ GameObject:
   - component: {fileID: 549102786}
   - component: {fileID: 549102785}
   m_Layer: 5
-  m_Name: message
+  m_Name: messageR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2678,6 +2714,7 @@ GameObject:
   - component: {fileID: 557574622}
   - component: {fileID: 557574621}
   - component: {fileID: 557574625}
+  - component: {fileID: 557574626}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2784,7 +2821,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6058e49c08f36c14c98eb71de36a240b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messageText: {fileID: 549102783}
   usernameInput: {fileID: 404119640}
   emailInput: {fileID: 1459355661}
   passwordInput: {fileID: 416653788}
@@ -2793,10 +2829,25 @@ MonoBehaviour:
   passwordLogin: {fileID: 1213885004}
   messageTextL: {fileID: 1710212461}
   emailInputR: {fileID: 1865518172}
-  messageTextR: {fileID: 259850959}
+  messageTextR: {fileID: 549102783}
+  messageTextP: {fileID: 259850959}
   LoginScreen: {fileID: 1636039595}
   ResetScreen: {fileID: 1402081392}
   RegisterScreen: {fileID: 865124214}
+  key: 13
+  but: {fileID: 1743100099}
+--- !u!114 &557574626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557574620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa2558a1101616b4090c7b9a1a357702, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &635224315
 GameObject:
   m_ObjectHideFlags: 0
@@ -3355,6 +3406,8 @@ GameObject:
   m_Component:
   - component: {fileID: 865124215}
   - component: {fileID: 865124216}
+  - component: {fileID: 865124217}
+  - component: {fileID: 865124218}
   m_Layer: 5
   m_Name: RegisterScreen
   m_TagString: Untagged
@@ -3401,6 +3454,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deb1442e682b79646b8ef3de139afd9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &865124217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865124214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 621133c5abd24834db28b8b0c4ff1b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  username: {fileID: 404119641}
+  email: {fileID: 1459355663}
+  password: {fileID: 416653790}
+  password2: {fileID: 431573011}
+  InputSelected: 0
+--- !u!114 &865124218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865124214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a95db16430c020747baa8f177d8842dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 13
+  but: {fileID: 1679432717}
 --- !u!1 &870619195
 GameObject:
   m_ObjectHideFlags: 0
@@ -4921,7 +5005,7 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 3
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
+    m_SelectOnUp: {fileID: 1326237981}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
@@ -4973,7 +5057,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnSelect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1636039598}
+        m_TargetAssemblyTypeName: Tab, Assembly-CSharp
+        m_MethodName: passwordSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnDeselect:
     m_PersistentCalls:
       m_Calls: []
@@ -5397,7 +5493,7 @@ MonoBehaviour:
     m_Mode: 3
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnDown: {fileID: 1213885006}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -5448,7 +5544,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnSelect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1636039598}
+        m_TargetAssemblyTypeName: Tab, Assembly-CSharp
+        m_MethodName: loginSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnDeselect:
     m_PersistentCalls:
       m_Calls: []
@@ -5547,6 +5655,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1402081393}
   - component: {fileID: 1402081394}
+  - component: {fileID: 1402081395}
   m_Layer: 5
   m_Name: ResetScreen
   m_TagString: Untagged
@@ -5590,6 +5699,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deb1442e682b79646b8ef3de139afd9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1402081395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402081392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a95db16430c020747baa8f177d8842dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 13
+  but: {fileID: 1806646137}
 --- !u!1 &1409225480
 GameObject:
   m_ObjectHideFlags: 0
@@ -6719,7 +6842,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnSelect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 865124217}
+        m_TargetAssemblyTypeName: TabReg, Assembly-CSharp
+        m_MethodName: emailSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnDeselect:
     m_PersistentCalls:
       m_Calls: []
@@ -7087,6 +7222,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1636039596}
   - component: {fileID: 1636039597}
+  - component: {fileID: 1636039598}
+  - component: {fileID: 1636039599}
   m_Layer: 5
   m_Name: LoginScreen
   m_TagString: Untagged
@@ -7134,6 +7271,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deb1442e682b79646b8ef3de139afd9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1636039598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636039595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bac205b689b98041a172ca802bdbc78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  login: {fileID: 1326237981}
+  password: {fileID: 1213885006}
+  InputSelected: 0
+--- !u!114 &1636039599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636039595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a95db16430c020747baa8f177d8842dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 13
+  but: {fileID: 1743100099}
 --- !u!1 &1662162674
 GameObject:
   m_ObjectHideFlags: 0
@@ -7992,7 +8158,7 @@ GameObject:
   - component: {fileID: 1710212464}
   - component: {fileID: 1710212463}
   m_Layer: 5
-  m_Name: message
+  m_Name: messageL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8314,6 +8480,22 @@ MonoBehaviour:
         - m_Target: {fileID: 1743100098}
           m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
           m_MethodName: Play
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 15
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 557574625}
+          m_TargetAssemblyTypeName: PlayfabManager, Assembly-CSharp
+          m_MethodName: LoginButton
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

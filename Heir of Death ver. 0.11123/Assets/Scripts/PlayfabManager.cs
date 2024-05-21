@@ -1,12 +1,14 @@
 using PlayFab;
 using PlayFab.ClientModels;
+using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayfabManager : MonoBehaviour
 {
-    public GameObject messageText;
     public GameObject usernameInput;
     public GameObject emailInput;
     public GameObject passwordInput;
@@ -16,10 +18,13 @@ public class PlayfabManager : MonoBehaviour
     public GameObject messageTextL;
     public GameObject emailInputR;
     public GameObject messageTextR;
+    public GameObject messageTextP;
     public GameObject LoginScreen;
     public GameObject ResetScreen;
     public GameObject RegisterScreen;
     public static string name = null;
+    string MyPlayfabID;
+    string gottenId;
     
     public class PlayerData
     {
@@ -28,11 +33,13 @@ public class PlayfabManager : MonoBehaviour
         public int score;
     }
 
+    
+
     public void RegisterButton()
     {
-        if(passwordInput.GetComponent<TMP_InputField>().text.Length > 6)
+        if (passwordInput.GetComponent<TMP_InputField>().text.Length > 6)
         {
-            messageText.GetComponent<TMP_Text>().text = "Has³o za krótkie";
+            messageTextR.GetComponent<TMP_Text>().text = "Has³o za krótkie";
             return;
         }
 
@@ -46,11 +53,11 @@ public class PlayfabManager : MonoBehaviour
                 Username = usernameInput.GetComponent<TMP_InputField>().text,
                 RequireBothUsernameAndEmail = true
             };
-            PlayFabClientAPI.RegisterPlayFabUser(request, OnRegisterSuccess, OnError);
+            PlayFabClientAPI.RegisterPlayFabUser(request, OnRegisterSuccess, OnErrorR);
         }
         else
         {
-            messageText.GetComponent<TMP_Text>().text = "Has³a nie s¹ identyczne";
+            messageTextR.GetComponent<TMP_Text>().text = "Has³a nie s¹ identyczne";
         }
     }
 
@@ -72,15 +79,100 @@ public class PlayfabManager : MonoBehaviour
                 GetPlayerProfile = true
             }
         };
-        PlayFabClientAPI.LoginWithEmailAddress(request, OnLoginSuccess, OnError);
+        PlayFabClientAPI.LoginWithEmailAddress(request, OnLoginSuccess, OnErrorL);
+        
     }
 
     void OnLoginSuccess(LoginResult result)
     {
+        GetAccountInfo();
+        GetLocalDeviceId();
         name = result.InfoResultPayload.PlayerProfile.DisplayName;
-        
-        SceneManager.LoadScene("Menu");
     }
+
+    public void SaveLocalDeviceId(string localDeviceId)
+    {
+        var request = new UpdateUserDataRequest
+        {
+
+            Data = new Dictionary<string, string>
+        {
+            { "localDeviceId", localDeviceId }
+        }
+        };
+
+        PlayFabClientAPI.UpdateUserData(request, result =>
+        {
+            Debug.Log("Local device ID saved successfully!");
+        }, error =>
+        {
+            Debug.LogError($"Error saving local device ID: {error.ErrorMessage}");
+        });
+    }
+    public void GetLocalDeviceId() {
+        var request = new GetUserDataRequest
+        {
+            PlayFabId = MyPlayfabID,
+            Keys = new List<string> { "localDeviceId" } // Klucz dla zmiennej poziomu
+        };
+
+        // Wywo³aj ¿¹danie
+        PlayFabClientAPI.GetUserData(request, OnGetUserDataSuccess, OnGetUserDataError);
+        
+    }
+
+private void OnGetUserDataSuccess(GetUserDataResult result)
+{
+    if (result.Data.TryGetValue("localDeviceId", out var idValue))
+    {
+        string id = idValue.Value;
+        gottenId = idValue.Value;
+        Debug.Log($"ID: " +id);
+    }
+    else
+    {
+        Debug.LogWarning("Nie znaleziono zmiennej poziomu gracza.");
+    }
+        if (gottenId == null)
+        {
+            SaveLocalDeviceId(SystemInfo.deviceUniqueIdentifier);
+            
+            SceneManager.LoadScene("Menu");
+        }
+        else
+        {
+            messageTextL.GetComponent<TMP_Text>().text = "U¿ytkownik jest zalogowany na to konto";
+        }
+    }
+
+private void OnGetUserDataError(PlayFabError error)
+{
+    Debug.LogError($"B³¹d pobierania danych gracza: {error.ErrorMessage}");
+}
+
+    void GetAccountInfo()
+    {
+        GetAccountInfoRequest request = new GetAccountInfoRequest();
+        PlayFabClientAPI.GetAccountInfo(request, Successs, fail);
+    }
+
+
+    void Successs(GetAccountInfoResult result)
+    {
+
+        MyPlayfabID = result.AccountInfo.PlayFabId;
+
+    }
+
+
+    void fail(PlayFabError error)
+    {
+
+        Debug.LogError(error.GenerateErrorReport());
+    }
+
+    
+    
 
     public void ResetPassword()
     {
@@ -89,7 +181,7 @@ public class PlayfabManager : MonoBehaviour
             Email = emailInputR.GetComponent<TMP_InputField>().text,
             TitleId = "87196"
         };
-        PlayFabClientAPI.SendAccountRecoveryEmail(request, OnPasswordReset, OnError);
+        PlayFabClientAPI.SendAccountRecoveryEmail(request, OnPasswordReset, OnErrorP);
     }
 
     void OnPasswordReset(SendAccountRecoveryEmailResult result)
@@ -99,9 +191,21 @@ public class PlayfabManager : MonoBehaviour
         LoginScreen.SetActive(true);
     }
 
-    void OnError(PlayFabError error)
+    void OnErrorL(PlayFabError error)
     {
         messageTextL.GetComponent<TMP_Text>().text = error.ErrorMessage;
+        Debug.Log(error.GenerateErrorReport());
+    }
+
+    void OnErrorR(PlayFabError error)
+    {
+        messageTextR.GetComponent<TMP_Text>().text = error.ErrorMessage;
+        Debug.Log(error.GenerateErrorReport());
+    }
+
+    void OnErrorP(PlayFabError error)
+    {
+        messageTextP.GetComponent<TMP_Text>().text = error.ErrorMessage;
         Debug.Log(error.GenerateErrorReport());
     }
 }

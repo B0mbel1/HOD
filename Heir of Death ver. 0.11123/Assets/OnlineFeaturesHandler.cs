@@ -65,6 +65,7 @@ public class OnlineFeaturesHandler : MonoBehaviour
     {
         Cleanup();
         PlayfabManager.name = null;
+        DeleteCurrentId(null);
         SceneManager.LoadScene("WelcomeScreen");
     }
 
@@ -175,5 +176,25 @@ public class OnlineFeaturesHandler : MonoBehaviour
                 SendLvl(zaokraglenie);
             }
         }
+    }
+
+    public void DeleteCurrentId(string DefaultID)
+    {
+        var request = new UpdateUserDataRequest
+        {
+
+            Data = new Dictionary<string, string>
+        {
+            { "localDeviceId", DefaultID }
+        }
+        };
+
+        PlayFabClientAPI.UpdateUserData(request, result =>
+        {
+            Debug.Log("Local device ID saved successfully!");
+        }, error =>
+        {
+            Debug.LogError($"Error saving local device ID: {error.ErrorMessage}");
+        });
     }
 }
