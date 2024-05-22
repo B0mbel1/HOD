@@ -21,6 +21,7 @@ public class OnlineFeaturesHandler : MonoBehaviour
     public List<PlayerData> playerDataList = new List<PlayerData>();
     public double wynik = 0;
     public int zaokraglenie = 0;
+    
 
     private void Start()
     {
@@ -122,13 +123,18 @@ public class OnlineFeaturesHandler : MonoBehaviour
 
     void OnLeaderboardGet(GetLeaderboardResult result)
     {
-        foreach(var item in result.Leaderboard)
+        
+        foreach (var item in result.Leaderboard)
         {
-            if(item.DisplayName == PlayfabManager.name)
+            if (item.DisplayName == PlayfabManager.name)
             {
+                
                 PoziomNumberTXT.text = item.StatValue.ToString();
+                
             }
+            
         }
+        
     }
 
     public void GetLeaderboard()

@@ -56,8 +56,8 @@ public class MenuPauzyOnline : NetworkBehaviour
 
         if (IsClient)
         {
-            NetworkManager.Singleton.DisconnectClient(OwnerClientId);
-            
+            //NetworkManager.Singleton.DisconnectClient(OwnerClientId);
+            NetworkManager.Singleton.Shutdown();
         }
         
         Cleanup();

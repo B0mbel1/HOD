@@ -142,6 +142,10 @@ private void OnGetUserDataSuccess(GetUserDataResult result)
         else
         {
             messageTextL.GetComponent<TMP_Text>().text = "U¿ytkownik jest zalogowany na to konto";
+            name = null;
+            PlayFabClientAPI.ForgetAllCredentials();
+            emailLogin.GetComponent<TMP_InputField>().text = "";
+            passwordLogin.GetComponent<TMP_InputField>().text = "";
         }
     }
 
