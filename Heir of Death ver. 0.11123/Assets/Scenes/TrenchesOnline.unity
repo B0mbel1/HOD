@@ -14402,8 +14402,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterDatabase: {fileID: 11400000, guid: 4510cfb054f910e46964934658d98c82, type: 2}
-  spawnPoints:
-  - {x: 121.884, y: 32.9, z: 144.52}
   spawnPointClient: {x: 120, y: 19, z: 85}
   spawnPointHost: {x: 48, y: 19, z: 21}
 --- !u!114 &8766731300304980642

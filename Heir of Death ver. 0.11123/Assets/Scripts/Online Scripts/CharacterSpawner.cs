@@ -8,9 +8,10 @@ public class CharacterSpawner : NetworkBehaviour
 
     [SerializeField] private CharacterDatabase characterDatabase;
 
-    [SerializeField] private Vector3[] spawnPoints;
+    // [SerializeField] private Vector3[] spawnPoints;
 
     public Vector3 spawnPointClient;
+    public Vector3 spawnPointHost;
 
     private void Awake()
     {
@@ -28,18 +29,13 @@ public class CharacterSpawner : NetworkBehaviour
                 var character = characterDatabase.GetCharacterById(client.Value.characterId);
                 if (character != null && host != client.Value.clientId)
                 {
-                    var characterSpawnPoint = RandomSpawnPoint();
-                    spawnPointClient = characterSpawnPoint;
-                    var characterInstance = Instantiate(character.GameplayPrefab, character.GameplayPrefab.transform.position, Quaternion.identity);
-
+                    var characterInstance = Instantiate(character.GameplayPrefab, spawnPointClient, Quaternion.identity);
                     characterInstance.SpawnAsPlayerObject(client.Value.clientId);
-
-                    Debug.Log(client.Value.clientId + " pozycja " + characterSpawnPoint.x + " " + characterSpawnPoint.y + " " + characterSpawnPoint.z);
                 }
             }
-
             SpawnHost();
         }
+
     }
 
     public void SpawnHost()
@@ -52,18 +48,10 @@ public class CharacterSpawner : NetworkBehaviour
             var hostCharacter = characterDatabase.GetCharacterById(hostClient.Value.characterId);
             if (hostCharacter != null)
             {
-                var hostSpawnPoint = RandomSpawnPoint();
-                var hostInstance = Instantiate(hostCharacter.GameplayPrefab, hostCharacter.GameplayPrefab.transform.position, Quaternion.identity);
+                var hostInstance = Instantiate(hostCharacter.GameplayPrefab, spawnPointHost, Quaternion.identity);
                 hostInstance.SpawnAsPlayerObject(hostClient.Value.clientId);
-                Debug.Log(hostClient.Value.clientId + " pozycja " + hostSpawnPoint.x + " " + hostSpawnPoint.y + " " + hostSpawnPoint.z);
             }
         }
-    }
-
-    public Vector3 RandomSpawnPoint()
-    {
-        int randomIndex = UnityEngine.Random.Range(0, spawnPoints.Length);
-        return spawnPoints[randomIndex];
     }
 
     public Vector3 GetSpawnPoint()
