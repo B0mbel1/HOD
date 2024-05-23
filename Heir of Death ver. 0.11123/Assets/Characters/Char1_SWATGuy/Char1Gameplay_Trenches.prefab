@@ -958,7 +958,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3725579188
+  GlobalObjectIdHash: 2547820438
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
   ActiveSceneSynchronization: 0
@@ -1643,7 +1643,7 @@ Transform:
   m_GameObject: {fileID: 2893557086950090720}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 58.8, y: 15.496, z: 24.07}
+  m_LocalPosition: {x: 120, y: 19, z: 85}
   m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -1666,7 +1666,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3725579188
+  GlobalObjectIdHash: 1705570636
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
   ActiveSceneSynchronization: 1
@@ -2101,7 +2101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {x: 0, y: 0, z: 0}
-  GetSpawnPosition: {fileID: 2893557086950090720}
+  hostSpawn: {x: 48, y: 19, z: 21}
+  clientSpawn: {x: 120, y: 19, z: 85}
   ownerRoundCountTxt: {fileID: 444770164824778225}
   opponentRoundCountTxt: {fileID: 6843950796179199052}
   dead: 0
@@ -5204,7 +5205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3725579188
+  GlobalObjectIdHash: 2429646188
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
   ActiveSceneSynchronization: 0
@@ -6135,7 +6136,7 @@ PrefabInstance:
       objectReference: {fileID: 2898455531196878150}
     - target: {fileID: 6297806380319108427, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
       propertyPath: GlobalObjectIdHash
-      value: 3725579188
+      value: 2490958840
       objectReference: {fileID: 0}
     - target: {fileID: 7435915038155686191, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
       propertyPath: gun1

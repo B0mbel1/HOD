@@ -44,11 +44,9 @@ public class RifleAnimationsOnline : NetworkBehaviour
         bool crouchPressed = Input.GetKey("left ctrl");
         bool jumpPressed = Input.GetKey("space");
         bool altPressed = Input.GetKey("left alt");
-        bool LPMPressed = Input.GetKey("mouse 0");
 
         if(MenuPauzyOnline.GameIsPaused == false)
         {
-
             if (!isRunning && forwardPressed)
             {
                 animator.SetBool("isRunning", true);
@@ -193,9 +191,6 @@ public class RifleAnimationsOnline : NetworkBehaviour
         {
 
         }
-
-
-
     }
 
     float NormalizeRotation(float rotation, float min, float max)
