@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class PulpitInteraction : NetworkBehaviour
 {
-    public GameObject interactionText;
     public GameObject pulpit;
 
     public AudioClip amenoSound;
@@ -11,17 +10,13 @@ public class PulpitInteraction : NetworkBehaviour
 
     void Start()
     {
-        interactionText.SetActive(false);
         amenoSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (!IsOwner) return;
-        if (other.gameObject.tag == "Player")
-        {
-            interactionText.SetActive(true);
-        }
+        
     }
 
     private void OnTriggerStay(Collider other)
@@ -32,7 +27,6 @@ public class PulpitInteraction : NetworkBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 amenoSource.Play();
-                interactionText.SetActive(false);
             }
         }
     }
@@ -40,9 +34,6 @@ public class PulpitInteraction : NetworkBehaviour
     private void OnTriggerExit(Collider other)
     {
         if (!IsOwner) return;
-        if (other.gameObject.tag == "Player")
-        {
-            interactionText.SetActive(false);
-        }
+        
     }
 }
