@@ -11691,7 +11691,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e74716478cd7bd40b0bc6ee915c839b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionText: {fileID: 0}
   shelter: {fileID: 1907325473}
   lookSound: {fileID: 8300000, guid: 83d9933be6081d441a2f56c41d4d92c2, type: 3}
   pickupSource: {fileID: 0}
@@ -12126,7 +12125,7 @@ GameObject:
   - component: {fileID: 2036385873}
   m_Layer: 0
   m_Name: ObjectsRespawn
-  m_TagString: Untagged
+  m_TagString: Respawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14405,7 +14404,8 @@ MonoBehaviour:
   characterDatabase: {fileID: 11400000, guid: 4510cfb054f910e46964934658d98c82, type: 2}
   spawnPoints:
   - {x: 121.884, y: 32.9, z: 144.52}
-  spawnPointClient: {x: 0, y: 0, z: 0}
+  spawnPointClient: {x: 120, y: 19, z: 85}
+  spawnPointHost: {x: 48, y: 19, z: 21}
 --- !u!114 &8766731300304980642
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -22353,7 +22353,8 @@ MonoBehaviour:
   characterDatabase: {fileID: 11400000, guid: a79a08f8600093e49ab597c645cea610, type: 2}
   spawnPoints:
   - {x: 121.884, y: 32.9, z: 144.52}
-  spawnPointClient: {x: 0, y: 0, z: 0}
+  spawnPointClient: {x: 58, y: 41, z: 246}
+  spawnPointHost: {x: 237, y: 39, z: 55}
 --- !u!4 &1029993838
 Transform:
   m_ObjectHideFlags: 0
