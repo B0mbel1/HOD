@@ -6,23 +6,26 @@ public class AddonsRespawn : NetworkBehaviour
 {
     public List<GameObject> remedy, ammo;
 
-    public void Update()
+
+    public void FixedUpdate()
     {
-        if (!IsOwner)
+        if (RoundHandler.hostDed == true || RoundHandler.klientDed == true)
         {
-            if (RoundHandler.odnow == true)
+            if (IsHost)
             {
+                Debug.Log("Powinno siê respiæ host");
                 OdnowServerRpc();
                 SynchroOdnowServerRpc(1);
             }
-        }
 
-        if (IsOwner)
-        {
-            if (RoundHandler.odnow == true)
+            if (!IsHost && IsClient)
             {
-                OdnowServerRpc(); 
+                Debug.Log("Powinno siê respiæ klient");
+
+                OdnowServerRpc();
                 SynchroOdnowServerRpc(1);
+                SynchroOdnowServerRpc(0);
+                RoundHandler.hostDed = false;
             }
         }
     }

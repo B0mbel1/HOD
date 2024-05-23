@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using TMPro;
 using Unity.Netcode;
@@ -7,21 +7,33 @@ using UnityEngine;
 public class RoundHandler : NetworkBehaviour
 {
     public Vector3 spawnPoint;
-    public GameObject GetSpawnPosition;
+    
+    public Vector3 hostSpawn;
+    public Vector3 clientSpawn;
+
     public TextMeshProUGUI ownerRoundCountTxt;
     public TextMeshProUGUI opponentRoundCountTxt;
     public bool dead;
     public ulong ulongVar;
     public int intVar;
 
-    public static bool odnow;
-
     public override void OnNetworkSpawn()
     {
-        spawnPoint = GetSpawnPosition.transform.position;
+        if (IsHost)
+        {
+            spawnPoint = hostSpawn;
+        }
+
+        if (!IsHost && IsClient)
+        {
+            spawnPoint = clientSpawn;
+        }
+
+
         dead = false;
-        Debug.Log(spawnPoint);
+        
         base.OnNetworkSpawn();
+
         ulongVar = NetworkManager.LocalClientId;
         intVar = Convert.ToInt32(ulongVar.ToString());
 
@@ -30,12 +42,11 @@ public class RoundHandler : NetworkBehaviour
 
     private void Update()
     {
+        if (!IsOwner) return;
+
         if (IsHost && PlayerHealth.health <= 0)
         {
-            //respawn2ServerRpc(true);
-
             respawnClientRpc(new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
-
         }
 
         if (!IsHost && IsClient && PlayerHealth.health <= 0)
@@ -48,7 +59,6 @@ public class RoundHandler : NetworkBehaviour
         if (PlayerHealth.health <= 0)
         {
             dead = true;
-            odnow = true;
             PlayerHealth.health = 100;
         }
 
@@ -70,15 +80,12 @@ public class RoundHandler : NetworkBehaviour
 
         if (klientDed == true)
         {
-            //respawnSynchroServerRpc(1);
             RespawnPlayer();
             klientDed = false;
         }
         if (hostDed == true)
         {
-            //respawnSynchroServerRpc(0);
             RespawnPlayer();
-            hostDed = false;
         }
 
         if (dead == true)
@@ -97,7 +104,6 @@ public class RoundHandler : NetworkBehaviour
 
             setTimeServerRpc();
             setTimeSynchroServerRpc(1);
-            //RespawnPlayer(NetworkManager.LocalClientId);
         }
 
         if (TimerScript.TimeLeft == 0)
@@ -119,13 +125,13 @@ public class RoundHandler : NetworkBehaviour
     [ServerRpc]
     public void setTimeServerRpc()
     {
-        TimerScript.TimeLeft = 10;       //ZMIANA
+        TimerScript.TimeLeft = 20;       
     }
 
     [ClientRpc]
     public void setTimeClientRpc()
     {
-        TimerScript.TimeLeft = 10;          //ZMIANA
+        TimerScript.TimeLeft = 20;         
     }
 
     [ServerRpc]
@@ -175,14 +181,13 @@ public class RoundHandler : NetworkBehaviour
         transform.position = spawnPoint;
         dead = false;
 
-        odnow = false;
 
         PlayerHealth.health = 100;
 
-        TimerScript.TimeLeft = 10f;              //ZMIANA
+        TimerScript.TimeLeft = 20f;              //ZMIANA
     }
 
-    [ServerRpc(RequireOwnership =false)]
+    [ServerRpc(RequireOwnership = false)]
     public void respawnServerRpc(bool klient)
     {
         klientDed = klient;
