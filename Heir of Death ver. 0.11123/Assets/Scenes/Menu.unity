@@ -839,7 +839,6 @@ MonoBehaviour:
   - TrenchesOnline
   gameplaySceneName: 
   characterSelectSceneName: SelectCharacter
-  ipAddressText: {fileID: 0}
   ip: {fileID: 870967023}
   ipAddress: 
   transport: {fileID: 326103338}
@@ -4335,7 +4334,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 59e05ef13720c754b93c9c95a3513580, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fa080daf7ac56d7448d9716d877ea4ca, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7604,7 +7603,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 506085221}
   m_Template: {fileID: 1183025615}
   m_CaptionText: {fileID: 476203225}
-  m_CaptionImage: {fileID: 0}
+  m_CaptionImage: {fileID: 2038447710}
   m_Placeholder: {fileID: 0}
   m_ItemText: {fileID: 204917780}
   m_ItemImage: {fileID: 0}
@@ -7612,11 +7611,11 @@ MonoBehaviour:
   m_Options:
     m_Options:
     - m_Text: "Domy\u015Blna"
-      m_Image: {fileID: 0}
+      m_Image: {fileID: 21300000, guid: 63fd53dceed1aba4499ff1b3f7b91f40, type: 3}
     - m_Text: Alt
-      m_Image: {fileID: 0}
+      m_Image: {fileID: 21300000, guid: 2a1f703b8473ab243a85a4436c916595, type: 3}
     - m_Text: Duch
-      m_Image: {fileID: 0}
+      m_Image: {fileID: 21300000, guid: 4b2ff13677ee2cf4b87137bf9b3c1996, type: 3}
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -13633,7 +13632,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Posta\u0107 4"
+  m_text: Ben Herdgall
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -14551,7 +14550,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 904223690}
   m_Template: {fileID: 1579645365}
   m_CaptionText: {fileID: 1479969694}
-  m_CaptionImage: {fileID: 0}
+  m_CaptionImage: {fileID: 272064096}
   m_Placeholder: {fileID: 0}
   m_ItemText: {fileID: 902393115}
   m_ItemImage: {fileID: 0}
@@ -14559,11 +14558,11 @@ MonoBehaviour:
   m_Options:
     m_Options:
     - m_Text: "Domy\u015Blna"
-      m_Image: {fileID: 0}
+      m_Image: {fileID: 21300000, guid: fa080daf7ac56d7448d9716d877ea4ca, type: 3}
     - m_Text: Alt
-      m_Image: {fileID: 0}
+      m_Image: {fileID: 21300000, guid: 41ca4c1635bcafd4c9ceb9177d433e76, type: 3}
     - m_Text: Duch
-      m_Image: {fileID: 0}
+      m_Image: {fileID: 21300000, guid: e972aa234b6af474594710b829625328, type: 3}
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -15289,7 +15288,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Posta\u0107 1"
+  m_text: Neran
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -19131,7 +19130,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bc07455bcbb763e4bb4f643788bb916b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fc184fba7889fe64e83df5c77150b723, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -21459,7 +21458,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1327682275}
   m_Template: {fileID: 332082569}
   m_CaptionText: {fileID: 1630160257}
-  m_CaptionImage: {fileID: 0}
+  m_CaptionImage: {fileID: 1892150106}
   m_Placeholder: {fileID: 0}
   m_ItemText: {fileID: 764874690}
   m_ItemImage: {fileID: 0}
@@ -21467,11 +21466,11 @@ MonoBehaviour:
   m_Options:
     m_Options:
     - m_Text: "Domy\u015Blna"
-      m_Image: {fileID: 0}
+      m_Image: {fileID: 21300000, guid: 8fbf91d34595d024dbfc3fccb018ad36, type: 3}
     - m_Text: Alt
-      m_Image: {fileID: 0}
+      m_Image: {fileID: 21300000, guid: 854f8883a54220a4cb7a5c9d37a644e4, type: 3}
     - m_Text: Duch
-      m_Image: {fileID: 0}
+      m_Image: {fileID: 21300000, guid: e62bbb437991b1347966e4ff1a0c432e, type: 3}
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -22203,7 +22202,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1362353990}
   m_Template: {fileID: 1808111106}
   m_CaptionText: {fileID: 378357142}
-  m_CaptionImage: {fileID: 0}
+  m_CaptionImage: {fileID: 1120745340}
   m_Placeholder: {fileID: 0}
   m_ItemText: {fileID: 1590884260}
   m_ItemImage: {fileID: 0}
@@ -22211,11 +22210,11 @@ MonoBehaviour:
   m_Options:
     m_Options:
     - m_Text: "Domy\u015Blna"
-      m_Image: {fileID: 0}
+      m_Image: {fileID: 21300000, guid: fc184fba7889fe64e83df5c77150b723, type: 3}
     - m_Text: Alt
-      m_Image: {fileID: 0}
+      m_Image: {fileID: 21300000, guid: 5b6a498c3c96f1c49a0311b485c9ee73, type: 3}
     - m_Text: Duch
-      m_Image: {fileID: 0}
+      m_Image: {fileID: 21300000, guid: 8c2e5195c6745ba40aff4e130a66455a, type: 3}
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -23596,7 +23595,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -30709,7 +30708,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Posta\u0107 2"
+  m_text: Asseria
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -31111,7 +31110,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 12a998e1e9891bb408df09f3fda7d959, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8fbf91d34595d024dbfc3fccb018ad36, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -31371,6 +31370,7 @@ GameObject:
   - component: {fileID: 1908341372}
   - component: {fileID: 1908341373}
   - component: {fileID: 1908341374}
+  - component: {fileID: 1908341375}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -31565,6 +31565,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textureSlider: {fileID: 718213238}
+--- !u!114 &1908341375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908341364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa2558a1101616b4090c7b9a1a357702, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1914439274
 GameObject:
   m_ObjectHideFlags: 0
@@ -33213,7 +33225,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b2cd912eca73dde4795d3c91106e1e94, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 63fd53dceed1aba4499ff1b3f7b91f40, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -34397,7 +34409,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Posta\u0107 3"
+  m_text: Rizael
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
