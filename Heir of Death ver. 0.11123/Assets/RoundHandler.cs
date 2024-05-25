@@ -184,7 +184,7 @@ public class RoundHandler : NetworkBehaviour
 
         PlayerHealth.health = 100;
 
-        TimerScript.TimeLeft = 20f;              //ZMIANA
+        TimerScript.TimeLeft = 20f;             
     }
 
     [ServerRpc(RequireOwnership = false)]

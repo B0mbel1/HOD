@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
@@ -50,12 +51,13 @@ public class ServerManager : MonoBehaviour
         GetLocalIPAddress();
     }
 
+
     public void StartClient()
     {
         //NetworkManager.Singleton.ConnectionApprovalCallback += ApprovalCheck;
         ipAddress = ip.text;
         SetIpAddress(ipAddress);
-
+        
         NetworkManager.Singleton.StartClient();
     }
 
@@ -114,6 +116,9 @@ public class ServerManager : MonoBehaviour
         transport = NetworkManager.Singleton.GetComponent<UnityTransport>();
         transport.ConnectionData.Address = ipAddress;
     }
+
+
+
 
     private void OnNetworkReady()
     {
