@@ -66,7 +66,11 @@ public class OnlineFeaturesHandler : MonoBehaviour
     {
         Cleanup();
         PlayfabManager.name = null;
+        PlayfabManager.gottenId = null;
+        PlayfabManager.MyPlayfabID = null;
+        
         DeleteCurrentId(null);
+        PlayFabClientAPI.ForgetAllCredentials();
         SceneManager.LoadScene("WelcomeScreen");
     }
 
