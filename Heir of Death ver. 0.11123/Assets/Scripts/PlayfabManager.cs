@@ -23,8 +23,8 @@ public class PlayfabManager : MonoBehaviour
     public GameObject ResetScreen;
     public GameObject RegisterScreen;
     public static string name = null;
-    string MyPlayfabID;
-    string gottenId;
+    public static string MyPlayfabID;
+    public static string gottenId;
     
     public class PlayerData
     {
@@ -129,10 +129,7 @@ private void OnGetUserDataSuccess(GetUserDataResult result)
         gottenId = idValue.Value;
         Debug.Log($"ID: " +id);
     }
-    else
-    {
-        Debug.LogWarning("Nie znaleziono zmiennej poziomu gracza.");
-    }
+    
         if (gottenId == null)
         {
             SaveLocalDeviceId(SystemInfo.deviceUniqueIdentifier);
@@ -141,14 +138,21 @@ private void OnGetUserDataSuccess(GetUserDataResult result)
         }
         else
         {
+            
             messageTextL.GetComponent<TMP_Text>().text = "U¿ytkownik jest zalogowany na to konto";
-            name = null;
-            PlayFabClientAPI.ForgetAllCredentials();
-            emailLogin.GetComponent<TMP_InputField>().text = "";
-            passwordLogin.GetComponent<TMP_InputField>().text = "";
+            CleanLogin();
         }
     }
 
+    private void CleanLogin()
+    {
+        name = null;
+        gottenId = null;
+        MyPlayfabID = null;
+        emailLogin.GetComponent<TMP_InputField>().text = null;
+        passwordLogin.GetComponent<TMP_InputField>().text = null;
+        PlayFabClientAPI.ForgetAllCredentials();
+    }
 private void OnGetUserDataError(PlayFabError error)
 {
     Debug.LogError($"B³¹d pobierania danych gracza: {error.ErrorMessage}");
