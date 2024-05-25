@@ -4,7 +4,7 @@ using Unity.Netcode;
 
 public class TimerScript : NetworkBehaviour
 {
-    public static float TimeLeft = 15f;     //Ustawiæ na 90f;
+    public static float TimeLeft = 90f;     //Ustawiæ na 90f;
     public bool TimerOn = false;
 
     public Text RoundTimer;
@@ -51,7 +51,6 @@ public class TimerScript : NetworkBehaviour
                 }
             }
         }
-
     }
 
     public void UpdateTimer(float currentTime)
@@ -63,5 +62,4 @@ public class TimerScript : NetworkBehaviour
 
         RoundTimer.text = string.Format("{0:00} : {1:00}", minutes, seconds);
     }
-
 }
