@@ -1257,7 +1257,7 @@ GameObject:
   - component: {fileID: 34079967}
   - component: {fileID: 35216709}
   - component: {fileID: 39432635}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Gravestone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3014,7 +3014,7 @@ GameObject:
   - component: {fileID: 133885973}
   - component: {fileID: 132889959}
   - component: {fileID: 128712471}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Gravestone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8575,7 +8575,7 @@ GameObject:
   - component: {fileID: 319659328}
   - component: {fileID: 320616794}
   - component: {fileID: 324765344}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Gravestone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10266,7 +10266,7 @@ GameObject:
   - component: {fileID: 386753798}
   - component: {fileID: 387717064}
   - component: {fileID: 391893080}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Gravestone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12830,7 +12830,7 @@ GameObject:
   - component: {fileID: 558899872}
   - component: {fileID: 557936594}
   - component: {fileID: 553725346}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Gravestone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15151,7 +15151,7 @@ GameObject:
   - component: {fileID: 690923000}
   - component: {fileID: 692059234}
   - component: {fileID: 696193180}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Gravestone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15744,7 +15744,7 @@ GameObject:
   - component: {fileID: 717171854}
   - component: {fileID: 716070464}
   - component: {fileID: 719952336}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Gravestone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17151,7 +17151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11b2936ed56f1e54286b1a8761c788b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionText: {fileID: 0}
   pulpit: {fileID: 792954589}
   amenoSound: {fileID: 8300000, guid: 6129ca5650c09f14981cdf5c3ec2ad6f, type: 3}
   amenoSource: {fileID: 0}
@@ -17320,7 +17319,7 @@ GameObject:
   - component: {fileID: 799224204}
   - component: {fileID: 800232854}
   - component: {fileID: 804596332}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Gravestone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18305,7 +18304,7 @@ GameObject:
   - component: {fileID: 822928380}
   - component: {fileID: 824021298}
   - component: {fileID: 828004002}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Gravestone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18674,7 +18673,7 @@ GameObject:
   - component: {fileID: 848055792}
   - component: {fileID: 849209834}
   - component: {fileID: 853169680}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Gravestone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18827,7 +18826,7 @@ GameObject:
   - component: {fileID: 853300104}
   - component: {fileID: 852303610}
   - component: {fileID: 848125066}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Gravestone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22298,7 +22297,7 @@ GameObject:
   - component: {fileID: 1030320051}
   - component: {fileID: 1031326633}
   - component: {fileID: 1027568723}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Gravestone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22351,8 +22350,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterDatabase: {fileID: 11400000, guid: a79a08f8600093e49ab597c645cea610, type: 2}
-  spawnPoints:
-  - {x: 121.884, y: 32.9, z: 144.52}
   spawnPointClient: {x: 58, y: 41, z: 246}
   spawnPointHost: {x: 237, y: 39, z: 55}
 --- !u!4 &1029993838
@@ -25119,7 +25116,7 @@ GameObject:
   - component: {fileID: 1129566921}
   - component: {fileID: 1128439815}
   - component: {fileID: 1124427671}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Gravestone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26224,7 +26221,7 @@ GameObject:
   - component: {fileID: 1143951192}
   - component: {fileID: 1144919746}
   - component: {fileID: 1149172284}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Gravestone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26944,7 +26941,7 @@ GameObject:
   - component: {fileID: 1155901453}
   - component: {fileID: 1156897475}
   - component: {fileID: 1152589139}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Gravestone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28763,7 +28760,7 @@ GameObject:
   - component: {fileID: 1207778750}
   - component: {fileID: 1206644862}
   - component: {fileID: 1202442588}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Gravestone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28954,7 +28951,7 @@ GameObject:
   - component: {fileID: 1209852881}
   - component: {fileID: 1208859211}
   - component: {fileID: 1213028021}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Gravestone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33224,7 +33221,7 @@ GameObject:
   - component: {fileID: 1374277290}
   - component: {fileID: 1375667050}
   - component: {fileID: 1371480648}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Gravestone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40066,7 +40063,7 @@ GameObject:
   - component: {fileID: 1549688794}
   - component: {fileID: 1548685992}
   - component: {fileID: 1544507608}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Gravestone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40544,7 +40541,7 @@ GameObject:
   - component: {fileID: 1596942742}
   - component: {fileID: 1597908196}
   - component: {fileID: 1602119316}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Gravestone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42357,7 +42354,7 @@ GameObject:
   - component: {fileID: 1652445227}
   - component: {fileID: 1651023339}
   - component: {fileID: 1646836937}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Gravestone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43474,7 +43471,7 @@ GameObject:
   - component: {fileID: 1685938522}
   - component: {fileID: 1684804500}
   - component: {fileID: 1680593924}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Gravestone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46125,7 +46122,7 @@ GameObject:
   - component: {fileID: 1773866339}
   - component: {fileID: 1772994723}
   - component: {fileID: 1777197441}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Gravestone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50382,7 +50379,7 @@ GameObject:
   - component: {fileID: 1948792373}
   - component: {fileID: 1949930031}
   - component: {fileID: 1954426325}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Gravestone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55697,7 +55694,7 @@ GameObject:
   - component: {fileID: 2141923282}
   - component: {fileID: 2142923424}
   - component: {fileID: 2147100880}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Gravestone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
