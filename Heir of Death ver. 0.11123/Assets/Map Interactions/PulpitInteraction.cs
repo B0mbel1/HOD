@@ -6,34 +6,39 @@ public class PulpitInteraction : NetworkBehaviour
     public GameObject pulpit;
 
     public AudioClip amenoSound;
-    public AudioSource amenoSource;
 
-    void Start()
-    {
-        amenoSource = GetComponent<AudioSource>();
-    }
-
-    private void OnTriggerEnter(Collider other)
+    public void Update()
     {
         if (!IsOwner) return;
-        
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (!IsOwner) return;
-        if (other.gameObject.tag == "Player")
+        Skrypt player = other.GetComponentInParent<Skrypt>();
+
+        if (player != null)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (player.czyHost == true)
             {
-                amenoSource.Play();
+                if (other.gameObject.tag == "Player")
+                {
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        player.BulletSpawnServerRpc();
+                    }
+                }
+            }
+
+            if (player.czyHost == false)
+            {
+                if (other.gameObject.tag == "Player")
+                {
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        player.SynchroServerRpc();
+                    }
+                }
             }
         }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (!IsOwner) return;
-        
     }
 }
