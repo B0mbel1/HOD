@@ -20,7 +20,7 @@ public class ChangeGun : NetworkBehaviour
         {
             if (IsHost)
             {
-                if (Input.GetKeyDown(KeyCode.Q) && FreeTeleportationOnline.teleportState == true)
+                if (Input.GetKey(KeyCode.Q) && FreeTeleportationOnline.teleportState == true)
                 {
                     gun2.SetActive(false);
                     gun1.SetActive(false);

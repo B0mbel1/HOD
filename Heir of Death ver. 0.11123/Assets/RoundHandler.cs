@@ -125,13 +125,13 @@ public class RoundHandler : NetworkBehaviour
     [ServerRpc]
     public void setTimeServerRpc()
     {
-        TimerScript.TimeLeft = 20;       
+        TimerScript.TimeLeft = 90;       
     }
 
     [ClientRpc]
     public void setTimeClientRpc()
     {
-        TimerScript.TimeLeft = 20;         
+        TimerScript.TimeLeft = 90;         
     }
 
     [ServerRpc]
@@ -184,7 +184,7 @@ public class RoundHandler : NetworkBehaviour
 
         PlayerHealth.health = 100;
 
-        TimerScript.TimeLeft = 20f;             
+        TimerScript.TimeLeft = 90f;             
     }
 
     [ServerRpc(RequireOwnership = false)]
