@@ -14,7 +14,6 @@ public class OnlineStart : MonoBehaviour
 
     public void StartClient()
     {
-        //NetworkManager.Singleton.StartClient();
         ServerManager.Instance.StartClient();
     }
 }
