@@ -168,8 +168,6 @@ public class RoundHandler : NetworkBehaviour
         GetComponent<PlayerMovementOnline>().enabled = false;
         GetComponentInChildren<MeshRenderer>().enabled = false;
         GetComponentInChildren<shootingfinal>().enabled = false;
-
-        //RespawnPlayer();
     }
 
     public void RespawnPlayer()
