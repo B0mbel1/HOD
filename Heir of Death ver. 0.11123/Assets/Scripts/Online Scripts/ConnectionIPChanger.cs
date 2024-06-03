@@ -8,6 +8,6 @@ public class ConnectionIPChanger : NetworkBehaviour
 
     void Update()
     {
-        ipAddressText.text = ServerManager.AdresIP;
+        ipAddressText.text = "Adres IP hosta: "+ServerManager.AdresIP;
     }
 }

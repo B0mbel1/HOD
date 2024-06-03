@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
 using UnityEngine;
@@ -15,7 +16,7 @@ public class ServerManager : MonoBehaviour
     [SerializeField] public List<string> SceneList = new List<string>();
     [SerializeField] private string gameplaySceneName = "";
     [SerializeField] private string characterSelectSceneName = "SelectCharacter";
-    [SerializeField] InputField ip;
+    [SerializeField] TMP_InputField ip;
     [SerializeField] string ipAddress;
     [SerializeField] UnityTransport transport;
 
