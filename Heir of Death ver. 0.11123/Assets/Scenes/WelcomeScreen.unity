@@ -2834,8 +2834,6 @@ MonoBehaviour:
   LoginScreen: {fileID: 1636039595}
   ResetScreen: {fileID: 1402081392}
   RegisterScreen: {fileID: 865124214}
-  key: 13
-  but: {fileID: 1743100099}
 --- !u!114 &557574626
 MonoBehaviour:
   m_ObjectHideFlags: 0

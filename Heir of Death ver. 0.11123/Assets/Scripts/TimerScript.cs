@@ -11,7 +11,15 @@ public class TimerScript : NetworkBehaviour
 
     void Start()
     {
-        TimerOn = true;
+        if (Main.gamemode == 0)
+        {
+            TimerOn = true;
+        }
+        if(Main.gamemode == 1)
+        {
+            TimerOn = false;
+            RoundTimer.text = "Timer wy³¹czony";
+        }
     }
 
     void Update()
