@@ -13,17 +13,17 @@ public class RemedyUsage : NetworkBehaviour
         {
             if (playerHealth.czyHost && IsServer)
             {
-                playerHealth.RestoreHealthServerRpc(10f);
+                playerHealth.RestoreHealthServerRpc();
 
                 destroyRemedyServerRpc();
                 destroySynchroRemedyServerRpc(1);
+                Debug.Log("Zycie:" + PlayerHealth.health);
             }
 
             if (playerHealth.czyHost == false && (!IsServer))
             {
-                playerHealth.SynchroServerRpc(10f);
-
-
+                playerHealth.SynchroServerRpc();
+                
                 destroyRemedyServerRpc();
                 destroySynchroRemedyServerRpc(1);
                 destroySynchroRemedyServerRpc(0);
@@ -31,7 +31,7 @@ public class RemedyUsage : NetworkBehaviour
         }
     }
 
-    [ServerRpc]
+    [ServerRpc(RequireOwnership = false)]
     public void destroyRemedyServerRpc()
     {
         gameObject.SetActive(false);
@@ -57,9 +57,3 @@ public class RemedyUsage : NetworkBehaviour
         gameObject.SetActive(false);
     }
 }
-
-
-
-
-
-

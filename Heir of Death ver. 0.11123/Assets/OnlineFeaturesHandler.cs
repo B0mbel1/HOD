@@ -21,6 +21,7 @@ public class OnlineFeaturesHandler : MonoBehaviour
     public List<PlayerData> playerDataList = new List<PlayerData>();
     public double wynik = 0;
     public int zaokraglenie = 0;
+    
 
     private void Start()
     {
@@ -65,6 +66,11 @@ public class OnlineFeaturesHandler : MonoBehaviour
     {
         Cleanup();
         PlayfabManager.name = null;
+        PlayfabManager.gottenId = null;
+        PlayfabManager.MyPlayfabID = null;
+        
+        DeleteCurrentId(null);
+        PlayFabClientAPI.ForgetAllCredentials();
         SceneManager.LoadScene("WelcomeScreen");
     }
 
@@ -121,13 +127,18 @@ public class OnlineFeaturesHandler : MonoBehaviour
 
     void OnLeaderboardGet(GetLeaderboardResult result)
     {
-        foreach(var item in result.Leaderboard)
+        
+        foreach (var item in result.Leaderboard)
         {
-            if(item.DisplayName == PlayfabManager.name)
+            if (item.DisplayName == PlayfabManager.name)
             {
+                
                 PoziomNumberTXT.text = item.StatValue.ToString();
+                
             }
+            
         }
+        
     }
 
     public void GetLeaderboard()
@@ -175,5 +186,25 @@ public class OnlineFeaturesHandler : MonoBehaviour
                 SendLvl(zaokraglenie);
             }
         }
+    }
+
+    public void DeleteCurrentId(string DefaultID)
+    {
+        var request = new UpdateUserDataRequest
+        {
+
+            Data = new Dictionary<string, string>
+        {
+            { "localDeviceId", DefaultID }
+        }
+        };
+
+        PlayFabClientAPI.UpdateUserData(request, result =>
+        {
+            Debug.Log("Local device ID saved successfully!");
+        }, error =>
+        {
+            Debug.LogError($"Error saving local device ID: {error.ErrorMessage}");
+        });
     }
 }

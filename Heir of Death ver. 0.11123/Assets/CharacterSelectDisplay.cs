@@ -15,6 +15,7 @@ public class CharacterSelectDisplay : NetworkBehaviour
     [SerializeField] private PlayerCard[] playerCards;
     [SerializeField] private Transform introSpawnPoint;
     [SerializeField] private Button lockInButton;
+    [SerializeField] private TMP_Text IPHostInfo;
 
     private NetworkList<CharacterSelectState> players;
     private GameObject introInstance;
@@ -22,6 +23,14 @@ public class CharacterSelectDisplay : NetworkBehaviour
 
     private void Awake()
     {
+        if(Main.gamemode == 0)
+        {
+            IPHostInfo.gameObject.SetActive(true);
+        }
+        if (Main.gamemode == 1)
+        {
+            IPHostInfo.gameObject.SetActive(false);
+        }
         players = new NetworkList<CharacterSelectState>();
     }
 

@@ -640,7 +640,7 @@ Transform:
   m_GameObject: {fileID: 1370538760696813027}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 120.318, y: 15.677, z: 85.01}
+  m_LocalPosition: {x: 120, y: 19, z: 85}
   m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -1098,7 +1098,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {x: 0, y: 0, z: 0}
-  GetSpawnPosition: {fileID: 1370538760696813027}
+  hostSpawn: {x: 48, y: 19, z: 21}
+  clientSpawn: {x: 120, y: 19, z: 85}
   ownerRoundCountTxt: {fileID: 329971787762048978}
   opponentRoundCountTxt: {fileID: 6648148066683907695}
   dead: 0
@@ -3827,7 +3828,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   czyHost: 0
-  maxHealth: 100
   chipSpeed: 2
   frontHealthBar: {fileID: 1738041752493435573}
   backHealthBar: {fileID: 5814236395178663361}
@@ -5317,6 +5317,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3883822849603614194, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5300069803075435369, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
       propertyPath: gun1
       value: 
@@ -5325,6 +5329,10 @@ PrefabInstance:
       propertyPath: gun2
       value: 
       objectReference: {fileID: 5368188194080034748}
+    - target: {fileID: 6297806380319108427, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 922196629
+      objectReference: {fileID: 0}
     - target: {fileID: 8087372784962087565, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 72000853

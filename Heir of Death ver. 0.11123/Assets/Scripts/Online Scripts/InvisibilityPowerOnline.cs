@@ -42,7 +42,7 @@ public class InvisibilityPowerOnline : NetworkBehaviour
     {
         if (Main.Power == 2)
         {
-            if (CanPressAbility && Input.GetKeyDown(KeyCode.Q))
+            if (CanPressAbility && Input.GetKeyDown(KeyCode.Q) && MenuPauzyOnline.GameIsPaused == false)
             {
                 IsPowerActivated(true);
                 CanPressAbility = false;

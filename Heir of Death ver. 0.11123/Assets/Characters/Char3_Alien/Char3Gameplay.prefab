@@ -262,7 +262,7 @@ Transform:
   m_GameObject: {fileID: 1318587044675773895}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 103.48, y: 33.5, z: 132.39}
+  m_LocalPosition: {x: 58, y: 41, z: 246}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -693,7 +693,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {x: 0, y: 0, z: 0}
-  GetSpawnPosition: {fileID: 1318587044675773895}
+  hostSpawn: {x: 237, y: 39, z: 55}
+  clientSpawn: {x: 58, y: 41, z: 246}
   ownerRoundCountTxt: {fileID: 5182985659225125960}
   opponentRoundCountTxt: {fileID: 2250415639504045557}
   dead: 0
@@ -2998,7 +2999,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   czyHost: 0
-  maxHealth: 100
   chipSpeed: 2
   frontHealthBar: {fileID: 6586269999505113391}
   backHealthBar: {fileID: 1425867958646617691}
@@ -3262,7 +3262,7 @@ Transform:
   m_GameObject: {fileID: 6382019073397861001}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.12859344, y: 4.877995, z: 0.531}
+  m_LocalPosition: {x: -0.12859344, y: 4.8779984, z: 0.53100437}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3374,7 +3374,7 @@ PositionConstraint:
   m_Active: 1
   m_IsLocked: 1
   m_Sources:
-  - sourceTransform: {fileID: 0}
+  - sourceTransform: {fileID: 4199089143905459621}
     weight: 1
 --- !u!1 &6406340012767789502
 GameObject:
@@ -4214,7 +4214,7 @@ Transform:
   m_GameObject: {fileID: 8664196768629763387}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.07099724, y: -0.00000013411045, z: 0.11000194}
+  m_LocalPosition: {x: -0.070999876, y: -0.00000012665987, z: 0.110001236}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4978,6 +4978,10 @@ PrefabInstance:
       propertyPath: gun2
       value: 
       objectReference: {fileID: 4518086769103066041}
+    - target: {fileID: 6297806380319108427, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2219313520
+      objectReference: {fileID: 0}
     - target: {fileID: 8087372784962087565, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 2219313520

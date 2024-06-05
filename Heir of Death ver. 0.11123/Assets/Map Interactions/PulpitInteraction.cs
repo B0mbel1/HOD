@@ -3,46 +3,42 @@ using UnityEngine;
 
 public class PulpitInteraction : NetworkBehaviour
 {
-    public GameObject interactionText;
     public GameObject pulpit;
 
     public AudioClip amenoSound;
-    public AudioSource amenoSource;
 
-    void Start()
-    {
-        interactionText.SetActive(false);
-        amenoSource = GetComponent<AudioSource>();
-    }
-
-    private void OnTriggerEnter(Collider other)
+    public void Update()
     {
         if (!IsOwner) return;
-        if (other.gameObject.tag == "Player")
-        {
-            interactionText.SetActive(true);
-        }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (!IsOwner) return;
-        if (other.gameObject.tag == "Player")
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                amenoSource.Play();
-                interactionText.SetActive(false);
-            }
-        }
-    }
+        Skrypt player = other.GetComponentInParent<Skrypt>();
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (!IsOwner) return;
-        if (other.gameObject.tag == "Player")
+        if (player != null)
         {
-            interactionText.SetActive(false);
+            if (player.czyHost == true)
+            {
+                if (other.gameObject.tag == "Player")
+                {
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        player.BulletSpawnServerRpc();
+                    }
+                }
+            }
+
+            if (player.czyHost == false)
+            {
+                if (other.gameObject.tag == "Player")
+                {
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        player.SynchroServerRpc();
+                    }
+                }
+            }
         }
     }
 }

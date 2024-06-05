@@ -267,7 +267,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   czyHost: 0
-  maxHealth: 100
   chipSpeed: 2
   frontHealthBar: {fileID: 1920411748910534806}
   backHealthBar: {fileID: 5911043497839962082}
@@ -1664,7 +1663,7 @@ Transform:
   m_GameObject: {fileID: 2893557086950090720}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 121.884, y: 33.5, z: 144.52}
+  m_LocalPosition: {x: 58, y: 41, z: 246}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -1687,7 +1686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 4069156427
+  GlobalObjectIdHash: 503231569
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
   ActiveSceneSynchronization: 1
@@ -2095,7 +2094,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {x: 0, y: 0, z: 0}
-  GetSpawnPosition: {fileID: 2893557086950090720}
+  hostSpawn: {x: 237, y: 39, z: 55}
+  clientSpawn: {x: 58, y: 41, z: 246}
   ownerRoundCountTxt: {fileID: 444770164824778225}
   opponentRoundCountTxt: {fileID: 6843950796179199052}
   dead: 0
@@ -3505,7 +3505,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   czyHost: 0
-  maxHealth: 100
   chipSpeed: 2
   frontHealthBar: {fileID: 1920411748910534806}
   backHealthBar: {fileID: 5911043497839962082}
@@ -4567,7 +4566,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   czyHost: 0
-  maxHealth: 100
   chipSpeed: 2
   frontHealthBar: {fileID: 1920411748910534806}
   backHealthBar: {fileID: 5911043497839962082}
@@ -6223,6 +6221,10 @@ PrefabInstance:
       propertyPath: gun2
       value: 
       objectReference: {fileID: 2898455531196878150}
+    - target: {fileID: 6297806380319108427, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 912468160
+      objectReference: {fileID: 0}
     - target: {fileID: 7435915038155686191, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
       propertyPath: gun1
       value: 
@@ -6237,6 +6239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
+    - {fileID: 2417487989820071593, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

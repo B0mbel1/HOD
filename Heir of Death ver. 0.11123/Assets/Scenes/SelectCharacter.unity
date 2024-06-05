@@ -692,6 +692,10 @@ PrefabInstance:
       value: "\u0141adowanie..."
       objectReference: {fileID: 0}
     - target: {fileID: 7585858182925046760, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
+      propertyPath: IPHostInfo
+      value: 
+      objectReference: {fileID: 2106813420}
+    - target: {fileID: 7585858182925046760, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
       propertyPath: characterBioText
       value: 
       objectReference: {fileID: 1448906575}
@@ -741,13 +745,33 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4688268952188529564, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2106813422}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3127509610762614205, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 681861060}
   m_SourcePrefab: {fileID: 100100000, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
 --- !u!224 &681861058 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4688268952188529564, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
   m_PrefabInstance: {fileID: 681861057}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &681861059 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3127509610762614205, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
+  m_PrefabInstance: {fileID: 681861057}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &681861060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681861059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa2558a1101616b4090c7b9a1a357702, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &829164333
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1445,7 +1469,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: new
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1538,8 +1562,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -709, y: 343}
-  m_SizeDelta: {x: 458, y: 54.9232}
+  m_AnchoredPosition: {x: -550, y: 343}
+  m_SizeDelta: {x: 600, y: 54.9232}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2106813423
 MonoBehaviour:

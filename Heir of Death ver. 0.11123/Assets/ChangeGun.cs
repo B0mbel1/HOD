@@ -16,53 +16,56 @@ public class ChangeGun : NetworkBehaviour
     {
         if (!IsOwner) return;
 
-        if (IsHost)
+        if (MenuPauzyOnline.GameIsPaused == false)
         {
-            if (Input.GetKeyDown(KeyCode.Q) && FreeTeleportationOnline.teleportState == true)
+            if (IsHost)
             {
-                gun2.SetActive(false);
-                gun1.SetActive(false);
-            }
-            else
-            {
-                if (!Input.GetKey(KeyCode.Q) && Input.GetKeyDown(KeyCode.Alpha1))
+                if (Input.GetKey(KeyCode.Q) && FreeTeleportationOnline.teleportState == true)
                 {
-                    HostShowGunServerRpc(true, false);
-                    ShowGunClientRpc(true,false, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
+                    gun2.SetActive(false);
+                    gun1.SetActive(false);
                 }
-
-                if (!Input.GetKey(KeyCode.Q) && Input.GetKeyDown(KeyCode.Alpha2))
+                else
                 {
-                    HostShowGunServerRpc(false, true);
-                    ShowGunClientRpc(false, true, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
+                    if (!Input.GetKey(KeyCode.Q) && Input.GetKeyDown(KeyCode.Alpha1))
+                    {
+                        HostShowGunServerRpc(true, false);
+                        ShowGunClientRpc(true, false, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
+                    }
+
+                    if (!Input.GetKey(KeyCode.Q) && Input.GetKeyDown(KeyCode.Alpha2))
+                    {
+                        HostShowGunServerRpc(false, true);
+                        ShowGunClientRpc(false, true, new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
+                    }
                 }
             }
-        }
 
-        if (!IsHost && IsClient)
-        {
-            if (Input.GetKeyDown(KeyCode.Q) && FreeTeleportationOnline.teleportState == true)
+            if (!IsHost && IsClient)
             {
-                gun2.SetActive(false);
-                gun1.SetActive(false);
-            }
-            else
-            {
-                if (!Input.GetKey(KeyCode.Q) && Input.GetKeyDown(KeyCode.Alpha1))
+                if (Input.GetKeyDown(KeyCode.Q) && FreeTeleportationOnline.teleportState == true)
                 {
-                    SynchroShowGunServerRpc(true, false, 1);
-                    HostShowGunServerRpc(true, false);
+                    gun2.SetActive(false);
+                    gun1.SetActive(false);
                 }
-
-                if (!Input.GetKey(KeyCode.Q) && Input.GetKeyDown(KeyCode.Alpha2))
+                else
                 {
-                    SynchroShowGunServerRpc(false, true, 1);
-                    HostShowGunServerRpc(false, true);
+                    if (!Input.GetKey(KeyCode.Q) && Input.GetKeyDown(KeyCode.Alpha1))
+                    {
+                        SynchroShowGunServerRpc(true, false, 1);
+                        HostShowGunServerRpc(true, false);
+                    }
+
+                    if (!Input.GetKey(KeyCode.Q) && Input.GetKeyDown(KeyCode.Alpha2))
+                    {
+                        SynchroShowGunServerRpc(false, true, 1);
+                        HostShowGunServerRpc(false, true);
+                    }
                 }
             }
         }
     }
-    
+
     public void ShowGun(bool show1, bool show2)
     {
         gun1.SetActive(show1);
@@ -82,7 +85,7 @@ public class ChangeGun : NetworkBehaviour
     }
 
     [ServerRpc]
-    public void SynchroShowGunServerRpc (bool show1, bool show2, ulong player)
+    public void SynchroShowGunServerRpc(bool show1, bool show2, ulong player)
     {
         ClientRpcParams clientRpcParams = new ClientRpcParams
         {

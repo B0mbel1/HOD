@@ -1,4 +1,5 @@
-using System;
+﻿using System;
+using System.Collections.Generic;
 using TMPro;
 using Unity.Netcode;
 using UnityEngine;
@@ -6,7 +7,10 @@ using UnityEngine;
 public class RoundHandler : NetworkBehaviour
 {
     public Vector3 spawnPoint;
-    public GameObject GetSpawnPosition;
+    
+    public Vector3 hostSpawn;
+    public Vector3 clientSpawn;
+
     public TextMeshProUGUI ownerRoundCountTxt;
     public TextMeshProUGUI opponentRoundCountTxt;
     public bool dead;
@@ -15,17 +19,43 @@ public class RoundHandler : NetworkBehaviour
 
     public override void OnNetworkSpawn()
     {
-        spawnPoint = GetSpawnPosition.transform.position;
+        if (IsHost)
+        {
+            spawnPoint = hostSpawn;
+        }
+
+        if (!IsHost && IsClient)
+        {
+            spawnPoint = clientSpawn;
+        }
+
+
         dead = false;
-        Debug.Log(spawnPoint);
+        
         base.OnNetworkSpawn();
+
         ulongVar = NetworkManager.LocalClientId;
         intVar = Convert.ToInt32(ulongVar.ToString());
+
     }
+    public static bool klientDed, hostDed;
 
     private void Update()
     {
         if (!IsOwner) return;
+
+        if (IsHost && PlayerHealth.health <= 0)
+        {
+            respawnClientRpc(new ClientRpcParams { Send = new ClientRpcSendParams { TargetClientIds = new List<ulong> { 1 } } });
+        }
+
+        if (!IsHost && IsClient && PlayerHealth.health <= 0)
+        {
+            respawnServerRpc(true);
+        }
+
+        if (!IsOwner) return;
+
         if (PlayerHealth.health <= 0)
         {
             dead = true;
@@ -46,12 +76,78 @@ public class RoundHandler : NetworkBehaviour
 
     private void FixedUpdate()
     {
+        if (!IsOwner) return;
+
+        if (klientDed == true)
+        {
+            RespawnPlayer();
+            klientDed = false;
+        }
+        if (hostDed == true)
+        {
+            RespawnPlayer();
+        }
+
         if (dead == true)
         {
-            Die();
-            //RespawnPlayer(NetworkManager.LocalClientId);
+            if (IsHost)
+            {
+                Die();
+                RespawnPlayer();
+            }
+
+            if (!IsHost && IsClient)
+            {
+                Die();
+                RespawnPlayer();
+            }
+
+            setTimeServerRpc();
+            setTimeSynchroServerRpc(1);
+        }
+
+        if (TimerScript.TimeLeft == 0)
+        {
+            if (IsHost)
+            {
+                RespawnPlayer();
+            }
+
+            if (!IsHost && IsClient)
+            {
+                RespawnPlayer();
+            }
         }
     }
+
+
+
+    [ServerRpc]
+    public void setTimeServerRpc()
+    {
+        TimerScript.TimeLeft = 90;       
+    }
+
+    [ClientRpc]
+    public void setTimeClientRpc()
+    {
+        TimerScript.TimeLeft = 90;         
+    }
+
+    [ServerRpc]
+    public void setTimeSynchroServerRpc(ulong a)
+    {
+        ClientRpcParams clientRpcParams = new ClientRpcParams
+        {
+            Send = new ClientRpcSendParams
+            {
+                TargetClientIds = new ulong[] { a }
+            }
+        };
+
+        respawnClientRpc(clientRpcParams);
+    }
+
 
     public void Die()
     {
@@ -72,7 +168,6 @@ public class RoundHandler : NetworkBehaviour
         GetComponent<PlayerMovementOnline>().enabled = false;
         GetComponentInChildren<MeshRenderer>().enabled = false;
         GetComponentInChildren<shootingfinal>().enabled = false;
-        RespawnPlayer();
     }
 
     public void RespawnPlayer()
@@ -83,7 +178,48 @@ public class RoundHandler : NetworkBehaviour
 
         transform.position = spawnPoint;
         dead = false;
+
+
+        PlayerHealth.health = 100;
+
+        TimerScript.TimeLeft = 90f;             
     }
+
+    [ServerRpc(RequireOwnership = false)]
+    public void respawnServerRpc(bool klient)
+    {
+        klientDed = klient;
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    public void respawn2ServerRpc(bool host)
+    {
+        hostDed = host;
+    }
+
+    [ClientRpc]
+    public void respawnClientRpc(ClientRpcParams clientRpcParams)
+    {
+        hostDed = true;
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    public void respawnSynchroServerRpc(ulong a)
+    {
+        ClientRpcParams clientRpcParams = new ClientRpcParams
+        {
+            Send = new ClientRpcSendParams
+            {
+                TargetClientIds = new ulong[] { a }
+            }
+        };
+        respawnClientRpc(clientRpcParams);
+    }
+
+
+
+
+
 
     public void HostRoundWin()
     {

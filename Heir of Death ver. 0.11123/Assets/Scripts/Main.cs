@@ -5,6 +5,7 @@ public class Main : MonoBehaviour
 {
     public static float Power = 0;
     public static float Character = 1;
+    public static float gamemode = 0;
     public static int isHost = 0;
 
     public void PlayGameLas()
@@ -80,6 +81,16 @@ public class Main : MonoBehaviour
     public void SetChar5()
     {
         Character = 5;
+    }
+
+    public void SetGamemode0()
+    {
+        gamemode = 0;
+    }
+
+    public void SetGamemode1()
+    {
+        gamemode = 1;
     }
 
     public void LoadMainMenu()

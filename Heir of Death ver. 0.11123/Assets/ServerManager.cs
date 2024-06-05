@@ -1,4 +1,6 @@
+using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
 using UnityEngine;
@@ -14,7 +16,7 @@ public class ServerManager : MonoBehaviour
     [SerializeField] public List<string> SceneList = new List<string>();
     [SerializeField] private string gameplaySceneName = "";
     [SerializeField] private string characterSelectSceneName = "SelectCharacter";
-    [SerializeField] InputField ip;
+    [SerializeField] TMP_InputField ip;
     [SerializeField] string ipAddress;
     [SerializeField] UnityTransport transport;
 
@@ -50,12 +52,13 @@ public class ServerManager : MonoBehaviour
         GetLocalIPAddress();
     }
 
+
     public void StartClient()
     {
         //NetworkManager.Singleton.ConnectionApprovalCallback += ApprovalCheck;
         ipAddress = ip.text;
         SetIpAddress(ipAddress);
-
+        
         NetworkManager.Singleton.StartClient();
     }
 
@@ -114,6 +117,9 @@ public class ServerManager : MonoBehaviour
         transport = NetworkManager.Singleton.GetComponent<UnityTransport>();
         transport.ConnectionData.Address = ipAddress;
     }
+
+
+
 
     private void OnNetworkReady()
     {

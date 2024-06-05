@@ -4,37 +4,64 @@ using Unity.Netcode;
 
 public class TimerScript : NetworkBehaviour
 {
-    public float TimeLeft;
+    public static float TimeLeft = 90f;     //Ustawiæ na 90f;
     public bool TimerOn = false;
 
     public Text RoundTimer;
 
     void Start()
     {
-        TimerOn = true;
+        if (Main.gamemode == 0)
+        {
+            TimerOn = true;
+        }
+        if(Main.gamemode == 1)
+        {
+            TimerOn = false;
+            RoundTimer.text = "Timer wy³¹czony";
+        }
     }
-    
+
     void Update()
     {
-        if(!IsOwner) return;
+        if (!IsOwner) return;
 
-        if(TimerOn)
+        if (IsHost)
         {
-            if(TimeLeft > 0)
+            if (TimerOn)
             {
-                TimeLeft -= Time.deltaTime;
-                UpdateTimer(TimeLeft);
+                if (TimeLeft > 0)
+                {
+                    TimeLeft -= Time.deltaTime;
+                    UpdateTimer(TimeLeft);
+                }
+                else
+                {
+                    TimeLeft = 0;
+                    //TimerOn = false;
+                }
             }
-            else
+        }
+
+        if (!IsHost && IsClient)
+        {
+            if (TimerOn)
             {
-                Debug.Log("Koniec Rundy");
-                TimeLeft = 0;
-                TimerOn = false;
+                if (TimeLeft > 0)
+                {
+                    TimeLeft -= Time.deltaTime;
+                    UpdateTimer(TimeLeft);
+                }
+                else
+                {
+                    TimeLeft = 0;
+                    //TimerOn = false;
+                }
             }
         }
     }
 
-    void UpdateTimer(float currentTime)
+    public void UpdateTimer(float currentTime)
     {
         currentTime += 1;
 

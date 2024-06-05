@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class ShelterInteraction : NetworkBehaviour
 {
-    public GameObject interactionText;
     public GameObject shelter;
 
     public AudioClip lookSound;
@@ -11,7 +10,6 @@ public class ShelterInteraction : NetworkBehaviour
 
     void Start()
     {
-        interactionText.SetActive(false);
         pickupSource = GetComponent<AudioSource>();
     }
 
