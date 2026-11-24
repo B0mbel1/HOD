@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -150,6 +149,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2690468082117378489, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
+      propertyPath: m_text
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 3011345893718789671, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
       propertyPath: m_LocalPosition.x
       value: 309.39886
@@ -190,9 +193,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6297806380319108427, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3220402135
+      objectReference: {fileID: 0}
     - target: {fileID: 7262914570115263074, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7803321182580324389, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
+      propertyPath: m_text
+      value: You
       objectReference: {fileID: 0}
     - target: {fileID: 7922751862813056832, guid: 01ec98e195bb7034abf349a3edd4b630, type: 3}
       propertyPath: m_SizeDelta.x
@@ -249,7 +260,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a2d15bc7fd430469eed400a5de6190, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeLeft: 90
   TimerOn: 0
   RoundTimer: {fileID: 754546483}
 --- !u!1 &754546485 stripped
@@ -384,7 +394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d5717d6cd854784ea93d0d8b4d10990, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  czyHost: 0
   chipSpeed: 2
   frontHealthBar: {fileID: 1714187523}
   backHealthBar: {fileID: 139375415}

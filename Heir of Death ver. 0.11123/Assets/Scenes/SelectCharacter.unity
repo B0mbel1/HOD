@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -333,6 +332,7 @@ Terrain:
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 355
+  m_HeightmapMinimumLODSimplification: 0
   m_HeightmapMaximumLOD: 0
   m_ShadowCastingMode: 2
   m_DrawHeightmap: 1
@@ -537,7 +537,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 935890435520816436, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
       propertyPath: m_text
-      value: Wybieranie...
+      value: Choosing...
       objectReference: {fileID: 0}
     - target: {fileID: 1242367671494295392, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
       propertyPath: m_fontSize
@@ -577,15 +577,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1962374641139834109, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
       propertyPath: m_text
-      value: "\u0141adowanie..."
+      value: Loading...
       objectReference: {fileID: 0}
     - target: {fileID: 3127509610762614205, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
       propertyPath: m_Name
       value: CharacterSelect
       objectReference: {fileID: 0}
+    - target: {fileID: 3334850766314067970, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
+      propertyPath: m_text
+      value: Confirm Your Choice
+      objectReference: {fileID: 0}
     - target: {fileID: 3400845734531091643, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
       propertyPath: m_text
-      value: "\u0141adowanie..."
+      value: Loading...
       objectReference: {fileID: 0}
     - target: {fileID: 3648590641235717445, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -601,7 +605,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4104196667959965042, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
       propertyPath: m_text
-      value: Wybieranie...
+      value: Choosing...
       objectReference: {fileID: 0}
     - target: {fileID: 4172789517138272331, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
       propertyPath: m_text
@@ -617,7 +621,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4930685072000198986, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
       propertyPath: m_text
-      value: Wybieranie...
+      value: Choosing...
       objectReference: {fileID: 0}
     - target: {fileID: 5169024991814785370, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -685,11 +689,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5986343681341445169, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
       propertyPath: m_text
-      value: Wybieranie...
+      value: Choosing...
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986343681341445169, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
+      propertyPath: m_fontSize
+      value: 23.45
       objectReference: {fileID: 0}
     - target: {fileID: 7467961848040718533, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
       propertyPath: m_text
-      value: "\u0141adowanie..."
+      value: Loading...
       objectReference: {fileID: 0}
     - target: {fileID: 7585858182925046760, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
       propertyPath: IPHostInfo
@@ -701,11 +709,11 @@ PrefabInstance:
       objectReference: {fileID: 1448906575}
     - target: {fileID: 8132669238264823230, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
       propertyPath: m_text
-      value: "\u0141adowanie..."
+      value: Loading...
       objectReference: {fileID: 0}
     - target: {fileID: 8132669238264823230, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
       propertyPath: m_fontSize
-      value: 36
+      value: 32.8
       objectReference: {fileID: 0}
     - target: {fileID: 8230621807863359962, guid: f6e63c8f2f2b21b498b2f817ca7d24fd, type: 3}
       propertyPath: m_SizeDelta.x
@@ -1578,6 +1586,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GlobalObjectIdHash: 1746318978
+  InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
   ActiveSceneSynchronization: 0

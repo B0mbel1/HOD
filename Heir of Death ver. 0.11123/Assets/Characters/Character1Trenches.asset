@@ -14,14 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   displayName: Neran
-  displayBio: "Cz\u0142onek misji kosmicznej statku Artel 12. Zostawiony na pastw\u0119
-    losu, zapomniany przez rz\u0105d USA, mog\u0105cy odlicza\u0107 czas dop\xF3ki
-    zabraknie mu tlenu. Ostatnie jego chwile wype\u0142nione by\u0142y strachem,
-    \u017Calem i gorej\u0105c\u0105 ch\u0119ci\u0105 zemsty na ludziach, kt\xF3rzy
-    skazali go na \u015Bmier\u0107 w ciemnej pustce kosmosu. Cz\u0142owiek zostawiony
-    sam na sam ze \u015Bmierci\u0105 zaprzyja\u017Ania si\u0119 z ni\u0105, czasem
-    ta przyja\u017A\u0144 mo\u017Ce owocowa\u0107 czym\u015B gro\u017Anym.. czym\u015B
-    co powoduje, \u017Ce zaczynamy by\u0107 ni\u0105 sami..."
+  displayBio: "A crew member of the Artel 12 space mission. Left to his fate and
+    forgotten by the US government, he could only count down the seconds until his
+    oxygen ran out. His final moments were filled with fear, sorrow, and a burning
+    desire for vengeance against those who condemned him to die in the dark void
+    of space. A man left alone with death eventually befriends it\u2014and sometimes,
+    that friendship bears something terrifying... something that makes us become
+    death itself..."
   icon: {fileID: 21300000, guid: 59e05ef13720c754b93c9c95a3513580, type: 3}
   introPrefab: {fileID: 4578970355672015949, guid: c640380a4e1cc5942a48106347102a70, type: 3}
   gameplayPrefab: {fileID: 395039855420561295, guid: 564bcccdefd040147802eda69e2d5d65, type: 3}

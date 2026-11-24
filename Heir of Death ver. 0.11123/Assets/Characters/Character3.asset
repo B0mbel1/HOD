@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 3
   displayName: Rizael
-  displayBio: "W\u0119druj\u0105cy po \u015Bwiecie wysysacz dusz, szukaj\u0105cy
-    ofiar, kt\xF3re nie b\u0119d\u0105 ba\u0142y si\u0119 sta\u0107 z nim do walki.
-    Czyste uciele\u015Bnienie po\u017Cogi i sprytu. Nieprzewidywalny i nie znaj\u0105cy
-    znaczenia s\u0142owa poddanie. Po odbyciu dziesi\u0105tek tysi\u0119cy walk przysz\u0142a
-    pora na t\u0105 ostatni\u0105 w swoim \u017Cyciu..."
+  displayBio: A wandering soul-drainer roaming the world in search of prey brave
+    enough to stand and fight him. The pure embodiment of devastation and cunning.
+    Unpredictable, and a stranger to the word "surrender." After fighting tens of
+    thousands of battles, the time has finally come for the very last one of his
+    life...
   icon: {fileID: 21300000, guid: b2cd912eca73dde4795d3c91106e1e94, type: 3}
   introPrefab: {fileID: 5541418207077098958, guid: fcc530ea9581e714885812a05a87b6a9, type: 3}
   gameplayPrefab: {fileID: 5085903601916345769, guid: bb49a6259a4a7f84ba7f3d08ee99c303, type: 3}

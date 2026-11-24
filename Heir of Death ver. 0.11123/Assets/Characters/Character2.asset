@@ -14,16 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 2
   displayName: Asseria
-  displayBio: "Na obrze\u017Cach miasta Ektrell w pi\u0105tym dystrykcie planety
-    Symperion w kaplicy \u015Bwiadomo\u015Bci IUA zebrane m\u0142ode Hya-Tu'ah -
-    (t\u0142. kerra\u0144skie ~ \"Przeznaczone by umrze\u0107\") przygotowuj\u0105
-    si\u0119 wraz z kap\u0142anami do corocznego obrz\u0119du po\u015Bwi\u0119cenia
-    cia\u0142a. Asseria, jedna z po\u015Bwi\u0119conych, za dziecka zabrana ze swojej
-    rodzimej planety - Jierra przez Aktta Sutrte - wojownik\xF3w klanu, prosi swoj\u0105
-    boginie o szybk\u0105 bezbolesn\u0105 \u015Bmier\u0107.  Gdy kap\u0142ani spuszczaj\u0105
-    krew z cia\u0142a Asserii, ta ostatkiem si\u0142 wymawia mantr\u0119 Opta Entris.
-    Gdy zamyka oczy, w ciemno\u015Bci pojawia si\u0119 ogie\u0144, tym ogniem sp\u0142onie
-    ca\u0142e Symperion."
+  displayBio: "On the outskirts of the city of Ektrell, in the fifth district of
+    the planet Symperion, inside the IUA Chapel of Consciousness, the gathered young
+    Hya-Tu'ah (Kerranian, roughly \"Destined to Die\") prepare alongside the priests
+    for the annual rite of bodily sacrifice. Asseria, one of the chosen offerings\u2014taken
+    as a child from her homeworld of Jierra by the Aktta Sutrte, warriors of the
+    clan\u2014prays to her goddess for a swift and painless death. As the priests
+    drain the blood from Asseria\u2019s body, she utters the mantra Opta Entris with
+    her dying breath. When she closes her eyes, fire appears in the darkness\u2014a
+    fire that will burn all of Symperion to ashes."
   icon: {fileID: 21300000, guid: 12a998e1e9891bb408df09f3fda7d959, type: 3}
   introPrefab: {fileID: 1795839604808385621, guid: 87f81d4bd5522af4ea58a9cf34d9b2ce, type: 3}
   gameplayPrefab: {fileID: 4217453867588923020, guid: ae5d124884f54834ca9918c4454bcba2, type: 3}

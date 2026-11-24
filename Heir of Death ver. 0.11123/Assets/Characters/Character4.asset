@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 4
   displayName: Ben Herdgall
-  displayBio: "Zawodowy hitman, cz\u0142owiek elitarnej grupy asasyn\xF3w - Herraelis.
-    Znany by\u0142 jako \"Pan \u015Amierci\". W ci\u0105gu ponad 12 lat s\u0142u\u017Cenia
-    jako zawodowy morderca, wype\u0142ni\u0142 wszystkie powierzone mu zadania. Zgodnie
-    z kodeksem Herraelis je\u017Celi zab\xF3jca wype\u0142ni wszystkie zlecenia przez
-    pierwsze 13 lat przynale\u017Cno\u015Bci do bractwa uzyskuje wolno\u015B\u0107
-    i pieni\u0105dze. Benowi zosta\u0142o ostatnie zlecenie, jego celem jest \"Tanatos\".
-    Jednak\u017Ce to zlecenie okazuje si\u0119 by\u0107 czym\u015B innym od pozosta\u0142ych.."
+  displayBio: A professional hitman and member of the elite group of assassins known
+    as Herraelis. He went by the name "The Lord of Death." Over more than 12 years
+    of service as a contract killer, he completed every single assignment entrusted
+    to him. According to the Herraelis Code, if an assassin fulfills all contracts
+    during their first 13 years in the brotherhood, they earn their freedom and fortune.
+    Ben has only one final contract left, and his target is "Thanatos." However,
+    this contract turns out to be unlike any other...
   icon: {fileID: 21300000, guid: bc07455bcbb763e4bb4f643788bb916b, type: 3}
   introPrefab: {fileID: 7983146585644693607, guid: 67ee89f996910b94e84857b055f0ccbe, type: 3}
   gameplayPrefab: {fileID: 8727896245451519565, guid: ec7eb57b633fa88408d4a1d94e4312a8, type: 3}
